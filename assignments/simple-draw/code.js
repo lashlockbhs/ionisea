@@ -47,5 +47,5 @@ var shithead = 1000
 while (shithead >0) {
     drawCircle(height-shithead, height-shithead, 50, 'blue');
    // change the -5 var to change the distance between circles KEEP NEGATIVE!!!!
-    var shithead = shithead -2
+    var shithead = shithead -8
 }
