@@ -42,6 +42,9 @@
 //drawRect(50, 50, 60, 40, 'black');
 
 //drawFilledCircle(width /2, width -100, 50, 'red');
-
+var shithead = 0
 //drawFilledRect(5, height - 200, 45, 15, 'purple');
-drawCircle(0, 0, 50, 'blue');
+while (sht) {
+    drawCircle(height/shithead, height/shithead, 50, 'blue');
+    var shithead = 0
+}
