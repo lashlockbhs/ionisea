@@ -45,7 +45,7 @@
 var shithead = 1000
 //drawFilledRect(5, height - 200, 45, 15, 'purple');
 while (shithead >0) {
-    drawCircle(width/2, height-shithead, 250, '#fd5e53');
+    drawCircle(width/2, height-shithead, 250, '#FF00FF');
    // change the -x number to change the distance between circles, KEEP NEGATIVE!!!!
     var shithead = shithead -2 //<- here!
 }
