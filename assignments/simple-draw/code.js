@@ -45,6 +45,6 @@
 var shithead = 1000
 //drawFilledRect(5, height - 200, 45, 15, 'purple');
 while (shithead >0) {
-    drawCircle(height/shithead, height/shithead, 50, 'blue');
+    drawCircle(height-shithead, height-shithead, 50, 'blue');
     var shithead = shithead -3
 }
