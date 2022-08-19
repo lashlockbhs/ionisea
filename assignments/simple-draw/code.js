@@ -5,4 +5,4 @@ while (shithead >-250000) {
    // change the -x number to change the distance between circles, KEEP NEGATIVE!!!!
     var shithead = shithead -5 //<- here!
 }
-drawFilledCircle (width/2,height/2, 50, "red")
+drawFilledCircle (width/2,height/2, 150, "red")
