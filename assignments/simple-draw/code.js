@@ -1,4 +1,4 @@
-drawFilledRect (0, 0, width, height, 'white');
+drawFilledRect (0, 0, width, height, 'orange');
 var shithead = 1000
 while (shithead >-250000) {
     drawLine(0, shithead, width, height, 'black');
