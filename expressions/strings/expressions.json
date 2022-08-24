@@ -94,5 +94,11 @@
     "answer": "s.substring(1,s.length-1)",
     "correct": true,
     "timestamp": 1661378639090
+  },
+  {
+    "name": "Last three",
+    "answer": "s.substring(s.length-3,s.length)\t",
+    "correct": true,
+    "timestamp": 1661378665193
   }
 ]
