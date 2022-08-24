@@ -6,4 +6,4 @@ while (shithead >-250000) {
     var shithead = shithead -5 //<- here!
 }
 drawFilledCircle (width/2,height/3, 100, "white")
-drawFilledRect (width/2, height/2, 100, 200, 'white');
+drawFilledRect (width/2, height/2, 300, 200, 'white');
