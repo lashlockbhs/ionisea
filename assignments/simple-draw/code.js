@@ -7,4 +7,4 @@ while (shithead >-250000) {
 }
 drawFilledCircle (width/2,height/3, 100, "white")
 drawFilledRect (width/2 - 100, height/2 - 100, 200, 200, 'white');
-drawFilledRect (width/2 + 100, height/2 - 120, 100, 50, 'white');
+drawFilledRect (width/2 + 100, height/2 - 120, 50, 100, 'white');
