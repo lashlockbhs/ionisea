@@ -1,7 +1,7 @@
 drawFilledRect (0, 0, width, height, 'teal');
 var shithead = 1000
 while (shithead >-250000) {
-    drawLine(0, shithead, width, height, 'shit color');
+    drawLine(0, shithead, width, height, 'maroon');
    // change the -x number to change the distance between circles, KEEP NEGATIVE!!!!
     var shithead = shithead -15 //<- here!
 }
