@@ -1,4 +1,4 @@
-drawFilledRect (0, 0, width, height, 'teal'); // use the red text to change the colors
+drawFilledRect (0, 0, width, height, 'green'); // use the red text to change the colors
 var shithead = 1000
 while (shithead >-250000) {
     drawLine(0, shithead, width, height, 'maroon'); //do it here as well
@@ -9,9 +9,9 @@ while (shithead >-250000) {
 
 // un mong us code dont touch loser vvvvv
 
-drawFilledCircle (width/2,height/3, 100, "white")
-drawFilledRect (width/2 - 100, height/2 - 100, 200, 200, 'white');
-drawFilledRect (width/2 + 100, height/2 - 100, 50, 130, 'white');
-drawFilledRect (width/2 - 100, height/2 + 100, 60, 80, 'white');
-drawFilledRect (width/2 + 40, height/2 + 100, 60, 80, 'white');
-drawFilledRect (width/2 - 90, height/2 - 100, 100, 60, 'black');
+//drawFilledCircle (width/2,height/3, 100, "white")
+//drawFilledRect (width/2 - 100, height/2 - 100, 200, 200, 'white');
+//drawFilledRect (width/2 + 100, height/2 - 100, 50, 130, 'white');
+//drawFilledRect (width/2 - 100, height/2 + 100, 60, 80, 'white');
+//drawFilledRect (width/2 + 40, height/2 + 100, 60, 80, 'white');
+//drawFilledRect (width/2 - 90, height/2 - 100, 100, 60, 'black');
