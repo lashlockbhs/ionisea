@@ -1,5 +1,5 @@
 drawFilledRect (0, 0, width, height, 'grey'); // use the red text to change the colors
-var shithead = 1000
+var shithead = 10000
 while (shithead >-250000) {
     drawLine(0, shithead, width, height, 'teal'); //do it here as well
    // change the -x number to change the distance between circles, turn positive and funny happens
