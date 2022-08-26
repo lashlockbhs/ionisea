@@ -15,4 +15,3 @@ while (shithead >-200000) {
 //drawFilledRect (width/2 - 100, height/2 + 100, 60, 80, 'white');
 //drawFilledRect (width/2 + 40, height/2 + 100, 60, 80, 'white');
 //drawFilledRect (width/2 - 90, height/2 - 100, 100, 60, 'black');
-'die'
