@@ -3,7 +3,7 @@ var shithead = 1000
 while (shithead >-150000) {
     drawLine(0, shithead, width, height, 'black'); //do it here as well
    // change the -x number to change the distance between circles, turn positive and funny happens
-    var shithead = shithead-20 //<- here!
+    var shithead = shithead-8 //<- here!
 }
 //drawFilledCircle (width/2, height/2, 150)
 
