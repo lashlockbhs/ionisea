@@ -5,7 +5,7 @@ while (shithead >-200000) {
    // change the -x number to change the distance between circles, turn positive and funny little page crash
     var shithead = shithead -8 //<- here!
 }
-//drawFilledCircle (width/2, height/2, 150)
+drawFilledCircle (width/2, height/2, 150)
 
 // un mong us code dont touch vvvvv
 
