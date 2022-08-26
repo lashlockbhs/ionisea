@@ -3,7 +3,7 @@ var shithead = 1000
 while (shithead >-200000) {
     drawLine(0, shithead, width, height, 'maroon'); //you can do it here as well
    // change the -x number to change the distance between circles, turn positive and funny little page crash
-    var shithead = shithead -40 //<- here!
+    var shithead = shithead -8 //<- here!
 }
 var fujkYou = 0
 while (fujkYou <100000){
