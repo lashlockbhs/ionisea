@@ -4,5 +4,11 @@
     "answer": "storeOpen && !linesTooLong",
     "correct": false,
     "timestamp": 1661551140677
+  },
+  {
+    "name": "Will we skip our trip to the store?",
+    "answer": "!storeOpen && !linesTooLong",
+    "correct": false,
+    "timestamp": 1661551151403
   }
 ]
