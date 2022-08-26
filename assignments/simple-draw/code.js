@@ -1,4 +1,5 @@
 drawFilledRect (0, 0, width, height, 'teal'); // use the red text to change the colors
+var width = width -100
 var shithead = 1000
 while (shithead >-200000) {
     drawLine(0, shithead, width, height, 'maroon'); //you can do it here as well
