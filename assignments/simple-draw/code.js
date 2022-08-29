@@ -7,8 +7,8 @@ while (shithead >-190000) {
 }
 var fujkYou = -10000
 while (fujkYou <100000){
-  drawLine(0, fujkYou, width, height, 'maroon'); //you can do it here as well
-    //change the -x number to change the distance between circles, turn positive and funny little page crash
+  drawLine(0, fujkYou, width, height, 'red'); //you can do it here as well
+    //change the -x number to change the distance between circles, turn </= 0 and funny little page crash
     var fujkYou = fujkYou +5 //<- here!
 }
 //drawFilledCircle (width/2, height/2, 150)
