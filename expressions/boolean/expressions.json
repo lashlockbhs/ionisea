@@ -10,5 +10,12 @@
     "answer": "gdgd",
     "correct": false,
     "timestamp": 1661551054550
+  },
+  {
+    "name": "Energetic?",
+    "canonical": "enoughSleep && !justWorkedOut",
+    "answer": "enoughSleep&&!justWorkedOut",
+    "correct": true,
+    "timestamp": 1661809823304
   }
 ]
