@@ -3,7 +3,7 @@ var fujkYou = -10000
 while (fujkYou <100000){
   drawLine(0, fujkYou, width, height, 'red'); //you can do it here as well
     //change the -x number to change the distance between circles, turn </= 0 and funny little page crash
-    var fujkYou = fujkYou +5 //<- here!
+    var fujkYou = fujkYou +10 //<- here!
 }
 var shithead = 1000
 while (shithead >-190000) {
@@ -14,7 +14,7 @@ while (shithead >-190000) {
 
 //drawFilledCircle (width/2, height/2, 150)
 
-// un mong us code dont touch vvvvv
+// mail bx uspsp code dont touch vvvvv
 
 //drawFilledCircle (width/2,height/3, 100, "blue")
 //drawFilledRect (width/2 - 100, height/2 - 100, 200, 200, 'blue');
