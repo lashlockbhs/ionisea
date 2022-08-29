@@ -61,5 +61,12 @@
     "answer": "Math.abs(a)-Math.abs(b)",
     "correct": false,
     "timestamp": 1661810450671
+  },
+  {
+    "name": "Distance",
+    "canonical": "Math.abs(a - b)",
+    "answer": "Math.abs(a)-b",
+    "correct": false,
+    "timestamp": 1661810454407
   }
 ]
