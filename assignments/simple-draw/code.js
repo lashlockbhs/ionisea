@@ -1,4 +1,4 @@
-drawFilledRect (0, 0, width, height, 'magenta'); // use the red text to change the colors
+drawFilledRect (0, 0, width, height, 'black'); // use the red text to change the colors
 var fujkYou = -10000
 while (fujkYou <1000){
   drawLine(0, fujkYou, width, height, 'red'); //you can do it here as well
