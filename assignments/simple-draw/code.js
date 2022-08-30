@@ -1,6 +1,6 @@
 drawFilledRect (0, 0, width, height, 'teal'); // use the red text to change the colors
 var fujkYou = -10000
-while (fujkYou <100000){
+while (fujkYou <10000){
   drawLine(0, fujkYou, width, height, 'red'); //you can do it here as well
     //change the -x number to change the distance between circles, turn </= 0 and funny little page crash
     var fujkYou = fujkYou +7 //<- here!
