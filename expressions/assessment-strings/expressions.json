@@ -33,5 +33,12 @@
     "answer": "s.substring(0,3).toUpperCase+s.substring(3,s.length)",
     "correct": false,
     "timestamp": 1661896752338
+  },
+  {
+    "name": "First character",
+    "canonical": "s[0]",
+    "answer": "s.substring(0,1)",
+    "correct": true,
+    "timestamp": 1661896773744
   }
 ]
