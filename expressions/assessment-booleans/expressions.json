@@ -131,5 +131,12 @@
     "answer": "!enoughSleep && lotsOfWork",
     "correct": true,
     "timestamp": 1661896447362
+  },
+  {
+    "name": "Ready for some football?",
+    "canonical": "fast && strong",
+    "answer": "fast && strong",
+    "correct": true,
+    "timestamp": 1661896454353
   }
 ]
