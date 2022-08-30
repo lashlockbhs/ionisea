@@ -5,5 +5,12 @@
     "answer": "Math.PI*2**2",
     "correct": true,
     "timestamp": 1661895712743
+  },
+  {
+    "name": "Seconds in a day",
+    "canonical": "24 * 60 * 60",
+    "answer": "24*60*60",
+    "correct": true,
+    "timestamp": 1661895721871
   }
 ]
