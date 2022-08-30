@@ -103,5 +103,12 @@
     "answer": "\t(x2-x1)+(y2-y1)",
     "correct": false,
     "timestamp": 1661896568976
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "\tMath.abs(x2-x1)+(y2-y1)",
+    "correct": false,
+    "timestamp": 1661896576671
   }
 ]
