@@ -103,5 +103,12 @@
     "answer": "fireLit || !haveMatches",
     "correct": true,
     "timestamp": 1661896393067
+  },
+  {
+    "name": "Super beat?",
+    "canonical": "!enoughSleep && !eatenEnough",
+    "answer": "!enoughSleep && !eatenEnough",
+    "correct": true,
+    "timestamp": 1661896412227
   }
 ]
