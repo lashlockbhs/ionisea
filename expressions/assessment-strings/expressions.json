@@ -187,5 +187,33 @@
     "answer": "toLowerCase(s)",
     "correct": false,
     "timestamp": 1661896846230
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896846334
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896846518
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896846646
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896846734
   }
 ]
