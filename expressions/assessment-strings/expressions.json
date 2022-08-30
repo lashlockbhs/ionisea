@@ -89,5 +89,26 @@
     "answer": "toLowerCase(s)",
     "correct": false,
     "timestamp": 1661896844438
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896844582
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896844718
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896844854
   }
 ]
