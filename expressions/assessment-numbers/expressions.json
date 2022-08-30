@@ -12,5 +12,12 @@
     "answer": "24*60*60",
     "correct": true,
     "timestamp": 1661895721871
+  },
+  {
+    "name": "Distance",
+    "canonical": "Math.abs(a - b)",
+    "answer": "Math.abs(a-b)",
+    "correct": true,
+    "timestamp": 1661895743831
   }
 ]
