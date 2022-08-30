@@ -16,9 +16,9 @@ while (shithead >-190000) {
 
 // mail bx uspsp code dont touch vvvvv
 
-drawFilledCircle (width/2,height/3, 100, "blue")
-drawFilledRect (width/2 - 100, height/2 - 100, 200, 200, 'blue');
-drawFilledRect (width/2 - 100, height/2 + 100, 60, 80, 'blue');
-drawFilledRect (width/2 + 40, height/2 + 100, 60, 80, 'blue');
-drawFilledRect (width/2 -75, height/2 - 120, 150, 60, 'teal');
+//drawFilledCircle (width/2,height/3, 100, "blue")
+//drawFilledRect (width/2 - 100, height/2 - 100, 200, 200, 'blue');
+//drawFilledRect (width/2 - 100, height/2 + 100, 60, 80, 'blue');
+//drawFilledRect (width/2 + 40, height/2 + 100, 60, 80, 'blue');
+//drawFilledRect (width/2 -75, height/2 - 120, 150, 60, 'teal');
 //drawFilledRect (width/2 + 100, height/2 - 100, 50, 130, 'white');
