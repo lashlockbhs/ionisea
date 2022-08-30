@@ -110,5 +110,33 @@
     "answer": "toLowerCase(s)",
     "correct": false,
     "timestamp": 1661896844854
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896844974
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896845110
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896845238
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "toLowerCase(s)",
+    "correct": false,
+    "timestamp": 1661896845358
   }
 ]
