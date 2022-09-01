@@ -54,5 +54,12 @@
     "answer": "24*60*60",
     "correct": true,
     "timestamp": 1662045201346
+  },
+  {
+    "name": "Minutes in a year",
+    "canonical": "60 * 24 * 365",
+    "answer": "365*24*60",
+    "correct": true,
+    "timestamp": 1662045210488
   }
 ]
