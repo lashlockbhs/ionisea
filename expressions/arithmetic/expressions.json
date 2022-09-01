@@ -173,5 +173,26 @@
     "answer": "(x1-x2)+(y1-y2)",
     "correct": false,
     "timestamp": 1662043774358
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "(x1-x2)+(y1-y2)",
+    "correct": false,
+    "timestamp": 1662043774503
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "(x1-x2)+(y1-y2)",
+    "correct": false,
+    "timestamp": 1662043774646
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "(x1-x2)+(y1-y2)",
+    "correct": false,
+    "timestamp": 1662043774776
   }
 ]
