@@ -222,5 +222,26 @@
     "answer": "(x1-x2)+(y1-y2)",
     "correct": false,
     "timestamp": 1662043775318
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "(x1-x2)+(y1-y2)",
+    "correct": false,
+    "timestamp": 1662043775465
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "(x1-x2)+(y1-y2)",
+    "correct": false,
+    "timestamp": 1662043775605
+  },
+  {
+    "name": "Manhattan distance",
+    "canonical": "Math.abs(x1 - x2) + Math.abs(y1 - y2)",
+    "answer": "Math.abs(x1-x2)+Math.abs(y1-y2)",
+    "correct": true,
+    "timestamp": 1662044789393
   }
 ]
