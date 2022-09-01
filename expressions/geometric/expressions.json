@@ -47,5 +47,12 @@
     "answer": "1/2*(b1+b2)*h",
     "correct": true,
     "timestamp": 1662045394879
+  },
+  {
+    "name": "Area of a circle",
+    "canonical": "Math.PI*r*r",
+    "answer": "Math.PI*r**2",
+    "correct": true,
+    "timestamp": 1662045417525
   }
 ]
