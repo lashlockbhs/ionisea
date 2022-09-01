@@ -12,5 +12,12 @@
     "answer": "2(w+h)",
     "correct": false,
     "timestamp": 1662045281162
+  },
+  {
+    "name": "Perimeter of a rectangle",
+    "canonical": "2 * (w + h)",
+    "answer": "2*(w+h)",
+    "correct": true,
+    "timestamp": 1662045286236
   }
 ]
