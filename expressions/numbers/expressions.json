@@ -61,5 +61,26 @@
     "answer": "8957398474278",
     "correct": false,
     "timestamp": 1662044868809
+  },
+  {
+    "name": "1337 times 32",
+    "canonical": "1337 * 32",
+    "answer": "8957398474278",
+    "correct": false,
+    "timestamp": 1662044868941
+  },
+  {
+    "name": "1337 times 32",
+    "canonical": "1337 * 32",
+    "answer": "8957398474278",
+    "correct": false,
+    "timestamp": 1662044869054
+  },
+  {
+    "name": "1337 times 32",
+    "canonical": "1337 * 32",
+    "answer": "8957398474278",
+    "correct": false,
+    "timestamp": 1662044869199
   }
 ]
