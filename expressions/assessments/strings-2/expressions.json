@@ -33,5 +33,12 @@
     "answer": "s.substring(0,3)",
     "correct": true,
     "timestamp": 1662501087694
+  },
+  {
+    "name": "lower case",
+    "canonical": "s.toLowerCase()",
+    "answer": "s.toLowerCase()",
+    "correct": true,
+    "timestamp": 1662501099238
   }
 ]
