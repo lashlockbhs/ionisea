@@ -33,5 +33,12 @@
     "answer": "24*60*60",
     "correct": true,
     "timestamp": 1662501291259
+  },
+  {
+    "name": "Remainder",
+    "canonical": "a % b",
+    "answer": "a%b",
+    "correct": true,
+    "timestamp": 1662501295756
   }
 ]
