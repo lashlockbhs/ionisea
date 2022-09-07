@@ -22,3 +22,6 @@ function isFlobbyBird(red,spotted){
 function isBloggyBird(red,spotted){
     return red && !spotted
 }
+function isFlibbleBird(red,spotted){
+    return !red && spotted
+}
