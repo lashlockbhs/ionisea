@@ -25,3 +25,9 @@ function isBloggyBird(red,spotted){
 function isFlibbleBird(red,spotted){
     return !red && spotted
 }
+function isGlobbyBird(red,spotted){
+    return !red && !spotted
+}
+function eatsWorms(flobbyBird,bloggyBird,flibbleBird,globbyBird){
+    return flobbyBird && bloggyBird && flibbleBird && !globbyBird
+}
