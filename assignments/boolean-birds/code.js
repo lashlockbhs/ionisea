@@ -17,5 +17,5 @@
  *
  */
 function isFlobbyBird(red,spotted){
-    return (red=true,spotted=true)
+    red && spotted
 }
