@@ -50,5 +50,5 @@ function eatsMice(red,spotted){
 function isRed (yes,no){
   yes='Flobby','Bloggy'
   no='Flibble','Globby'
-  return yes
+  return yes - no
 }
