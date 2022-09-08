@@ -47,4 +47,6 @@ function eatsMice(red,spotted){
     //b4='Globby'
     //return b1 && b2 && b3 && b4
 //}
-function isRed (yes,no)
+function isRed (yes,no){
+  
+}
