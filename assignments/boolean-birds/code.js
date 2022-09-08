@@ -41,6 +41,6 @@ function eatsMice(red,spotted){
   return !red || !spotted
 }
 function isRed (flobby,bloggy,flibble,globby){
-  return flobby, floggy, !flibble, !globby
+  return flobby, bloggy, !flibble, !globby
 
 }
