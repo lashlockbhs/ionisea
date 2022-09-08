@@ -29,5 +29,5 @@ function isGlobbyBird(red,spotted){
     return !red && !spotted
 }
 function eatsWorms (red,spotted){
-  return red && spotted
+  return red || spotted
 }
