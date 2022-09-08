@@ -52,5 +52,5 @@ function isRed (flobby, bloggy, flibble, globby){
   bloggy= 'Bloggy'
   flibble='Flibble'
   globby='Globby'
-  return flobby, bloggy, !flibble, !globby
+  return flobby|| bloggy|| !flibble|| !globby
 }
