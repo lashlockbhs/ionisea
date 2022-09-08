@@ -47,8 +47,10 @@ function eatsMice(red,spotted){
     //b4='Globby'
     //return b1 && b2 && b3 && b4
 //}
-function isRed (yes,no){
-  yes='Flobby','Bloggy'
-  no='Flibble','Globby'
-  return yes - no
+function isRed (flobby, bloggy, flibble, globby){
+  flobby='Flobby'
+  bloggy= 'Bloggy'
+  flibble='Flibble'
+  globby='Globby'
+  return flobby, bloggy, !flibble, !globby
 }
