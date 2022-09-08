@@ -40,7 +40,10 @@ function eatsFish(red,spotted){
 function eatsMice(red,spotted){
   return !red || !spotted
 }
-function isRed (flobby,bloggy,flibble,globby){
-  return flobby, bloggy, !flibble, !globby
-
+function isRed (b1,b2,b3,b4){
+    b1='Flobby';
+    b2='Bloggy';
+    b3='Flibble';
+    b4='Globby';
+    return b1 || b2 || !b3 || !b4
 }
