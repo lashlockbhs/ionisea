@@ -28,6 +28,6 @@ function isFlibbleBird(red,spotted){
 function isGlobbyBird(red,spotted){
     return !red && !spotted
 }
-function eatsWorms(flobbyBird,bloggyBird,flibbleBird,globbyBird){
-    return true, true, true, false
+function eatsWorms (red,spotted){
+  return red && spotted
 }
