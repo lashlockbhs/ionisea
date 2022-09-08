@@ -41,9 +41,10 @@ function eatsMice(red,spotted){
   return !red || !spotted
 }
 function isRed (b1,b2,b3,b4){
-    b1='Flobby'=false;
-    b2='Bloggy'=true;
-    b3='Flibble'=false;
-    b4='Globby'=true;
-    return b1 || b2 || !b3 || !b4
+    //b1='Flobby'=false;
+    //b2='Bloggy'=true;
+    //b3='Flibble'=false;
+    //b4='Globby'=true;
+    //return b1 || b2 || !b3 || !b4
+    return !flobby || !globby
 }
