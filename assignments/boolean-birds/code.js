@@ -32,8 +32,8 @@ function eatsWorms (red,spotted){
   return red || spotted
 }
 function eatsNuts (red,spotted){
-  return red || spotted
+  return red || !spotted
 }
 function eatsFish(red,spotted){
-  return red || spotted
+  return !red || spotted
 }
