@@ -45,6 +45,5 @@ function isRed (b1,b2,b3,b4){
     b2='Bloggy'=true;
     b3='Flibble'=false;
     b4='Globby'=true;
-    b1 || b2 || !b3 || !b4
-    
+    return b1 || b2 || !b3 || !b4
 }
