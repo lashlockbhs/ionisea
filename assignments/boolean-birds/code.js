@@ -49,5 +49,5 @@ function eatsMice(red,spotted){
 //}
 function isRed (bird){
  
-  return bird === "Flobby" && "Bloggy"
+  return bird === "Flobby" || bird === "Bloggy"
 }
