@@ -38,9 +38,9 @@ const pigLatin =(string)=>{
 const advancedPigLatin =(string)=>{ 
   var advlatin = string.search(/[aeiou]/)
   if (advlatin=0){
-  return string.substring(advlatin+1,string.length)+string.substring(0,advlatin-1)+'way'
+  return string.substring(advlatin+1,string.length)+string.substring(0,advlatin+1)+'way'
   }
   else{
-    return string.substring(advlatin+1, string.length)+string.substring(0, advlatin-1)+'ay'
+    return string.substring(advlatin+1, string.length)+string.substring(0, advlatin+1)+'ay'
   }
 }
