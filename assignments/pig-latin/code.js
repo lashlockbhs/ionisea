@@ -31,3 +31,7 @@
 //
 // Feel free to play around in the REPL to make sure you understand how this
 // operator works.
+const pigLatin =(string)=>{
+  const latin = string.search(/[aeiou]/)
+  return string.substring(latin,string.length)+string.substring(0,latin)
+}
