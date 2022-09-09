@@ -16,47 +16,36 @@
  *   - Globby Birds eat fish, mice, and nuts.
  *
  */
-function isFlobbyBird(red,spotted){
-    return red && spotted
-}
-function isBloggyBird(red,spotted){
-    return red && !spotted
-}
-function isFlibbleBird(red,spotted){
+const isFlobbyBird=(red,spotted)=>red && spotted
+const isBloggyBird=(red,spotted)=> red && !spotted
+const isFlibbleBird=(red,spotted)=>{
     return !red && spotted
 }
-function isGlobbyBird(red,spotted){
+const isGlobbyBird=(red,spotted)=>{
     return !red && !spotted
 }
-function eatsWorms (red,spotted){
+const eatsWorms =(red,spotted)=>{
   return red || spotted
 }
-function eatsNuts (red,spotted){
+const eatsNuts =(red,spotted)=>{
   return red || !spotted
 }
-function eatsFish(red,spotted){
+const eatsFish=(red,spotted)=>{
   return !red || spotted
 }
-function eatsMice(red,spotted){
+const eatsMice=(red,spotted)=>{
   return !red || !spotted
 }
-//function isRed (b1,b2,b3,b4){
-    //b1='Flobby'
-    //b2='Bloggy'
-    //b3='Flibble'
-    //b4='Globby'
-    //return b1 && b2 && b3 && b4
-//}
-function isRed (bird){
+const isRed =(bird)=>{
   return bird === "Flobby" || bird === "Bloggy"
 }
-function isSpotted (bird){
+const isSpotted =(bird)=>{
   return bird === "Flobby" || bird === "Flibble"
 }
-function isNotRed (bird){
+const isNotRed =(bird)=>{
   return bird === "Flibble" || bird === "Globby"
 }
-function isNotSpotted (bird){
+const isNotSpotted =(bird)=>{
   return bird === "Bloggy" || bird === "Globby"
 }
 
