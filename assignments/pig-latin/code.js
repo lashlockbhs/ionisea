@@ -40,7 +40,7 @@ const advancedPigLatin =(string)=>{
   if (advlatin=0){
   return string.substring(advlatin,string.length)+string.substring(0,advlatin)+'way'
   }
-  if (advlatin<0){
+  else{
     return string.substring(advlatin, string.length)+string.substring(0, advlatin)+'ay'
   }
 }
