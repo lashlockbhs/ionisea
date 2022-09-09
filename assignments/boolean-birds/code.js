@@ -51,3 +51,6 @@ function isRed (bird){
  
   return bird === "Flobby" || bird === "Bloggy"
 }
+function isSpotted (bird){
+  return bird === "Flobby" || bird === "Flibble"
+}
