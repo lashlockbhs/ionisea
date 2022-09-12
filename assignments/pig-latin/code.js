@@ -32,11 +32,11 @@
 // Feel free to play around in the REPL to make sure you understand how this
 // operator works.
 const pigLatin =(string)=>{
-  const latin = string.search(/[aeiou]/)+1
+  const latin = string.search(/[aeiou]/)
   return string.substring(latin,string.length)+string.substring(0,latin)+'ay'
 }
 const advancedPigLatin =(string)=>{ 
-  var advlatin = string.search(/[aeiou]/)
+  var advlatin = string.search(/[aeiou]/)+1
   if (advlatin=0){
   return string.substring(advlatin,string.length)+string.substring(0,advlatin)+'way'
   }
