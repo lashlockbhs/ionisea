@@ -23,6 +23,8 @@
  *
  *  clear()
  */
-const circline = (sd) =>{
-  drawFilledCircle(x, y, radius, color)
+const circline = (ds) =>{
+  var bigness = 5
+  var crap = width + bigness*2
+  return drawFilledCircle(crap, y, bigness, red)
 }
