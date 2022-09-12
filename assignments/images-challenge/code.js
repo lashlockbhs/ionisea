@@ -23,3 +23,6 @@
  *
  *  clear()
  */
+const circline = (sd) =>{
+  drawFilledCircle(x, y, radius, color)
+}
