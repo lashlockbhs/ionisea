@@ -28,7 +28,7 @@ var dist = bigness
 while (dist < width-bigness){
   var dist = dist+bigness*2
 }
-const center = width-bigness-dist
+const center = width-dist
 var dist=center
 while (dist < width-bigness){ 
 drawFilledCircle(dist, height/2, bigness, 'red')
