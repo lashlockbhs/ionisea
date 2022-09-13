@@ -26,7 +26,7 @@
 
 
 //v Circle line code
-const bigness = 21 //just leave it at 5 or 10 please edit: it works now
+/*const bigness = 21 //just leave it at 5 or 10 please edit: it works now
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
@@ -35,3 +35,21 @@ dist = center+bigness*2
 while (dist < width){ 
   drawFilledCircle(dist-center/2, height/2, bigness, 'red')
   dist = dist+bigness*2}
+*/
+const bigness = 21 
+let colour = 'red'
+let dist = bigness*2
+while (dist < width){
+  dist = dist+bigness*2
+}const center = width-dist
+dist = center+bigness*2
+while (dist < width){ 
+  drawFilledCircle(dist-center/2, height/2, bigness, colour)
+  dist = dist+bigness*2
+  if (colour = 'red'){
+    colour = 'blue'
+  } 
+  else{
+
+  }
+  }
