@@ -25,7 +25,7 @@
  */
 const circline = (ds) =>{
   var bigness = 5
-  
+  while (crap < width){ 
   var crap = width + bigness*2
   return drawFilledCircle(crap, height/2, bigness, 'red')
-}
+}}
