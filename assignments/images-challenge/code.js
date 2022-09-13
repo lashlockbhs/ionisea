@@ -23,9 +23,9 @@
  *
  *  clear()
  */
-const circline = (ds) =>{
   const bigness = 5
+  let dist = bigness*2
   while (crap < width){ 
-  let crap = bigness*2
+  let crap = crap+5
   return drawFilledCircle(crap, height/2, bigness, 'red')
-}}
+}
