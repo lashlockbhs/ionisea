@@ -23,26 +23,15 @@
  *
  *  clear()
  */
-/*const bigness = 21 //just leave it at 5 or 10 please edit: it works now
-var dist = bigness*2
-while (dist < width){
-  var dist = dist+bigness*2
-}
-const center = width-dist
-var dist = center+bigness*2
-while (dist < width){ 
-drawFilledCircle(dist-center/2, height/2, bigness, 'red')
-var dist = dist+bigness*2
-}
-*/
+
+
+//v Circle line code
 const bigness = 21 //just leave it at 5 or 10 please edit: it works now
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
-}
-const center = width-dist
+}const center = width-dist
 dist = center+bigness*2
 while (dist < width){ 
   drawFilledCircle(dist-center/2, height/2, bigness, 'red')
-  dist = dist+bigness*2
-}
+  dist = dist+bigness*2}
