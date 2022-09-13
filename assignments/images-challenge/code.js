@@ -25,12 +25,12 @@
  */
 const bigness = 18 //just leave it at 5 or 10 please
 var dist = bigness
-while (dist < width){
+while (dist < width-bigness){
   var dist = dist+bigness*2
 }
 const center = width-dist
 var dist=bigness
-while (dist < width){ 
+while (dist < width-bigness){ 
 drawFilledCircle(dist, height/2, bigness, 'red')
 var dist = dist+bigness*2
 }
