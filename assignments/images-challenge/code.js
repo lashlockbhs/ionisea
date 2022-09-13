@@ -23,7 +23,7 @@
  *
  *  clear()
  */
-const bigness = 28 //just leave it at 5 or 10 please
+const bigness = 120 //just leave it at 5 or 10 please
 var dist = bigness*2
 while (dist < width+10){
   var dist = dist+bigness*2
