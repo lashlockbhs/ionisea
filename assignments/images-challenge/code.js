@@ -24,7 +24,7 @@
  *  clear()
  */
 const bigness = 5
-var dist = 0
+var dist = bigness
 while (dist < width){ 
 drawFilledCircle(dist, height/2, bigness, 'red')
 var dist = dist+bigness*2
