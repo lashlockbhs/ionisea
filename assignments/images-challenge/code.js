@@ -23,7 +23,7 @@
  *
  *  clear()
  */
-const bigness = 5
+const bigness = 26
 var dist = bigness
 while (dist < width){ 
 drawFilledCircle(dist, height/2, bigness, 'red')
