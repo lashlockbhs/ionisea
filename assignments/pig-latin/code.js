@@ -3,6 +3,6 @@ const pigLatin =(string)=>{
   return string.substring(latin)+string.substring(0,latin)+'ay'
 }
 const advancedPigLatin =(string)=>{ 
-  var vLoc = string.search(/[aeiou]/)
+  let vLoc = string.search(/[aeiou]/)
   return vLoc === 0? string.substring(0)+'way':string.substring(vLoc)+string.substring(0, vLoc)+'ay'
 }
