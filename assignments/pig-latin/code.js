@@ -3,8 +3,6 @@ const pigLatin =(string)=>{
   return string.substring(latin,string.length)+string.substring(0,latin)+'ay'
 }
 const advancedPigLatin =(string)=>{ 
-  var advlatin = string.search(/[aeiou]/)
-  return advlatin === 0? string.substring(0,string.length)+'way':string.substring(advlatin, string.length)+string.substring(0, advlatin)+'ay'
+  var vowelLoc = string.search(/[aeiou]/)
+  return vowelLoc === 0? string.substring(0)+'way':string.substring(vowelLoc)+string.substring(0, vowelLoc)+'ay'
 }
-var weiu = 3
-var weiu = 62
