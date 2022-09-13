@@ -25,7 +25,7 @@
  */
 const bigness = 63 //just leave it at 5 or 10 please
 var dist = bigness*2
-while (dist < width+1){
+while (dist < width+10){
   var dist = dist+bigness*2
 }
 const center = width-dist
