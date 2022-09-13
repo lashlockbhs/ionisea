@@ -23,7 +23,7 @@
  *
  *  clear()
  */
-const bigness = 22 //just leave it at 5 or 10 please
+/*const bigness = 22 //just leave it at 5 or 10 please edit: it works now
 var dist = bigness*2
 while (dist < width){
   var dist = dist+bigness*2
@@ -34,4 +34,17 @@ var dist = dist+bigness*2
 while (dist < width){ 
 drawFilledCircle(dist-center/2, height/2, bigness, 'red')
 var dist = dist+bigness*2
+}
+*/
+const bigness = 22 
+let dist = bigness*2
+while (dist < width){
+  let dist = dist+bigness*2
+}
+const center = width-dist
+let dist=center
+let dist = dist+bigness*2
+while (dist < width){ 
+drawFilledCircle(dist-center/2, height/2, bigness, 'red')
+let dist = dist+bigness*2
 }
