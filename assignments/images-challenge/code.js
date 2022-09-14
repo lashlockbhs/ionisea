@@ -49,7 +49,8 @@ while (dist < height){
   drawFilledCircle(width/2, dist-center/2, bigness, color)
   dist = dist+bigness*2
 }*/
-const bigness = 12
+  // alternating
+/*const bigness = 12
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
@@ -60,10 +61,18 @@ let color = 'blue'
 while (dist < width){ 
   if (color == 'blue'){
     color = 'red'
-  }
-  else {
+  } else {
     color = 'blue'
   }
   drawFilledCircle(dist-center/2, height/2, bigness, color)
   dist = dist+bigness*2
+}*/
+const bigness = 12
+let widthDist = bigness*2
+while (widthDist < width){
+  widthDist = widthDist+bigness*2
+}
+let heightDist = bigness*2
+while (heightDist < height){
+  heightdist = heightDist+bigness*2
 }
