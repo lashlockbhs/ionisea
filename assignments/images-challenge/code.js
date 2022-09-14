@@ -37,21 +37,8 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, bigness, 'red') // Finally drawing the circles.
   dist = dist+bigness*2
 }*/
-
+            // vertical version
 /*const bigness = 12
-var color = 'blue'
-let dist = bigness*2
-while (dist < width){
-  dist = dist+bigness*2
-}
-const center = width-dist
-dist = center+bigness*2
-while (dist < width){ 
-  drawFilledCircle(dist-center/2, height/2, bigness, color)
-  dist = dist+bigness*2
-}*/
-const bigness = 12
-var color = 'blue'
 let dist = bigness*2
 while (dist < height){
   dist = dist+bigness*2
@@ -60,5 +47,17 @@ const center = height-dist
 dist = center+bigness*2
 while (dist < height){ 
   drawFilledCircle(width/2, dist-center/2, bigness, color)
+  dist = dist+bigness*2
+}*/
+const bigness = 12
+var color = 'beige'
+let dist = bigness*2
+while (dist < width){
+  dist = dist+bigness*2
+}
+const center = width-dist
+dist = center+bigness*2
+while (dist < width){ 
+  drawFilledCircle(dist-center/2, height/2, bigness, color)
   dist = dist+bigness*2
 }
