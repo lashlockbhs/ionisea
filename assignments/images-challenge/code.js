@@ -37,7 +37,7 @@ while (dist < width){
   dist = dist+bigness*2}
 */
 const bigness = 21 
-let colour = Math.random
+let colour = Math.random(0,1)
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
@@ -46,5 +46,4 @@ dist = center+bigness*2
 while (dist < width){ 
   drawFilledCircle(dist-center/2, height/2, bigness, colour === 0? 'red' : 'blue')
   dist = dist+bigness*2
-  
 }
