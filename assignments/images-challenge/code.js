@@ -50,7 +50,7 @@ while (dist < height){
   dist = dist+bigness*2
 }*/
 const bigness = 125
-var color = 'green'
+var color = 'red'
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
