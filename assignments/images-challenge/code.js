@@ -25,7 +25,7 @@
  */
 
 
-//v normal Circle line code
+    // normal Circle line code
 /*const bigness = 21 // change size & spacing here, used bigness because size would not work
 let dist = bigness*2 // Start position
 while (dist < width){
@@ -37,7 +37,7 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, bigness, 'red') // Finally drawing the circles.
   dist = dist+bigness*2
 }*/
-            // vertical version
+   // vertical version
 /*const bigness = 12
 let dist = bigness*2
 while (dist < height){
@@ -50,7 +50,7 @@ while (dist < height){
   dist = dist+bigness*2
 }*/
 const bigness = 12
-var color = 'red'
+let color = 'blue'
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
@@ -58,6 +58,7 @@ while (dist < width){
 const center = width-dist
 dist = center+bigness*2
 while (dist < width){ 
+  
   drawFilledCircle(dist-center/2, height/2, bigness, color)
   dist = dist+bigness*2
 }
