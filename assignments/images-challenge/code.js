@@ -68,11 +68,13 @@ while (dist < width){
   dist = dist+bigness*2
 }*/
 const bigness = 12
+
 let widthDist = bigness*2
 while (widthDist < width){
   widthDist = widthDist+bigness*2
 }
 const widthCenter = width-widthDist
+
 let heightDist = 600-bigness*2
 while (heightDist < height){
   heightDist = heightDist+bigness*2
