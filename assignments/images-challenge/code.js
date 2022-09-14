@@ -58,7 +58,7 @@ const center = width-dist
 dist = center+bigness*2
 let color = 'blue'
 while (dist < width){ 
-  if (color === 'blue'){
+  if (color == 'blue'){
     color = 'red'
   }
   else {
