@@ -26,7 +26,7 @@
 
 
 //v Circle line code
-/*const bigness = 21 // change size & spacing here, used bigness because size would not work
+const bigness = 21 // change size & spacing here, used bigness because size would not work
 let dist = bigness*2 // Start position
 while (dist < width){
   dist = dist+bigness*2 // First passthrough without drawing the circles to determine the space it takes up.
@@ -34,11 +34,11 @@ while (dist < width){
 const center = width-dist // Determinining a start position that will end up with the circles centered.
 dist = center+bigness*2 // Again start position, this time so it will have an equal gap on either side.
 while (dist < width){ 
-  drawFilledCircle(dist-center/2, height/2, bigness, 'red')
+  drawFilledCircle(dist-center/2, height/2, bigness, 'red') // Finally drawing the circles.
   dist = dist+bigness*2
 }
-*/
-const bigness = 12
+
+/*const bigness = 12
 var color = 'blue'
 let dist = bigness*2
 while (dist < width){
@@ -47,8 +47,6 @@ while (dist < width){
 const center = width-dist
 dist = center+bigness*2
 while (dist < width){ 
-  if (color = 'blue'){var color = 'red'}
-  if (color = 'red'){var color = 'blue'}
   drawFilledCircle(dist-center/2, height/2, bigness, color)
   dist = dist+bigness*2
-}
+}*/
