@@ -72,13 +72,14 @@ let widthDist = bigness*2
 while (widthDist < width){
   widthDist = widthDist+bigness*2
 }
-let heightDist = bigness*2
+const widthCenter = width-widthDist
+let heightDist = 600-bigness*2
 while (heightDist < height){
   heightDist = heightDist+bigness*2
 }
+const heightCenter = height-heightDist
 while (heightDist < height){
-  while (widthDist < height){ 
-  drawCircle(widthDist/2, heightDist-center/2, bigness, 'blue', lineWidth=1)
+  while (widthDist < width){ 
+  drawCircle(widthDist-widthCenter/2, heightDist-heightCenter/2, bigness, 'blue', lineWidth=1)
   widthDist = widthDist+bigness*2
-}
-}
+}}
