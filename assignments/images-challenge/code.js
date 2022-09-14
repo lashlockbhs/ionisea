@@ -84,4 +84,6 @@ while (heightDist < height){
   while (widthDist < width){ 
   drawCircle(widthDist-widthCenter/2, heightDist-heightCenter/2, bigness, 'blue', lineWidth=1)
   widthDist = widthDist+bigness*2
-}}
+}
+heightDist = heightDist - bigness * 2
+}
