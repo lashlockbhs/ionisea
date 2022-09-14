@@ -59,7 +59,7 @@ dist = center+bigness*2
 let color = 'blue'
 while (dist < width){ 
   if (color = 'blue'){
-    color = 'red'
+    //color = 'red'
   }
   else {
     color = 'blue'
