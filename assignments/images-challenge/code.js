@@ -49,7 +49,7 @@ while (dist < width){
   if (colour = 'red'){
     colour = 'blue'
   } 
-  else{
+  if (colour = 'blue'){
     colour = 'red'
   }
   }
