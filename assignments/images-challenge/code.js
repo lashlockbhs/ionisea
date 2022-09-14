@@ -50,13 +50,13 @@ while (dist < height){
   dist = dist+bigness*2
 }*/
 const bigness = 12
-let color = 'blue'
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
 }
 const center = width-dist
 dist = center+bigness*2
+let color = 'blue'
 while (dist < width){ 
   if (color = 'blue'){
     color = 'red'
