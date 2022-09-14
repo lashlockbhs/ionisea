@@ -37,7 +37,9 @@ while (dist < width){
   dist = dist+bigness*2}
 */
 const bigness = 21 
-let colour = 'red'
+let r = 'red'
+let b = 'blue'
+let colour = r
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
@@ -46,10 +48,9 @@ dist = center+bigness*2
 while (dist < width){ 
   drawFilledCircle(dist-center/2, height/2, bigness, colour)
   dist = dist+bigness*2
-  if (colour = 'red'){
-    colour = 'blue'
+  if (colour = r){
+    colour = b
   } 
-  if (colour = 'blue'){
-    colour = 'red'
-  }
-  }
+  else{
+    colour = r
+  }}
