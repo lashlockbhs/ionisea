@@ -38,7 +38,7 @@ while (dist < width){
   dist = dist+bigness*2
 }
 */
-const bigness = 15
+const bigness = 12
 let color = 'blue'
 let dist = bigness*2
 while (dist < width){
