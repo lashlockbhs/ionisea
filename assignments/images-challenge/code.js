@@ -50,6 +50,6 @@ while (dist < width){
     colour = 'blue'
   } 
   else{
-  colour = 'red'
+    colour = 'red'
   }
   }
