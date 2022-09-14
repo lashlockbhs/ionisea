@@ -80,6 +80,7 @@ while (heightDist < height){
   heightDist = heightDist+bigness*2
 }
 const heightCenter = height-heightDist
+
 while (heightDist < bigness *2){
   while (widthDist < width){ 
   drawCircle(widthDist-widthCenter/2, heightDist-heightCenter/2, bigness, 'blue', lineWidth=1)
