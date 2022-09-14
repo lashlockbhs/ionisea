@@ -30,18 +30,21 @@
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
-}const center = width-dist
+}
+const center = width-dist
 dist = center+bigness*2
 while (dist < width){ 
   drawFilledCircle(dist-center/2, height/2, bigness, 'red')
-  dist = dist+bigness*2}
+  dist = dist+bigness*2
+}
 */
 const bigness = 21 
 let color = 'blue'
 let dist = bigness*2
-while (dist < width){
-  dist = dist+bigness*2
-}const center = width-dist
+while (dist < width){dist = dist+bigness*2}
+const center = width-dist
 dist = center+bigness*2
-while (dist < width){ drawFilledCircle(dist-center/2, height/2, bigness, color)
-  dist = dist+bigness*2}
+while (dist < width){ 
+  drawFilledCircle(dist-center/2, height/2, bigness, color)
+  dist = dist+bigness*2
+}
