@@ -49,8 +49,8 @@ while (dist < height){
   drawFilledCircle(width/2, dist-center/2, bigness, color)
   dist = dist+bigness*2
 }*/
-const bigness = 12
-var color = 'white'
+const bigness = 250
+var color = 'green'
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
