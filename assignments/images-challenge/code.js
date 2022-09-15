@@ -79,8 +79,12 @@ while (x < width-extra){
 }
 const heightdist = Math.floor(height/diameter)*diameter
 const heightextra = height-heightdist
-let x = 0
-while (x < height-extra){ 
-  drawFilledCircle(width/2, x+radius+extra/2, radius, 'red')
-  x += diameter
-}
+let y = 0
+while (y < height-extra){ 
+  let x = 0
+while (x < width-extra){ 
+  drawFilledCircle(x+radius+extra/2, height/2, y+radius+extra, 'red')
+  x += diameter 
+  }
+  y += diameter
+  }
