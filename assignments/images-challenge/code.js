@@ -74,7 +74,7 @@ const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
 const heightdist = Math.floor(height/diameter)*diameter
 const heightextra = height-heightdist
-let y = -radius
+let y = 0
 while (y < height-heightextra){ 
   let x = 0
 while (x < width-widthextra){ 
