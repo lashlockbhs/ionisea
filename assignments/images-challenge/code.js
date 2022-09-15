@@ -50,7 +50,7 @@ while (dist < height){
   dist = dist+bigness*2
 }*/
   // alternating
-/*const bigness = 12
+const bigness = 12
 let dist = bigness*2
 while (dist < width){
   dist = dist+bigness*2
@@ -66,25 +66,4 @@ while (dist < width){
   }
   drawFilledCircle(dist-center/2, height/2, bigness, color)
   dist = dist+bigness*2
-}*/
-const bigness = 12
-
-let widthDist = bigness*2
-while (widthDist < width){
-  widthDist = widthDist+bigness*2
-}
-const widthCenter = width-widthDist
-
-let heightDist = 600-bigness*2
-while (heightDist < height){
-  heightDist = heightDist+bigness*2
-}
-const heightCenter = height-heightDist
-
-while (heightDist < bigness *2){
-  while (widthDist < width){ 
-  drawCircle(widthDist-widthCenter/2, heightDist-heightCenter/2, bigness, 'blue', lineWidth=1)
-  widthDist = widthDist+bigness*2
-}
-heightDist = heightDist - bigness * 2
 }
