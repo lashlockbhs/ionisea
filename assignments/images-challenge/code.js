@@ -78,7 +78,7 @@ let y = 0
 while (y < height-heightextra){ 
   let x = 0
 while (x < width-widthextra){ 
-  drawCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'red')
+  drawCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'blue')
   x += diameter 
   }
   y += diameter
