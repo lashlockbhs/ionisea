@@ -68,7 +68,7 @@ while (dist < width){
   dist = dist+bigness*2
 }*/
 //FillBox using your optomised code
-const radius = 5.82342
+const radius = 50
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
