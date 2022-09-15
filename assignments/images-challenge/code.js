@@ -72,17 +72,12 @@ const radius = 29
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
-let x = 0
-while (x < width-extra){ 
-  drawFilledCircle(x+radius+extra/2, height/2, radius, 'red')
-  x += diameter
-}
 const heightdist = Math.floor(height/diameter)*diameter
 const heightextra = height-heightdist
 let y = 0
-while (y < height-extra){ 
+while (y < height-heightextra){ 
   let x = 0
-while (x < width-extra){ 
+while (x < width-widthextra){ 
   drawFilledCircle(x+radius+widthextra/2, height/2, y+radius+heightextra, 'red')
   x += diameter 
   }
