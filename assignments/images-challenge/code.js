@@ -88,7 +88,7 @@ const howManyCircles = 22
 let radius = width/2/howManyCircles
 let clour = 'red'
 while (radius < width/2){
- drawCircle (width/2, height/2, radius, clour, lineWidth=width/2/howManyCircles)
+ drawCircle (width/2, height/2, radius, clour, width/2/howManyCircles)
  if (clour == 'red'){clour = 'blue'} else{clour = 'red'}
  radius += width/2/howManyCircles
 }
