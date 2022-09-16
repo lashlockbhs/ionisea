@@ -67,8 +67,8 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, bigness, color)
   dist = dist+bigness*2
 }*/
-//FillBox using your optomised code
-const radius = 2
+//FillBox using your optimised code
+/*const radius = 2
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
@@ -82,4 +82,4 @@ while (x < width-widthextra){
   x += diameter 
   }
   y += diameter
-  }
+  }*/
