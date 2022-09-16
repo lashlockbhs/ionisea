@@ -83,3 +83,12 @@ while (x < width-widthextra){
   }
   y += diameter
   }*/
+//circle code
+const howManyCircles = 22
+let radius = width/2/howManyCircles
+let clour = 'red'
+while (radius < width/2){
+ drawFilledCircle (width/2, height/2, radius, clour)
+ if (clour == 'red'){clour = 'blue'} else{clour = 'red'}
+ radius += width/2/howManyCircles
+}
