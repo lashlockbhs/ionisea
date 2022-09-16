@@ -85,7 +85,7 @@ while (x < width-widthextra){
   }*/
 //circle code
 drawFilledRect(0, 0, width, height, 'blue')
-const howManyCircles = 22
+const howManyCircles = 16
 let radius = width/2/howManyCircles
 let clour = 'red'
 while (radius < width/2){
