@@ -84,7 +84,7 @@ while (x < width-widthextra){
   y += diameter
   }*/
 //circle code
-const howManyCircles = 5
+const howManyCircles = 12
 let radius = width/2/howManyCircles
 let clour = 'red'
 while (radius < width/2){
