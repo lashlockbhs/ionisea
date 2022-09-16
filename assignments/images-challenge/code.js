@@ -84,6 +84,7 @@ while (x < width-widthextra){
   y += diameter
   }*/
 //circle code
+drawFilledRectangle (width/2, height/2, width, height, 'blue' )
 const howManyCircles = 22
 let radius = width/2/howManyCircles
 let clour = 'red'
