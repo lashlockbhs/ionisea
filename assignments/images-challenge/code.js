@@ -98,12 +98,15 @@ while (radius < width/2){
 }*/
 
 
+const pby = 1 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
 const radius = 2
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
 const heightdist = Math.floor(height/diameter)*diameter
 const heightextra = height-heightdist
+const min = pby/2
+const max = 1
 let y = 0
 while (y < height-heightextra){ 
   let x = 0
