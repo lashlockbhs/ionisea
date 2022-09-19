@@ -53,7 +53,7 @@
 // this code once you start writing your own code. (Comments are all lines
 // starting with // like what you're reading right now. Or you can enclose code
 // in a /* and then */ like the instruction above.)
-
+/*
 drawLine(0, 0, width, height, 'red');
 
 drawCircle(width / 2, height / 2, 10, 'blue');
@@ -75,3 +75,5 @@ drawFilledTriangle(
   width * 0.5,
   height - 80,
   'blue');
+*/
+drawFilledCircle(width/2, height/2, 50, 'blue')
