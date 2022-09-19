@@ -111,7 +111,7 @@ while (y < height-heightextra){
 while (x < width-widthextra){ 
   let fillOrNo = Math.random()
   if (fillOrNo > pby){
-    drawCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'white')
+    drawCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'black')
   }else{
     drawFilledCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'black')
   }
