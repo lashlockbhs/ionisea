@@ -84,13 +84,9 @@ while (x < width-widthextra){
   y += diameter
   }*/
 //circle code
-const howManyCircles=25
+/*const howManyCircles=25
 let radius = width/4/howManyCircles
-if (Math.floor(howManyCircles/2) == howManyCircles/2){
-var clour = 'blue'
-} else {
-var clour = 'red'
-}
+let clour = 'red'
 while (radius < width/2){
  drawCircle (width/2, height/2, radius, clour, width/2/howManyCircles)
  if (clour == 'blue'){
@@ -99,4 +95,26 @@ while (radius < width/2){
    var clour = 'blue'
  }
  radius += width/2/howManyCircles
-}
+}*/
+
+
+const radius = 2
+const diameter = 2*radius
+const widthdist = Math.floor(width/diameter)*diameter
+const widthextra = width-widthdist
+const heightdist = Math.floor(height/diameter)*diameter
+const heightextra = height-heightdist
+let y = 0
+while (y < height-heightextra){ 
+  let x = 0
+while (x < width-widthextra){ 
+  let fillYN = Math.random(min,max)
+  if (fillYN > 0.5){
+    drawCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'blue')
+  }else{
+    drawFilledCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'blue')
+  }
+  x += diameter 
+  }
+  y += diameter
+  }
