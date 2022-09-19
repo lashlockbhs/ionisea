@@ -90,7 +90,7 @@ let clour = 'red'
 while (radius < width/2){
  drawCircle (width/2, height/2, radius, clour, width/2/howManyCircles)
  if (clour == 'red'){
- clour = 'blue'
+ clour = 'white'
   }else{
   clour = 'red'
  }
