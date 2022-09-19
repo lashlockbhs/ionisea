@@ -98,8 +98,8 @@ while (radius < width/2){
 }*/
 
 
-const pby = .25 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
-const radius = 15
+const pby = .5 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
+const radius = 22
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
@@ -109,8 +109,8 @@ let y = 0
 while (y < height-heightextra){ 
   let x = 0
 while (x < width-widthextra){ 
-  let rand = Math.random()
-  if (rand > pby){
+  let fillOrNo = Math.random()
+  if (fillOrNo > pby){
     drawCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'blue')
   }else{
     drawFilledCircle(x+radius+widthextra/2, y+radius+heightextra/2, radius, 'blue')
