@@ -79,3 +79,5 @@ drawFilledTriangle(
 
 drawFilledCircle(width/2, height/2, 50, 'blue')
 drawRect(width/4, 50, width/2, 100, 'red')
+drawCircle(55, 50, 30, 'black')
+drawCircle(width-70, 150, 30, 'black')
