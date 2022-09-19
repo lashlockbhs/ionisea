@@ -84,7 +84,7 @@ while (x < width-widthextra){
   y += diameter
   }*/
 //circle code
-const howManyCircles=24
+const howManyCircles=25
 let radius = width/4/howManyCircles
 if (Math.floor(howManyCircles/2) == howManyCircles/2){
 var clour = 'blue'
