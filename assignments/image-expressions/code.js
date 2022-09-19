@@ -78,4 +78,4 @@ drawFilledTriangle(
 */
 
 drawFilledCircle(width/2, height/2, 50, 'blue')
-drawRect(width/2, 50, width/2, 100, 'red')
+drawRect(width/4, 50, width/2, 100, 'red')
