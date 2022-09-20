@@ -123,7 +123,7 @@ while (x < width-widthextra){
 const lineDistance = 15
 let lineY = 0
 let lineX = 0
-while (lineX < width-lineDistance){
+while (lineX < width){
   drawLine(lineX, 0 , lineX, height, 'black')
   lineX += lineDistance
 }
