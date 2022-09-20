@@ -99,7 +99,7 @@ while (radius < width/2){
 
 // again with your code, fillbox with random chance
 const pby = .21 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
-const radius = 5
+const radius = 15
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
