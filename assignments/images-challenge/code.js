@@ -120,7 +120,7 @@ while (x < width-widthextra){
   y += diameter
 }*/
 // grid
-const lineDistance = 100
+const lineDistance = 15
 let lineY = lineDistance
 let lineX = lineDistance
 while (lineX < width - lineDistance){
