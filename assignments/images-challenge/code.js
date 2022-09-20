@@ -98,7 +98,7 @@ while (radius < width/2){
 }*/
 
 // again with your code, fillbox with random chance
-const pby = .58 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
+/*const pby = .58 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
 const radius = 15
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
@@ -118,4 +118,16 @@ while (x < width-widthextra){
   x += diameter 
   }
   y += diameter
+}*/
+// grid
+const lineDistance = 6
+let lineY = lineDistance
+let lineX = lineDistance
+while (lineX < height - lineDistance){
+  drawLine(lineX, 0 , lineX, height, 'black')
+  lineX += lineDistance
+}
+while (lineY < width - lineDistance){
+  drawLine (0, lineY, width, lineY)
+  lineY += lineDistance
 }
