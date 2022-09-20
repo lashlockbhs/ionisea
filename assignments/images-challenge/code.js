@@ -128,6 +128,6 @@ while (lineX < width){
   lineX += lineDistance
 }
 while (lineY < height){
-  drawLine (0, lineY, width, lineY)
+  drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }
