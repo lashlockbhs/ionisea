@@ -139,7 +139,7 @@ const boardHeight = width
   let y = (height-width)/2
 while (y < height-(height-width)/2){ 
   let x = 0
-while (x < width-widthextra){ 
+while (x < width){ 
   drawFilledRect(squarePos, y+radius+heightextra/2, squareSize, squareSize, colour)
   x += diameter 
   if (colour == 'red'){
