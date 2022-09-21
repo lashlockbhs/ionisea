@@ -121,8 +121,6 @@ while (x < width-widthextra){
 }*/
 // grid
 const lineDistance = 11
-const xExtra = lineDistance
-const yExtra = lineDistance
 let lineY = 0
 let lineX = 0
 while (lineX < width){
