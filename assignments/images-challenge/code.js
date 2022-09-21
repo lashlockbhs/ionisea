@@ -147,9 +147,9 @@ while (x < width-widthextra){
   } else {
     colour = 'red'
   }
-  
+
   }
   y += diameter
   }
-
 }
+checkerboard(numSq);
