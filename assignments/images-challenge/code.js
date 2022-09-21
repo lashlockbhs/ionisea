@@ -25,6 +25,8 @@
  */
 
 
+concCircles(howManyCircles);
+//checkerboard(numSq);
     // normal Circle line code (outdated)
 /*const bigness = 21 // change size & spacing here, used bigness because size would not work
 let dist = bigness*2 // Start position
@@ -84,7 +86,8 @@ while (x < width-widthextra){
   y += diameter
   }*/
 //conc circle code
-/*const howManyCircles=25
+const howManyCircles=25
+const concCircles = (howManyCircles) =>{
 let radius = width/4/howManyCircles
 let clour = 'red'
 while (radius < width/2){
@@ -95,7 +98,7 @@ while (radius < width/2){
    var clour = 'blue'
  }
  radius += width/2/howManyCircles
-}*/
+}}
 
 // again with your code, fillbox with random chance
 /*const pby = .58 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
@@ -139,9 +142,9 @@ let y = (height-width)/2
 let colour = 'blue'
 while (y < height-(height-width)/2){ 
   let x = 0
-while (x < width && x >= 0){ 
+while (x < width){ 
   drawFilledRect(x, y+width-height/2, squareSize, squareSize, colour)
-  x += diameter 
+  x += squareSize 
   if (colour == 'red'){
     colour = 'blue'
   } else {
@@ -150,4 +153,3 @@ while (x < width && x >= 0){
   y += squareSize
   }
 }
-checkerboard(numSq);
