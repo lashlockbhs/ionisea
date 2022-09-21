@@ -125,11 +125,11 @@ const xExtra = width-lineDistance
 const yExtra = height-lineDistance
 let lineY = 0
 let lineX = 0
-while (lineX < width-xExtra/2){
+while (lineX < width){
   drawLine(lineX, 0 , lineX, height, 'black')
   lineX += lineDistance
 }
-while (lineY < height - yExtra/2){
+while (lineY < height){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }
