@@ -120,14 +120,17 @@ while (x < width-widthextra){
   y += diameter
 }*/
 // grid
+
 const lineDistance = 18
-let lineY = lineDistance/2
-let lineX = lineDistance/2
-while (lineX < width){
+const xExtra = width - width%lineDistance
+const yExtra = height - height%lineDistance
+let lineY = yExtra/2
+let lineX = xExtra/2
+while (lineX < width-xExtra/2){
   drawLine(lineX, 0 , lineX, height, 'black')
   lineX += lineDistance
 }
-while (lineY < height){
+while (lineY < height - yExtra/2){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }
