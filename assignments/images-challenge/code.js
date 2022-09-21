@@ -25,7 +25,7 @@
  */
 
 
-    // normal Circle line code 
+    // normal Circle line code (outdated)
 /*const bigness = 21 // change size & spacing here, used bigness because size would not work
 let dist = bigness*2 // Start position
 while (dist < width){
@@ -37,7 +37,7 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, bigness, 'red') // Finally drawing the circles.
   dist = dist+bigness*2
 }*/
-   // vertical version
+   // vertical version (outdated)
 /*const bigness = 12
 let dist = bigness*2
 while (dist < height){
@@ -49,7 +49,7 @@ while (dist < height){
   drawFilledCircle(width/2, dist-center/2, bigness, color)
   dist = dist+bigness*2
 }*/
-  // alternating
+  // alternating (outdated)
 /*const bigness = 12
 let dist = bigness*2
 while (dist < width){
@@ -83,7 +83,7 @@ while (x < width-widthextra){
   }
   y += diameter
   }*/
-//circle code
+//conc circle code
 /*const howManyCircles=25
 let radius = width/4/howManyCircles
 let clour = 'red'
@@ -133,6 +133,3 @@ while (lineY < height - yExtra/2){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }
-
-const squareSideCt = 8
-const squareSL = width/squareSideCt
