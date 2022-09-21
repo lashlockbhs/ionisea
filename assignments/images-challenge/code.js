@@ -24,8 +24,6 @@
  *  clear()
  */
 
-
-concCircles(howManyCircles);
 //checkerboard(numSq);
     // normal Circle line code (outdated)
 /*const bigness = 21 // change size & spacing here, used bigness because size would not work
@@ -99,7 +97,7 @@ while (radius < width/2){
  }
  radius += width/2/howManyCircles
 }}
-
+concCircles(howManyCircles);
 // again with your code, fillbox with random chance
 /*const pby = .58 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
 const radius = 15
