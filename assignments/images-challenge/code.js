@@ -147,7 +147,7 @@ while (x < width && x >= 0){
   } else {
     colour = 'red'
   }}
-  y += diameter
+  y += squareSize
   }
 }
 checkerboard(numSq);
