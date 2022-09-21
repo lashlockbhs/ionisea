@@ -121,15 +121,15 @@ while (x < width-widthextra){
 }*/
 // grid
 const lineDistance = 2.2
-const xExtra = width/lineDistance
-const yExtra = height/lineDistance
-let lineY = 0
-let lineX = 0
-while (lineX < width-xExtra/8){
+const xExtra = width-lineDistance
+const yExtra = height-lineDistance
+let lineY = yExtra/2
+let lineX = yExtra/2
+while (lineX < width-xExtra/2){
   drawLine(lineX, 0 , lineX, height, 'black')
   lineX += lineDistance
 }
-while (lineY < height - yExtra/8){
+while (lineY < height - yExtra/2){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }
