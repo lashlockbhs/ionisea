@@ -119,7 +119,8 @@ while (x < width-widthextra){
   }
   y += diameter
 }*/
-// grid
+// grid its good enoguh
+/*
 const lineDistance = 11
 let lineY = 0
 let lineX = 0
@@ -130,4 +131,25 @@ while (lineX < width){
 while (lineY < height){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
+}*/
+const numSq = 8
+const checkerboard = (numSq) =>{
+const squareSize = numSq/width
+const boardHeight = width
+  let y = (height-width)/2
+while (y < height-(height-width)/2){ 
+  let x = 0
+while (x < width-widthextra){ 
+  drawFilledRect(squarePos, y+radius+heightextra/2, squareSize, squareSize, colour)
+  x += diameter 
+  if (colour == 'red'){
+    colour = 'blue'
+  } else {
+    colour = 'red'
+  }
+  
+  }
+  y += diameter
+  }
+
 }
