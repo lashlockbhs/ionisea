@@ -136,19 +136,17 @@ const numSq = 8
 const checkerboard = (numSq) =>{
 const squareSize = numSq/width
 const boardHeight = width
-  let y = (height-width)/2
+let y = (height-width)/2
 while (y < height-(height-width)/2){ 
   let x = 0
-while (x < width){ 
-  drawFilledRect(squarePos, y+radius+heightextra/2, squareSize, squareSize, colour)
+while (x < width && x >= 0){ 
+  drawFilledRect(x, y+width-height/2, squareSize, squareSize, colour)
   x += diameter 
   if (colour == 'red'){
     colour = 'blue'
   } else {
     colour = 'red'
-  }
-
-  }
+  }}
   y += diameter
   }
 }
