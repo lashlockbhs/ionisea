@@ -136,7 +136,7 @@ while (lineY < height){
 }*/
 
 const checkerboard = (numSq) =>{
-  numSq =20
+numSq =20 // this isnt here
 const squareSize = width/numSq
 let y = (height-width)/2
 let colour = 'blue'
@@ -157,4 +157,4 @@ while (x < width){
   }
   y += squareSize
 }}
-checkerboard(110); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
+checkerboard(2); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
