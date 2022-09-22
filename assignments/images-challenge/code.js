@@ -94,7 +94,7 @@ for (let radius = width/4/howManyCircles; radius < width/2; radius += width/2/ho
   clour = 'blue'
  }
 }}
-  concCircles(howManyCircles);
+  //concCircles(howManyCircles);
 
 // again with your code, fillbox with random chance
 /*const pby = .58 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
@@ -133,7 +133,7 @@ while (lineY < height){
 }*/
 const numSq = 8
 const checkerboard = (numSq) =>{
-const squareSize = numSq/width
+const squareSize = width/numSq
 let y = (height-width)/2
 let colour = 'blue'
 while (y < height-(height-width)/2){ 
@@ -149,4 +149,4 @@ while (x < width){
   y += squareSize
   }
 }
-//checkerboard(numSq);
+checkerboard(numSq);
