@@ -85,16 +85,14 @@ while (x < width-widthextra){
 //conc circle code
 const howManyCircles=width/3
 const concCircles = (howManyCircles) =>{
-let radius = width/4/howManyCircles
 let clour = 'red'
-while (radius < width/2){
+for (let radius = width/4/howManyCircles; radius < width/2; radius += width/2/howManyCircles){
  drawCircle (width/2, height/2, radius, clour, width/2/howManyCircles)
  if (clour == 'blue'){
    clour = 'red'
   }else{
   clour = 'blue'
  }
- radius += width/2/howManyCircles
 }}
   concCircles(howManyCircles);
 
