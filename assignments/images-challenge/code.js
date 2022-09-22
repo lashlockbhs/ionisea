@@ -131,7 +131,7 @@ while (lineY < height){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }*/
-const numSq = 7 //just keep it kinda reasonable (< 71, > 5)
+const numSq = 14.5 //just keep it kinda reasonable (< 71, > 7)
 const checkerboard = (numSq) =>{
 const squareSize = width/numSq
 let y = (height-width)/2
