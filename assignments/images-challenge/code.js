@@ -97,7 +97,7 @@ for (let radius = width/4/howManyCircles; radius < width/2; radius += width/2/ho
   //concCircles(howManyCircles);
 
 // again with your code, fillbox with random chance
-/*const pby = .58 //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc
+const fillBox = (pby) =>{
 const radius = 15
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
@@ -117,7 +117,8 @@ while (x < width-widthextra){
   x += diameter 
   }
   y += diameter
-}*/
+}}
+fillBox(1); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
 // grid its good enoguh
 /*
 const lineDistance = 11
@@ -154,4 +155,4 @@ while (x < width){
   y += squareSize
   }
 }
-checkerboard(numSq);
+//checkerboard(numSq);
