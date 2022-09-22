@@ -156,4 +156,4 @@ while (x < width){
   }
   y += squareSize
 }}
-checkerboard(100); //just keep it kinda reasonable and keep it nice (8 through 70, no numbers that upset me)
+checkerboard(200); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
