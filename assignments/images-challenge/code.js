@@ -137,6 +137,7 @@ const squareSize = width/numSq
 let y = (height-width)/2
 let colour = 'blue'
 while (y < height-(height-width)/2){ 
+  let x = 0
 while (x < width){ 
   drawFilledRect(x, y, squareSize, squareSize, colour)
   x += squareSize
@@ -145,7 +146,6 @@ while (x < width){
   } else {
     colour = 'red'
   }}
-  let x = 0
   if (colour == 'red'){
     colour = 'blue'
   } else {
