@@ -118,7 +118,7 @@ while (x < width-widthextra){
   }
   y += diameter
 }}
-fillBox(1); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
+fillBox(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
 // grid its good enoguh
 /*
 const lineDistance = 11
