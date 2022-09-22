@@ -83,7 +83,7 @@ while (x < width-widthextra){
   y += diameter
   }*/
 //conc circle code
-const howManyCircles=width/3
+
 const concCircles = (howManyCircles) =>{
 let clour = 'red'
 for (let radius = width/4/howManyCircles; radius < width/2; radius += width/2/howManyCircles){
@@ -94,7 +94,7 @@ for (let radius = width/4/howManyCircles; radius < width/2; radius += width/2/ho
   clour = 'blue'
  }
 }}
-  //concCircles(howManyCircles);
+  //concCircles(5);
 
 // again with your code, fillbox with random chance
 const fillBox = (pby) =>{
@@ -118,7 +118,9 @@ while (x < width-widthextra){
   }
   y += diameter
 }}
-fillBox(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
+//fillBox(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
+
+
 // grid its good enoguh
 /*
 const lineDistance = 11
@@ -132,7 +134,7 @@ while (lineY < height){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
 }*/
-const numSq = 70 //just keep it kinda reasonable (8 through 70)
+
 const checkerboard = (numSq) =>{
 const squareSize = width/numSq
 let y = (height-width)/2
@@ -153,6 +155,5 @@ while (x < width){
     colour = 'red'
   }
   y += squareSize
-  }
-}
-//checkerboard(numSq);
+}}
+checkerboard(25); //just keep it kinda reasonable (8 through 70)
