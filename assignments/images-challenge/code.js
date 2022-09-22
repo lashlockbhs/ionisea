@@ -146,6 +146,11 @@ while (x < width){
   } else {
     colour = 'red'
   }}
+  if (colour == 'red'){
+    colour = 'blue'
+  } else {
+    colour = 'red'
+  }
   y += squareSize
   }
 }
