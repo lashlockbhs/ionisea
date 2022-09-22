@@ -48,30 +48,9 @@
    Note that the coordinate system goes from 0,0 at the top left corner to
    width,height at the bottom right corner.
  */
-
-// Examples of calling those functions here. You should delete or comment out
-// this code once you start writing your own code. (Comments are all lines
-// starting with // like what you're reading right now. Or you can enclose code
-// in a /* and then */ like the instruction above.)
-
-drawLine(0, 0, width, height, 'red');
-
-drawCircle(width / 2, height / 2, 10, 'blue');
-
-drawRect(50, 50, 60, 40, 'black');
-
-drawFilledCircle(width - 50, height - 50, 50, 'red');
-
-drawFilledRect(5, height - 20, 45, 15, 'purple');
-
-drawTriangle(width * 0.25, 10, width * 0.75, 20, width * 0.5, 80, 'blue');
-
-// You can also put line breaks in if the line gets too long as shown
-drawFilledTriangle(
-  width * 0.25,
-  height - 10,
-  width * 0.75,
-  height - 20,
-  width * 0.5,
-  height - 80,
-  'blue');
+drawFilledCircle(width/2, height/2, 50, 'blue')
+drawRect(width/4, 50, width/2, 100, 'red')
+drawCircle(55, height-50, 30, 'blue')
+drawCircle(width-70, height-150, 30, 'blue')
+drawLine(55, height-50, width-70, height-150, 'black')
+drawTriangle(width/4+5, 145, width/2, 55, width*0.75-5, 145, 'blue')
