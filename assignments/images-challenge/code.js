@@ -159,4 +159,4 @@ for(let x = 0; x < width; x+=squareSize){
   }}
   y += squareSize
 }}
-checkerboard(12); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
+checkerboard(120); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
