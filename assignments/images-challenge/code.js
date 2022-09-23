@@ -136,20 +136,20 @@ while (lineY < height){
 }*/
 
 const checkerboard = (numSq) =>{
-numSq =20 // this isnt here
 const squareSize = width/numSq
 let y = (height-width)/2
 let colour = 'blue'
 while (y < height-(height-width)/2){ 
   let x = 0
 while (x < width){ 
-  drawFilledRect(x, y, squareSize, squareSize, colour)
-  x += squareSize
   if (colour == 'red'){
     colour = 'blue'
   } else {
     colour = 'red'
-  }}
+  }
+  drawFilledRect(x, y, squareSize, squareSize, colour)
+  x += squareSize
+  }
   if (colour == 'red'){
     colour = 'blue'
   } else {
