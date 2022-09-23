@@ -138,16 +138,16 @@ while (lineY < height){
 const checkerboard = (numSq) =>{
 const squareSize = width/numSq
 let y = (height-width)/2
-let colour = 'blue'
+let ignore = 0
 while (y < height-(height-width)/2){ 
+  let colour = 'blue'
 for(let x = 0; x < width; x+=squareSize){ 
+  drawFilledRect(x, y, squareSize, squareSize, colour)
   if (colour == 'red'){
     colour = 'blue'
   } else {
     colour = 'red'
-  }
-  drawFilledRect(x, y, squareSize, squareSize, colour)
-  }
+  }}
   y += squareSize
 }}
 checkerboard(8); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
