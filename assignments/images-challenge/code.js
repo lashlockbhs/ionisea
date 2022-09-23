@@ -158,6 +158,5 @@ for(let x = 0; x < width; x+=squareSize){
     colour = 'red'
   }}
   y += squareSize
-}
-}
-checkerboard(71); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
+}}
+checkerboard(71); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
