@@ -150,11 +150,6 @@ while (x < width){
   drawFilledRect(x, y, squareSize, squareSize, colour)
   x += squareSize
   }
-  if (colour == 'red'){
-    colour = 'blue'
-  } else {
-    colour = 'red'
-  }
   y += squareSize
 }}
 checkerboard(50); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
