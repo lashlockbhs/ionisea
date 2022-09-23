@@ -160,4 +160,4 @@ for(let x = 0; x < width; x+=squareSize){
   y += squareSize
 }
 }
-checkerboard(8); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
+checkerboard(71); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
