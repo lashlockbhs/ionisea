@@ -147,5 +147,17 @@ for(let x = 0; x < width; x+=squareSize){
     colour = 'red'
   }}
   y += squareSize
-}}
+}
+for(let y = (height-width)/2 + squareSize;y < height-(height-width)/2; y+= squareSize){ 
+  let colour = 'blue'
+for(let x = 0; x < width; x+=squareSize){ 
+  drawFilledRect(x, y, squareSize, squareSize, colour)
+  if (colour == 'red'){
+    colour = 'blue'
+  } else {
+    colour = 'red'
+  }}
+  y += squareSize
+}
+}
 checkerboard(8); //just keep it kinda reasonable and keep it nice (no numbers that upset me)
