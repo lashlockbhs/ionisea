@@ -39,7 +39,7 @@ while (dist < width){
 //circleLine(6); // change size & spacing here
 
    // vertical version (outdated)
-const verticalCLine = (radius) =>{
+const verticalCircleLine = (radius) =>{
 let dist = radius*2
 while (dist < height){
   dist = dist+radius*2
