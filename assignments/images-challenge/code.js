@@ -144,7 +144,7 @@ for(let x = 0; x < height; x+=squareSize){
 }
 for(let y = (height-width)/2 + squareSize;y < width-(width-height)/2; y+= squareSize){ 
   let colour = 'red'
-for(let x = 0; x < width; x+=squareSize){ 
+for(let x = 0; x < height; x+=squareSize){ 
   drawFilledRect(x, y, squareSize, squareSize, colour)
   if (colour == 'red'){
     colour = 'blue'
