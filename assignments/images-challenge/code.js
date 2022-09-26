@@ -94,7 +94,7 @@ for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2
   clour = 'blue'
  }
 }}
-  concCircles(5);
+  concCircles(7);
 
 // again with your code, fillbox with random chance
 const fillBox = (pby) =>{
