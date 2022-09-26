@@ -70,7 +70,7 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, radius, color)
   dist = dist+radius*2
 }}
-alternatingCircleLine(15);
+//alternatingCircleLine(15);
 
 //FillBox using your optimised code
 const fillBox = (radius) => {
@@ -128,7 +128,7 @@ while (x < width-widthextra){
 //fillBoxRand(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
 
 
-// grid its good enoguh
+// grid its good enoguh (ignored)
 /*
 const lineDistance = 11
 let lineY = 0
