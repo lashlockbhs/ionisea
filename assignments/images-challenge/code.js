@@ -26,7 +26,6 @@
 
     // normal Circle line code (outdated)
 const circleLine = (radius) =>{
-const radius = 21 // change size & spacing here, used radius because size would not work
 let dist = radius*2 // Start position
 while (dist < width){
   dist = dist+radius*2 // First passthrough without drawing the circles to determine the space it takes up.
@@ -37,7 +36,7 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, radius, 'red') // Finally drawing the circles.
   dist = dist+radius*2
 }}
-//circleLine(6);
+//circleLine(6); // change size & spacing here
 
    // vertical version (outdated)
 const verticalCLine = (radius) =>{
