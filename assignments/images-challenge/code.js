@@ -118,7 +118,7 @@ while (x < width-widthextra){
   }
   y += diameter
 }}
-//fillBox(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
+fillBox(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
 
 
 // grid its good enoguh
@@ -159,4 +159,4 @@ for(let x = 0; x < width; x+=squareSize){
   }}
   y += squareSize
 }}
-checkerboard(26); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
+//checkerboard(26); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
