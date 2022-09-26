@@ -191,6 +191,6 @@ for(let x = 0; x < width; x+=squareSize){
 //verticalCircleLine(5); // defines radius
 //alternatingCircleLine(15); //defines radius
 //fillBox(5); // defines radius
-fillBoxRand(.21, 1.1); // chance of fill (0-1), radius
+fillBoxRand(.21, 1); // chance of fill (0-1), radius
 //concCircles(7); // amount of circles drawn
 //checkerboard(26); // broken for the time being, defines number of squares on a row
