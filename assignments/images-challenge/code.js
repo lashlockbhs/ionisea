@@ -25,37 +25,42 @@
  */
 
     // normal Circle line code (outdated)
-const bigness = 21 // change size & spacing here, used bigness because size would not work
-let dist = bigness*2 // Start position
+const circleLine = (radius) =>{
+const radius = 21 // change size & spacing here, used radius because size would not work
+let dist = radius*2 // Start position
 while (dist < width){
-  dist = dist+bigness*2 // First passthrough without drawing the circles to determine the space it takes up.
+  dist = dist+radius*2 // First passthrough without drawing the circles to determine the space it takes up.
 }
 const center = width-dist // Determinining a start position that will end up with the circles centered.
-dist = center+bigness*2 // Again start position, this time so it will have an equal gap on either side.
+dist = center+radius*2 // Again start position, this time so it will have an equal gap on either side.
 while (dist < width){ 
-  drawFilledCircle(dist-center/2, height/2, bigness, 'red') // Finally drawing the circles.
-  dist = dist+bigness*2
-}
+  drawFilledCircle(dist-center/2, height/2, radius, 'red') // Finally drawing the circles.
+  dist = dist+radius*2
+}}
+//circleLine(6);
+
    // vertical version (outdated)
-/*const bigness = 12
-let dist = bigness*2
+const verticalCLine = (radius) =>{
+const radius = 12
+let dist = radius*2
 while (dist < height){
-  dist = dist+bigness*2
+  dist = dist+radius*2
 }
 const center = height-dist
-dist = center+bigness*2
+dist = center+radius*2
 while (dist < height){ 
-  drawFilledCircle(width/2, dist-center/2, bigness, color)
-  dist = dist+bigness*2
-}*/
+  drawFilledCircle(width/2, dist-center/2, radius, color)
+  dist = dist+radius*2
+}}
+verticalCLine(5);
   // alternating (outdated)
-/*const bigness = 12
-let dist = bigness*2
+/*const radius = 12
+let dist = radius*2
 while (dist < width){
-  dist = dist+bigness*2
+  dist = dist+radius*2
 }
 const center = width-dist
-dist = center+bigness*2
+dist = center+radius*2
 let color = 'blue'
 while (dist < width){ 
   if (color == 'blue'){
@@ -63,8 +68,8 @@ while (dist < width){
   } else {
     color = 'blue'
   }
-  drawFilledCircle(dist-center/2, height/2, bigness, color)
-  dist = dist+bigness*2
+  drawFilledCircle(dist-center/2, height/2, radius, color)
+  dist = dist+radius*2
 }*/
 //FillBox using your optimised code
 /*const radius = 2
