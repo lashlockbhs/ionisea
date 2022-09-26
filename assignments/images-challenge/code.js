@@ -133,7 +133,7 @@ const checkerboard = (numSq) =>{
 const squareSize = width/numSq
 for(let y = (height-width)/2;y < height-(height-width)/2; y+= squareSize){ 
   let colour = 'blue'
-for(let x = 0; x < width; x+=squareSize){ 
+for(let x = 0; x < height; x+=squareSize){ 
   drawFilledRect(x, y, squareSize, squareSize, colour)
   if (colour == 'red'){
     colour = 'blue'
@@ -144,7 +144,7 @@ for(let x = 0; x < width; x+=squareSize){
 }
 for(let y = (height-width)/2 + squareSize;y < height-(height-width)/2; y+= squareSize){ 
   let colour = 'red'
-for(let x = 0; x < width; x+=squareSize){ 
+for(let x = 0; x < height; x+=squareSize){ 
   drawFilledRect(x, y, squareSize, squareSize, colour)
   if (colour == 'red'){
     colour = 'blue'
@@ -191,6 +191,6 @@ for(let x = 0; x < width; x+=squareSize){
 //verticalCircleLine(5); // defines radius
 //alternatingCircleLine(15); //defines radius
 //fillBox(5); // defines radius
-fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
+//fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(7); // amount of circles drawn
-//checkerboard(26); // broken for the time being, defines number of squares on a row
+checkerboard(26); // broken for the time being, defines number of squares on a row
