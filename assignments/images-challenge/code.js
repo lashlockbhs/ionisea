@@ -104,7 +104,7 @@ for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2
 //concCircles(7);
 
 // again with your code, fillbox with random chance
-const fillBox = (pby) =>{
+const fillBoxRand = (pby) =>{
 const radius = 15
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
@@ -125,7 +125,7 @@ while (x < width-widthextra){
   }
   y += diameter
 }}
-//fillBox(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
+//fillBoxRand(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
 
 
 // grid its good enoguh
