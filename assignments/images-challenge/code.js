@@ -153,7 +153,6 @@ for(let x = 0; x < height; x+=squareSize){
   }}
   y += squareSize
 }}
-//just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
 
 
 
@@ -193,4 +192,4 @@ for(let x = 0; x < height; x+=squareSize){
 //fillBox(5); // defines radius
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(7); // amount of circles drawn
-checkerboard(26); // broken for the time being, defines number of squares on a row
+checkerboard(200); // broken for the time being, defines number of squares on a row
