@@ -94,8 +94,6 @@ for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2
   clour = 'blue'
  }
 }}
-//concCircles(7);
-
 // again with your code, fillbox with random chance
 const fillBoxRand = (pby, radius) =>{
 const diameter = 2*radius
@@ -155,7 +153,7 @@ for(let x = 0; x < width; x+=squareSize){
   }}
   y += squareSize
 }}
-//checkerboard(26); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
+//just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
 
 
 
@@ -193,4 +191,6 @@ for(let x = 0; x < width; x+=squareSize){
 //verticalCircleLine(5); // defines radius
 //alternatingCircleLine(15); //defines radius
 //fillBox(5); // defines radius
-//fillBoxRand(.51, 15); // chance of fill (0-1), radius
+fillBoxRand(.75, 15); // chance of fill (0-1), radius
+//concCircles(7); // amount of circles drawn
+//checkerboard(26); // broken for the time being, defines number of squares on a row
