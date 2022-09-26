@@ -41,7 +41,6 @@ while (dist < width){
 
    // vertical version (outdated)
 const verticalCLine = (radius) =>{
-const radius = 12
 let dist = radius*2
 while (dist < height){
   dist = dist+radius*2
