@@ -50,8 +50,9 @@ while (dist < height){
   drawFilledCircle(width/2, dist-center/2, radius, 'blue')
   dist = dist+radius*2
 }}
-verticalCircleLine(5);
-  // alternating (outdated)
+//verticalCircleLine(5);
+
+// alternating (outdated)
 const alternatingCircleLine = (radius) => {
 let dist = radius*2
 while (dist < width){
@@ -70,8 +71,9 @@ while (dist < width){
   dist = dist+radius*2
 }}
 alternatingCircleLine(15);
+
 //FillBox using your optimised code
-/*const radius = 2
+const fillBox = (radius) => {
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
@@ -85,9 +87,10 @@ while (x < width-widthextra){
   x += diameter 
   }
   y += diameter
-  }*/
+  }
+}
+fillBox(5);
 //conc circle code
-
 const concCircles = (howManyCircles) =>{
 let clour = 'red'
 for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2/howManyCircles){
