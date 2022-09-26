@@ -36,8 +36,6 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, radius, 'red') // Finally drawing the circles.
   dist = dist+radius*2
 }}
-//circleLine(6); // change size & spacing here
-
    // vertical version (outdated)
 const verticalCircleLine = (radius) =>{
 let dist = radius*2
@@ -50,8 +48,6 @@ while (dist < height){
   drawFilledCircle(width/2, dist-center/2, radius, 'blue')
   dist = dist+radius*2
 }}
-//verticalCircleLine(5);
-
 // alternating (outdated)
 const alternatingCircleLine = (radius) => {
 let dist = radius*2
@@ -70,8 +66,6 @@ while (dist < width){
   drawFilledCircle(dist-center/2, height/2, radius, color)
   dist = dist+radius*2
 }}
-//alternatingCircleLine(15);
-
 //FillBox using your optimised code
 const fillBox = (radius) => {
 const diameter = 2*radius
@@ -89,7 +83,6 @@ while (x < width-widthextra){
   y += diameter
   }
 }
-fillBox(5);
 //conc circle code
 const concCircles = (howManyCircles) =>{
 let clour = 'red'
@@ -104,8 +97,7 @@ for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2
 //concCircles(7);
 
 // again with your code, fillbox with random chance
-const fillBoxRand = (pby) =>{
-const radius = 15
+const fillBoxRand = (pby, radius) =>{
 const diameter = 2*radius
 const widthdist = Math.floor(width/diameter)*diameter
 const widthextra = width-widthdist
@@ -125,9 +117,6 @@ while (x < width-widthextra){
   }
   y += diameter
 }}
-//fillBoxRand(.51); //1 is 100% chance, 0.5 is 50, 0.25 is 25, etc.
-
-
 // grid its good enoguh (ignored)
 /*
 const lineDistance = 11
@@ -169,3 +158,39 @@ for(let x = 0; x < width; x+=squareSize){
 //checkerboard(26); //just keep it kinda reasonable and keep it nice (no numbers that upset me) never mind i ruined the code so now it works (: (((((:
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// calling
+//circleLine(6); // defines radius
+//verticalCircleLine(5); // defines radius
+//alternatingCircleLine(15); //defines radius
+//fillBox(5); // defines radius
+//fillBoxRand(.51, 15); // chance of fill (0-1), radius
