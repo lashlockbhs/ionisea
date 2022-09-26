@@ -47,7 +47,7 @@ while (dist < height){
 const center = height-dist
 dist = center+radius*2
 while (dist < height){ 
-  drawFilledCircle(width/2, dist-center/2, radius, color)
+  drawFilledCircle(width/2, dist-center/2, radius, 'blue')
   dist = dist+radius*2
 }}
 verticalCLine(5);
