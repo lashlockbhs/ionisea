@@ -25,7 +25,7 @@
  */
 
     // normal Circle line code (outdated)
-/*const bigness = 21 // change size & spacing here, used bigness because size would not work
+const bigness = 21 // change size & spacing here, used bigness because size would not work
 let dist = bigness*2 // Start position
 while (dist < width){
   dist = dist+bigness*2 // First passthrough without drawing the circles to determine the space it takes up.
@@ -35,7 +35,7 @@ dist = center+bigness*2 // Again start position, this time so it will have an eq
 while (dist < width){ 
   drawFilledCircle(dist-center/2, height/2, bigness, 'red') // Finally drawing the circles.
   dist = dist+bigness*2
-}*/
+}
    // vertical version (outdated)
 /*const bigness = 12
 let dist = bigness*2
