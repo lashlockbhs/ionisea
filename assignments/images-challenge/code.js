@@ -156,10 +156,12 @@ for(let x = 0; x < height; x+=squareSize){
 const squareOfCircles = (radius) =>{
   const diameter = 2*radius
   const cSide = Math.floor(diameter/height)*diameter
-  for (let pos = (width - height)/2-cSide;pos < width - ((width - height)/2-cSide);pos += diameter){
-    drawCircle(pos, cSide+radius, radius, 'blue')
-    drawCircle(pos, height-cSide-radius, radius, 'blue' )
-}}
+  for (let xPos = (width - height)/2-cSide;xPos < width - ((width - height)/2-cSide);xPos += diameter){
+    drawCircle(xPos, cSide+radius, radius, 'blue')
+    drawCircle(xPos, height-cSide-radius, radius, 'blue' )
+}
+for (let)
+}
 
 
 
