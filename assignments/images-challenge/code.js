@@ -154,8 +154,8 @@ for(let x = 0; x < height; x+=squareSize){
   y += squareSize
 }}
 const squareOfCircles = (radius) =>{
-  diameter = 2*radius
-  cSide = Math.floor(diameter/height)
+  const diameter = 2*radius
+  const cSide = Math.floor(diameter/height)
 
 }
 
