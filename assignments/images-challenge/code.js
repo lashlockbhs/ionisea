@@ -160,7 +160,7 @@ const squareOfCircles = (radius) =>{
     drawCircle(xPos, cSide+radius, radius, 'blue')
     drawCircle(xPos, height-cSide-radius, radius, 'blue' )
 }
-for (let)
+//for (let)
 }
 
 
