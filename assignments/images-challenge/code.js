@@ -155,6 +155,7 @@ const squareOfCircles = (radius) =>{
   const cExtra = height - (diameter*cNum)
   for(let xPos = (width - height+cExtra)/2;xPos < width - ((width - height)- cExtra)/2; xPos += diameter){
     drawCircle(xPos, height - cExtra, radius, 'blue')
+    drawCircle (xPos, cExtra, radius, 'blue')
   }
 }
 
