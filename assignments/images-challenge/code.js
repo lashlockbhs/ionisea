@@ -85,14 +85,10 @@ while (x < width-widthextra){
 }
 //conc circle code
 const concCircles = (howManyCircles) =>{
-let clour = 'red'
+let draw = no
 drawFilledCircle(width/2, height/2, height/2, 'red')
-for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2/howManyCircles){
- drawCircle (width/2, height/2, radius, clour, height/2/howManyCircles)
- if (clour == 'blue'){
-   clour = 'red'
-  }else{
-  clour = 'blue'
+for (let radius = height/4/howManyCircles; radius < height/2; radius += radius + height/2/howManyCircles){
+ drawCircle (width/2, height/2, radius, 'blue', height/2/howManyCircles)
  }
 }}
 // again with your code, fillbox with random chance
