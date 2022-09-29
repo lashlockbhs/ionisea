@@ -86,7 +86,7 @@ while (x < width-widthextra){
 //conc circle code
 const concCircles = (howManyCircles) =>{
 drawFilledCircle(width/2, height/2, height/2, 'red')
-for (let radius = height/4/howManyCircles; radius < height/2; radius += radius + height/2/howManyCircles){
+for (let radius = height/4/howManyCircles; radius < height/2; radius += + height/2/howManyCircles){
  drawCircle (width/2, height/2, radius, 'blue', height/2/howManyCircles)
  }
 }
