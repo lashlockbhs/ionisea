@@ -159,7 +159,7 @@ const squareOfCircles = (radius) =>{
   const diameter = 2*radius
   const cNum = Math.floor(height/diameter)
   const cExtra = height - (diameter*cNum)
-  for(let xPos = width/2 - height; ){
+  for(let xPos = width/2 - height; ;){
 
   }
 }
@@ -200,6 +200,6 @@ const squareOfCircles = (radius) =>{
 //alternatingCircleLine(15); //defines radius
 //fillBox(5); // defines radius
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
-//concCircles(7); // amount of circles drawn
+concCircles(7); // amount of circles drawn
 //checkerboard(20); // broken for the time being, defines number of squares on a row
-squareOfCircles(15);
+//squareOfCircles(15);
