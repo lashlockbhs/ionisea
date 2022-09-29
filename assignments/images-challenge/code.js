@@ -149,19 +149,19 @@ for(let x = 0; x < height; x+=squareSize){
   y += squareSize
 }}
 
-const squareOfCircles = (radius) =>{
+const squareOfCircles = (radius, color) =>{
   const diameter = 2*radius
   const cNum = Math.floor(height/diameter)
   const cExtra = (height - (diameter*cNum))/2+radius
   let xCheese;
   for(let xPos = (width - height+cExtra)/2;xPos < width - ((width - height)- cExtra)/2-radius; xPos += diameter){
-    drawCircle(xPos, height - cExtra, radius, 'blue')
-    drawCircle (xPos, cExtra, radius, 'blue')
+    drawCircle(xPos, height - cExtra, radius, color)
+    drawCircle (xPos, cExtra, radius, color)
     xCheese = xPos
   }
   for(let yPos = cExtra+diameter; yPos < height-cExtra; yPos += diameter){
-    drawCircle((width-height+cExtra)/2,yPos, radius, 'blue')
-    drawCircle(xCheese, yPos, radius, 'blue')
+    drawCircle((width-height+cExtra)/2,yPos, radius, color)
+    drawCircle(xCheese, yPos, radius, color)
   }
 }
 
@@ -203,4 +203,4 @@ const squareOfCircles = (radius) =>{
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(22); // amount of circles drawn
 //checkerboard(20); // broken for the time being, defines number of squares on a row
-squareOfCircles(23); //sets radius
+squareOfCircles(23, 'blue'); //sets radius
