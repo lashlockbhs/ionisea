@@ -194,6 +194,6 @@ const squareOfCircles = (radius) =>{
 //alternatingCircleLine(15); //defines radius
 //fillBox(5); // defines radius
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
-concCircles(7); // amount of circles drawn
+concCircles(22); // amount of circles drawn
 //checkerboard(20); // broken for the time being, defines number of squares on a row
 //squareOfCircles(15);
