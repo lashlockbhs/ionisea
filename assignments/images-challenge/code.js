@@ -161,7 +161,7 @@ const squareOfCircles = (radius) =>{
   }
   for(let yPos = cExtra+diameter; yPos < height-cExtra; yPos += diameter){
     drawCircle((width-height+cExtra)/2,yPos, radius, 'blue')
-    drawCircle(xCheese, yPos, radius, 'blue', 7)
+    drawCircle(xCheese, yPos, radius, 'blue')
   }
 }
 
