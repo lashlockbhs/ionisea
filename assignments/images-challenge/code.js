@@ -86,6 +86,7 @@ while (x < width-widthextra){
 //conc circle code
 const concCircles = (howManyCircles) =>{
 let clour = 'red'
+drawFilledCircle(width/2, height/2, height/2, 'red')
 for (let radius = height/4/howManyCircles; radius < height/2; radius += height/2/howManyCircles){
  drawCircle (width/2, height/2, radius, clour, height/2/howManyCircles)
  if (clour == 'blue'){
@@ -158,14 +159,9 @@ const squareOfCircles = (radius) =>{
   const diameter = 2*radius
   const cNum = Math.floor(height/diameter)
   const cExtra = height - (diameter*cNum)
-  for (let xPos =(width-height)/2+cExtra; xPos < width - (width-height)/2 ;xPos += diameter){
-    drawCircle(xPos, cExtra/2, radius, 'blue')
-    drawCircle(xPos, height-cExtra/2, radius, 'blue' )
-}
-for (let yPos = cExtra/2+diameter; yPos < height - cExtra/2;yPos += diameter){
-  drawCircle((width - height)/2-cExtra/2, yPos, radius, 'blue')
-  drawCircle(width - ((width - height)/2-cExtra), yPos, radius, 'blue')
-}
+  for(let xPos = width/2 - height; ){
+
+  }
 }
 
 
