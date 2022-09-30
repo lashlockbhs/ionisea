@@ -23,7 +23,7 @@ maxRadius();
 const numCircles=(radius,width)=>{
   return Math.floor(width/(radius*2))
 }
-numCircles();
+numCircles(20, 500);
 
 const offset = (cWidth, fWidth) =>{
   return (cWidth-fWidth)/2
@@ -59,9 +59,18 @@ getsSpeedingTicket(66, true)
 
 const moreThanTwiceAsLong = (string1,string2) => {
   if (string1.length > string2.length){
-    return console.log('2')
+    return true
   } else {
-    return console.log('3')
+    return false
   }
 }
-moreThanTwiceAsLong('imanidiotitsast435345ring', 'howcouldImessthisup')
+moreThanTwiceAsLong('imanidiotitsastringextratestingtexthere', 'howcouldImessthisup')
+
+const aFartherThanB = (a,b,c) =>{
+  if (Math.abs(c-a) > Math.abs(c-b)){
+    return console.log('true')
+  } else {
+    return console.log('possibly wrong')
+  }
+}
+aFartherThanB(2,6,-20)
