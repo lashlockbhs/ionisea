@@ -55,7 +55,7 @@ const getsSpeedingTicket=(speed, grouchyCop) =>{
     return false
   }
 }
-getsSpeedingTicket(66, true)
+getsSpeedingTicket(66, true);
 
 const moreThanTwiceAsLong = (string1,string2) => {
   if (string1.length > string2.length){
@@ -64,7 +64,7 @@ const moreThanTwiceAsLong = (string1,string2) => {
     return false
   }
 }
-moreThanTwiceAsLong('imanidiotitsastringextratestingtexthere', 'howcouldImessthisup')
+moreThanTwiceAsLong('imanidiotitsastringextratestingtexthere', 'howcouldImessthisup');
 
 const aFartherThanB = (a,b,c) =>{
   if (Math.abs(c-a) > Math.abs(c-b)){
@@ -73,14 +73,19 @@ const aFartherThanB = (a,b,c) =>{
     return false
   }
 }
-aFartherThanB(0,2,15)
+aFartherThanB(0,2,15);
 
 const firstHalf = (string) => {
   return string.substring(0,Math.min(string.length/2))
 }
-firstHalf('howisyourday')
+firstHalf('howisyourday');
 
 const secondHalf = (string) => {
-  return console.log(string.substring(Math.min(string.length/2), string.length))
+  return string.substring(Math.min(string.length/2), string.length)
 }
-secondHalf('gamern')
+secondHalf('wowitworkssick');
+
+const upDown = (string) =>{
+
+}
+upDown()
