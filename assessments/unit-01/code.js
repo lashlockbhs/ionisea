@@ -41,7 +41,7 @@ canSleepIn();
 
 const canGoToProm =(senior, invitedBySenior, onExcList) =>{
   if((senior || invitedBySenior) && !onExcList){
-    return console.log('true')
+    return true
   } else {
     return false
   }
