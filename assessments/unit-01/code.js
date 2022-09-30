@@ -96,6 +96,6 @@ const everyOther=(string)=>{
 everyOther('woahcoolitworks');
 
 const upDownLastCharacter = (string) =>{
-  return console.log((string[string.length]).toUpperCase()+string[string.length])
+  return console.log((string[string.length-1]).toUpperCase()+string[string.length-1])
 }
 upDownLastCharacter('ohmanihavelotsofideasforthesestrings')
