@@ -32,15 +32,18 @@ offset();
 
 const canSleepIn = (weekday, vacation) =>{
   if (!weekday || vacation){
-    return console.log('true')
+    return true //is this supposed to be in console log or no
   } else {
     return false
   }
 }
-canSleepIn(true,true);
+canSleepIn();
 
 const canGoToProm =(senior, invitedBySenior, onExcList) =>{
   if(senior || invitedBySenior && !onExcList){
-
+    return true
+  } else {
+    return false
   }
 }
+canGoToProm(true, false, true);
