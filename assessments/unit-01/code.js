@@ -64,4 +64,4 @@ const moreThanTwiceAsLong = (string1,string2) => {
     return console.log('false')
   }
 }
-moreThanTwiceAsLong(55, 20)
+moreThanTwiceAsLong('imanidiotitsastring', 'howcouldImessthisup')
