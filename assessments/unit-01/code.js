@@ -68,9 +68,14 @@ moreThanTwiceAsLong('imanidiotitsastringextratestingtexthere', 'howcouldImessthi
 
 const aFartherThanB = (a,b,c) =>{
   if (Math.abs(c-a) > Math.abs(c-b)){
-    return console.log('true')
+    return true
   } else {
     return false
   }
 }
 aFartherThanB(0,2,15)
+
+const firstHalf = (string) => {
+  return console.log('string.substring(0,Math.min(string.length/2))')
+}
+firstHalf('IAmExceptionallySkilledAtThis')
