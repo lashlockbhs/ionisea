@@ -37,7 +37,7 @@ const canSleepIn = (weekday, vacation) =>{
     return false
   }
 }
-canSleepIn();
+canSleepIn(false,false);
 
 const canGoToProm =(senior, invitedBySenior, onExcList) =>{
   if((senior || invitedBySenior) && !onExcList){
@@ -47,3 +47,12 @@ const canGoToProm =(senior, invitedBySenior, onExcList) =>{
   }
 }
 canGoToProm(true, false, true);
+
+const getsSpeedingTicket=(speed, grouchyCop) =>{
+  if (((speed < 65)&& grouchyCop) || speed > 70){
+    return console.log('true')
+  } else {
+    return false
+  }
+}
+getsSpeedingTicket(66, true)
