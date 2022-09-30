@@ -59,9 +59,9 @@ getsSpeedingTicket(66, true)
 
 const moreThanTwiceAsLong = (string1,string2) => {
   if (string1.length > string2.length){
-    return console.log('true')
+    return console.log('2')
   } else {
-    return console.log('false')
+    return console.log('3')
   }
 }
 moreThanTwiceAsLong('imanidiotitsastring', 'howcouldImessthisup')
