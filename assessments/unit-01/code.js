@@ -40,7 +40,7 @@ const canSleepIn = (weekday, vacation) =>{
 canSleepIn();
 
 const canGoToProm =(senior, invitedBySenior, onExcList) =>{
-  if(senior || invitedBySenior && !onExcList){
+  if((senior || invitedBySenior) && !onExcList){
     return console.log('true')
   } else {
     return false
