@@ -96,6 +96,15 @@ const everyOther=(string)=>{
 everyOther('woahcoolitworks');
 
 const upDownLastCharacter = (string) =>{
-  return console.log(string[string.length-1].toUpperCase()+string[string.length-1])
+  return string[string.length-1].toUpperCase()+string[string.length-1]
 }
-upDownLastCharacter('ohmanihavelotsofideasforthesestrings')
+upDownLastCharacter('ohmanihavelotsofideasforthesestrings');
+
+const yesIfEven=(num)=>{
+  if (num/2 == Math.floor(num/2)){
+  return console.log('yes')
+  } else {
+    return console.log('no')
+  }
+}
+yesIfEven(25);
