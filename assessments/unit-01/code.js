@@ -78,4 +78,4 @@ aFartherThanB(0,2,15)
 const firstHalf = (string) => {
   return console.log(string.substring(0,Math.min(string.length/2)))
 }
-firstHalf('howisyourday?')
+firstHalf('howisyourday')
