@@ -83,4 +83,4 @@ firstHalf('howisyourday')
 const secondHalf = (string) => {
   return console.log(string.substring(Math.min(string.length/2), string.length))
 }
-secondHalf('howisyourday')
+secondHalf('gamern')
