@@ -61,7 +61,7 @@ const moreThanTwiceAsLong = (string1,string2) => {
   if (string1.length > (string2.length)*2){ //"more than twice as many letters," not at least
     return console.log('true')
   } else {
-
+    return console.log('false')
   }
 }
 moreThanTwiceAsLong(55, 20)
