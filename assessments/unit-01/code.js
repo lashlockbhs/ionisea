@@ -88,4 +88,4 @@ secondHalf('wowitworkssick');
 const upDown = (string) =>{
   return console.log(string.toUpperCase()+string)
 }
-upDown('insertusfulmessagehere');
+upDown('insertusfulmessAGehere');
