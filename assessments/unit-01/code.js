@@ -5,3 +5,7 @@ const emit = (a, b, product) => {
 };
 
 // Write your code here ...
+const averageWeight=(weight, num)=>{
+  return weight/num
+}
+averageWeight(weight,num)
