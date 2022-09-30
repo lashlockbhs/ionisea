@@ -86,6 +86,11 @@ const secondHalf = (string) => {
 secondHalf('wowitworkssick');
 
 const upDown = (string) =>{
-  return console.log(string.toUpperCase()+string)
+  return string.toUpperCase()+string
 }
-upDown('insertusfulmessAGehere');
+upDown('insertusfulmessagehere');
+
+const everyOther=(string)=>{
+  return console.log(string[0]+string[2]+string[4])
+}
+everyOther('woahcoolitworks');
