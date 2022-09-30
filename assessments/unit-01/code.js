@@ -73,4 +73,4 @@ const aFartherThanB = (a,b,c) =>{
     return console.log('possibly wrong')
   }
 }
-aFartherThanB(2,6,-20)
+aFartherThanB(6,2,-20)
