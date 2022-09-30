@@ -107,4 +107,4 @@ const yesIfEven=(num)=>{
     return console.log('no')
   }
 }
-yesIfEven(25);
+yesIfEven(24);
