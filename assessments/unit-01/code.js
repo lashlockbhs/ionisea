@@ -91,6 +91,11 @@ const upDown = (string) =>{
 upDown('insertusfulmessagehere');
 
 const everyOther=(string)=>{
-  return console.log(string[0]+string[2]+string[4])
+  return string[0]+string[2]+string[4] //just the 1st, 3rd, and 5th
 }
 everyOther('woahcoolitworks');
+
+const upDownLastCharacter = (string) =>{
+  return console.log(string[string.length].toUpperCase()+string[string.length])
+}
+upDownLastCharacter('ohmanihavelotsofideasforthesestrings')
