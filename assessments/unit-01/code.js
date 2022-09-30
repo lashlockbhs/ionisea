@@ -68,9 +68,9 @@ moreThanTwiceAsLong('imanidiotitsastringextratestingtexthere', 'howcouldImessthi
 
 const aFartherThanB = (a,b,c) =>{
   if (Math.abs(c-a) > Math.abs(c-b)){
-    return console.log('true')
+    return true
   } else {
-    return console.log('possibly wrong')
+    return false
   }
 }
 aFartherThanB(6,2,-20)
