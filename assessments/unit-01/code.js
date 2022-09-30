@@ -49,7 +49,7 @@ const canGoToProm =(senior, invitedBySenior, onExcList) =>{
 canGoToProm(true, false, true);
 
 const getsSpeedingTicket=(speed, grouchyCop) =>{
-  if (((speed < 65)&& grouchyCop) || speed > 70){
+  if ((speed < 65&& grouchyCop) || speed > 70){
     return console.log('true')
   } else {
     return false
