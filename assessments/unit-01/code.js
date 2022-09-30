@@ -26,7 +26,7 @@ const numCircles=(radius,width)=>{
 numCircles();
 
 const offset = (cWidth, fWidth) =>{
-  return 1/2(cWidth-fWidth)
+  return (cWidth-fWidth)/2
 }
 offset();
 
