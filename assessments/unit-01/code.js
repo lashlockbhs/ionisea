@@ -73,4 +73,4 @@ const aFartherThanB = (a,b,c) =>{
     return false
   }
 }
-aFartherThanB(6,2,15)
+aFartherThanB(0,2,15)
