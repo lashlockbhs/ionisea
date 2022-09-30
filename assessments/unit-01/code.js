@@ -102,9 +102,14 @@ upDownLastCharacter('ohmanihavelotsofideasforthesestrings');
 
 const yesIfEven=(num)=>{
   if (num/2 == Math.floor(num/2)){
-  return console.log('yes')
+  return 'yes'
   } else {
-    return console.log('no')
+    return 'no'
   }
 }
-yesIfEven(-25656);
+yesIfEven(64);
+
+const countXs = (string) => {
+  return console.log(string.search[/x/])
+}
+countXs('dbxxxxxenof');
