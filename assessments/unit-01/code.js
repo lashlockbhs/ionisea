@@ -49,10 +49,18 @@ const canGoToProm =(senior, invitedBySenior, onExcList) =>{
 canGoToProm(true, false, true);
 
 const getsSpeedingTicket=(speed, grouchyCop) =>{
-  if (((speed > 65 )&& grouchyCop) || speed > 70){
-    return console.log('true')
+  if (((speed > 65)&& grouchyCop) || speed > 70){
+    return true
   } else {
     return false
   }
 }
 getsSpeedingTicket(66, true)
+
+const moreThanTwiceAsLong = (string1,string2) => {
+  if (string1.length > string2.length*2){ //"more than twice as many letters," not at least
+    return console.log('true')
+  } else {
+
+  }
+}
