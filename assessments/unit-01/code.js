@@ -76,6 +76,6 @@ const aFartherThanB = (a,b,c) =>{
 aFartherThanB(0,2,15)
 
 const firstHalf = (string) => {
-  return console.log('string.substring(0,Math.min(string.length/2))')
+  return console.log(string.substring(0,Math.min(string.length/2)))
 }
 firstHalf('IAmExceptionallySkilledAtThis')
