@@ -63,7 +63,6 @@ const moreThanTwiceAsLong = (string1,string2) => {
     return false
   }
 }
-moreThanTwiceAsLong('imanidiotitsastringextratestingtexthere', 'howcouldImessthisup');
 
 const aFartherThanB = (a,b,c) =>{
   if (Math.abs(c-a) > Math.abs(c-b)){
