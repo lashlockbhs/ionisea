@@ -11,7 +11,7 @@ const averageWeight=(weight, num)=>{
 averageWeight(40,8);
 
 const hypotenuse = (a,b) =>{
-  return Math.sqrt(a^2+b^2)
+  return Math.sqrt(a**2+b**2)
 }
 hypotenuse();
 
@@ -28,7 +28,6 @@ numCircles(20, 500);
 const offset = (cWidth, fWidth) =>{
   return (cWidth-fWidth)/2
 }
-offset();
 
 const canSleepIn = (weekday, vacation) =>{
   if (!weekday || vacation){
