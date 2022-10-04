@@ -125,29 +125,11 @@ while (lineY < height){
 }*/
 
 const checkerboard = (numSq) =>{
-const squareSize = Math.min(height,width)/numSq
-for(let y = (height-width)/2;y < height-(height-width)/2; y+= squareSize){ 
-  let colour = 'blue'
-for(let x = 0; x < height; x+=squareSize){ 
-  drawFilledRect(x, y, squareSize, squareSize, colour)
-  if (colour == 'red'){
-    colour = 'blue'
-  } else {
-    colour = 'red'
-  }}
-  y += squareSize
+const shortSide = Math.min(height,width)
+const longSide = Math.max(height, width)
+const squareSL = short/numSq // side length/size
+drawFilledRect(width-height/2, height, height, height)
 }
-for(let y = (height-width)/2 + squareSize;y < width-(width-height)/2; y+= squareSize){ 
-  let colour = 'red'
-for(let x = 0; x < height; x+=squareSize){ 
-  drawFilledRect(x, y, squareSize, squareSize, colour)
-  if (colour == 'red'){
-    colour = 'blue'
-  } else {
-    colour = 'red'
-  }}
-  y += squareSize
-}}
 
 const squareOfCircles = (radius, color) =>{
   const diameter = 2*radius
