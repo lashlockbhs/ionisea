@@ -131,7 +131,7 @@ let offset = 0;
 const squareSL = shortSide/numSq // side length/size
 drawFilledRect((width-height)/2, 0, shortSide, shortSide, color2)
 for (let yPos = 0; yPos < height; yPos += squareSL){
-  for (let xPos = (width-height)/2 + offset * squareSL; xPos < width - (width-height)/2 - 1; xPos += 2*squareSL){
+  for (let xPos = (width-height)/2 + offset * squareSL; xPos < width - (width-height)/2 - squareSL/2; xPos += 2*squareSL){
     drawFilledRect(xPos, yPos, squareSL, squareSL, color1)
   }
   if (offset == 0){
