@@ -127,7 +127,7 @@ while (lineY < height){
 const checkerboard = (numSq) =>{
 const shortSide = Math.min(height,width)
 const longSide = Math.max(height, width)
-const squareSL = short/numSq // side length/size
+const squareSL = shortSide/numSq // side length/size
 drawFilledRect(width-height/2, height, height, height)
 }
 
