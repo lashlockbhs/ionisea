@@ -152,7 +152,7 @@ for(let x = 0; x < height; x+=squareSize){
 const squareOfCircles = (radius, color) =>{
   const diameter = 2*radius
   const width = 6
-  const height = 
+  const height = 6
   const cNum = Math.floor(height/diameter)
   const cExtra = (height - (diameter*cNum))/2
   for(let xPos = (width - height)/2+cExtra+radius;xPos < width - ((width - height))/2-cExtra; xPos += diameter){
