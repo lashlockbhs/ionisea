@@ -128,7 +128,7 @@ const checkerboard = (numSq) =>{
 const shortSide = Math.min(height,width)
 const longSide = Math.max(height, width)
 const squareSL = shortSide/numSq // side length/size
-drawFilledRect(width-height/2, height, height, 0, 'blue')
+drawFilledRect(width-height/2, 0, height, height, 'blue')
 }
 
 const squareOfCircles = (radius, color) =>{
