@@ -124,11 +124,16 @@ while (lineY < height){
   lineY += lineDistance
 }*/
 
-const checkerboard = (numSq) =>{
+const checkerboard = (numSq, color1, color2) =>{
 const shortSide = Math.min(height,width)
 const longSide = Math.max(height, width)
 const squareSL = shortSide/numSq // side length/size
-drawFilledRect((width-height)/2, 0, shortSide, shortSide, 'blue')
+drawFilledRect((width-height)/2, 0, shortSide, shortSide, color1)
+for (let yPos = 0; yPos < height; yPos += squareSL){
+  for (let xPos = (width-height)/2; xPos < width - width-height/2; xPos += 2*squareSL){
+    drawFilledRect(xPos, yPos, squareSL, squareSL, color2)
+  }
+}
 }
 
 const squareOfCircles = (radius, color) =>{
@@ -182,5 +187,5 @@ const squareOfCircles = (radius, color) =>{
 //fillBox(5); // defines radius
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(22); // amount of circles drawn
-checkerboard(20); // broken for the time being, defines number of squares on a row
+checkerboard(20, 'black', 'white'); // broken for the time being, defines number of squares on a row
 //squareOfCircles(6, 'blue'); //sets radius && color
