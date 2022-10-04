@@ -193,5 +193,5 @@ const squareOfCircles = (radius, color) =>{
 //fillBox(5); // defines radius
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(22); // amount of circles drawn
-checkerboard(200, 'black', 'white'); // broken for the time being, defines number of squares on a row
+checkerboard(100, 'black', 'white'); // broken for the time being, defines number of squares on a row
 //squareOfCircles(6, 'blue'); //sets radius && color
