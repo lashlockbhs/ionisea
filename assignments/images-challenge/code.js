@@ -125,7 +125,7 @@ while (lineY < height){
 }*/
 
 const checkerboard = (numSq) =>{
-const squareSize = width/numSq
+const squareSize = Math.min(height,width)/numSq
 for(let y = (height-width)/2;y < height-(height-width)/2; y+= squareSize){ 
   let colour = 'blue'
 for(let x = 0; x < height; x+=squareSize){ 
