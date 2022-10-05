@@ -134,12 +134,8 @@ for (let yPos = 0; yPos < height; yPos += squareSL){
   for (let xPos = (width-height)/2 + offset * squareSL; xPos < width - (width-height)/2 - squareSL/2; xPos += 2*squareSL){
     drawFilledRect(xPos, yPos, squareSL, squareSL, color1)
   }
-  if (offset == 0){
-    offset = 1
-  } else {
-    offset = 0
+  offset == 0 ? 1 : 0
   }
-}
 }
 
 const squareOfCircles = (radius, color) =>{
