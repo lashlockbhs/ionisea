@@ -134,7 +134,7 @@ for (let yPos = 0; yPos < height; yPos += squareSL){
   for (let xPos = (width-height)/2 + offset * squareSL; xPos < width - (width-height)/2 - squareSL/2; xPos += 2*squareSL){
     drawFilledRect(xPos, yPos, squareSL, squareSL, color1)
   }
-  offset = offset === 0 ? 1 : 0
+  offset === 1 ? 1 : 0
   }
 }
 
