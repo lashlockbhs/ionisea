@@ -6,3 +6,5 @@ const array1 = [
 array1[2].pop()
 array1[0][0][2].push('ieuw')
 console.log(array1)
+
+tic.tac.toe
