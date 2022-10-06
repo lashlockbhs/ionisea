@@ -111,7 +111,7 @@ while (x < width-widthextra){
   y += diameter
 }}
 // grid its good enoguh (ignored)
-/*
+
 const lineDistance = 11
 let lineY = 0
 let lineX = 0
@@ -122,7 +122,7 @@ while (lineX < width){
 while (lineY < height){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
-}*/
+}
 
 const checkerboard = (numSq, color1, color2) =>{
 const shortSide = Math.min(height,width)
