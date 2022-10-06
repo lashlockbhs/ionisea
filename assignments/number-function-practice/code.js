@@ -4,5 +4,5 @@ const array1 = [
   [3, 4, 8],
   ];
 array1[2].pop()
-array1[2].push(array1)
+array1[2].push('ieuw')
 console.log(array1)
