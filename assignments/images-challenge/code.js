@@ -110,29 +110,30 @@ while (x < width-widthextra){
   }
   y += diameter
 }}
-// grid its good enoguh (ignored)
 
-const lineDistance = 11
+// grid its good enoguh
+const lineGrid = (lineDistance, lWidth, lColor) => {
 let lineY = 0
 let lineX = 0
-while (lineX < width){
+const yOffset =  (height - lineDistance * (Math.floor(height/lineDistance)))/2
+const xOffset = (height - lineDistance * (Math.floor(width/lineDistance)))/2
+for(let lineX = xOffset;  lineX < width - xOffset;  lineX += lineDistance){
   drawLine(lineX, 0 , lineX, height, 'black')
-  lineX += lineDistance
 }
 while (lineY < height){
   drawLine (0, lineY, width, lineY, 'black')
   lineY += lineDistance
-}
+}}
 
 const checkerboard = (numSq, color1, color2) =>{
 const shortSide = Math.min(height,width)
 const longSide = Math.max(height, width)
 let offset = 0;
 const squareSL = shortSide/numSq // side length/size
-drawFilledRect((width-height)/2, 0, shortSide, shortSide, color2)
+drawFilledRect((width-height)/2, 0, shortSide, shortSide, color1)
 for (let yPos = 0; yPos < height; yPos += squareSL){
   for (let xPos = (width-height)/2 + offset * squareSL; xPos < width - (width-height)/2 - squareSL/2; xPos += 2*squareSL){
-    drawFilledRect(xPos, yPos, squareSL, squareSL, color1)
+    drawFilledRect(xPos, yPos, squareSL, squareSL, color2)
   }
   offset = offset === 0 ? 1 : 0
   }
@@ -190,4 +191,5 @@ const squareOfCircles = (radius, color) =>{
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(22); // amount of circles drawn
 //checkerboard(100, 'blue', 'red'); // broken for the time being, defines number of squares on a row
-squareOfCircles(62, 'blue'); //sets radius && color
+//squareOfCircles(62, 'blue'); //sets radius && color
+lineGrid(5, 2, 'black'); // distance, width, color
