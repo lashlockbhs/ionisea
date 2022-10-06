@@ -39,29 +39,17 @@ const canSleepIn = (weekday, vacation) =>{
 canSleepIn(false,false);
 
 const canGoToProm =(senior, invitedBySenior, onExcList) =>{
-  if((senior || invitedBySenior) && !onExcList){
-    return true
-  } else {
-    return false
-  }
+  return ((senior || invitedBySenior) && !onExcList)
 }
 canGoToProm(true, false, true);
 
 const getsSpeedingTicket=(speed, grouchyCop) =>{
-  if (((speed > 65)&& grouchyCop) || speed > 70){
-    return true
-  } else {
-    return false
-  }
+  return (((speed > 65)&& grouchyCop) || speed > 70)
 }
 getsSpeedingTicket(66, true);
 
 const moreThanTwiceAsLong = (string1,string2) => {
-  if (string1.length > string2.length * 2){
-    return true
-  } else {
-    return false
-  }
+  return (string1.length > string2.length * 2)
 }
 
 const aFartherThanB = (a,b,c) =>{
