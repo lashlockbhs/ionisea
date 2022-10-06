@@ -114,7 +114,6 @@ while (x < width-widthextra){
 // grid its good enoguh
 const lineGrid = (lineDistance, lWidth, lColor) => {
 let lineY = 0
-let lineX = 0
 const yOffset =  (height - lineDistance * (Math.floor(height/lineDistance)))/2
 const xOffset = (height - lineDistance * (Math.floor(width/lineDistance)))/2
 for(let lineX = xOffset;  lineX < width - xOffset;  lineX += lineDistance){
