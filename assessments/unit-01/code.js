@@ -30,11 +30,7 @@ const offset = (cWidth, fWidth) =>{
 }
 
 const canSleepIn = (weekday, vacation) =>{
-  if (!weekday || vacation){
-    return true //is this supposed to be in console log or no
-  } else {
-    return false
-  }
+  return (!weekday || vacation)
 }
 canSleepIn(false,false);
 
