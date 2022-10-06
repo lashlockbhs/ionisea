@@ -65,9 +65,7 @@ const moreThanTwiceAsLong = (string1,string2) => {
 }
 
 const aFartherThanB = (a,b,c) =>{
-  if (Math.abs(c-a) > Math.abs(c-b)){
-    return Math.abs(c-a) > Math.abs (c-b);
-  }
+return Math.abs(c-a) > Math.abs (c-b);
 }
 aFartherThanB(0,2,15);
 
