@@ -54,12 +54,12 @@ return Math.abs(c-a) > Math.abs (c-b);
 aFartherThanB(0,2,15);
 
 const firstHalf = (string) => {
-  return string.substring(0,Math.min(string.length/2))
+  return string.substring(0,Math.floor(string.length/2))
 }
 firstHalf('howisyourday');
 
 const secondHalf = (string) => {
-  return string.substring(Math.min(string.length/2), string.length)
+  return string.substring(Math.floor(string.length/2))
 }
 secondHalf('wowitworkssick');
 
