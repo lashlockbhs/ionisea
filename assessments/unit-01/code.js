@@ -66,9 +66,7 @@ const moreThanTwiceAsLong = (string1,string2) => {
 
 const aFartherThanB = (a,b,c) =>{
   if (Math.abs(c-a) > Math.abs(c-b)){
-    return true
-  } else {
-    return false
+    return Math.abs(c-a) > Math.abs (c-b);
   }
 }
 aFartherThanB(0,2,15);
@@ -107,7 +105,7 @@ const yesIfEven=(num)=>{
 }
 yesIfEven(64);
 
-const countXs = (string) => {
+const countXs = (string) => { // <- ran out of time here
   return console.log(string.search[/x/])
 }
 countXs('dbxxxxxenof');
