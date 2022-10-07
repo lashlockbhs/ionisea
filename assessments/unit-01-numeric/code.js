@@ -34,5 +34,5 @@ const valueOfJewels = (numDiamonds, numEmeralds, diamondValue, emeraldValue) => 
 }
 
 const payWithOvertime = (hoursWorked, normRate, otRate) => { 
-  return (hoursWorked-8) * otRate + (8*normRate)
+  return hoursWorked > 8 ? 8*normRate + (hoursWorked-8) * otRate : normRate*hoursWorked
 }
