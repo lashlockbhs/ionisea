@@ -191,4 +191,4 @@ const squareOfCircles = (radius, color) =>{
 //concCircles(22); // amount of circles drawn
 //checkerboard(100, 'blue', 'red'); // broken for the time being, defines number of squares on a row
 //squareOfCircles(62, 'blue'); //sets radius && color
-lineGrid(12, 2, 'black'); // distance, width, color
+lineGrid(28, 2, 'black'); // distance, width, color
