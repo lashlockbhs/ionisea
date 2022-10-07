@@ -116,7 +116,7 @@ const lineGrid = (lineDistance, lWidth, lColor) => {
 const lineNumY = Math.floor(height/lineDistance)
 const lineNumX = Math.floor(width/lineDistance)
 const yOffset =  (height - lineDistance * lineNumY)/2
-const xOffset = (height - lineDistance * lineNumX)/2
+const xOffset = (width - lineDistance * lineNumX)/2
 for(let lineX = xOffset;  lineX < width - xOffset;  lineX += lineDistance){
   drawLine(lineX, 0 , lineX, height, lColor, lWidth)
 }
@@ -126,9 +126,9 @@ for (let lineY = yOffset; lineY < height; lineY += lineDistance){
 
 const checkerboard = (numSq, color1, color2) =>{
 const shortSide = Math.min(height,width)
-const longSide = Math.max(height, width)
+const longSide = Math.max(height, width) //might properly implement at some point
 let offset = 0;
-const squareSL = shortSide/numSq // side length/size
+const squareSL = shortSide/numSq // side length of the squares
 drawFilledRect((width-height)/2, 0, shortSide, shortSide, color1)
 for (let yPos = 0; yPos < height; yPos += squareSL){
   for (let xPos = (width-height)/2 + offset * squareSL; xPos < width - (width-height)/2 - squareSL/2; xPos += 2*squareSL){
