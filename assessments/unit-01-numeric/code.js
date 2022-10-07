@@ -26,7 +26,7 @@ const populationGrowth = (initPop, growthRate) => {
 }
 
 const earnedRunAverage = (earnedRuns, inningsPitched) =>{
-  return (earnedRuns/inningsPitched) * 9 // dont know baseball, will return to if i have time and could not really understand the question
+  return (earnedRuns/inningsPitched) * 9 // dont know baseball, could not really understand the question and instructions somewhat unclear
 }
 
 const valueOfJewels = (numDiamonds, numEmeralds, diamondValue, emeraldValue) => {
