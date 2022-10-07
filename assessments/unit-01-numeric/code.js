@@ -40,3 +40,7 @@ const payWithOvertime = (hoursWorked, normRate, otRate) => {
 const firstClassPostage = (weight) =>{
   return 60 + 24 * Math.ceil(weight-1)
 }
+
+const weightOnJupiter = (earthWeight) => {
+  return earthWeight * (JUPITER_GRAVITY / EARTH_GRAVITY)
+}
