@@ -117,7 +117,7 @@ const lineNumY = Math.floor(height/lineDistance)
 const lineNumX = Math.floor(width/lineDistance)
 const yOffset =  (height - lineDistance * lineNumY)/2
 const xOffset = (width - lineDistance * lineNumX)/2
-for(let lineX = xOffset;  lineX < width - xOffset;  lineX += lineDistance){
+for(let lineX = xOffset;  lineX < width;  lineX += lineDistance){
   drawLine(lineX, 0 , lineX, height, lColor, lWidth)
 }
 for (let lineY = yOffset; lineY < height; lineY += lineDistance){
