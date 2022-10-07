@@ -26,7 +26,7 @@ const populationGrowth = (initPop, growthRate) => {
 }
 
 const earnedRunAverage = (earnedRuns, inningsPitched) =>{
-  return (earnedRuns/inningsPitched) * 9 // dont know baseball, will return to if i have time
+  return (earnedRuns/inningsPitched) * 9 // dont know baseball, will return to if i have time and could not really understand the question
 }
 
 const valueOfJewels = (numDiamonds, numEmeralds, diamondValue, emeraldValue) => {
@@ -45,3 +45,6 @@ const weightOnJupiter = (earthWeight) => {
   return earthWeight * (JUPITER_GRAVITY / EARTH_GRAVITY)
 }
 
+const gravity = (mass1, mass2, distance) => {
+  return ((mass1 * mass2) / distance ** 2) * G
+}
