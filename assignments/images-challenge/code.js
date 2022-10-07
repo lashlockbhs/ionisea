@@ -112,16 +112,16 @@ while (x < width-widthextra){
 }}
 
 // grid its good enoguh
-const lineGrid = (lineDistance, lWidth, lColor) => {
+const lineGrid = (lineDistance, lWidth, yColor, xColor) => {
 const lineNumY = Math.floor(height/lineDistance)
 const lineNumX = Math.floor(width/lineDistance)
 const yOffset =  (height - lineDistance * lineNumY)/2
 const xOffset = (width - lineDistance * lineNumX)/2
 for(let lineX = xOffset;  lineX < width;  lineX += lineDistance){
-  drawLine(lineX, 0 , lineX, height, lColor, lWidth)
+  drawLine(lineX, 0 , lineX, height, xColor, lWidth)
 }
 for (let lineY = yOffset; lineY < height; lineY += lineDistance){
-  drawLine (0, lineY, width, lineY, lColor, lWidth)
+  drawLine (0, lineY, width, lineY, yColor, lWidth)
 }}
 
 const checkerboard = (numSq, color1, color2) =>{
@@ -189,6 +189,6 @@ const squareOfCircles = (radius, color) =>{
 //fillBox(5); // defines radius
 //fillBoxRand(.5, 1.5); // chance of fill (0-1), radius
 //concCircles(22); // amount of circles drawn
-//checkerboard(100, 'blue', 'red'); // broken for the time being, defines number of squares on a row
+//checkerboard(100, 'blue', 'red'); // number of squares, color1, color2
 //squareOfCircles(62, 'blue'); //sets radius && color
-lineGrid(5, 1, 'red'); // distance, width, color
+lineGrid(5, 1, 'red', 'blue'); // distance, width, vertical color, and horizontal color
