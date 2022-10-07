@@ -114,14 +114,15 @@ while (x < width-widthextra){
 // grid its good enoguh
 const lineGrid = (lineDistance, lWidth, lColor) => {
 let lineY = 0
+const lineNumY = Math.floor(height/lineDistance)
+const lineNumX = Math.floor(width/lineDistance)
 const yOffset =  (height - lineDistance * (Math.floor(height/lineDistance)))/2
 const xOffset = (height - lineDistance * (Math.floor(width/lineDistance)))/2
 for(let lineX = xOffset;  lineX < width - xOffset;  lineX += lineDistance){
-  drawLine(lineX, 0 , lineX, height, 'black')
+  drawLine(lineX, 0 , lineX, height, lColor)
 }
-while (lineY < height){
-  drawLine (0, lineY, width, lineY, 'black')
-  lineY += lineDistance
+for (let lineY = yOffset; lineY < height; lineY += lineDistance){
+  drawLine (0, lineY, width, lineY, lColor)
 }}
 
 const checkerboard = (numSq, color1, color2) =>{
