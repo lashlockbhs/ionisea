@@ -7,5 +7,9 @@ const countTens = (array) =>{
 }
 
 const sum = (array) => {
-  return 
+  let total = 0;
+  for(let pos = 0; pos < array.length; pos += 1){
+    total += array[pos]
+  }
+  return total
 }
