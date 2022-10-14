@@ -5,5 +5,6 @@ const countTens = (array) =>{
       numOfTens += 1
     }
   }
+  return numOfTens
 }
 const array = [5,5,5,5,5]
