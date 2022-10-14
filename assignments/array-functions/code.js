@@ -17,7 +17,10 @@ const sum = (array) => {
 const evens = (array) =>{
   let numEvens = 0;
   for (let pos = 0; pos < array.length; pos += 1){
-    array[pos] == (Math.floor(array[pos])/2)*2 ? numEvens += 1:numEvens;
+    //array[pos] == (Math.floor(array[pos])/2)*2 ? numEvens += 1:numEvens;
+    if (array[pos]/2 == Math.floor(array[pos])/2){
+      numEvens += 1
+    }
   }
   return numEvens
 }
