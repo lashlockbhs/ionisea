@@ -21,3 +21,7 @@ const evens = (array) =>{
   }
   return evensArray
 }
+const anyOverOneHundred = (array) =>{
+  return array.find(element => element > 100)
+
+}
