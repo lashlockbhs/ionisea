@@ -6,3 +6,4 @@ const countTens = (array) =>{
     }
   }
 }
+const array = [5,5,5,5,5]
