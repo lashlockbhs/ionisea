@@ -1,3 +1,3 @@
 const countTens = (array) =>{
-  return array.search(10)
+  return array.prototype.findIndex(10)
 }
