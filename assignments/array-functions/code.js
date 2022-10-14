@@ -1,7 +1,7 @@
 const countTens = (array) =>{
   let numOfTens = 0;
   for (let pos = 0; pos < array.length; pos += 1){
-    if (array[pos]){
+    if (array[2] = 10){
       numOfTens += 1
     }
   }
