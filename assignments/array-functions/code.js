@@ -1,3 +1,8 @@
 const countTens = (array) =>{
-  return array.prototype.find(10)
+  let numOfTens;
+  for (let pos; pos < array.length; pos += 1){
+    if (array[pos] = 10){
+      numOfTens += 1
+    }
+  }
 }
