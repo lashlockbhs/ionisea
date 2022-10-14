@@ -23,5 +23,7 @@ const evens = (array) =>{
 }
 const anyOverOneHundred = (array) =>{
   return array.find(element => element > 100) ? true:false;
-
+}
+const pyramid = (int) => {
+  int < 1 ? console.log('try again mate') 
 }
