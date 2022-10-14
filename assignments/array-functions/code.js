@@ -13,3 +13,11 @@ const sum = (array) => {
   }
   return total
 }
+
+const evens = (array) =>{
+  let numEvens = 0;
+  for (let pos = 0; pos < array.length; pos += 1){
+    array[pos] == (Math.floor(array[pos])/2)*2 ? numOfTens += 1:numOfTens;
+  }
+  return numEvens
+}
