@@ -21,5 +21,5 @@ const evens = (array) =>{
       evensArray.push(array[pos])
     }
   }
-  return numEvens
+  return evensArray
 }
