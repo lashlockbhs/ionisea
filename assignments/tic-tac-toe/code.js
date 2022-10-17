@@ -7,6 +7,6 @@
 let player = 'X';
 for (let totalTurns = 0; totalTurns < 9; totalTurns++){
 registerOnclick((x, y) => {
-  drawText(player, x-20, y+20, 'black', Math.min(width, height) * 0.3);
+  drawText(player, x-20, y+20, 'black', 60);
   player == 'X' ? player = 'O' : player = 'X';
 })};
