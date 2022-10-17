@@ -4,9 +4,11 @@
 // of the equals sign in our normal `const foo = ...` function definition. This
 // is called an anonymous function. We'll discuss this in more detail in a few
 // weeks but for now you can just adapt this code.
+const max = Math.max(width,height)
+const min = Math.min(width,height)
 let player = 'X';
 for (let totalTurns = 0; totalTurns < 9; totalTurns++){
 registerOnclick((x, y) => {
-  drawText(player, x-25, y+25, 'black', 75);
+  drawText(player, x-min*0.1, y+min*0.1, 'black', min * 0.3);
   player == 'X' ? player = 'O' : player = 'X';
 })};
