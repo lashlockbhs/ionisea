@@ -15,9 +15,9 @@ const sum = (array) => {
 }
 
 const evens = (array) =>{
-  const evensArray= [];
-  for (let pos = 0; pos < array.length; pos += 1){
-    array[pos]/2 == Math.floor(array[pos]/2)? evensArray.push(array[pos]):0;
+  const evensArray = [];
+  for (const element of array){
+    element%2 ==0 ? evensArray.push(element):0;
   }
   return evensArray
 }
