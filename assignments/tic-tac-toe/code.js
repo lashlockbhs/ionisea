@@ -8,6 +8,6 @@ let player = 'x';
 for (let totalTurns = 0; totalTurns <= 9; totalTurns++){
 registerOnclick((x, y) => {
   drawText(player, x-20, y+20, 'black', Math.min(width, height) * 0.3);
+  player == 'x' ? player = 'o' : player = 'x';
 });
-player == 'x' ? player = 'o' : player = 'x';
 }
