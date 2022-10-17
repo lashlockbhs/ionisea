@@ -10,7 +10,7 @@ const max = Math.max(width,height)
 const min = Math.min(width,height)
 let player = 'X';
 for (let editConst = 1; editConst > 0; editConst -= 1/3){
-  drawLine(max/2 + (min/2*editConst), height, max/2 + min/2*editConst, 0, 'black', 2)
+  drawLine(max/2 + (min*editConst), height, max/2 + min*editConst, 0, 'black', 2)
 }
 for (let totalTurns = 0; totalTurns < 9; totalTurns++){
 registerOnclick((x, y) => {
