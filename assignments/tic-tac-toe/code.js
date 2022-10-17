@@ -5,7 +5,7 @@
 // is called an anonymous function. We'll discuss this in more detail in a few
 // weeks but for now you can just adapt this code.
 let player = 'X';
-for (let totalTurns = 0; totalTurns <= 9; totalTurns++){
+for (let totalTurns = 0; totalTurns < 9; totalTurns++){
 registerOnclick((x, y) => {
   drawText(player, x-20, y+20, 'black', Math.min(width, height) * 0.3);
   player == 'X' ? player = 'O' : player = 'X';
