@@ -34,4 +34,4 @@ registerOnclick((x, y) => {
 }});
 const yPos = 3 // 1, 3, 5
 const xPos = 3 // 1, 3, 5 
-drawText('X', max/2-min/2 + (min * xPos/6) - min*0.115, min*yPos/6 + min*0.11, 'black', min * 0.3)
+drawText('X', max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.11, 'black', min * 0.3)
