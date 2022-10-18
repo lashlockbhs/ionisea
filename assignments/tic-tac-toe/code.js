@@ -32,5 +32,5 @@ registerOnclick((x, y) => {
   player == 'X' ? player = 'O' : player = 'X';
   turns++
 }});
-yPos = 3 //1, 3, 5
+const yPos = 3 //1, 3, 5
 drawText('X', max/2-min/2 + (min * 1/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3)
