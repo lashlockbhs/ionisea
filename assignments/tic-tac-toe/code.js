@@ -15,6 +15,6 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
 }
 for (let totalTurns = 0; totalTurns < 9; totalTurns++){
 registerOnclick((x, y) => {
-  drawText(player, x-min*0.1, y+min*0.1, 'black', min * 0.3);
+  drawText(player, x-min*0.95, y+min*0.1, 'black', min * 0.3);
   player == 'X' ? player = 'O' : player = 'X';
 })};
