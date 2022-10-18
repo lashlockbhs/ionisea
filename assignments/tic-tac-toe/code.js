@@ -33,7 +33,6 @@ registerOnclick((x, y) => {
   turns++
 }});
 const yPos = 1 // 1, 3, 5
-const xPos = 5 // 1, 3, 5 
-let player = 'X' //test. 
+const xPos = 5 // 1, 3, 5  
 drawText(player, max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3)
 
