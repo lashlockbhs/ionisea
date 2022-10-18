@@ -13,8 +13,8 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2 + min*editConst, height, max/2-min/2 + min*editConst, 0, 'black', 2)
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
 }
-for (let totalTurns = 0; totalTurns < 9; totalTurns++){
 registerOnclick((x, y) => {
+  for (let totalTurns = 0; totalTurns < 9; totalTurns++){
   drawText(player, x-min*0.095, y+min*0.1, 'black', min * 0.3);
   player == 'X' ? player = 'O' : player = 'X';
-})};
+}});
