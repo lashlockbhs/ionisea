@@ -14,7 +14,17 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
 }
 let turns = 0; 
-const xBanArray = [, ]
+const coordArray = [
+  [],
+  [], 
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+]
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){
   if (turns <9){
@@ -24,4 +34,4 @@ registerOnclick((x, y) => {
 }});
 console.log (max/2-min/2 + 1/6*min)
 console.log (max)
-drawText('X', max/2-min/2 + min/24, min, 'black', min * 1/3)
+drawText('X', max/2-min/2 + min*0.095, min, 'black', min * 1/3)
