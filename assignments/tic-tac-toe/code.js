@@ -22,4 +22,5 @@ registerOnclick((x, y) => {
   player == 'X' ? player = 'O' : player = 'X';
   turns++
 }});
-console.log (max-2-min/2 + 1/6*min)
+console.log (max/2-min/2 + 1/6*min)
+console.log (max)
