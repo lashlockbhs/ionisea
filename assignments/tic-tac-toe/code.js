@@ -14,6 +14,7 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
 }
 let turns = 0; 
+const xBanArray = [, ]
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){
   if (turns <9){
@@ -21,3 +22,4 @@ registerOnclick((x, y) => {
   player == 'X' ? player = 'O' : player = 'X';
   turns++
 }});
+console.log (max-2-min/2 + 1/6*min)
