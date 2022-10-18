@@ -32,4 +32,4 @@ registerOnclick((x, y) => {
   player == 'X' ? player = 'O' : player = 'X';
   turns++
 }});
-drawText('X', max/2-min/2 + min/6 - min*0.09, min/6 + min*0.1, 'black', min * 0.3)
+drawText('X', max/2-min/2 + min/6 - min*0.1, min/6 + min*0.1, 'black', min * 0.3)
