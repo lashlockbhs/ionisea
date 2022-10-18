@@ -24,4 +24,4 @@ registerOnclick((x, y) => {
 }});
 console.log (max/2-min/2 + 1/6*min)
 console.log (max)
-drawText('E', max/2-min/2, min, 'black', min * 1/3)
+drawText('X', max/2-min/2, min, 'black', min * 1/3)
