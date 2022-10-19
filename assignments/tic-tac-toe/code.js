@@ -21,14 +21,14 @@ const shher = (array) =>{
 return array.findIndex((element) => element >12)
 }
 let turns = 0; 
-/*registerOnclick((x, y) => {
+registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
   drawText(player, x-min*0.1, y+min*0.1, 'black', min * 0.3);
   player == 'X' ? player = 'O' : player = 'X';
   turns++
   console.log(x,y)
-}});*/
+}});
 const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
 drawText(player, max/2-min/2 - min*0.1 + (min * xPos/6), min*0.1 + min*yPos/6, 'black', min * 0.3)
