@@ -33,5 +33,5 @@ const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
 drawText(player, max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3)
 button.onclick(7) = {
-return : drawText(player, max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3);
+return : drawText(player, max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3)
 }
