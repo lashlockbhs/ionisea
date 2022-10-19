@@ -19,9 +19,8 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
-let tictacpos;
-const searchForClose = (array) =>{
-  tictacpos = array.findIndex((element - min/6 || element + min/6) <= x-50 || y-50 || x+50 || y+50 )
+const searchForClose = (array, x, y) =>{
+  return array.findIndex((element - min/6 || element + min/6) <= x-50 || y-50 || x+50 || y+50 )
 }
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
