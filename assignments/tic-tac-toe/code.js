@@ -15,18 +15,16 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
 }
 let turns = 0; 
 const coordArray = [
-  [],
-  [], 
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
+  [[], [], []],
+  [[], [], []],
+  [[], [], []],
 ]
+let tictacpos;
+const searchForClose = (array) =>{
+  tictacpos = array.findIndex((element - min/6 || element + min/6) <= x-50 || y-50 || x+50 || y+50 )
+}
 registerOnclick((x, y) => {
-  //for (let totalTurns = 0; totalTurns < 9; totalTurns++){
+  //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
   drawText(player, x-min*0.1, y+min*0.1, 'black', min * 0.3);
   player == 'X' ? player = 'O' : player = 'X';
