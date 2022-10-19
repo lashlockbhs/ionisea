@@ -5,7 +5,11 @@
 // is called an anonymous function. We'll discuss this in more detail in a few
 // weeks but for now you can just adapt this code.
 // for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
-
+const coordArray = [
+  [[], [], []],
+  [[], [], []],
+  [[], [], []],
+]
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 let player = 'X';
@@ -14,14 +18,6 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
 }
 let turns = 0; 
-const coordArray = [
-  [[], [], []],
-  [[], [], []],
-  [[], [], []],
-]
-const searchForClose = (array, x, y) =>{
-  return array.findIndex((element - min/6 || element + min/6) <= x-50 || y-50 || x+50 || y+50 )
-}
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
@@ -31,4 +27,4 @@ registerOnclick((x, y) => {
 }});
 const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
-//drawText(player, max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3)
+drawText(player, max/2-min/2 + (min * xPos/6) - min*0.1, min*yPos/6 + min*0.1, 'black', min * 0.3)
