@@ -30,7 +30,7 @@ const pyramid = (int) => {
    for (let ipos = 1; ipos <= pos; ipos++){
    array.push(pos)
  }}
- if (array = []){
+ if (array == []){
    console.log('you silly goose')
  }
  return array
