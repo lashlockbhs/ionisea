@@ -25,10 +25,10 @@ const anyOverOneHundred = (array) =>{
   return array.find(element => element > 100) ? true:false;
 }
 const pyramid = (int) => {
- const array = [];
+ const array = ['!'];
  for (let pos = 1; pos <= int; pos++){
    for (let ipos = 1; ipos <= pos; ipos++){
    array.push(pos)
  }}
- return (array == [] ?  'you silly goose' :  array)
+ return array
 }
