@@ -31,7 +31,7 @@ const pyramid = (int) => {
    array.push(pos)
  }}
  if (array == []){
-   console.log('you silly goose')
+  return  console.log('you silly goose')
  }
  return array
 }
