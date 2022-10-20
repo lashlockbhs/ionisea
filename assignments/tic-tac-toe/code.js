@@ -33,4 +33,4 @@ const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
 drawText(player, max/2-min/2 - min*0.1 + (min * xPos/6), min*0.1 + min*yPos/6, 'black', min * 0.3)
 
-drawText(player, max/2-min/2 - min*0.1 + (min * ((155)/ min/2)/6), min*0.1 + min*yPos/6, 'black', min * 0.3)
+drawText(player, max/2-min/2 - min*0.1 + (min * ((155)/min)/6), min*0.1 + min*yPos/6, 'black', min * 0.3)
