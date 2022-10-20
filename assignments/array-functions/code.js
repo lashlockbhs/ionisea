@@ -26,7 +26,7 @@ const anyOverOneHundred = (array) =>{
 }
 const pyramid = (int) => {
  if (int == 0){ return 'what the hell'}
- const array = ['!'];
+ const array = [];
  for (let pos = 1; pos <= int; pos++){
    for (let ipos = 1; ipos <= pos; ipos++){
    array.push(pos)
