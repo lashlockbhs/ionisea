@@ -30,8 +30,5 @@ const pyramid = (int) => {
    for (let ipos = 1; ipos <= pos; ipos++){
    array.push(pos)
  }}
- if (array == []){
-  return 'you silly goose'
- }
- return array
+ return array == [] ?  'you silly goose' :  array
 }
