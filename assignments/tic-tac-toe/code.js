@@ -26,9 +26,9 @@ registerOnclick((x, y) => {
   if (turns <9){
   drawText(player, x-min*0.1, y+min*0.1, 'black', min * 0.3);
   //player == 'X' ? player = 'O' : player = 'X';
-  player = turns
   turns++
-  console.log('player: ' + player, 'turn: ' + turns, 'coords: ' + (width/x),(height/y))
+  player = turns
+  console.log('player: ' + player, 'turn: ' + turns, 'coords: ' + Math.round(width/x),Math.round(height/y))
 }});
 const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
