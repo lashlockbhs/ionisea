@@ -18,5 +18,6 @@
   "10",
   "false",
   "The sum of the elements of the array.",
-  "Produces a new array containing all the words in words in uppercase."
+  "Produces a new array containing all the words in words in uppercase.",
+  "Starts by asking for an array, then creates a new array to be used later. This code then iterates through all elements of xs while pushing the position of (assumedly) another array from the end toward the beginning until xs' length value is reached, then finally returning the function."
 ]
