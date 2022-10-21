@@ -20,7 +20,7 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
 const shher = (array) =>{
 return array.findIndex((element) => element >12)
 }
-let turns = 0; 
+let turns = 1; 
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
@@ -31,5 +31,5 @@ registerOnclick((x, y) => {
 }});
 const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
-drawText(player, max/2-min/2 - min*0.1 + (min * xPos/6), min*0.1 + min*yPos/6, 'black', min * 0.3)
+//drawText(player, max/2-min/2 - min*0.1 + (min * xPos/6), min*0.1 + min*yPos/6, 'black', min * 0.3)
 
