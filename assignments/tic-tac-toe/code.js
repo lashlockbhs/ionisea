@@ -24,10 +24,9 @@ let turns = 0;
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
-  drawText(player, x-min*0.1, y+min*0.1, 'black', min * 0.3);
+  drawText(turns, x-min*0.1, y+min*0.1, 'black', min * 0.3);
   //player == 'X' ? player = 'O' : player = 'X';
   turns++
-  player = turns
   console.log('player: ' + player, 'turn: ' + turns, 'coords: ' + Math.round(width/x),Math.round(height/y))
 }});
 const yPos = 3 // 1, 3, 5
