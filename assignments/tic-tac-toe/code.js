@@ -27,7 +27,7 @@ registerOnclick((x, y) => {
   turns++
   drawText(turns, x-min*0.1, y+min*0.1, 'black', min * 0.3);
   //player == 'X' ? player = 'O' : player = 'X';
-  console.log('turn: ' + turns, 'coords: ' + Math.round((height/x)),Math.round((height/y)))
+  console.log('turn: ' + turns, 'coords: ' + Math.round((height/x)),Math.round((width/y)))
 }});
 const yPos = 3 // 1, 3, 5
 const xPos = 5 // 1, 3, 5  
