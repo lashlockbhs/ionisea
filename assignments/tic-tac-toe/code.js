@@ -30,6 +30,6 @@ registerOnclick((x, y) => {
   console.log('turn: ' + turns, 'coords: ' /x),Math.round((height/y))
 }});
 const yPos = 1 // 1, 3, 5
-const xPos = 0 // 1, 3, 5  
+const xPos = 1 // 1, 3, 5  
 drawText(player, max/2-min/2 - min*0.1 + (min * xPos/3), min*0.1 + min*yPos/3, 'black', min * 0.3)
 
