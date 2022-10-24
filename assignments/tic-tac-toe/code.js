@@ -12,7 +12,7 @@ const coordArray = [
   [[], [], []],
 ]
 const yPosConst = min*0.1 + min/6
-const xPosConst = 
+const xPosConst = max/2-min/2 - min*0.1 + min/6
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 let player = 'X';
