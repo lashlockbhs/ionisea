@@ -5,12 +5,14 @@
 // is called an anonymous function. We'll discuss this in more detail in a few
 // weeks but for now you can just adapt this code.
 // for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
+
 const coordArray = [
   [[], [], []],
   [[], [], []],
   [[], [], []],
 ]
-
+const yPosConst = min*0.1 + min/6
+const xPosConst = 
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 let player = 'X';
@@ -19,18 +21,25 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
 }
 let turns = 0; 
+let xPos;
+let yPos;
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
   turns++
-  drawText(turns, x-min*0.1, y+min*0.1, 'black', min * 0.33);
+  
   //player == 'X' ? player = 'O' : player = 'X';
   console.log('turn: ' + turns, 'coords: ' ,x,y)
   if (y < 1/3 * height){
-
+    yPos = yPosConst
+  } if (y < 2/3 * height){
+    yPos = yPosConst + 1/3 * height
+  } else {
+    yPos = yPosConst + 2/3 * height
   }
+  drawText(turns, x-min*0.1, yPos, 'black', min * 0.33);
 }});
-const yPos = 0 // 0, 1, 2
-const xPos = 0 // 0, 1, 2 
+//const yPos = 0 // 0, 1, 2
+//const xPos = 0 // 0, 1, 2 
 drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
 
