@@ -14,7 +14,7 @@ const coordArray = [
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 const yPosConst = min*0.1 + min/6
-const xPosConst = max/2-min/2 - min*0.1 + min/6
+const xPosConst = max/2-min/2 - min*0.11 + min/6
 let player = 'O';
 for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2 + min*editConst, height, max/2-min/2 + min*editConst, 0, 'black', 2)
