@@ -36,7 +36,8 @@ registerOnclick((x, y) => {
     yPos = yPosConst + 2/3 * height
   }
   if (x < max/2 - min/2 || x > max/2 + min/2){
-    console.log ('dumbass')}
+   return console.log ('dumbass')
+   }
   if (x < max/2 - min/2 + 1/3*min){
     xPos = xPosConst
   } else if (x < max/2 + min * 1/6){
