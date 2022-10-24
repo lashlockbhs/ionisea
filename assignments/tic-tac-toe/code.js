@@ -37,7 +37,7 @@ registerOnclick((x, y) => {
   }
   if (x < max/2 - min/2 + 1/3 *min){
     xPos = xPosConst
-  } else if (x < max/2 - min * (1+1/6)){
+  } else if (x < max/2 + min * 1/6){
     xPos = xPosConst + 1/3 * min
   } else if (x < max/2 + min/2){
     xPos = xPosConst + 2/3 * min
