@@ -10,6 +10,7 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
+
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 let player = 'X';
@@ -22,9 +23,10 @@ registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
   turns++
-  drawText(turns, x-min*0.1, y+min*0.1, 'black', min * 0.3);
+  drawText(turns, x-min*0.1, y+min*0.1, 'black', min * 0.33);
   //player == 'X' ? player = 'O' : player = 'X';
   console.log('turn: ' + turns, 'coords: ' ,x,y)
+  y < height/3 ? 
 }});
 const yPos = 0 // 0, 1, 2
 const xPos = 0 // 0, 1, 2 
