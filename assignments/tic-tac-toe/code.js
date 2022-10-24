@@ -35,13 +35,14 @@ registerOnclick((x, y) => {
   } else if (y < height) {
     yPos = yPosConst + 2/3 * height
   }
-  if (x < max/2 - min/2 + 1/3*min && x > max/2 - min/2){
+  if (x > max/2 - min/2){
+  if (x < max/2 - min/2 + 1/3*min){
     xPos = xPosConst
   } else if (x < max/2 + min * 1/6){
     xPos = xPosConst + 1/3 * min
   } else if (x < max/2 + min/2){
     xPos = xPosConst + 2/3 * min
-  }
+  }}
   drawText(player, xPos, yPos, 'black', min * 0.33);
   player == 'X' ? player = 'O' : player = 'X';
 }});
