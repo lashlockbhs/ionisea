@@ -24,7 +24,6 @@ let yPos;
 let player = 'X';
 registerOnclick((x, y) => {
   if (turns <9){
-  turns++
   if (y < 1/3 * height){
     yPos = 0
   } else if (y < 2/3 * height){
@@ -43,6 +42,7 @@ registerOnclick((x, y) => {
     xPos = 2
   }
  // y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? 
+  turns++
   console.log('turn: ' + turns, 'coords: ' ,x,y)
   drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
   player == 'X' ? player = 'O' : player = 'X';
