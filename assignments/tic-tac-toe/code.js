@@ -15,7 +15,7 @@ const max = Math.max(width,height)
 const min = Math.min(width,height)
 const yPosConst = min*0.1 + min/6
 const xPosConst = max/2-min/2 - min*0.1 + min/6
-let player = 'X';
+let player = 'O';
 for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2 + min*editConst, height, max/2-min/2 + min*editConst, 0, 'black', 2)
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
@@ -26,7 +26,7 @@ let yPos;
 registerOnclick((x, y) => {
   if (turns <9){
   turns++
-  player == 'X' ? player = 'O' : player = 'X';
+  
   console.log('turn: ' + turns, 'coords: ' ,x,y)
   if (y < 1/3 * height){
     yPos = yPosConst
@@ -43,6 +43,7 @@ registerOnclick((x, y) => {
     xPos = xPosConst + 2/3 * min
   }
   drawText(player, xPos, yPos, 'black', min * 0.3);
+  player == 'X' ? player = 'O' : player = 'X';
 }});
 //const yPos = 0 // 0, 1, 2
 //const xPos = 0 // 0, 1, 2 
