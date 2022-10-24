@@ -32,7 +32,7 @@ registerOnclick((x, y) => {
     yPos = yPosConst
   } else if (y < 2/3 * height){
     yPos = yPosConst + 1/3 * height
-  } else if (y > height) {
+  } else if (y < height) {
     yPos = yPosConst + 2/3 * height
   }
   if (x < max/2 - min/2 + 1/3 *min){
