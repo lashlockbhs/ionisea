@@ -21,12 +21,14 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
 let turns = 0; 
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
-  if (turns <9){
+  if (turns <99){
   turns++
   drawText(turns, x-min*0.1, y+min*0.1, 'black', min * 0.33);
   //player == 'X' ? player = 'O' : player = 'X';
   console.log('turn: ' + turns, 'coords: ' ,x,y)
-  y < height/3 ? 
+  if (y < 1/3 * height){
+
+  }
 }});
 const yPos = 0 // 0, 1, 2
 const xPos = 0 // 0, 1, 2 
