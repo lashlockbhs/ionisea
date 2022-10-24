@@ -32,8 +32,15 @@ registerOnclick((x, y) => {
     yPos = yPosConst
   } else if (y < 2/3 * height){
     yPos = yPosConst + 1/3 * height
-  } else {
+  } else if (y > height) {
     yPos = yPosConst + 2/3 * height
+  }
+  if (x > max/2 - min/2){
+    xPos = xPosConst
+  } else if (x > max/2 - min/6){
+    xPos = xPosConst + 1/3 * min
+  } else if (x < max/2 + min/2){
+    xPos = xPosConst + 2/3 * min
   }
   drawText(turns, x-min*0.1, yPos, 'black', min * 0.33);
 }});
