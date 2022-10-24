@@ -42,7 +42,7 @@ registerOnclick((x, y) => {
   } else if (x < max/2 + min/2){
     xPos = xPosConst + 2/3 * min
   }
-  drawText(player, xPos, yPos, 'black', min * 0.3);
+  drawText(player, xPos, yPos, 'black', min * 0.33);
   player == 'X' ? player = 'O' : player = 'X';
 }});
 //const yPos = 0 // 0, 1, 2
