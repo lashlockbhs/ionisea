@@ -24,15 +24,13 @@ let turns = 0;
 let xPos;
 let yPos;
 registerOnclick((x, y) => {
-  //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
   if (turns <9){
   turns++
-  
   //player == 'X' ? player = 'O' : player = 'X';
   console.log('turn: ' + turns, 'coords: ' ,x,y)
   if (y < 1/3 * height){
     yPos = yPosConst
-  } if (y < 2/3 * height){
+  } else if (y < 2/3 * height){
     yPos = yPosConst + 1/3 * height
   } else {
     yPos = yPosConst + 2/3 * height
