@@ -17,9 +17,6 @@ for (let editConst = 0; editConst <= 1; editConst += 1/3){
   drawLine(max/2-min/2 + min*editConst, height, max/2-min/2 + min*editConst, 0, 'black', 2)
   drawLine(max/2-min/2, height*editConst, max/2+min/2, height*editConst, 'black', 2)
 }
-const shher = (array) =>{
-return array.findIndex((element) => element >12)
-}
 let turns = 0; 
 registerOnclick((x, y) => {
   //for (let totalTurns = 0; totalTurns < 9; totalTurns++){ // (does not work!!!!!!! used if )
@@ -31,5 +28,5 @@ registerOnclick((x, y) => {
 }});
 const yPos = 0 // 0, 1, 2
 const xPos = 0 // 0, 1, 2 
-drawText(player, max/2-min/2 - min*0.1 + (min * xPos/3)+min/6, min*0.1 + min*yPos/3 + min/6, 'black', min * 0.3)
+drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
 
