@@ -46,7 +46,7 @@ registerOnclick((x, y) => {
     coordArray[yPos][xPos].push(player)
     turns++
     console.log('turn: ' + turns, 'coords: ' ,x,y)
-    drawText(player, max/2-min/2 - min*0.15 +min/6 + (min * xPos/3), min*0.11 + min/6 + min*yPos/3, 'black', min * 0.33)
+    drawText(player, max/2-min/2 - min*0.15 +min/6 + (min * xPos/3), min*0.11 + min/6 + min*yPos/3, 'black', min * 0.3)
     player == '⬜' ? player = '⬛' : player = '⬜';
     console.log (coordArray)
 }}}});
