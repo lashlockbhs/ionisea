@@ -20,7 +20,7 @@ for (let editVar = 0; editVar <= 1; editVar += 1/3){
 let turns = 0; 
 let xPos;
 let yPos;
-let player = 'X';
+let player = '😭';
 registerOnclick((x, y) => {
   if (turns <9){
  if (y < 1/3 * height){
@@ -47,7 +47,7 @@ registerOnclick((x, y) => {
     turns++
     console.log('turn: ' + turns, 'coords: ' ,x,y)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-    player == 'X' ? player = '🤓' : player = 'X';
+    player == '😭' ? player = '🤓' : player = '😭';
     console.log (coordArray)
 }}}});
 
