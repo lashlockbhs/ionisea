@@ -31,8 +31,9 @@ registerOnclick((x, y) => {
     yPos = 2
   } 
   if (x < max/2 - min/2 || x > max/2 + min/2){
+   for (let i = 0; i<300; i++){
    return console.log ('dumbass')
-   }else{
+  }}
   if (x < max/2 - min/6){
     xPos = 0
   } else if (x < max/2 + min/6){
@@ -42,11 +43,11 @@ registerOnclick((x, y) => {
   } 
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
   if (coordArray[yPos][xPos] == ''){
-  coordArray[yPos][xPos].push(player)
-  turns++
-  console.log('turn: ' + turns, 'coords: ' ,x,y)
-  drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-  player == 'X' ? player = 'O' : player = 'X';
-  console.log (coordArray)
-}}}});
+    coordArray[yPos][xPos].push(player)
+    turns++
+    console.log('turn: ' + turns, 'coords: ' ,x,y)
+    drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
+    player == 'X' ? player = 'O' : player = 'X';
+    console.log (coordArray)
+}}});
 
