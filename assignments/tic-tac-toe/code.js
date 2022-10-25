@@ -15,7 +15,7 @@ const max = Math.max(width,height)
 const min = Math.min(width,height)
 for (let editVar = 0; editVar <= 1; editVar += 1/3){
   drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'red', 4)
-  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'red', 3.9)
+  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'red', 4)
 }
 let turns = 0; 
 let xPos;
