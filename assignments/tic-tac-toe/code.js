@@ -32,8 +32,8 @@ registerOnclick((x, y) => {
   } 
   if (x < max/2 - min/2 || x > max/2 + min/2){
    for (let i = 0; i<300; i++){
-   return console.log ('dumbass')
-  }}
+    console.log ('dumbass')
+  }}else{
   if (x < max/2 - min/6){
     xPos = 0
   } else if (x < max/2 + min/6){
@@ -49,5 +49,5 @@ registerOnclick((x, y) => {
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     player == 'X' ? player = 'O' : player = 'X';
     console.log (coordArray)
-}}});
+}}}});
 
