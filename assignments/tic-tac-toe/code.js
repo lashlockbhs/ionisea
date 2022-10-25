@@ -47,7 +47,7 @@ registerOnclick((x, y) => {
     turns++
     console.log('turn: ' + turns, 'coords: ' ,x,y)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-    player == 'X' ? player = 'O' : player = 'X';
+    player == 'X' ? player = '🤓' : player = 'X';
     console.log (coordArray)
 }}}});
 
