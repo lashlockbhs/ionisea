@@ -42,6 +42,7 @@ registerOnclick((x, y) => {
     xPos = 2
   } 
   y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
+  console.log (coordArray[yPos][xPos])
   turns++
   console.log('turn: ' + turns, 'coords: ' ,x,y)
   drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
