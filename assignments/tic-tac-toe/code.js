@@ -5,7 +5,7 @@
 // is called an anonymous function. We'll discuss this in more detail in a few
 // weeks but for now you can just adapt this code.
 // for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
-
+drawFilledRect(width,height,widt)
 const coordArray = [
   [[], [], []],
   [[], [], []],
