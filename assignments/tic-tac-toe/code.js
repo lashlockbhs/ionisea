@@ -43,7 +43,7 @@ registerOnclick((x, y) => {
   } 
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
   console.log (coordArray)
-  if (coordArray[yPos][xPos] != ''){
+  if (coordArray[yPos][xPos] == ''){
   coordArray[yPos][xPos].push(player)
   turns++
   console.log('turn: ' + turns, 'coords: ' ,x,y)
