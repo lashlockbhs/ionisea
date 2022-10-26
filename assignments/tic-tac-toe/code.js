@@ -31,8 +31,8 @@ registerOnclick((x, y) => {
     yPos = 2
   } 
   if (x < max/2 - min/2 || x > max/2 + min/2){
-   for (let i = 0; i<250000; i++){
-    await(5600)
+   await(5600)
+   for (let i = 0; i<250000; i++){ 
     //console.log (Math.random()/Math.random() + ' 🖕🤓 ' + 'click in a box') 
   }}else{
   if (x < max/2 - min/6){
