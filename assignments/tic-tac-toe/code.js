@@ -31,8 +31,8 @@ registerOnclick((x, y) => {
     yPos = 2
   } 
   if (x < max/2 - min/2 || x > max/2 + min/2){
-    let ha = 0;
-    let funny = 0;
+    let ha;
+    let funny;
    for (let i = 0; i<10000000; i++){ 
     ha = Math.random()/Math.random()
     funny < ha ? funny = ha : 0;
