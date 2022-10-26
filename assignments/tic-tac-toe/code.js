@@ -12,7 +12,7 @@ const coordArray = [
 ]
 const max = Math.max(width,height)
 const min = Math.min(width,height)
-for (let editVar = 0; editVar <= 1; editVar += 1/3){
+for (let editVar = 1/3; editVar < 1; editVar += 1/3){
   drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'black', 4)
   drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'black', 4)
 }
