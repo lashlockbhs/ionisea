@@ -13,8 +13,8 @@ const coordArray = [
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 for (let editVar = 0; editVar <= 1; editVar += 1/3){
-  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'blue', 4)
-  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'blue', 4)
+  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'black', 4)
+  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'black', 4)
 }
 let turns = 0; 
 let xPos;
@@ -32,9 +32,11 @@ registerOnclick((x, y) => {
     yPos = 2
   } 
   if (x < max/2 - min/2 || x > max/2 + min/2){
+    let ha = 0;
    for (let i = 0; i<100000; i++){ 
-    console.log (Math.random()/Math.random() + ' 🖕🤓 ' + 'click in a box') 
-  }}else{
+    console.log (Math.random()/Math.random()) 
+  }
+  }else{
   if (x < max/2 - min/6){
     xPos = 0
   } else if (x < max/2 + min/6){
