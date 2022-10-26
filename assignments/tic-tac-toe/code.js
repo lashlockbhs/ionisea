@@ -36,7 +36,7 @@ registerOnclick((x, y) => {
     let funny = 0;
    for (let i = 0; i<250000; i++){ 
     ha = Math.random()
-    funny < ha ? funny = ha : 0;
+    funny > ha ? funny = ha : 0;
   }
   console.log(funny)
   }else{
