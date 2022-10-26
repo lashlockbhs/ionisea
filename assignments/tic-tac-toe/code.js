@@ -5,7 +5,6 @@
 // is called an anonymous function. We'll discuss this in more detail in a few
 // weeks but for now you can just adapt this code.
 // for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
-drawFilledRect(0, 0, width,height,'green')
 const coordArray = [
   [[], [], []],
   [[], [], []],
@@ -14,8 +13,8 @@ const coordArray = [
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 for (let editVar = 0; editVar <= 1; editVar += 1/3){
-  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'red', 4)
-  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'red', 4)
+  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'blue', 4)
+  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'blue', 4)
 }
 let turns = 0; 
 let xPos;
