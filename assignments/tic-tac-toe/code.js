@@ -23,7 +23,6 @@ const player1 = '🟥'
 const player2 = '⬛'
 let player = player1;
 registerOnclick((x, y) => {
-  if (turns <9){
  if (y < 1/3 * height){
     yPos = 0
   } else if (y < 2/3 * height){
@@ -50,10 +49,9 @@ registerOnclick((x, y) => {
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
   if (coordArray[yPos][xPos] == ''){
     coordArray[yPos][xPos].push(player)
-    turns++
     console.log('turn: ' + turns, 'coords: ' ,x,y)
     drawText(player, max/2-min/2 - min*0.15 +min/6 + (min * xPos/3), min*0.11 + min/6 + min*yPos/3, 'black', min * 0.3)
     player == player1 ? player = player2 : player = player1;
     console.log (coordArray)
-}}}});
+}}});
 
