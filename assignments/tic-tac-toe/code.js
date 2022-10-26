@@ -19,7 +19,7 @@ for (let editVar = 0; editVar <= 1; editVar += 1/3){
 let turns = 0; 
 let xPos;
 let yPos;
-const player1 = '⬜'
+const player1 = '🟥'
 const player2 = '⬛'
 let player = player1;
 registerOnclick((x, y) => {
