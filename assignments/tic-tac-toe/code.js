@@ -35,7 +35,7 @@ registerOnclick((x, y) => {
     const funny = [];
    for (let i = 0; i<25000; i++){ 
     ha = Math.random()/Math.random()
-    funny < ha ? funny.push(ha) : 0;
+    funny[funny.length] < ha ? funny.push(ha) : 0;
   }
   console.log(funny)
   }else{
