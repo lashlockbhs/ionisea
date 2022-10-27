@@ -43,3 +43,9 @@ const lastName = (string) =>{
 const concatenate = (stringA, stringB) =>{
   return stringA+stringB
 }
+const firstCharacter = (string) =>{
+  return string[0]
+}
+const lastCharacter = (string) =>{
+  return string[string.length-1]
+}
