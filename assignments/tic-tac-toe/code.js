@@ -45,7 +45,7 @@ registerOnclick((x, y) => {
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
   if (coordArray[yPos][xPos] == ''){
     coordArray[yPos][xPos].push(player)
-    drawText(player, max/2-min/2 - min*0.15 +min/6 + (min * xPos/3), min*0.11 + min/6 + min*yPos/3, 'black', min * 0.3)
+    drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     player == player1 ? player = player2 : player = player1;
     console.log (coordArray, 'most recent: ', xPos, yPos)
 }}});
