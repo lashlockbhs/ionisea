@@ -29,7 +29,7 @@ registerOnclick((x, y) => {
    drawText('idiot', x-20, y, 'black', 25)
    /* let ha = 0;
     let funny = 0;
-   for (let i = 0; i<1100000000; i++){ 
+   for (let i = 0; i<100000000; i++){ 
     ha = Math.random()/Math.random()
     funny < ha ? funny = ha : 0;
   }
