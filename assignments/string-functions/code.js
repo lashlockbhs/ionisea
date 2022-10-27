@@ -26,5 +26,5 @@ const secondHalf = (string) =>{
   return string.substring(Math.floor(string.length/2), string.length)
 }
 const upDown = (string) => {
-  return string[string.length].toUpperCase() + string[string.length].toLowerCase()
+  return string[string.length-1].toUpperCase() + string[string.length-1].toLowerCase()
 }
