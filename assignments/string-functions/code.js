@@ -16,3 +16,6 @@ const simplePigLatin =(string, vIndex)=>{
 const isAllUpperCase = (string) =>{
   return string.search(/[abcdefghijklmnopqrstuvwxyz]/) == -1
 }
+const sameIgnoringCase = (stringA, stringB) =>{
+  return stringA.toUpperCase() == stringB.toUpperCase()
+}
