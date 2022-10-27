@@ -14,8 +14,8 @@ for (let editVar = 1/3; editVar < 1; editVar += 1/3){
 let turns = 0; 
 let xPos;
 let yPos;
-const player1 ='x'
-const player2 = 'o'
+const player1 ='X'
+const player2 = 'O'
 let player = player1;
 registerOnclick((x, y) => {
  if (y < 1/3 * height){
