@@ -1,3 +1,3 @@
 const findFnord = (string) =>{
-  return string.findIndex("fnord")
+  return string.find("fnord")
 }
