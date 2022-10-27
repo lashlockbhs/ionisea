@@ -13,3 +13,6 @@ const swapFrontAndBack = (string) => {
 const simplePigLatin =(string, vIndex)=>{
   return string.substring(vIndex)+string.substring(0,vIndex)+'ay'
 }
+const isAllUpperCase = (string) =>{
+  return string.search(/[abcdefghijklmnopqrstuvwxyz]/) == -1
+}
