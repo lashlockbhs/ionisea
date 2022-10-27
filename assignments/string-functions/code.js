@@ -28,3 +28,6 @@ const secondHalf = (string) =>{
 const upDown = (string) => {
   return string.toUpperCase() + string.toLowerCase()
 }
+const everyOther = (string) => {
+  
+}
