@@ -20,5 +20,5 @@ const sameIgnoringCase = (stringA, stringB) =>{
   return stringA.toUpperCase() == stringB.toUpperCase()
 }
 const firstHalf = (string) => {
-  return string.substring(0, Math.floor(string.length/2)) + string.substring(Math.floor(string.length/2), string.length)
+  return string.substring(0, Math.floor(string.length/2))
 }
