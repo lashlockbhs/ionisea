@@ -37,6 +37,6 @@ const upDownLastCharacter = (string) => {
 const firstName = (string) =>{
   return string.substring(0, string.indexOf(' '))
 }
-const firstName = (string) =>{
+const lastName = (string) =>{
   return string.substring(string.indexOf(' '), string.length)
 }
