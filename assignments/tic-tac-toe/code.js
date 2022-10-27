@@ -32,8 +32,8 @@ registerOnclick((x, y) => {
    for (let i = 0; i<1100000000; i++){ 
     ha = Math.random()/Math.random()
     funny < ha ? funny = ha : 0;
-  }*/
-  console.log(funny)
+  }
+  console.log(funny)*/
   }else{
   if (x < max/2 - min/6){
     xPos = 0
