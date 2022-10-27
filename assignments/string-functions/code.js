@@ -31,3 +31,6 @@ const upDown = (string) => {
 const everyOther = (string) => {
   return string[0]+string[2]+string[4]
 }
+const upDown = (string) => {
+  return string[string.length-1].toUpperCase() + string[string.length-1].toLowerCase()
+}
