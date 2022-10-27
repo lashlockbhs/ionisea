@@ -8,5 +8,5 @@ const firstAndLast = (string) =>{
   return string[0] + string[string.length -1]
 }
 const swapFrontAndBack = (string) => {
-  return string[string.length] + string.substring(1,string.length-1) + string[0]
+  return string[string.length-1] + string.substring(1,string.length-2) + string[0]
 }
