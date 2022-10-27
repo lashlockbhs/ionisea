@@ -49,3 +49,9 @@ const firstCharacter = (string) =>{
 const lastCharacter = (string) =>{
   return string[string.length-1]
 }
+const allButFirst = (string) => {
+  return string.substring(1)
+}
+const firstThree = (s) => {
+  return s.substring(0,3)
+}
