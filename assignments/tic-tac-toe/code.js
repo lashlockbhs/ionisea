@@ -26,7 +26,7 @@ registerOnclick((x, y) => {
     yPos = 2
   } 
   if (x < max/2 - min/2 || x > max/2 + min/2){
-   drawText('idiot', x-height, y, 'black', height/3)
+   drawText('idiot', x-height*.183, y, 'black', height/3)
    /* let ha = 0;
     let funny = 0;
    for (let i = 0; i<100000000; i++){ 
