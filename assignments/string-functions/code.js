@@ -22,3 +22,6 @@ const sameIgnoringCase = (stringA, stringB) =>{
 const firstHalf = (string) => {
   return string.substring(0, Math.floor(string.length/2))
 }
+const secondHalf = (string) =>{
+  return string.substring(Math.floor(string.length/2), string.length)
+}
