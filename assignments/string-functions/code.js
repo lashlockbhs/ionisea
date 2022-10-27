@@ -40,3 +40,6 @@ const firstName = (string) =>{
 const lastName = (string) =>{
   return string.substring(string.indexOf(' ') + 1, string.length)
 }
+const concatenate = (stringA, stringB) =>{
+  return stringA+stringB
+}
