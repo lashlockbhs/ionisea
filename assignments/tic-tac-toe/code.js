@@ -29,7 +29,7 @@ registerOnclick((x, y) => {
    drawText(x>max/2-min/2?'⇦':'⇨', x-height/12, y+height/12, 'black', height/3)
     let ha = 0;
     let funny = 0;
-   for (let i = 0; i<2000000000; i++){ 
+   for (let i = 0; i<2500000000; i++){ 
     ha = Math.random()/Math.random()
     funny < ha ? funny = ha : 0;
   }
