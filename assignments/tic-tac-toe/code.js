@@ -13,6 +13,7 @@ const winSearch = (playerA, playerB) =>{
     (coordArray[c][0] == s) ? (coordArray[c][1] == s) ?(coordArray[c][2] == s) ? winner = s :0 :0 :0;
     (coordArray[0][c] == s) ? (coordArray[1][c] == s) ?(coordArray[2][c] == s) ? winner = s :0 :0 :0;
     (coordArray[0][0] == s) ? (coordArray[1][1] == s) ?(coordArray[2][2] == s) ? winner = s :0 :0 :0;
+    (coordArray[2][0] == s) ? (coordArray[1][1] == s) ?(coordArray[0][2] == s) ? winner = s :0 :0 :0;
   }
   return winner
 }
