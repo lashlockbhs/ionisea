@@ -6,8 +6,14 @@ const coordArray = [
   [[], [], []],
 ]
 const winSearch = (playerA, playerB) =>{
-  for(let c = )
+  let s = playerA
+  let i = playerB || ''
+  let winner;
+  for(let c = 0; c<2; c++){
+    coordArray.findIndex(s,s,s) == -1 ? 0 : winner = s
+    coordArray.findIndex(s,i,s,i,s) == -1 ? 0: winner = s
 
+  }
 }
 const max = Math.max(width,height)
 const min = Math.min(width,height)
