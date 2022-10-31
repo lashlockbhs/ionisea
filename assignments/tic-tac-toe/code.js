@@ -5,6 +5,10 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
+const winSearch = (playerA, playerB) =>{
+  for()
+
+}
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 for (let editVar = 1/3; editVar < 1; editVar += 1/3){
