@@ -10,7 +10,7 @@ const winSearch = (playerA, playerB) =>{
   let i = playerB || ''
   let winner;
   for(let c = 0; c<2; c++){
-    (coordArray[c][0] != i) ? (coordArray[c][1] != i) ?(coordArray [c][2] != i) ? winner = s :0 :0 :0
+    (coordArray[c][0] == s) ? (coordArray[c][1] == s) ?(coordArray [c][2] == s) ? winner = s :0 :0 :0
   }
   return winner
 }
