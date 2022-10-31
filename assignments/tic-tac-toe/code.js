@@ -10,9 +10,7 @@ const winSearch = (playerA, playerB) =>{
   let i = playerB || ''
   let winner;
   for(let c = 0; c<2; c++){
-    coordArray.findIndex(s,s,s) == -1 ? 0 : winner = s
-    coordArray.findIndex(s,i,s,i,s) == -1 ? 0: winner = s
-
+    coordArray[1,2,3]||[4,5,6]||[7,8,9] == s,s,s ? 0 : winner = s
   }
 }
 const max = Math.max(width,height)
