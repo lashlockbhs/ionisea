@@ -12,7 +12,7 @@ const winSearch = (playerA, playerB) =>{
   for(let c = 0; c<2; c++){
     (coordArray[c][0] == s) ? (coordArray[c][1] == s) ?(coordArray[c][2] == s) ? winner = s :0 :0 :0;
     (coordArray[0][c] == s) ? (coordArray[1][c] == s) ?(coordArray[2][c] == s) ? winner = s :0 :0 :0;
-    
+
   }
   return winner
 }
@@ -50,8 +50,8 @@ registerOnclick((x, y) => {
   if (coordArray[yPos][xPos] == ''){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-    player == player1 ? player = player2 : player = player1;
     winSearch(player1,player2) ? drawText(player + 'wins!', width/2, height/2, height/2) : 0;
+    player == player1 ? player = player2 : player = player1;
     console.log (coordArray, 'most recent: ', xPos, yPos, winSearch(player1,player2))
     
 }}});
