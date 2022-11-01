@@ -30,5 +30,5 @@ const pyramid = (int) => {
    for (let ipos = 1; ipos <= pos; ipos++){
    array.push(pos)
  }}
- return array + '🖕'
+ return array
 }
