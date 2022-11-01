@@ -52,6 +52,6 @@ registerOnclick((x, y) => {
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     winSearch(player) ? drawText(player + 'wins!', width/3, height/2,'blue', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
-    console.log (coordArray, 'most recent: ', xPos, yPos, winSearch(player1,player2))
+    console.log (coordArray, 'most recent: ', xPos, yPos, winSearch(player))
 }}});
 
