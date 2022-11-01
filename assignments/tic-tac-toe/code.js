@@ -5,9 +5,9 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
+let winner;
 const winSearch = (player) =>{
   let s = player
-  let winner;
   for(let c = 0; c<2; c++){
     (coordArray[c][0] == s) ? (coordArray[c][1] == s) ?(coordArray[c][2] == s) ? winner = s :0 :0 :0;
     (coordArray[0][c] == s) ? (coordArray[1][c] == s) ?(coordArray[2][c] == s) ? winner = s :0 :0 :0;
@@ -47,7 +47,7 @@ registerOnclick((x, y) => {
     xPos = 2
   } 
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
-  if (coordArray[yPos][xPos] == ''){
+  if (coordArray[yPos][xPos] == '' && winner == undefined){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'most recent: ', xPos, yPos, winSearch(player))
