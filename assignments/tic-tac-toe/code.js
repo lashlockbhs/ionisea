@@ -50,7 +50,7 @@ registerOnclick((x, y) => {
   if (coordArray[yPos][xPos] == '' && winner == undefined){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-    console.log (coordArray, 'most recent: ', xPos, yPos, player, 'winner: ' + winSearch(player))
+    console.log (coordArray, 'most recent: ', xPos, yPos, player, 'winner: ' + winSearch(player)[1])
     drawLine(winner[1],winner[2],winner[3],winner[4],winner[0] == player1 ? 'blue' : 'red', 5)
     
     player == player1 ? player = player2 : player = player1;
