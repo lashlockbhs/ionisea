@@ -9,7 +9,7 @@ let winner;
 const player1 ='X'
 const player2 = 'O'
 const filled = () =>{
-  let check
+  let check = 0
   for (const element of coordArray){
     element == player1 || player2 ? check++ : 0;
   }
