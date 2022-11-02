@@ -13,7 +13,7 @@ const filled = () =>{
   for (const element of coordArray){
     element == player1 || player2 ? check++ : 0;
   }
-  check == 9
+  return check == 9
 }
 const winSearch = (player) =>{
   console.log (filled())
