@@ -53,6 +53,6 @@ registerOnclick((x, y) => {
     winSearch(player) == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
     turns++
-    turns == 10 && winner == undefined ? winner = 'no';
+    turns == 10 && winner == undefined ? winner = 'no': 0;
 }}});
 
