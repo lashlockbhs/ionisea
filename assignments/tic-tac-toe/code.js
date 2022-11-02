@@ -11,7 +11,7 @@ const player2 = 'O'
 const filled = () =>{
   let check = 0
   for (const element of coordArray){
-    element == player1 || player2 ? check++ : 0;
+    element == (player1 || player2) ? check++ : 0;
   }
   return check == 9
 }
