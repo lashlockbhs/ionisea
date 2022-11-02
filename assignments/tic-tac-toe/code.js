@@ -8,12 +8,8 @@ const coordArray = [
 let winner;
 const player1 ='X'
 const player2 = 'O'
-const filled = (c) =>{
- return(coordArray[c].find(element => element != (player1 || player2)) == undefined)
-}
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
-    filled(c) ? winner = 'no' : 0;
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player :0 :0 :0;
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player :0 :0 :0;
     (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player :0 :0 :0;
@@ -50,11 +46,12 @@ registerOnclick((x, y) => {
     xPos = 2
   } 
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
-  if (coordArray[yPos][xPos] == '' && winner == undefined){
+  if (coordArray[yPos][xPos] == '' && winner == undefined && turns < 9){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'most recent: ', xPos, yPos)
     winSearch(player) == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
+    turns++
 }}});
 
