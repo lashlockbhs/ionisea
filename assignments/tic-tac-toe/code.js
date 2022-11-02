@@ -13,6 +13,7 @@ const filled = () =>{
 }
 const winSearch = (player) =>{
   filled() ? winner == 'draw' : 0;
+  console.log (filled())
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player :0 :0 :0;
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player :0 :0 :0;
