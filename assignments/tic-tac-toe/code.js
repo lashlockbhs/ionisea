@@ -8,8 +8,11 @@ const coordArray = [
 let winner;
 const player1 ='X'
 const player2 = 'O'
+const filled = () =>{
+  coordArray == [[player1||player2],[player1||player2],[player1||player2]],[[player1||player2],[player1||player2],[player1||player2]]
+}
 const winSearch = (player) =>{
-  console.log(coordArray.filter((x) => x == player1 || player2).length == 9)
+  filled() ? winner == 'draw' : 0;
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player :0 :0 :0;
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player :0 :0 :0;
