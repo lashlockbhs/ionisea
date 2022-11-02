@@ -8,16 +8,16 @@ const coordArray = [
 let winner;
 const player1 ='X'
 const player2 = 'O'
-const filled = () =>{
- console.log (coordArray.find(element => element != (player1 || player2)) == undefined)
+const filled = (c) =>{
+ console.log (coordArray[0].find(element => element != (player1 || player2)) == undefined)
 }
 const winSearch = (player) =>{
-  console.log (filled())
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player :0 :0 :0;
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player :0 :0 :0;
     (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player :0 :0 :0;
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player :0 :0 :0;
+    console.log (filled(c))
   }
   return winner
 }
