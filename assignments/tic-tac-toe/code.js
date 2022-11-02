@@ -6,12 +6,15 @@ const coordArray = [
   [[], [], []],
 ]
 let winner;
+const player1 ='X'
+const player2 = 'O'
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player :0 :0 :0;
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player :0 :0 :0;
     (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player :0 :0 :0;
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player :0 :0 :0;
+    coordArray.filter((x) => x == player1 || player2).length == 9 ? winner = 'none' :0; 
   }
   return winner
 }
@@ -24,8 +27,6 @@ for (let editVar = 1/3; editVar < 1; editVar += 1/3){
 let turns = 0; 
 let xPos;
 let yPos;
-const player1 ='X'
-const player2 = 'O'
 let player = player1;
 registerOnclick((x, y) => {
  if (y < 1/3 * height){
