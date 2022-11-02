@@ -9,7 +9,7 @@ let winner;
 const player1 ='X'
 const player2 = 'O'
 const filled = () =>{
- console.log (coordArray.find(element => element != '') == undefined)
+ console.log (coordArray.find(element => element === '') == undefined)
 }
 const winSearch = (player) =>{
   console.log (filled())
