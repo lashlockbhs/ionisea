@@ -9,7 +9,7 @@ let winner;
 const player1 ='X'
 const player2 = 'O'
 const filled = () =>{
- return coordArray.find(element => element == '') == undefined 
+ return coordArray.find(element => element != player1 || player2) == undefined 
 }
 const winSearch = (player) =>{
   console.log (filled())
@@ -53,7 +53,7 @@ registerOnclick((x, y) => {
   if (coordArray[yPos][xPos] == '' && winner == undefined){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-    console.log (coordArray, 'most recent: ', xPos, yPos, winSearch(player))
+    console.log (coordArray, 'most recent: ', xPos, yPos)
     winSearch(player) == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
 }}});
