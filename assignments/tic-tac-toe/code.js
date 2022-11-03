@@ -11,10 +11,10 @@ let inertObject234;
 const winSearch = (player) =>{
   let winner
   for(let c = 0; c<=2; c++){
-    (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player:0 :0 :0;
-    (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player:0 :0 :0;
-    (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player:0 :0 :0;
-    (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
+    (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player + c:0 :0 :0;
+    (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player + c:0 :0 :0;
+    (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player + c:0 :0 :0;
+    (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player + c:0 :0 :0;
   }
   return winner
 }
@@ -54,6 +54,6 @@ registerOnclick((x, y) => {
     winSearch(player) == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
     turns++
-    turns == 9 && winSearch(player) == undefined ? drawText('draw', width/12, height*0.8, 'red', height): 0;
+    turns == 9 && winner == undefined ? drawText('draw', width/12, height*0.8, 'red', height): 0;
 }}});
 
