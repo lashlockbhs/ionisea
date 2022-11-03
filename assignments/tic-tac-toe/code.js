@@ -52,7 +52,7 @@ registerOnclick((x, y) => {
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'most recent: ', xPos, yPos, winner)
-    winSearch(player)[1] == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
+    winSearch(player).substring(0,1) == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
     turns++
     turns == 9 && winner == undefined ? drawText('draw', width/12, height*0.8, 'red', height): 0;
