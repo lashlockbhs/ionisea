@@ -14,7 +14,7 @@ const winSearch = (player) =>{
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player:0 :0 :0;
     (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player:0 :0 :0;
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
-    
+
   }
   return winner
 }
@@ -51,7 +51,7 @@ registerOnclick((x, y) => {
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'most recent: ', xPos, yPos, winSearch(player))
-    winSearch(player) == player ? drawText(player + ' wins!', width/4, height/2,'blue', height/2) : 0;
+    winSearch(player) == player ? drawText(player + ' wins!', width/4, height/2,'black', height/2) : 0;
     player == player1 ? player = player2 : player = player1;
     turns++
     turns == 9 && winSearch(player) == undefined ? drawText('draw', width/12, height*0.8, 'red', height): 0;
