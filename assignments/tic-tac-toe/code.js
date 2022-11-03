@@ -1,4 +1,4 @@
-// for me: drawLine(x1, y1, x2, y2, color, lineWidth)
+// for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
 
 const coordArray = [
   [[], [], []],
