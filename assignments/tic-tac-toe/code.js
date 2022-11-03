@@ -16,7 +16,7 @@ const winSearch = (player) =>{
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
 
   }
-  console.log(winner.toString())
+  console.log(winner.prototype.toString())
   return winner
 }
 const max = Math.max(width,height)
