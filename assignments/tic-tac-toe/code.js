@@ -7,14 +7,13 @@ const coordArray = [
 ]
 const player1 ='X' //will go first
 const player2 = 'O'
-let inertObject234;
+let winner
 const winSearch = (player) =>{
-  let winner
   for(let c = 0; c<=2; c++){
-    (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player + c:0 :0 :0;
-    (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player + c:0 :0 :0;
-    (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player + c:0 :0 :0;
-    (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player + c:0 :0 :0;
+    (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player:0 :0 :0;
+    (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player:0 :0 :0;
+    (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player:0 :0 :0;
+    (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
   }
   return winner
 }
