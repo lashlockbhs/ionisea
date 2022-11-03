@@ -6,8 +6,8 @@ const coordArray = [
   [[], [], []],
 ]
 let winner;
-const player1 ='fu'
-const player2 = 'ck'
+const player1 ='!'
+const player2 = '?'
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player :0 :0 :0;
