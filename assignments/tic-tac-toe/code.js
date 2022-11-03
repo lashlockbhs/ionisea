@@ -16,7 +16,6 @@ const winSearch = (player) =>{
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
 
   }
-  console.log(winner.prototype.toString())
   return winner
 }
 const max = Math.max(width,height)
@@ -47,6 +46,7 @@ registerOnclick((x, y) => {
   } else if (x < max/2 + min/2){
     xPos = 2
   } 
+  //ill use this if you say i can
   //y < 1/3 * height ? yPos = 0 : y < 2/3 * height ? yPos = 1 : yPos = 2;
   if (coordArray[yPos][xPos] == '' && winSearch(player) == undefined){
     coordArray[yPos][xPos].push(player)
