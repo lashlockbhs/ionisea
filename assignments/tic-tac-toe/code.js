@@ -5,7 +5,7 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
-const player1 ='X' //will go first
+const player1 = 'X' //will go first
 const player2 = 'O'
 let winner
 const winSearch = (player) =>{
@@ -14,6 +14,7 @@ const winSearch = (player) =>{
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player:0 :0 :0;
     (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player:0 :0 :0;
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
+    
   }
   return winner
 }
