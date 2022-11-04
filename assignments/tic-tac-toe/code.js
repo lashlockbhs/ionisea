@@ -16,8 +16,8 @@ if (winner[1] == 'h'){
   winner[2] == 1 ? drawLine(width/2-height/2, height, width/2+height/2, 0, 'grey', 8) : drawLine(width/2-height/2, 0, width/2+height/2,height, 'gray', 8);
 }
 }
+let winner
 const winSearch = (player) =>{
-  let winner
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player + 'h' + c:0 :0 :0;
     (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player + 'v' + c:0 :0 :0;
