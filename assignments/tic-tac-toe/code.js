@@ -25,8 +25,12 @@ const winSearch = (player) =>{
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player + 'd' + 1:0 :0 :0;
 
   }
+  if (winner != undefined){
   gameWin(winner)
   return player
+  } else {
+    return winner
+  }
 }
 const max = Math.max(width,height)
 const min = Math.min(width,height)
