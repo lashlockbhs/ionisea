@@ -13,7 +13,7 @@ if (winner[1] == 'h'){
 } else if (winner[1] == 'v'){
   drawLine(width/2-height/3+height*(winner[2]/3),height, width/2-height/3+height*(winner[2]/3), 0, 'gray', 8)
 } else if (winner[1] == 'd'){
-  winner[2] == 0 ? drawLine(width/2-height/2, height, width/2+height/2, 0, 'grey', 8) : drawLine(width, height/2, 0,height/2, 'gray', 8);
+  winner[2] == 1 ? drawLine(width/2-height/2, height, width/2+height/2, 0, 'grey', 8) : drawLine(width/2-height/2, 0, width/2+height/2,height, 'gray', 8);
 }
 }
 const winSearch = (player) =>{
