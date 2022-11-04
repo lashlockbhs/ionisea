@@ -8,6 +8,7 @@ const coordArray = [
 const player1 = 'X' //will go first
 const player2 = 'O'
 let winner
+const gameWin = (winner)
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
     (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player:0 :0 :0;
@@ -16,7 +17,7 @@ const winSearch = (player) =>{
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player:0 :0 :0;
 
   }
-  return winner
+  return gameWin(winner)
 }
 const max = Math.max(width,height)
 const min = Math.min(width,height)
