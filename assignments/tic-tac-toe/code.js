@@ -10,9 +10,9 @@ const player2 = 'O'
 let winner
 const gameWin = (winner) =>{
 if (winner[1] == 'h'){
-  drawLine(width/2 - height/2,height/6+height*(winner[2]/3), width/2 + height/2, height/6+height*(winner[2]/3), 'black', 15)
+  drawLine(width/2 - height/2,height/6+height*(winner[2]/3), width/2 + height/2, height/6+height*(winner[2]/3), 'grey', 8)
 } else if (winner[1] == 'v'){
-  drawLine(width/2-height/3+height*(winner[2]/3),height, width/2-height/3+height*(winner[2]/3), 0, 'black', 15)
+  drawLine(width/2-height/3+height*(winner[2]/3),height, width/2-height/3+height*(winner[2]/3), 0, 'gray', 8)
 } else if (winner[1] == 'd'){
   winner[2] == 0 ? drawLine() : drawLine();
 }
