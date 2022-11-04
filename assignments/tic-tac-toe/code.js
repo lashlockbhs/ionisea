@@ -9,7 +9,13 @@ const player1 = 'X' //will go first
 const player2 = 'O'
 let winner
 const gameWin = (winner) =>{
-
+if (winner[1] == 'h'){
+  drawLine(width/2 - height/3,height/6+height*(winner[2]/3), width/2 + height/3, height/6+height*(winner[2]/3))
+} else if (winner[1] = 'v'){
+  drawLine(width/2-height/3+height*(winner[2]/3),height - height/6, width/2-height/3+height*(winner[2]/3), height/6)
+} else if (winner[1] = 'd'){
+  winner[2] == 0 ? drawLine() : drawLine();
+}
 }
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
@@ -19,7 +25,8 @@ const winSearch = (player) =>{
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player + 'd' + 1:0 :0 :0;
 
   }
-  return gameWin(winner)
+  gameWin(winner)
+  return player
 }
 const max = Math.max(width,height)
 const min = Math.min(width,height)
