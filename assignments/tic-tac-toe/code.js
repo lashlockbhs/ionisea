@@ -27,9 +27,9 @@ const winSearch = (player) =>{
   }
   if (winner != undefined){
   gameWin(winner)
-  return undefined
+  return winner[0]
   } else {
-    return player
+    return undefined
   }
 }
 const max = Math.max(width,height)
