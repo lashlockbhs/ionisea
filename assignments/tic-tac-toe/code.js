@@ -29,7 +29,7 @@ const winSearch = (player) =>{
   gameWin(winner)
   return player
   } else {
-    return undefined
+    return 0
   }
 }
 const max = Math.max(width,height)
