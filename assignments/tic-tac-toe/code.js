@@ -9,9 +9,9 @@ const player1 = 'X' //will go first
 const player2 = 'O'
 const gameWin = (winner) =>{
 if (winner[1] == 'h'){
-  drawLine(width/2 - height/2,height/6+height*(winner[2]/3), width/2 + height/2, height/6+height*(winner[2]/3), 'grey', 8)
+  drawLine(width/2 - height/2,height/6+height*(winner[2]/3), width/2 + height/2, height/6+height*(winner[2]/3), 'grey', 5)
 } else if (winner[1] == 'v'){
-  drawLine(width/2-height/3+height*(winner[2]/3),height, width/2-height/3+height*(winner[2]/3), 0, 'gray', 8)
+  drawLine(width/2-height/3+height*(winner[2]/3),height, width/2-height/3+height*(winner[2]/3), 0, 'gray', 5)
 } else if (winner[1] == 'd'){
   winner[2] == 1 ? drawLine(width/2-height/2, height, width/2+height/2, 0, 'grey', 8) : drawLine(width/2-height/2, 0, width/2+height/2,height, 'gray', 8);
 }
