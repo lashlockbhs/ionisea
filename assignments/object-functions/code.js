@@ -13,12 +13,15 @@ const distance = (p1, p2) =>{
 const midpoint = (p1, p2) =>{
   return {x: ((p1.x) + (p2.x-p1.x)/2), y: ((p1.y) + (p2.y - p1.y)/2)}
 }
-const sumSalaries = (arr) =>{
+/*const sumSalaries = (arr) =>{
   let acc = 0;
   for (const element of arr){
     acc += element.salary
   }
   return acc
+}*/
+const sumSalaries = (a) => {
+  return a.reduce((acc, element)=> acc + element.salary, 0)
 }
 
 const newHighScore = (currHigh, arr)=>{
