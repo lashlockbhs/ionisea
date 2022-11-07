@@ -19,8 +19,8 @@ if (winner[1] == 'h'){
 let winner
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
-    (coordArray[c][0] == player) ? (coordArray[c][1] == player) ?(coordArray[c][2] == player) ? winner = player + 'h' + c:0 :0 :0;
-    (coordArray[0][c] == player) ? (coordArray[1][c] == player) ?(coordArray[2][c] == player) ? winner = player + 'v' + c:0 :0 :0;
+    if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = player + 'h' + c;
+    if ((coordArray[0][c] == player) && (coordArray[1][c] == player) && (coordArray[2][c] == player)) winner = player + 'v' + c;
     (coordArray[0][0] == player) ? (coordArray[1][1] == player) ?(coordArray[2][2] == player) ? winner = player + 'd' + 0:0 :0 :0;
     (coordArray[2][0] == player) ? (coordArray[1][1] == player) ?(coordArray[0][2] == player) ? winner = player + 'd' + 1:0 :0 :0;
 
