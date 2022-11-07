@@ -18,4 +18,5 @@ const sumSalaries = (arr) =>{
   for (element of arr){
     acc += element
   }
+  return acc
 }
