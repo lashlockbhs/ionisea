@@ -31,6 +31,5 @@ const newHighScore = (currHigh, arr)=>{
 const summarizeBooks = (arr) =>{
   const summary = {};
   for (const element of array){
-    summary.push({titles: element.title, pages: element.})
   }
 }
