@@ -29,10 +29,10 @@ const newHighScore = (currHigh, arr)=>{
   return nhs
 }
 const summarizeBooks = (arr) =>{
-  const summary = {titles: [], totalpages: 0};
+  const summary = {titles: [], pages: 0};
   for (const element of arr){
     summary.titles.push(element.title)
-    summary.totalpages+= element.pages
+    summary.pages+= element.pages
   }
   return summary
 }
