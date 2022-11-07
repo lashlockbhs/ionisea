@@ -16,7 +16,7 @@ const midpoint = (p1, p2) =>{
 const sumSalaries = (arr) =>{
   let acc = 0;
   for (const element of arr){
-    acc += element
+    acc += element.salary
   }
   return acc
 }
