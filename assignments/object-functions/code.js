@@ -25,7 +25,7 @@ const sumSalaries = (a) => {
 }
 
 const newHighScore = (currHigh, arr)=>{
-  let nhs = 0
+  let nhs = currHigh
   for (const element of arr){
     if (element.score > nhs) nhs = element.score;
   }
