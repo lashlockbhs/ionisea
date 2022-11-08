@@ -54,6 +54,8 @@ registerOnclick((x, y) => {
     xPos = 1
   } else if (x < max/2 + min/2){
     xPos = 2
+  } 
+  //ill use this if you say i can
   if (coordArray[yPos][xPos] == '' && winSearch(player) == undefined){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
@@ -61,5 +63,5 @@ registerOnclick((x, y) => {
     player == player1 ? player = player2 : player = player1;
     turns++
     turns == 9 && winSearch(player) == undefined ? drawText('draw', width/12, height*0.8, 'purple', height): 0;
-}}}});
+}}});
 
