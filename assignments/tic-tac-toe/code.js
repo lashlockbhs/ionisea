@@ -9,15 +9,12 @@ const player1 = 'X' //will go first
 const player2 = 'O'
 const gameWin = (winner) =>{
 if (winner.winType == 'h'){
-  drawLine(width/2 - height/2,height/6+height*(winner.winLoc/3), width/2 + height/2, height/6+height*(winner.winLoc/3), 'grey', 8)
-  console.log('(: win (:')
+  return drawLine(width/2 - height/2,height/6+height*(winner.winLoc/3), width/2 + height/2, height/6+height*(winner.winLoc/3), 'grey', 8)
 } else if (winner.winType == 'v'){
-  drawLine(width/2-height/3+height*(winner.winLoc/3),height, width/2-height/3+height*(winner.winLoc/3), 0, 'gray', 8)
-  console.log('(: win (:')
+  return drawLine(width/2-height/3+height*(winner.winLoc/3),height, width/2-height/3+height*(winner.winLoc/3), 0, 'gray', 8)
 } else if (winner.winType == 'd'){
-  drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), 0, width/2+height/(winner.winLoc == 0 ? 2 : -2),height, 'gray', 8)
-  console.log('(: win (:')
-} else console.log('): no win ):')
+  return drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), 0, width/2+height/(winner.winLoc == 0 ? 2 : -2),height, 'gray', 8)
+} 
 }
 let winner = {}
 const winSearch = (player) =>{
@@ -27,7 +24,7 @@ const winSearch = (player) =>{
     if ((coordArray[0][0] == player) && (coordArray[1][1] == player) && (coordArray[2][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 0};
     if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 1};
   }
-  gameWin(winner)
+  gameWin(winner) != undefined ? console.log('(: win (:') : ('): no win ):')
   return winner.winner
 }
 const max = Math.max(width,height)
