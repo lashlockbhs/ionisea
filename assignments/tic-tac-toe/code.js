@@ -13,7 +13,7 @@ if (winner.winType == 'h'){
 } else if (winner.winType == 'v'){
   drawLine(width/2-height/3+height*(winner.winLoc/3),height, width/2-height/3+height*(winner.winLoc/3), 0, 'gray', 8)
 } else if (winner.winType == 'd'){
- drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), winner.winLoc == 0 ? 0 : height, width/2-height/(winner.winLoc == 1 ? 2 : -2),winner.winLoc == 0 ? height : 0,  'gray', 8)
+ drawLine(width/2-height/(winner.winLoc == 0 ? -2 : 2), winner.winLoc == 0 ? 0 : height, width/2-height/(winner.winLoc == 0 ? 2 : -2),winner.winLoc == 0 ? height : 0,  'gray', 8)
 }
 }
 let winner = {}
