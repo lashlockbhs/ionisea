@@ -11,8 +11,8 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
-const player1 = 'O' //will go first
-const player2 = 'X'
+const player1 = 'i' //will go first
+const player2 = 'o'
 const gameWin = (winner) =>{
 if (winner.winType == 'h'){
   return drawLine(width/2 - height/2,height/6+height*(winner.winLoc/3), width/2 + height/2, height/6+height*(winner.winLoc/3), 'grey', 8)
