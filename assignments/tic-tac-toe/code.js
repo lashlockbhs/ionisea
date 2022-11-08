@@ -11,7 +11,7 @@ const coordArray = [
   [[], [], []],
   [[], [], []],
 ]
-const player1 = '0' //will go first
+const player1 = 'O' //will go first
 const player2 = 'X'
 const gameWin = (winner) =>{
 if (winner.winType == 'h'){
