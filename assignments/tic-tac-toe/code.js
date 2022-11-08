@@ -8,28 +8,25 @@ const coordArray = [
 const player1 = 'X' //will go first
 const player2 = 'O'
 const gameWin = (winner) =>{
-if (winner[1] == 'h'){
-  drawLine(width/2 - height/2,height/6+height*(winner[2]/3), width/2 + height/2, height/6+height*(winner[2]/3), 'grey', 8)
-} else if (winner[1] == 'v'){
+if (winner.winType == 'h'){
+  drawLine(width/2 - height/2,height/6+height*(winner.winLoc/3), width/2 + height/2, height/6+height*(winner[2]/3), 'grey', 8)
+} else if (winner.winType == 'v'){
   drawLine(width/2-height/3+height*(winner[2]/3),height, width/2-height/3+height*(winner[2]/3), 0, 'gray', 8)
-} else if (winner[1] == 'd'){
-  winner[2] == 1 ? drawLine(width/2-height/2, height, width/2+height/2, 0, 'grey', 8) : drawLine(width/2-height/2, 0, width/2+height/2,height, 'gray', 8);
+} else if (winner.winType == 'd'){
+ drawLine(width/2-winner[2] == 1 ? height/2 : height/-2, height)
 }
 }
-let winner
+let winner = {}
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
-    if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = player + 'h' + c;
-    if ((coordArray[0][c] == player) && (coordArray[1][c] == player) && (coordArray[2][c] == player)) winner = player + 'v' + c;
-    if ((coordArray[0][0] == player) && (coordArray[1][1] == player) && (coordArray[2][2] == player)) winner = player + 'd' + 0;
-    if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = player + 'd' + 1;
-
+    if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: c};
+    if ((coordArray[0][c] == player) && (coordArray[1][c] == player) && (coordArray[2][c] == player)) winner = {winner: player,winType: 'v' ,winLoc: c};
+    if ((coordArray[0][0] == player) && (coordArray[1][1] == player) && (coordArray[2][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: 0};
+    if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: 1};
   }
   if (winner != undefined){
   gameWin(winner)
-  return winner[0]
-  } else {
-    return undefined
+  return winner.winner
   }
 }
 const max = Math.max(width,height)
