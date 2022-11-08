@@ -10,10 +10,13 @@ const player2 = 'O'
 const gameWin = (winner) =>{
 if (winner.winType == 'h'){
   drawLine(width/2 - height/2,height/6+height*(winner.winLoc/3), width/2 + height/2, height/6+height*(winner.winLoc/3), 'grey', 8)
+  console.log('(: win (:')
 } else if (winner.winType == 'v'){
   drawLine(width/2-height/3+height*(winner.winLoc/3),height, width/2-height/3+height*(winner.winLoc/3), 0, 'gray', 8)
+  console.log('(: win (:')
 } else if (winner.winType == 'd'){
   drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), 0, width/2+height/(winner.winLoc == 0 ? 2 : -2),height, 'gray', 8)
+  console.log('(: win (:')
 } else console.log('): no win ):')
 }
 let winner = {}
