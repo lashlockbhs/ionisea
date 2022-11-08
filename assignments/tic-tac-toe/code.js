@@ -25,7 +25,6 @@ const winSearch = (player) =>{
     if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 1};
   }
   gameWin(winner) 
-  console.log(winner.winner != undefined ? '(: win (:' : '): no win ):')
   return winner.winner
 }
 const max = Math.max(width,height)
@@ -60,7 +59,7 @@ registerOnclick((x, y) => {
   if (coordArray[yPos][xPos] == '' && winSearch(player) == undefined){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
-    console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player))
+    console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player), winner.winner != undefined ? '(: win (:' : '): no win ):')
     player == player1 ? player = player2 : player = player1;
     turns++
     turns == 9 && winSearch(player) == undefined ? drawText('draw', width/12, height*0.8, 'purple', height): 0;
