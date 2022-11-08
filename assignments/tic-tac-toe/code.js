@@ -1,12 +1,18 @@
 // for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
-
+const max = Math.max(width,height)
+const min = Math.min(width,height)
+//draw board
+for (let editVar = 1/3; editVar < 1; editVar += 1/3){
+  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'grey', 2)
+  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'gray', 2)
+}
 const coordArray = [
   [[], [], []],
   [[], [], []],
   [[], [], []],
 ]
-const player1 = 'X' //will go first
-const player2 = 'O'
+const player1 = '0' //will go first
+const player2 = 'X'
 const gameWin = (winner) =>{
 if (winner.winType == 'h'){
   return drawLine(width/2 - height/2,height/6+height*(winner.winLoc/3), width/2 + height/2, height/6+height*(winner.winLoc/3), 'grey', 8)
@@ -26,12 +32,6 @@ const winSearch = (player) =>{
   }
   gameWin(winner) 
   return winner.winner
-}
-const max = Math.max(width,height)
-const min = Math.min(width,height)
-for (let editVar = 1/3; editVar < 1; editVar += 1/3){
-  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'grey', 2)
-  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'gray', 2)
 }
 let turns = 0; 
 let xPos;
