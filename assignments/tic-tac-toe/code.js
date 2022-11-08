@@ -22,7 +22,7 @@ if (winner.winType == 'h'){
   return drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), 0, width/2+height/(winner.winLoc == 0 ? 2 : -2),height, 'gray', 8)
 } 
 }
-let winner;
+let winner ={}
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
     if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: c};
