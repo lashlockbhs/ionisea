@@ -24,7 +24,8 @@ const winSearch = (player) =>{
     if ((coordArray[0][0] == player) && (coordArray[1][1] == player) && (coordArray[2][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 0};
     if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 1};
   }
-  gameWin(winner) != undefined ? console.log('(: win (:') : ('): no win ):')
+  gameWin(winner) 
+  winner.winner != undefined ? console.log('(: win (:') : ('): no win ):')
   return winner.winner
 }
 const max = Math.max(width,height)
