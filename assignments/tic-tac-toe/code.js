@@ -21,8 +21,8 @@ const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
     if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: c};
     if ((coordArray[0][c] == player) && (coordArray[1][c] == player) && (coordArray[2][c] == player)) winner = {winner: player,winType: 'v' ,winLoc: c};
-    if ((coordArray[0][0] == player) && (coordArray[1][1] == player) && (coordArray[2][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 0};
-    if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 1};
+    if ((coordArray[0][0] == player) && (coordArray[1][1] == player) && (coordArray[2][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 1};
+    if ((coordArray[2][0] == player) && (coordArray[1][1] == player) && (coordArray[0][2] == player)) winner = {winner: player,winType: 'd' ,winLoc: 0};
   }
   if (winner != undefined){
   gameWin(winner)
