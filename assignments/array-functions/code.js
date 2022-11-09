@@ -1,7 +1,7 @@
 const countTens = (array) =>{
   let numOfTens = 0;
   for (const element of array){
-    element == 10 ? numOfTens += 1:numOfTens;
+    if (element == 10) numOfTens += 1;
   }
   return numOfTens
 }
@@ -17,12 +17,12 @@ const sum = (array) => {
 const evens = (array) =>{
   const evensArray = [];
   for (const element of array){
-    element%2 ==0 ? evensArray.push(element):0;
+    if (element%2 ==0) evensArray.push(element);
   }
   return evensArray
 }
 const anyOverOneHundred = (array) =>{
-  return array.find(element => element > 100) ? true:false;
+  return array.find(element => element > 100)
 }
 const pyramid = (int) => {
  const array = [];
