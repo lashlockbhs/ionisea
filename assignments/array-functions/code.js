@@ -22,7 +22,7 @@ const evens = (array) =>{
   return evensArray
 }
 const anyOverOneHundred = (array) =>{
-  return array.find(element => element > 100)
+  return array.find(element => element > 100) != undefined
 }
 const pyramid = (int) => {
  const array = [];
