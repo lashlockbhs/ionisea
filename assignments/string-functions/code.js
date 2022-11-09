@@ -1,5 +1,5 @@
 const findFnord = (string) =>{
-  return string.search("fnord")
+  return string.indexOf("fnord")
 }
 const stringContains = (string1, string2) => {
   return string1.search(string2) != -1
