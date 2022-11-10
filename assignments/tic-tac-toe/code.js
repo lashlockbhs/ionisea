@@ -62,6 +62,6 @@ registerOnclick((x, y) => {
     console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player))
     player == player1 ? player = player2 : player = player1;
     turns++
-    turns == 9 && winSearch(player) == undefined ? drawText('data encrypt !11!1', width/24, height*0.8, 'purple', height/3): 0;
+    turns == 9 && winSearch(player) == undefined ? drawText('data encrypt !11!1', width/24, height*0.5, 'purple', height/3): 0;
 }}});
 
