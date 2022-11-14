@@ -51,7 +51,7 @@ const sums = (n) => {
   for (let a = 0; a < n; a++) {
     let acc = 0
     for (const element of arr) {
-      acc += arr[element]
+      acc += arr[element] + element
     }
     arr.push(acc)
   }
