@@ -14,18 +14,37 @@ const isSamePoint = (p1, p2) => {
 };
 
 const totalWithTip = (bill, tipPercentage) => {
+  return {subtotal: bill, tip: bill*tipPercentage, total: bill + bill*tipPercentage}
 };
 
 const isWinner = (player) => {
+  return player.score > 100
 };
 
 const updateWins = (players) => {
+  for (const element of players){
+    if (isWinner(element.score)){ 
+      element.wins += 1
+      element.score = 0
+    }
+  }
 };
 
 const bigWinners = (players) => {
+  const array = []
+  for (const element of players){
+    if (element.wins > 10) array.push(element)
+  }
+  return array
 };
 
 const fillTimesTable = (table) => {
+  const array = []
+  for (const element of table){
+    for(const innerElement of table[element]){
+      array.push(table[element][innerElement]*(element+1))
+    }
+  }
 };
 
 const sums = (n) => {
