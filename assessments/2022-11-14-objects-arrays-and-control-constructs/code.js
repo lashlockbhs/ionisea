@@ -49,9 +49,9 @@ const fillTimesTable = (table) => {
 const sums = (n) => {
   const arr = []
   for (let a = 0; a < n; a++) {
-    let acc
+    let acc = 0
     for (const element of arr) {
-      acc += arr[element] + element
+      acc += arr[element]
     }
     arr.push(acc)
   }
