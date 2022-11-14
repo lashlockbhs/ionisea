@@ -44,10 +44,10 @@ const fillTimesTable = (table) => {
     array.push(table[element][element] * table)
   }
   return array
-};
+}; // kinda gave up, kinda ran out of time
 
 const sums = (n) => {
-  const arr = [0];
+  const arr = [];
   for (let i =0; i< n; i++) {
     arr.push(arr[i]+i)
   }
