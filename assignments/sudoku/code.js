@@ -1,12 +1,13 @@
 const attempts = 100000000
-const mode = 'power' //'sci', 'power', (anything else will return literal value)
+const mode = 'power' //'sci', 'power', 'commas'(anything else will return literal value)
 registerOnclick((x,y) => {
   let acc = 0;
   for (let x=0; x< attempts; x++){
     const l = Math.round(Math.random()/Math.random())
     if (acc<l) acc=l;
   }
-  let sciNote = acc.toString()[0] + '.' + acc.toString().substring(1,6) + ' · ' + '10' + '^' + (acc.toString().length - 1)
+  acc = acc.toString()
+  let sciNote = acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)
   console.log(acc, ' // ', sciNote, '//', sciNote[sciNote.length-1] + '; from', attempts, 'attempts')
-  drawText(mode == 'sci' ? sciNote : mode == 'power' ? sciNote[sciNote.length-1] : acc,x,y,'black',25)
+  drawText(mode == 'sci' ? sciNote : mode == 'power' ? sciNote[sciNote.length-1] :mode == 'commas'? acc.substring(0,3) + ',' + acc.substring acc,x,y,'black',25)
 });
