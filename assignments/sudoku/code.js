@@ -5,4 +5,4 @@ registerOnClick((x,y) => {
     if (acc<l)acc=l
   }
   drawText(acc,x,y,'black',25)
-})
+});
