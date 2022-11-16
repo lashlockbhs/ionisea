@@ -1,4 +1,4 @@
-const attempts = 100000000
+const attempts = 1000000
 const mode = 'commas' //'sci', 'power', 'commas'(anything else will return literal value)
 registerOnclick((x,y) => {
   let acc = 0;
