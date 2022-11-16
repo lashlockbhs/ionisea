@@ -8,5 +8,5 @@ registerOnclick((x,y) => {
   }
   let sciNote = acc.toString()[0] + '.' + acc.toString().substring(1,6) + ' · ' + '10' + '^' + (acc.toString().length - 1)
   console.log(sciNote, ' // ', acc + '; from', attempts, 'attempts')
-  drawText(mode == 'sci' ? sciNote : mode == 'power' ? sciNote[sciNote.length] : acc,x,y,'black',25)
+  drawText(mode == 'sci' ? sciNote : mode == 'power' ? sciNote[sciNote.length-1] : acc,x,y,'black',25)
 });
