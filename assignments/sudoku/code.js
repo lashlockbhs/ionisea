@@ -4,7 +4,7 @@ registerOnclick((x,y) => {
     const l = Math.round(Math.random()/Math.random())
     if (acc<l) acc=l;
   }
-  let sciNote = acc.toString()[0] + '.' + acc.toString().substring(1,6) + ' ·-· ' + '10' + '^' + (acc.toString().length - 1)
+  let sciNote = acc.toString()[0] + '.' + acc.toString().substring(1,6) + ' · ' + '10' + '^' + (acc.toString().length - 1)
   console.log(sciNote, acc)
   drawText(sciNote,x,y,'black',25)
 });
