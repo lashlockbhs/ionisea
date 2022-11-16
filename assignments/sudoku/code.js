@@ -4,5 +4,5 @@ registerOnclick((x,y) => {
     const l = Math.random()/Math.random()
     if (acc<l)acc=l;
   }
-  drawText(JSON.toString(acc),x,y,'black',25)
+  drawText(acc,x,y,'black',25)
 });
