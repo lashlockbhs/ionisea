@@ -1,5 +1,5 @@
 registerOnclick((x,y) => {
-  let acc = 100000;
+  let acc = 0;
   const attempts = 1000000
   for (let x=0; x< attempts; x++){
     const l = Math.round(Math.random()/Math.random())
