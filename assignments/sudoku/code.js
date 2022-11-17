@@ -10,8 +10,10 @@ const roundConcat = (acc) =>{
   else return acc.substring (0, acc.length - 9) + 'b'
 }
 const checkIfGood = (acc)=>{
-  if (acc.length-1 >= (attempts.toString().length)  || (acc.length < (attempts.toString().length-1))) {
+  if (acc.length-1 >= (attempts.toString().length)) {
     return 'green'
+  } else if (acc.length < (attempts.toString().length-1)){
+    return 'red'
   } else {
     return 'black'
   }
