@@ -1,7 +1,7 @@
 const attempts = 1000000
 const mode = 'sci' //'sci', 'power', 'commas'(anything else will return literal value)
 const sciNote = (acc) => {
- return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString
+ return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
 const commasNote = (acc) =>{
 
