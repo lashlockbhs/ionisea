@@ -14,5 +14,5 @@ registerOnclick((x,y) => {
   }
   acc = acc.toString()
   console.log(acc, '/ from', attempts, 'attempts')
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 :mode == 'commas'? commasNote(acc) : acc,x,y,acc.length >= attempts.length  ? 'green' : 'black',25)
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 :mode == 'commas'? commasNote(acc) : acc, x, y, acc.length >= attempts.toString().length ? 'green' : 'black',25)
 });
