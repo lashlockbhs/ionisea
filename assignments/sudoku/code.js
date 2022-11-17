@@ -1,9 +1,9 @@
 const attempts = 1000000000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
-const mode = 'power' //'sci', 'power', 'commas'(anything else will return literal value)
+const mode = 'power' //'sci' or 'power'(anything else will return literal value)
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
-const commasNote = (acc) =>{
+const checkIfGood = (acc)=>{
 
 }
 registerOnclick((x,y) => {
@@ -14,5 +14,5 @@ registerOnclick((x,y) => {
   }
   acc = acc.toString()
   console.log(acc, '/ from', attempts, 'attempts')
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 :mode == 'commas'? commasNote(acc) : acc, x, y, acc.length-1 >= (attempts.toString().length)  || (acc.length < (attempts.toString().length-1))? 'green' : 'black',25)
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : acc, x, y, acc.length-1 >= (attempts.toString().length)  || (acc.length < (attempts.toString().length-1))? 'green' : 'black',25)
 });
