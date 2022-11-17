@@ -1,5 +1,5 @@
 const attempts = 1000000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
-const mode = 'sci' //'sci' or 'power'(anything else will return literal value)
+const mode = 'power' //'sci' or 'power'(anything else will return literal value)
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
