@@ -4,7 +4,11 @@ const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
 const checkIfGood = (acc)=>{
-
+  if (acc.length-1 >= (attempts.toString().length)  || (acc.length < (attempts.toString().length-1))) {
+    return 'green'
+  } else {
+    return 'black'
+  }
 }
 registerOnclick((x,y) => {
   let acc = 0;
@@ -14,5 +18,5 @@ registerOnclick((x,y) => {
   }
   acc = acc.toString()
   console.log(acc, '/ from', attempts, 'attempts')
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : acc, x, y, acc.length-1 >= (attempts.toString().length)  || (acc.length < (attempts.toString().length-1))? 'green' : 'black',25)
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : acc, x, y, checkIfGood(acc),25)
 });
