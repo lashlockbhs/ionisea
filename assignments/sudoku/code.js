@@ -1,4 +1,4 @@
-const attempts = 150 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
+const attempts = 100000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
 const oddsIncrease = 0 // for testing only!
 const mode = 'power' //'sci', 'power', 'conc' (anything else will return literal value)
 const sciNote = (acc) => {
