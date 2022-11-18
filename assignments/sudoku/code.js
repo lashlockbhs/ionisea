@@ -30,7 +30,7 @@
 
 const attempts = 1000000 
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'commas' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
+const mode = 'dfgdfger' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
