@@ -1,9 +1,10 @@
 /* Quick guide! Read to understand a bit better.
-(Right click on any of the things in 'quotes' -> "Go to References" to see some of what they do.)
-start by choosing the amount of 'attempts' every time you click.
+(Double click on any of the things in 'quotes' to hightlight their occurences in the code.)
+start by choosing the amount of attempts every time you click.
   - Feel free to set this to any (positive) number (integer), but be careful!
     * Setting it too high will make it crash, and it will slow down heavily (30s wait) in the billions!
     * Due to the rounding, a low number may give a lot of 0's.
+    * A recommended amount is between 10 thousand and 10 million.
   - After choosing your attempt count, you may change the 'multiplier' of the returned number.
     * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
     * The recommended 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
@@ -26,10 +27,9 @@ start by choosing the amount of 'attempts' every time you click.
 ? (if you'd like to know how this works, I have written it out at the bottom, but try to figure it out yourself!)
 */
 
-
 const attempts = 100000 
-const multiplier = 1000000 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'power' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
+const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
+const mode = 'page.crash' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
 // Notation functions
@@ -83,3 +83,5 @@ registerOnclick((x,y) => {
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, x, y, checkIfGood(acc),25)
 });
+
+// 'quotes' You did it! congrats
