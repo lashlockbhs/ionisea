@@ -1,5 +1,5 @@
 const attempts = 1000000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
-const oddsIncrease = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers; less than 1 = screwed up
+const oddsIncrease = 1.2 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers; less than 1 = screwed up
 const mode = 'conc' //'sci', 'power', 'conc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
 const logArray = [] //used for averaging or checking your overall results!
 const sciNote = (acc) => {
