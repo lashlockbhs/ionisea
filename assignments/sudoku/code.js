@@ -1,7 +1,7 @@
 const attempts = 1000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
 const oddsIncrease = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers;  0.1 = 10x lower
 const mode = 'conc' //'sci', 'power', 'conc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
-let logs = {array: [], jackpots: 0, highAnomalies: 0, lowAnomalies: 0} //check your results by typing logs into repl
+let logs = {array: [], total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0} //check your results by typing logs into repl
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
@@ -45,6 +45,7 @@ registerOnclick((x,y) => {
   }
   logs.array.push(acc)
   acc = acc.toString()
+  logs.total++
   console.log(roundConcat(acc), '/ from', attempts, 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'conc' ? roundConcat(acc) : mode == 'avg' ? averageResults(logArray) : acc, x, y, checkIfGood(acc),25)
