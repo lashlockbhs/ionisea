@@ -36,7 +36,7 @@ const averageResults = (array) =>{
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e< attempts; e++){
-    const l = Math.round(Math.random()/Math.random() )* oddsIncrease
+    const l = Math.round(Math.random()/Math.random() * oddsIncrease)
     if (acc<l) acc=l;
   }
   logArray.push(acc)
