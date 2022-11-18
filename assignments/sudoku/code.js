@@ -27,7 +27,7 @@ const checkIfGood = (acc)=>{
 const averageResults = (array) =>{
   let avg = 0;
   for(const element of array){
-    avg += array[element]
+    avg += element
   }
   return avg/array.toString().length
 }
