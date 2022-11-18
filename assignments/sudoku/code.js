@@ -94,6 +94,6 @@ registerOnclick((x,y) => {
 });
 
 for (let editVar = 1/9; editVar < 1; editVar += 1/9){
-  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'grey', 2)
-  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'gray', 2)
+  drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
+  drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
 }
