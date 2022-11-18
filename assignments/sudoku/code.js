@@ -38,7 +38,7 @@ const averageResults = (array) =>{
   }
   return Math.round(avg/array.toString().length)
 }
-logs.avgResults = averageResults(logs.array)
+logs.avgResults += averageResults(logs.array)
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e< attempts; e++){
