@@ -24,12 +24,20 @@ const checkIfGood = (acc)=>{
     return 'black'
   }
 }
+const averageResults = (array) =>{
+  let avg = 0;
+  for(const element of array){
+    avg += array[element]
+  }
+  return avg/array.length
+}
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e< attempts; e++){
     const l = Math.round(Math.random()/Math.random()) + 1 * oddsIncrease
     if (acc<l) acc=l;
   }
+  logArray.push(acc)
   acc = acc.toString()
   console.log(acc, '/ from', attempts, 'attempts')
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'conc' ? roundConcat(acc) : acc, x, y, checkIfGood(acc),25)
