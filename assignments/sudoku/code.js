@@ -71,7 +71,7 @@ const averageResults = (array) =>{
   for(const element of array){
     avg += element
   }
-  return Math.round(avg/array.toString().length)
+  return Math.round(avg/array.length)
 }
 registerOnclick((x,y) => {
   let acc = 0;
