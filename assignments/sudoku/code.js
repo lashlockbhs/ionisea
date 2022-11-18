@@ -35,7 +35,7 @@ let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies:
 
 // Notation functions
 const commas = (num) =>{
-  let returnString = num.toString();
+  let returnString = num;
   for (let x = 4 - (4-num.length % 3); x< num.length; x+= 3){
     returnString = returnString.substring(0,x*4/3) + ',' + returnString.substring(x*4/3)
   }
@@ -88,7 +88,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   acc = acc.toString()
   logs.total++
-  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts), 'attempts')
+  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfGood(acc),25)
 });
