@@ -9,8 +9,12 @@ start by choosing the amount of attempts on line 5 every time you click
     * The recommended multiplier is 1, anything less (above 0) will result in more lowAnomalies, and vice versa.
   - Now you choose the mode that you would like the text to be displayed in:
     * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
-    * 'power'; Again straightforward, just takes the power of 10 that would be applied in 'sci'.
-    *
+    * 'power'; Takes the power of 10 that would be applied in 'sci'.
+    * 'trunc'; Truncation, the most complicated but best looking number representation.
+      ~ Similar to 'sci', in that it takes the first few digits and shows a multiplication
+      ~ However, this uses letters to show the multiplication.
+      ~ A 'k' represents a multiplication of 1,000, 'm' of 1,000,000, 'b' of a billion, and so on.
+
 */
 const attempts = 100000 //1 million or so is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
 const multiplier = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers;  0.1 = 10x lower
@@ -21,11 +25,11 @@ const sciNote = (acc) => {
 }
 const truncate = (acc) =>{
   if (acc.length <4) return acc;
-  else if (acc.length <7) return acc.substring(0,acc.length - 3) + '.' + acc[acc.length - 2] + 'k'
-  else if (acc.length <10) return acc.substring(0,acc.length - 6) + '.' + acc[acc.length - 5] +'m'
-  else if (acc.length <13) return acc.substring (0, acc.length - 9) + '.' + acc[acc.length - 8] +'b'
-  else if (acc.length <16) return acc.substring (0, acc.length - 12) + '.' + acc[acc.length - 11] +'t'
-  else if (acc.length <19) return acc.substring (0, acc.length - 15) + '.' + acc[acc.length - 14] +'Qd'
+  else if (acc.length < 7) return acc.substring(0, acc.length - 3) + '.' + acc[acc.length - 2] + 'k'
+  else if (acc.length <10) return acc.substring(0, acc.length - 6) + '.' + acc[acc.length - 5] + 'm'
+  else if (acc.length <13) return acc.substring(0, acc.length - 9) + '.' + acc[acc.length - 8] + 'b'
+  else if (acc.length <16) return acc.substring(0, acc.length - 12) + '.' + acc[acc.length - 11] +'t'
+  else if (acc.length <19) return acc.substring(0, acc.length - 15) + '.' + acc[acc.length - 14] +'Qd'
 }
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
@@ -61,7 +65,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   acc = acc.toString()
   logs.total++
-  console.log(truncate(acc), '/ from', attempts, 'attempts')
+  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logArray) : acc, '/ from', attempts, 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logArray) : acc, x, y, checkIfGood(acc),25)
 });
