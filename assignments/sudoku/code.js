@@ -1,13 +1,13 @@
 /* Quick guide! Read to understand a bit better.
 (Double click on any of the things in 'quotes' to hightlight their occurences in the code.)
-start by choosing the amount of attempts every time you click.
-  - Feel free to set this to any (positive) number (integer), but be careful!
-    * Setting it too high will make it crash, and it will slow down heavily (30s wait) in the billions!
+  - Start by choosing the amount of attempts every time you click.
+    * Feel free to set this to any (positive) number (integer), but be careful!
+    * Setting it too high will make it crash, or it will slow down heavily (30s+ wait)!
     * Due to the rounding, a low number may give a lot of 0's.
     * A recommended amount is between 10 thousand and 10 million.
   - After choosing your attempt count, you may change the 'multiplier' of the returned number.
     * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
-    * The recommended 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
+    * The default 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
   - Now you choose the mode that you would like the text to be displayed in:
     * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
     * 'power'; Takes the power of 10 that would be applied in 'sci'.
@@ -28,15 +28,15 @@ start by choosing the amount of attempts every time you click.
 ? (if you'd like to know how this works, I have written it out at the bottom, but try to figure it out yourself!)
 */
 
-const attempts = 10000000 
+const attempts = 1000000 
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'commas' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
+const mode = 'commas' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
 // Notation functions
-const commas = (str) =>{
-  let returnString = str;
-  for (let x = 4 - (4-str.length % 3); x< str.length; x+= 3){
+const commas = (num) =>{
+  let returnString = num.toString();
+  for (let x = 4 - (4-num.length % 3); x< num.length; x+= 3){
     returnString = returnString.substring(0,x+x/3) + ',' + returnString.substring(x+x/3)
   }
   if (returnString[0] == ',') returnString = returnString.substring(1)
@@ -88,9 +88,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   acc = acc.toString()
   logs.total++
-  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts.toString()), 'attempts')
+  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts), 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfGood(acc),25)
 });
-
-// 'quotes' No, don't highlight that!
