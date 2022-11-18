@@ -36,7 +36,7 @@ let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies:
 // Notation functions
 const commas = (acc) =>{
   let returnString = acc;
-  for (let x = 3 -  acc % 3; x< acc.length; x+= 3){
+  for (let x = 3 - acc.length % 3; x< acc.length; x+= 3){
     returnString = returnString.substring(0,x+x/3) + ',' + returnString.substring(x+x/3)
   }
   return returnString;
