@@ -34,9 +34,9 @@ const mode = 'commas' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this wil
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
 // Notation functions
-const commas = (acc) =>{
-  let returnString = acc;
-  for (let x = 4 - (4-acc.length % 3); x< acc.length; x+= 3){
+const commas = (str) =>{
+  let returnString = str;
+  for (let x = 4 - (4-str.length % 3); x< str.length; x+= 3){
     returnString = returnString.substring(0,x+x/3) + ',' + returnString.substring(x+x/3)
   }
   if (returnString[0] == ',') returnString = returnString.substring(1)
@@ -88,7 +88,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   acc = acc.toString()
   logs.total++
-  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, '/', acc, '/ from', attempts, 'attempts')
+  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfGood(acc),25)
 });
