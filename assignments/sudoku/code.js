@@ -1,107 +1,30 @@
-/* Quick guide! Read to understand a bit better.
-(Double click on any of the things in 'quotes' to hightlight their occurences in the code.)
-  - Start by choosing the amount of attempts every time you click.
-    * Feel free to set this to any (positive) number (integer), but be careful!
-    * Setting it too high will make it crash, or it will slow down heavily (30s+ wait)!
-    * Due to the rounding, a low number may give a lot of 0's.
-    * A recommended amount is between 10 thousand and 10 million.
-  - After choosing your attempt count, you may change the 'multiplier' of the returned number.
-    * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
-    * The default 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
-  - Now you choose the mode that you would like the text to be displayed in:
-    * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
-    * 'power'; Takes the power of 10 that would be applied in 'sci'.
-    * 'trunc'; Truncation, the most complicated but best looking number representation.
-      ~ Similar to 'sci', in that it takes the first few digits and shows a multiplication.
-      ~ However, this uses letters to show the multiplication.
-      ~ A "k" represents a multiplication of a thousand, "m" of one million, "b" of a billion, and so on.
-      ~ If you need more precise results, however, this may not be for you.
-      ~ This method cuts off all but the first 4 digits, causing some detail to be lost.
-    * 'avg'; A straightforward representation of the average of all results.
-    * 'commas'; interjects commas where there should be one to increase legibility.
-    * Anything else will default to the raw number.
-  - 'logs' can be useful if you are looking for some metric in particular.
-    * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
-    * You can also find the amount of each anomaly within 'logs', along with the total number of clicks and anomalies.
-  - The console log will show you the latest number (first of your mode, then natural), attempt count, and current average.
-  - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
-? (if you'd like to know how this works, I (will) have written it out at the bottom, but try to figure it out yourself!)
-*/
-
-const attempts = 100000 
-const multiplier = 1000 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'commas' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
-let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
-
-// Notation functions
-const commas = (num) =>{
-  let returnString = num;
-  for (let x = 4 - (4-num.length % 3); x< num.length; x+= 3){
-    returnString = returnString.substring(0,x*4/3) + ',' + returnString.substring(x*4/3)
-  }
-  if (returnString[0] == ',') returnString = returnString.substring(1)
-  return returnString;
-}
+const attempts = 100000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
+const mode = 'conc' //'sci', 'power', 'conc' (anything else will return literal value)
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
-const truncate = (acc) =>{
-  if (acc.length <4) return acc
-for (let i = 0; i< 100; i+=3){
-  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i] + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
-}}
-const averageResults = (array) =>{
-  let avg = 0;
-  for(const element of array){
-    avg += element
-  }
-  return Math.round(avg/array.length)
+const roundConcat = (acc) =>{
+  if (acc.length <4) return acc;
+  else if (acc.length <7) return acc.substring(0,acc.length - 3) + 'k'
+  else if (acc.length <10) return acc.substring(0,acc.length - 6) + 'm'
+  else return acc.substring (0, acc.length - 9) + 'b'
 }
-
-//Check for anomaly
-const checkIfAnomaly = (acc)=>{
+const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
-    logs.highAnomalies++
-    logs.anomalies++
-    if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('jackpot with ' + truncate(acc) + '!', Math.random()*width - height, Math.random()*height, 'blue', height/6)
-      logs.jackpots++
-      return 'blue'
-    }
-      return 'green'
+    return 'green'
   } else if (acc.length < (attempts.toString().length-1)){
-    logs.lowAnomalies++
-    logs.anomalies++
     return 'red'
   } else {
     return 'black'
   }
 }
-
-
 registerOnclick((x,y) => {
   let acc = 0;
-  for (let e=0; e < attempts; e++){
-    const l = Math.round(Math.random()/Math.random() * multiplier)
+  for (let e=0; e< attempts; e++){
+    const l = Math.round(Math.random()/Math.random())
     if (acc<l) acc=l;
   }
-  logs.array.push(acc)
   acc = acc.toString()
-  logs.total++
-  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts.toString()), 'attempts')
-  console.log('current avg:', averageResults(logs.array))
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfAnomaly(acc),25)
+  console.log(acc, '/ from', attempts, 'attempts')
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'conc' ? roundConcat(acc) : acc, x, y, checkIfGood(acc),25)
 });
-
-
-
-
-/* sudoku board
-for (let editVar = 0; editVar < 10/9; editVar += 1/9){
-  drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
-  drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
-}
-for (let editVar = 0; editVar <= 1; editVar += 1/3){
-  drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'black', 4)
-  drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'black', 4)
-}*/
