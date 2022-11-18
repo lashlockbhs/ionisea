@@ -8,9 +8,11 @@ start by choosing the amount of attempts on line 5 every time you click
     * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
     * The recommended multiplier is 1, anything less (above 0) will result in more lowAnomalies, and vice versa.
   - Now you choose the mode that you would like the text to be displayed in:
-    * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10)
+    * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
+    * 'power'; Again straightforward, just takes the power of 10 that would be applied in 'sci'.
+    *
 */
-const attempts = 1 //1 million or so is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
+const attempts = 100000 //1 million or so is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
 const multiplier = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers;  0.1 = 10x lower
 const mode = 'trunc' //'sci', 'power', 'trunc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
