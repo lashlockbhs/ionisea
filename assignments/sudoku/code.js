@@ -59,7 +59,7 @@ const averageResults = (array) =>{
 }
 
 //Check for anomaly
-const checkIfGood = (acc)=>{
+const checkIfAnomaly = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
     logs.highAnomalies++
     logs.anomalies++
@@ -90,7 +90,7 @@ registerOnclick((x,y) => {
   logs.total++
   console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfGood(acc),25)
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfAnomaly(acc),25)
 });
 
 
