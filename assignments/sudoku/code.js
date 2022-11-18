@@ -97,12 +97,12 @@ registerOnclick((x,y) => {
 
 
 
- const sudokuBoard =()=>{
-for (let editVar = 0; editVar < 10/9; editVar += 1/9){
-  drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
-  drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
-}
-for (let editVar = 0; editVar <= 1; editVar += 1/3){
-  drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'black', 4)
-  drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'black', 4)
+const sudokuBoard =()=>{
+  for (let editVar = 0; editVar < 10/9; editVar += 1/9){
+    drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
+    drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
+  }
+  for (let editVar = 0; editVar <= 1; editVar += 1/3){
+    drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'black', 4)
+    drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'black', 4)
 }}
