@@ -28,7 +28,7 @@ start by choosing the amount of 'attempts' every time you click.
 
 
 const attempts = 1 
-const multiplier = 100000000000000 //this should not exceed a few million or things WILL break
+const multiplier = 1 //this should not exceed a few million or things WILL break
 const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
@@ -38,7 +38,7 @@ const sciNote = (acc) => {
 }
 const truncate = (acc) =>{
 for (let i = 0; i< 100; i+=3){
-  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
+  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + (i== 0? undefined : i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
 }}
 const averageResults = (array) =>{
   let avg = 0;
