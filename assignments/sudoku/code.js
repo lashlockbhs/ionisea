@@ -40,6 +40,6 @@ registerOnclick((x,y) => {
   logArray.push(acc)
   acc = acc.toString()
   console.log(acc, '/ from', attempts, 'attempts')
-  console.log('current avg:', averageResults(logArray))
+  console.log('current avg:', Math.round(averageResults(logArray)))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'conc' ? roundConcat(acc) : acc, x, y, checkIfGood(acc),25)
 });
