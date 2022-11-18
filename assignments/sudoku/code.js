@@ -104,5 +104,5 @@ const sudokuBoard =()=>{
   }
   for (let editVar = 0; editVar <= 1; editVar += 1/3){
     drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'black', 6)
-    drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'black', 6)
+    drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'black', 5)
 }}
