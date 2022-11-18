@@ -11,7 +11,7 @@ start by choosing the amount of 'attempts' every time you click.
     * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
     * 'power'; Takes the power of 10 that would be applied in 'sci'.
     * 'trunc'; Truncation, the most complicated but best looking number representation.
-      ~ Similar to 'sci', in that it takes the first few digits and shows a multiplication
+      ~ Similar to 'sci', in that it takes the first few digits and shows a multiplication.
       ~ However, this uses letters to show the multiplication.
       ~ A "k" represents a multiplication of a thousand, "m" of one million, "b" of a billion, and so on.
       ~ If you need more precise results, however, this may not be for you.
@@ -21,24 +21,33 @@ start by choosing the amount of 'attempts' every time you click.
   - 'logs' can be useful if you are looking for some metric in particular.
     * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
     * You can also find the amount of each anomaly within 'logs', along with the total number of clicks and anomalies.
-  - You should be good to go! 
+  - The console log will show you the latest number, attempt count, and current average.
+  - You should be good to go! Have fun tweaking the variables to see what you like best. (:
+? (if you'd like to know how this works, I have written it out at the bottom, but try to figure it out yourself!)
 */
+
+
 const attempts = 100000 
 const multiplier = 1
-const mode = 'trunc' //'sci', 'power', 'trunc', 'avg' 
+const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
+
+
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
 const truncate = (acc) =>{
-//  for (let i; i< )
-  if (acc.length <4) return acc;
+for (let i = 0; i< 100; i+=3){
+  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + i/4 == 3 ? 'k' : i/4 == 6 ? 'm' : i/4 == 6 ? 'b' : i/4 == 6 ? 't' : '😵'
+}
+  /*if (acc.length <4) return acc;
   else if (acc.length < 7) return acc.substring(0, acc.length - 3) + '.' + acc[acc.length - 2] + 'k'
   else if (acc.length <10) return acc.substring(0, acc.length - 6) + '.' + acc[acc.length - 5] + 'm'
   else if (acc.length <13) return acc.substring(0, acc.length - 9) + '.' + acc[acc.length - 8] + 'b'
   else if (acc.length <16) return acc.substring(0, acc.length - 12) + '.' + acc[acc.length - 11] +'t'
-  else if (acc.length <19) return '😵'
+  else if (acc.length <19) return '😵'*/
 }
+
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
     logs.highAnomalies++
