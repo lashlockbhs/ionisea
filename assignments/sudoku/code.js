@@ -28,7 +28,7 @@
 ? (if you'd like to know how this works, I (will) have written it out at the bottom, but try to figure it out yourself!)
 */
 
-const attempts = 10
+const attempts = 10000
 const multiplier = -1 //this should not exceed a few million or things WILL break (also breaks with negatives)
 const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
