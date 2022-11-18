@@ -83,7 +83,7 @@ registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e < attempts; e++){
     const l = Math.round(Math.random()/Math.random() * multiplier)
-    if (acc<l) acc=l;
+    if (acc<Math.abs(l)) acc=l;
   }
   logs.array.push(acc)
   acc = acc.toString()
