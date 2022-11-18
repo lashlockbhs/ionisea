@@ -31,7 +31,7 @@ const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
 const truncate = (acc) =>{
-  for (let i; i< )
+//  for (let i; i< )
   if (acc.length <4) return acc;
   else if (acc.length < 7) return acc.substring(0, acc.length - 3) + '.' + acc[acc.length - 2] + 'k'
   else if (acc.length <10) return acc.substring(0, acc.length - 6) + '.' + acc[acc.length - 5] + 'm'
