@@ -21,7 +21,7 @@ start by choosing the amount of 'attempts' every time you click.
   - 'logs' can be useful if you are looking for some metric in particular.
     * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
     * You can also find the amount of each anomaly within 'logs', along with the total number of clicks and anomalies.
-  - The console log will show you the latest number, attempt count, and current average.
+  - The console log will show you the latest number (first of your mode, then natural), attempt count, and current average.
   - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
 ? (if you'd like to know how this works, I have written it out at the bottom, but try to figure it out yourself!)
 */
@@ -29,7 +29,7 @@ start by choosing the amount of 'attempts' every time you click.
 
 const attempts = 100000 
 const multiplier = 1 //this should not exceed a few million or things WILL break
-const mode = 'avg' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
+const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
 // Notation functions
