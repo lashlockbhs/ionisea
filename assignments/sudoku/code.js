@@ -28,8 +28,8 @@ start by choosing the amount of attempts every time you click.
 ? (if you'd like to know how this works, I have written it out at the bottom, but try to figure it out yourself!)
 */
 
-const attempts = 100000 
-const multiplier = 100 //this should not exceed a few million or things WILL break (also breaks with negatives)
+const attempts = 10000000 
+const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
 const mode = 'commas' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
