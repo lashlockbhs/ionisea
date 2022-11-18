@@ -1,7 +1,7 @@
 const attempts = 1000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
 const oddsIncrease = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers;  0.1 = 10x lower
 const mode = 'conc' //'sci', 'power', 'conc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
-let logs = {array: [], total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0} //check your results by typing logs into repl
+let logs = {array: [], total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0} //check your results by typing logs.(what you want here) into repl
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
@@ -19,12 +19,13 @@ const checkIfGood = (acc)=>{
       drawText('jackpot with ' + roundConcat(acc) + '!', 50, 2/3*height, 'blue', 100)
       logs.jackpots++
       return 'blue'
-    } else {
-      logs.highAnomalies++
-      return 'green'
     }
+      logs.highAnomalies++
+      logs.anomalies++
+      return 'green'
   } else if (acc.length < (attempts.toString().length-1)){
     logs.lowAnomalies++
+    logs.anomalies++
     return 'red'
   } else {
     return 'black'
