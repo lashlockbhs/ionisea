@@ -15,13 +15,13 @@ const roundConcat = (acc) =>{
 }
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
+    logs.highAnomalies++
+    logs.anomalies++
     if (acc.length-2 >= (attempts.toString().length)){ 
       drawText('jackpot with ' + roundConcat(acc) + '!', 50, 2/3*height, 'blue', 100)
       logs.jackpots++
       return 'blue'
     }
-      logs.highAnomalies++
-      logs.anomalies++
       return 'green'
   } else if (acc.length < (attempts.toString().length-1)){
     logs.lowAnomalies++
