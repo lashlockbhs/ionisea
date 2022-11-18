@@ -55,7 +55,7 @@ const checkIfGood = (acc)=>{
     logs.highAnomalies++
     logs.anomalies++
     if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('jackpot with ' + truncate(acc) + '!', 50, 2/3*height, 'blue', height/6)
+      drawText('jackpot with ' + truncate(acc) + '!', Math.random()*width, Math.random()*height, 'blue', height/6)
       logs.jackpots++
       return 'blue'
     }
