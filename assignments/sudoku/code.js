@@ -1,4 +1,4 @@
-const attempts = 1 //1 million (or less, under ~ 100 is not supported) is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
+const attempts = 1 //1 million or so is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
 const oddsIncrease = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers;  0.1 = 10x lower
 const mode = 'conc' //'sci', 'power', 'conc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, avgResults: 0, array: []} //check your results by typing logs.(what you want here) into repl
