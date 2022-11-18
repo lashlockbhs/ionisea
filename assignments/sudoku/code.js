@@ -37,8 +37,9 @@ const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
 const truncate = (acc) =>{
+  if (acc.length <4) return acc
 for (let i = 0; i< 100; i+=3){
-  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + (i !== 0 &&( i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵'))
+  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
 }}
 const averageResults = (array) =>{
   let avg = 0;
