@@ -79,7 +79,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   acc = acc.toString()
   logs.total++
-  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logArray) : acc, '/', acc, '/ from', attempts, 'attempts')
+  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, '/', acc, '/ from', attempts, 'attempts')
   console.log('current avg:', averageResults(logs.array))
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logArray) : acc, x, y, checkIfGood(acc),25)
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, x, y, checkIfGood(acc),25)
 });
