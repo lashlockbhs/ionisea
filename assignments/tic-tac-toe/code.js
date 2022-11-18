@@ -55,7 +55,6 @@ registerOnclick((x, y) => {
   } else if (x < max/2 + min/2){
     xPos = 2
   } 
-  //ill use this if you say i can
   if (coordArray[yPos][xPos] == '' && winSearch(player) == undefined){
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
@@ -64,4 +63,5 @@ registerOnclick((x, y) => {
     turns++
     turns == 9 && winSearch(player) == undefined ? drawText('data encrypt !11!1', width/24, height*0.5, 'purple', height/3): 0;
 }}});
+drawText('◯', max/2-min/2, 0, 'black', height)
 
