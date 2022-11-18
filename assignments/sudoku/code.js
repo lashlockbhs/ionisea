@@ -78,13 +78,12 @@ const checkIfAnomaly = (acc)=>{
   }
 }
 
-const arrayTest = []
+
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e < attempts; e++){
     const l = Math.round(Math.random()/Math.random() * multiplier)
     if (acc<l) acc=l;
-    if (arrayTest.length < 9) arrayTest.push(l);
   }
   logs.array.push(acc)
   acc = acc.toString()
