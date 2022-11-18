@@ -11,7 +11,8 @@ const roundConcat = (acc) =>{
 }
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
-    return 'green'
+    if (acc.length-2 >= (attempts.toString().length)) return 'blue'
+    else return 'green'
   } else if (acc.length < (attempts.toString().length-1)){
     return 'red'
   } else {
