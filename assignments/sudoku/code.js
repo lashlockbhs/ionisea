@@ -1,5 +1,5 @@
 const attempts = 1000000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
-const oddsIncrease = 10 // for testing only!
+const oddsIncrease = 10000 // for testing only! 1 = same numbers; 10 = 10x higher numbers
 const mode = 'conc' //'sci', 'power', 'conc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
 const logArray = [] //used for averaging or checking your overall results!
 const sciNote = (acc) => {
@@ -34,7 +34,7 @@ const averageResults = (array) =>{
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e< attempts; e++){
-    const l = Math.round(Math.random()/Math.random()) + 1 * oddsIncrease
+    const l = Math.round(Math.random()/Math.random()) * oddsIncrease
     if (acc<l) acc=l;
   }
   logArray.push(acc)
