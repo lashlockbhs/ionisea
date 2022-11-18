@@ -25,7 +25,7 @@ const checkIfGood = (acc)=>{
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e< attempts; e++){
-    const l = Math.round(Math.random()/Math.random()) *100
+    const l = Math.round(Math.random()/Math.random()) *10
     if (acc<l) acc=l;
   }
   acc = acc.toString()
