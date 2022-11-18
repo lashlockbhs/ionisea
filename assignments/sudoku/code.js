@@ -11,7 +11,10 @@ const roundConcat = (acc) =>{
 }
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
-    if (acc.length-2 >= (attempts.toString().length)) return 'blue'
+    if (acc.length-2 >= (attempts.toString().length)){ 
+      drawText('jackpot with ' + roundConcat(acc) + '!', width/2-height, 2/3*height, 'blue', 200)
+      return 'blue'
+    }
     else return 'green'
   } else if (acc.length < (attempts.toString().length-1)){
     return 'red'
@@ -22,7 +25,7 @@ const checkIfGood = (acc)=>{
 registerOnclick((x,y) => {
   let acc = 0;
   for (let e=0; e< attempts; e++){
-    const l = Math.round(Math.random()/Math.random())
+    const l = Math.round(Math.random()/Math.random()) *100
     if (acc<l) acc=l;
   }
   acc = acc.toString()
