@@ -1,5 +1,5 @@
 const attempts = 1000000 //1 million is best - can go up to maybe 2 billion before crashing (will take about a minute at 1 billion)
-const oddsIncrease = 0.1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers; less than 1 = 10x lower
+const oddsIncrease = 1 // for testing (and funny) only! 1 = same numbers; 10 = 10x higher numbers; less than 1 = 10x lower
 const mode = 'conc' //'sci', 'power', 'conc', 'avg' (scientific notation, power in sciNote, funny, average of all results)
 const logArray = [] //used for averaging or checking your overall results!
 const sciNote = (acc) => {
@@ -9,7 +9,9 @@ const roundConcat = (acc) =>{
   if (acc.length <4) return acc;
   else if (acc.length <7) return acc.substring(0,acc.length - 3) + 'k'
   else if (acc.length <10) return acc.substring(0,acc.length - 6) + 'm'
-  else return acc.substring (0, acc.length - 9) + 'b'
+  else if (acc.length <13) return acc.substring (0, acc.length - 9) + 'b'
+  else if (acc.length <16) return acc.substring (0, acc.length - 12) + 't'
+  else if (acc.length <19) return acc.substring (0, acc.length - 15) + 'Qd'
 }
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
