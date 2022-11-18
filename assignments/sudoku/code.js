@@ -64,7 +64,7 @@ const checkIfAnomaly = (acc)=>{
     logs.highAnomalies++
     logs.anomalies++
     if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('jackpot with ' + truncate(acc) + '!', Math.random()*width, Math.random()*height, 'blue', height/6)
+      drawText('jackpot with ' + truncate(acc) + '!', Math.random()*width - height, Math.random()*height, 'blue', height/6)
       logs.jackpots++
       return 'blue'
     }
