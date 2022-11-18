@@ -64,7 +64,7 @@ const checkIfAnomaly = (acc)=>{
     logs.highAnomalies++
     logs.anomalies++
     if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('jackpot with ' + (mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'commas' ? commas(acc): truncate(acc)) + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
+      drawText('Jackpot with ' + (mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'commas' ? commas(acc): truncate(acc)) + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
       logs.jackpots++
       return 'blue'
     }
