@@ -38,7 +38,7 @@ const sciNote = (acc) => {
 }
 const truncate = (acc) =>{
 for (let i = 0; i< 100; i+=3){
-  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + (i == 1 ? 'k' : i == 2 ? 'm' : i == 3 ? 'b' : 't')
+  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i + 1] + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : 't')
 }
   /*if (acc.length <4) return acc;
   else if (acc.length < 7) return acc.substring(0, acc.length - 3) + '.' + acc[acc.length - 2] + 'k'
