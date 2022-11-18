@@ -96,7 +96,8 @@ registerOnclick((x,y) => {
 
 
 
-/* sudoku board
+ /*//sudoku board 
+ const sudokuBoar
 for (let editVar = 0; editVar < 10/9; editVar += 1/9){
   drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
   drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
