@@ -24,7 +24,7 @@ start by choosing the amount of 'attempts' every time you click.
   - You should be good to go! 
 */
 const attempts = 100000 
-const multiplier = 10000000000
+const multiplier = 1
 const mode = 'trunc' //'sci', 'power', 'trunc', 'avg' 
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 const sciNote = (acc) => {
