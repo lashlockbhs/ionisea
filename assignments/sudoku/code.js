@@ -72,7 +72,7 @@ const checkIfGood = (acc)=>{
 
 registerOnclick((x,y) => {
   let acc = 0;
-  for (let e=0; e< attempts; e++){
+  for (let e=0; e < attempts; e++){
     const l = Math.round(Math.random()/Math.random() * multiplier)
     if (acc<l) acc=l;
   }
@@ -84,4 +84,4 @@ registerOnclick((x,y) => {
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, x, y, checkIfGood(acc),25)
 });
 
-// 'quotes' You did it! congrats
+// 'quotes' No, don't highlight that!
