@@ -93,6 +93,10 @@ registerOnclick((x,y) => {
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfGood(acc),25)
 });
 
+
+
+
+/* sudoku board
 for (let editVar = 0; editVar < 10/9; editVar += 1/9){
   drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
   drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
@@ -100,4 +104,4 @@ for (let editVar = 0; editVar < 10/9; editVar += 1/9){
 for (let editVar = 0; editVar <= 1; editVar += 1/3){
   drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'black', 4)
   drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'black', 4)
-}
+}*/
