@@ -14,7 +14,7 @@ const roundConcat = (acc) =>{
 const checkIfGood = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
     if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('jackpot with ' + roundConcat(acc) + '!', width/2-height, 2/3*height, 'blue', 100)
+      drawText('jackpot with ' + roundConcat(acc) + '!', width/2-height/2, 2/3*height, 'blue', 100)
       return 'blue'
     }
     else return 'green'
