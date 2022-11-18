@@ -39,6 +39,7 @@ const commas = (acc) =>{
   for (let x = 4 - (4-acc.length % 3); x< acc.length; x+= 3){
     returnString = returnString.substring(0,x+x/3) + ',' + returnString.substring(x+x/3)
   }
+  if (returnString[0] == ',') returnString = returnString.substring(1)
   return returnString;
 }
 const sciNote = (acc) => {
