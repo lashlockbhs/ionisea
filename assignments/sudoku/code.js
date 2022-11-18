@@ -18,6 +18,7 @@ start by choosing the amount of attempts every time you click.
       ~ If you need more precise results, however, this may not be for you.
       ~ This method cuts off all but the first 4 digits, causing some detail to be lost.
     * 'avg'; A straightforward representation of the average of all results.
+    * 'commas'; interjects commas where there should be one to increase legibility.
     * Anything else will default to the raw number.
   - 'logs' can be useful if you are looking for some metric in particular.
     * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
@@ -33,6 +34,13 @@ const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'page.Crash()' (this will
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} //check your results by typing logs.(what you want here) into repl
 
 // Notation functions
+const commas = (acc) =>{
+  let returnString = acc;
+  for (let x = acc % 3; x< acc.length; x+= 3){
+    returnString = returnString.substring(0,x+x/3) + ',' + returnString.substring(x+x/3)
+  }
+  return returnString;
+}
 const sciNote = (acc) => {
  return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
 }
@@ -81,7 +89,7 @@ registerOnclick((x,y) => {
   logs.total++
   console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, '/', acc, '/ from', attempts, 'attempts')
   console.log('current avg:', averageResults(logs.array))
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : acc, x, y, checkIfGood(acc),25)
+  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfGood(acc),25)
 });
 
 // 'quotes' No, don't highlight that!
