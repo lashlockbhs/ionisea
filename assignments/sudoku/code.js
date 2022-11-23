@@ -79,7 +79,7 @@ const checkIfAnomaly = (acc)=>{
   }
 }
 if (mode == 'shithead') {
-for (let shithead = 1000; shithead >-190000; shithead += -5) {
+for (let shithead = 1000; shithead >-190000; shithead += -20) {
     drawLine(0, shithead, width, height, 'maroon');
 }}
 
