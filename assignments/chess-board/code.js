@@ -17,5 +17,5 @@ const randArrayAvg = (arr) =>{
 for (let x; x<14; x++){
   arr.push(Math.round(Math.random()*10))
 }
-return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length();
+return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length()
 }}
