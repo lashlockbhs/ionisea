@@ -17,7 +17,6 @@ const randArrayAvg = (arr) =>{
 for (let x = 0; x<14; x++){
   arr.push(Math.round(Math.random()*100))
 }
-let median = arr.sort((a,b) => a-b)
-console.log(median)
-return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length
+const ordered = arr.sort((a,b) => a-b)
+return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length, arrayMedian: ordered%2 == 0 ? array[array.length.ceil/2] : array[(array.length/2)]/array[(array.length/2+1)]}
 }}
