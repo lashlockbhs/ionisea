@@ -31,7 +31,7 @@
 
 const attempts = 1000000
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'shithead' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
+const mode = 'shithead' //'sci', 'power', 'trunc', 'avg', 'commas', 'shithead', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
@@ -79,10 +79,9 @@ const checkIfAnomaly = (acc)=>{
   }
 }
 if (mode == 'shithead') {
-for (let shithead = 1000; shithead >-190000; shithead += -10) {
+for (let shithead = 1000; shithead >-190000; shithead += -5) {
     drawLine(0, shithead, width, height, 'maroon');
-}
-}
+}}
 
 registerOnclick((x,y) => {
   let acc = 0;
