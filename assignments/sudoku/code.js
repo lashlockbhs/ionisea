@@ -17,6 +17,7 @@
       ~ A "k" represents a multiplication of a thousand, "m" of one million, "b" of a billion, and so on.
       ~ If you need more precise results, however, this may not be for you.
       ~ This method cuts off all but the first 4 digits, causing some detail to be lost.
+      ~ For example, if the number returned was 2.799 million, it would express it as "2.7m"
     * 'avg'; A straightforward representation of the average of all results.
     * 'commas'; interjects commas where there should be one to increase legibility.
     * Anything else will default to the raw number.
