@@ -78,7 +78,11 @@ const checkIfAnomaly = (acc)=>{
     return 'black'
   }
 }
-
+if (mode == shithead) {
+for (let shithead = 1000; shithead >-190000; shithead += -10) {
+    drawLine(0, shithead, width, height, 'maroon');
+}
+}
 
 registerOnclick((x,y) => {
   let acc = 0;
