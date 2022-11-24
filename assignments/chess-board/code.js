@@ -13,8 +13,9 @@ const BLACK_PAWN   = '♟';
 
 // Example of drawing one of the pieces
 drawText(WHITE_KING, width/2, height/2, 'black', 64);
-const randArrayAvg = (arr) =>{
-for (let x = 0; x<14; x++){
+const randArrayAvg = (count) =>{
+const arr = [];
+for (let x = 0; x<count; x++){
   arr.push(Math.round(Math.random()*100))
 }
 const ordered = arr.sort((a,b) => a-b)
