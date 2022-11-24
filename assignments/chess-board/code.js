@@ -30,5 +30,5 @@ return jackpotOdds
 }
 registerOnclick((x,y) => {
   const randNum = Math.round(Math.random()*100)
-drawText(randNum,x,y, randNum < 40 ? 'red' : randNum > 60 ? 'green' :'black', 11)
+drawText(randNum,x,y, randNum < 40 ? 'red' : randNum > 60 ? 'green' : randNum == 100 ? 'blue' :'black', 11)
 })
