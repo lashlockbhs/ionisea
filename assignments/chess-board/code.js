@@ -21,10 +21,10 @@ for (let x = 0; x<count; x++){
 const ordered = arr.sort((a,b) => a-b)
 return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length, arrayMedian: ordered%2 == 0 ? arr[arr.length.ceil/2] : (arr[arr.length/2]+arr[arr.length/2+1])/2}
 }
-const jackpotOddsTest = () =>{
+const jackpotOddsTest = (count, times) =>{
   const jackpotOdds = []
-for (let test =0; test < 100; test++){
-jackpotOdds.push((1000 - randArrayAvg(1000).array.indexOf(100))/10)
+for (let test =0; test < times; test++){
+jackpotOdds.push((count - randArrayAvg(count).array.indexOf(100))/10)
 }
 return jackpotOdds
 }
