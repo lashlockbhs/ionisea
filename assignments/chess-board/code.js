@@ -21,7 +21,7 @@ for (let x = 0; x<count; x++){
 const ordered = arr.sort((a,b) => a-b)
 return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length, arrayMedian: ordered%2 == 0 ? arr[arr.length.ceil/2] : (arr[arr.length/2]+arr[arr.length/2+1])/2}
 }
-const jackpotOddsTest = (count, times) =>{ //leave as 1000, 100 in the repl preferably
+const jackpotOddsTest = (count, times) =>{ //keep above as 1000, x in the repl 
   const jackpotOdds = []
 for (let test =0; test < times; test++){
 jackpotOdds.push((count - randArrayAvg(count).array.indexOf(100))/(count*0.01))
