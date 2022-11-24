@@ -24,7 +24,7 @@ return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.red
 const jackpotOddsTest = () =>{
   const jackpotOdds = []
 for (let test =0; test < 100; test++){
-jackpotOdds.push((1000 - randArrayAvg(1000).array.indexOf(100))/1000)
+jackpotOdds.push((1000 - randArrayAvg(1000).array.indexOf(100))/100000)
 }
 return jackpotOdds
 }
