@@ -12,7 +12,7 @@ const BLACK_KNIGHT = '♞';
 const BLACK_PAWN   = '♟';
 
 // Example of drawing one of the pieces
-drawText(WHITE_KING, width/2, height/2, 'black', 64);
+//drawText(WHITE_KING, width/2, height/2, 'black', 64);
 const randArrayAvg = (count) =>{
 const arr = [];
 for (let x = 0; x<count; x++){
@@ -20,4 +20,11 @@ for (let x = 0; x<count; x++){
 }
 const ordered = arr.sort((a,b) => a-b)
 return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length, arrayMedian: ordered%2 == 0 ? arr[arr.length.ceil/2] : (arr[arr.length/2]+arr[arr.length/2+1])/2}
+}
+const jackpotOddsTest = () =>{
+  const jackpotOdds = []
+for (let test =0; test < 100; test++){
+jackpotOdds.push((1000 - randArrayAvg(1000).array.indexOf(100))/1000)
+}
+return jackpotOdds
 }
