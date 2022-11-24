@@ -31,7 +31,7 @@
 
 const attempts = 100000
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'shithead' //'sci', 'power', 'trunc', 'avg', 'commas', 'shithead', 'page.Crash()' (this will not do anything)
+const mode = 'avg' //'sci', 'power', 'trunc', 'avg', 'commas', 'shithead', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
