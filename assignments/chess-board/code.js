@@ -29,7 +29,6 @@ jackpotOdds.push((count - randArrayAvg(count).array.indexOf(100))/(count*0.01))
 return jackpotOdds
 }
 registerOnclick((x,y) => {
-drawText(Math.round(Math.random()*100),x,y, 'black', 11)
-
-
+  const randNum = Math.round(Math.random()*100)
+drawText(randNum,x,y, randNum < 40 ? 'red' : randNum > 60 ? 'green' :'black', 11)
 })
