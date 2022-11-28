@@ -32,3 +32,4 @@ registerOnclick((x,y) => {
 const randNum = Math.round(Math.random()*100)
 drawText(randNum,x,y, randNum < 45 ? 'red' : randNum > 60 ? 'green' : randNum == 100 ? 'blue' :'black', 20)
 })
+clear()
