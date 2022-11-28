@@ -17,7 +17,6 @@ const randArrayAvg = (count) =>{
 const arr = [];
 for (let x = 0; x<count; x++){
   arr.push(Math.round(Math.random()*100))
-  drawText(arr[arr.length - 1],width *Math.random(),height *Math.random(), arr[arr.length - 1] < 45 ? 'red' : arr[arr.length - 1] > 60 ? 'green' : arr[arr.length-1] == 100 ? 'blue' :'black', 20)
 }
 const ordered = arr.sort((a,b) => a-b)
 return {array: arr, arrayValue: arr.reduce((x, c) => x+c,0), arrayAvg: ( arr.reduce((x, c) => x+c,0))/arr.length, arrayMedian: ordered%2 == 0 ? arr[arr.length.ceil/2] : (arr[arr.length/2]+arr[arr.length/2+1])/2}
