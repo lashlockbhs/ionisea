@@ -101,7 +101,7 @@ registerOnclick((x,y) => {
 
 
 const test = (colour) =>{
-  return drawText('test', width/2, height/2, colour, size)
+  return drawText('test', width/2, height/2, colour, 40)
 }
 const sudokuBoard =()=>{
   for (let editVar = 0; editVar < 10/9; editVar += 1/9){
