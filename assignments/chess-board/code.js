@@ -13,6 +13,13 @@ const BLACK_PAWN   = '♟';
 
 // Example of drawing one of the pieces
 //drawText(WHITE_KING, width/2, height/2, 'black', 64);
+
+
+
+
+
+
+/*
 const randArrayAvg = (count) =>{
 const arr = [];
 for (let x = 0; x<count; x++){
@@ -32,4 +39,4 @@ registerOnclick((x,y) => {
 const randNum = Math.round(Math.random()*100)
 drawText(randNum,x,y, randNum < 45 ? 'red' : randNum > 60 ? 'green' : randNum == 100 ? 'blue' :'black', 20)
 })
-clear()
+clear() */
