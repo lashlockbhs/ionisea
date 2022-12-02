@@ -32,7 +32,7 @@ This program starts when you click on
 
 const attempts = 1000000
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 2 // 0-5, explained in the guide
+const mode = 3 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
@@ -45,7 +45,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)
+ return Math.round(acc/10*)
 }
 const truncate = (acc) =>{
   if (acc.length <4) return acc
@@ -62,9 +62,17 @@ const averageResults = (array) =>{
 
 // Mode check
 const modeCheck = (acc) =>{
-  if (mode == 0){ return acc
+  if (mode < 1 || mode >5){ return acc
   } else if (mode == 1) {
-    sciNote
+    sciNote(acc)
+  } else if (mode == 2){
+    Math.log10(acc)
+  } else if (mode == 3){
+    truncate(acc)
+  } else if (mode == 4){
+    averageResults(logs.array)
+  } else if (mode == 5){
+    commas(acc)
   }
 
 }
