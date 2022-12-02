@@ -59,7 +59,7 @@ registerOnclick((x, y) => {
     coordArray[yPos][xPos].push(player)
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player))
-    player == player1 ? player = player2 : player = player1;
+    player = player === player2 ? player1 : player2;
     turns++
     if (turns == 9 && winSearch(player) == undefined) drawText('◯', max/2-min/2, 8/9*height, 'grey', height);
 }}});
