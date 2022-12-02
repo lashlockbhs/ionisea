@@ -63,7 +63,7 @@ const averageResults = (array) =>{
 
 // Mode check
 const convertAccMode = (acc) =>{
-  if (mode < 1 || mode >5){ return acc
+  if ((mode < 1) || (mode >5)){ return acc
   } else if (mode == 1) {
     sciNote(acc)
   } else if (mode == 2){
