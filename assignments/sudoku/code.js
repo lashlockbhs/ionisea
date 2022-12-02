@@ -70,7 +70,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 2){
     Math.ceil(Math.log10(acc)).toString()
   } else if (mode == 3){
-    truncate(acc)
+    truncate(acc).toString()
   } else if (mode == 4){
     averageResults(logs.array)
   } else if (mode == 5){
