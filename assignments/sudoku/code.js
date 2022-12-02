@@ -10,17 +10,18 @@ This program starts when you click on
     * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
     * The default 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
   - Now you choose the mode that you would like the text to be displayed in:
-    * 'sci'; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
-    * 'power'; Takes the power of 10 that would be applied in 'sci'.
-    * 'trunc'; Truncation, the most complicated but best looking number representation.
+    * 0; Returns the raw number
+    * 1; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
+    * 2; Takes the power of 10 that would be applied in 'sci'.
+    * 3; Truncation, the most complicated but best looking number representation.
       ~ Similar to 'sci', in that it takes the first few digits and shows a multiplication.
       ~ However, this uses letters to show the multiplication.
       ~ A "k" represents a multiplication of a thousand, "m" of one million, "b" of a billion, and so on.
       ~ If you need more precise results, however, this may not be for you.
       ~ This method cuts off all but the first 4 digits, causing some detail to be lost.
       ~ For example, if the number returned was 2.799 million, it would express it as "2.7m"
-    * 'avg'; A straightforward representation of the average of all results.
-    * 'commas'; interjects commas where there should be one to increase legibility.
+    * 4; A straightforward representation of the average of all results.
+    * 5; interjects commas where there should be one to increase legibility.
     * Anything else will default to the raw number.
   - 'logs' can be useful if you are looking for some metric in particular.
     * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
@@ -31,7 +32,7 @@ This program starts when you click on
 
 const attempts = 1000000
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'sci' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
+const mode = 2 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
@@ -48,7 +49,7 @@ const sciNote = (acc) => {
 }
 const truncate = (acc) =>{
   if (acc.length <4) return acc
-for (let i = 0; i< 100; i+=3){
+for (let i = 0; i< 33; i+=3){
   if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i] + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
 }}
 const averageResults = (array) =>{
@@ -59,13 +60,21 @@ const averageResults = (array) =>{
   return Math.round(avg/array.length)
 }
 
+// Mode check
+const modeCheck = (acc) =>{
+  if (mode == 0){ return acc
+  } else if (mode == 1) {
+    sciNote
+  }
+
+}
 //Check for anomaly
 const checkIfAnomaly = (acc)=>{
   if (acc.length-1 >= (attempts.toString().length)) {
     logs.highAnomalies++
     logs.anomalies++
     if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('Jackpot with ' + (mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'commas' ? commas(acc): truncate(acc)) + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
+      drawText('Jackpot with ' + modeCheck() + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
       logs.jackpots++
       return 'blue'
     }
@@ -86,9 +95,8 @@ registerOnclick((x,y) => {
     if (acc<l* multiplier) acc=l*multiplier;
   }
   logs.array.push(acc)
-  acc = acc.toString()
   logs.total++
-  console.log(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, '/', acc, '/ from', commas(attempts.toString()), 'attempts')
+  console.log(modeCheck(), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfAnomaly(acc),25)
 });
