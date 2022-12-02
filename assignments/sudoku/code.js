@@ -48,9 +48,9 @@ const sciNote = (acc) => {
  return Math.round(acc/10*acc.length)
 }
 const truncate = (acc) =>{
-  if (acc.length <4) return acc
+  if (Math.ceil(Math.log10(num + 1)) <4) return acc
 for (let i = 0; i< 33; i+=3){
-  if (acc.length < 4 + i) return acc.substring(0, acc.length - i) + '.' + acc[acc.length - i] + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
+  if (Math.ceil(Math.log10(acc + 1)) < 4 + i) return acc/Math.ceil(Math.log10(acc + 1)) + (i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
 }}
 const averageResults = (array) =>{
   let avg = 0;
