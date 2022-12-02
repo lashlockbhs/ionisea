@@ -44,7 +44,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return (acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)).toString()
+ return acc[0] + '.' + acc.substring(1,6) + ' · ' + '10' + '^' + (acc.length - 1)
 }
 const truncate = (acc) =>{
   if (acc.length <4) return acc
