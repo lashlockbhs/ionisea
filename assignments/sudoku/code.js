@@ -52,7 +52,7 @@ const truncate = (acc) =>{
   console.log(accLength)
   if (accLength <4) return acc;
   const truncPower = accLength/3 <= 2 ? 'k' : accLength/3 <= 3 ? 'm' : accLength/3 <= 4 ? 'b' : accLength/3 <= 5 ? 't' : '😵'
-  return (acc/10**(accLength-(accLength%3-accLength%6)) + truncPower)
+  return (acc/10**(accLength-(accLength%6-accLength%3)) + truncPower)
 }
 const averageResults = (array) =>{
   let avg = 0;
