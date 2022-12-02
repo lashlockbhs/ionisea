@@ -52,7 +52,7 @@ const truncate = (acc) =>{
   console.log(accLength)
   if (accLength <4) return acc;
   const truncPower = accLength/3 > 1 ? 'k' : accLength/3 < 2 ? 'm' : accLength/3 > 3 ? 'b' : accLength/3 > 4 ? 't' : '😵'
-  return (acc/(10**accLength-(3-(accLength%3))) + truncPower)
+  return (acc/(10**accLength-(3-(1+accLength%3))) + truncPower)
 }
 const averageResults = (array) =>{
   let avg = 0;
@@ -79,7 +79,7 @@ const convertAccMode = (acc) =>{
 }
 //Check for anomaly
 const checkIfAnomaly = (acc)=>{
-  const accLength = Math.ceil(Math.log10(acc))
+  const accLength = Math.ceil(Math.log10(acc+1))
   if (accLength-1 >= (attempts.toString().length)) {
     logs.highAnomalies++
     logs.anomalies++
