@@ -22,8 +22,8 @@ if (winner.winType == 'h'){
   return drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), 0, width/2+height/(winner.winLoc == 0 ? 2 : -2),height, 'gray', 8)
 } 
 }
-let winner ={}
 const winSearch = (player) =>{
+  let winner ={}
   for(let c = 0; c<=2; c++){
     if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: c};
     if ((coordArray[0][c] == player) && (coordArray[1][c] == player) && (coordArray[2][c] == player)) winner = {winner: player,winType: 'v' ,winLoc: c};
@@ -34,10 +34,10 @@ const winSearch = (player) =>{
   return winner.winner
 }
 let turns = 0; 
-let xPos;
-let yPos;
 let player = player1;
 registerOnclick((x, y) => {
+let xPos;
+let yPos;
  if (y < 1/3 * height){
     yPos = 0
   } else if (y < 2/3 * height){
@@ -56,7 +56,7 @@ registerOnclick((x, y) => {
     xPos = 2
   } 
   if (coordArray[yPos][xPos] == '' && winSearch(player) == undefined){
-    coordArray[yPos][xPos].push(player)
+    coordArray[yPos][xPos] = player
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player))
     player = player === player2 ? player1 : player2;
