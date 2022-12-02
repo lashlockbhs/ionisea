@@ -37,7 +37,7 @@ let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies:
 
 // Notation functions
 const commas = (num) =>{
-  let returnString = num;
+  let returnString = num.toString;
   for (let x = 4 - (4-num.length % 3); x< num.length; x+= 3){
     returnString = returnString.substring(0,x*4/3) + ',' + returnString.substring(x*4/3)
   }
@@ -45,7 +45,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return Math.round(acc/10*acc.length)
+ return Math.trunc(acc/10*Math.ceil(Math.log10(acc + 1))+ "x10 ^" + Math.ceil(Math.log10(num + 1)))
 }
 const truncate = (acc) =>{
   if (Math.ceil(Math.log10(num + 1)) <4) return acc
