@@ -37,7 +37,7 @@ let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies:
 
 // Notation functions
 const commas = (num) =>{
-  let returnString = num.toString;
+  let returnString = num.toString();
   for (let x = 4 - (4-num.length % 3); x< num.length; x+= 3){
     returnString = returnString.substring(0,x*4/3) + ',' + returnString.substring(x*4/3)
   }
