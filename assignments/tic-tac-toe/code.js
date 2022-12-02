@@ -1,11 +1,12 @@
 // for me:  *  drawLine(x1, y1, x2, y2, color, lineWidth)
 const max = Math.max(width,height)
 const min = Math.min(width,height)
-//draw board
-for (let editVar = 1; editVar <= 2; editVar += 1){
+const drawBoard = (borders) =>{
+for (let editVar = 1-borders; editVar <= 2+borders; editVar += 1){
   drawLine(max/2-min/2 + min*(editVar/3), height, max/2-min/2 + min*(editVar/3), 0, 'grey', 2)
   drawLine(max/2-min/2, height*(editVar/3), max/2+min/2, height*(editVar/3), 'gray', 2)
-}
+}}
+drawBoard(0) //set 1 for borders and 0 for no borders
 const coordArray = [
   [[], [], []],
   [[], [], []],
@@ -22,7 +23,7 @@ if (winner.winType == 'h'){
   return drawLine(width/2-height/(winner.winLoc == 1 ? -2 : 2), 0, width/2+height/(winner.winLoc == 0 ? 2 : -2),height, 'gray', 8)
 } 
 }
-let winner ={}
+let winner = {}
 const winSearch = (player) =>{
   for(let c = 0; c<=2; c++){
     if ((coordArray[c][0] == player) && (coordArray[c][1] == player) && (coordArray[c][2] == player)) winner = {winner: player,winType: 'h' ,winLoc: c};
