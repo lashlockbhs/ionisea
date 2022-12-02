@@ -50,10 +50,10 @@ const sciNote = (acc) => {
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc + 1))
   console.log(accLength)
-  if (accLength <4) return acc
-for (let i = 0; i< 33; i+=3){
-  if (accLength < 4 + i) return (acc/(10**(accLength-accLength % i))) //(i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
-}}
+  if (accLength <4) return acc;
+  const truncPower = accLength/3 > 1 ? 'k' : accLength/3 < 2 ? 'm' : accLength/3 > 3 ? 'b' : accLength/3 > 4 ? 't' : '😵'
+  if (accLength < 4 + i) return (acc/(10) + truncPower
+}
 const averageResults = (array) =>{
   let avg = 0;
   for(const element of array){
