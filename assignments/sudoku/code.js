@@ -66,15 +66,15 @@ const averageResults = (array) =>{
 const convertAccMode = (acc) =>{
   if ((mode < 1) || (mode >5)){ return acc
   } else if (mode == 1) {
-    sciNote(acc)
+    return sciNote(acc)
   } else if (mode == 2){
-    Math.ceil(Math.log10(acc)).toString()
+    return Math.ceil(Math.log10(acc)).toString()
   } else if (mode == 3){
-    truncate(acc).toString()
+    return truncate(acc).toString()
   } else if (mode == 4){
-    averageResults(logs.array)
+    return averageResults(logs.array)
   } else if (mode == 5){
-    commas(acc)
+    return commas(acc)
   }
 }
 //Check for anomaly
