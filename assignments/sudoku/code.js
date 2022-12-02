@@ -1,5 +1,6 @@
 /* Quick guide! Read to understand a bit better.
-(Double click on any of the things in 'quotes' to hightlight their occurences in the code.)
+(Right click -> 'Change all occurrences' on any of the things in 'quotes' to hightlight their occurences in the code.)
+This program starts when you click on 
   - Start by choosing the amount of attempts every time you click.
     * Feel free to set this to any (positive) number (integer), but be careful!
     * Setting it too high will make it crash, or it will slow down heavily (30s+ wait)!
@@ -26,12 +27,11 @@
     * You can also find the amount of each anomaly within 'logs', along with the total number of clicks and anomalies.
   - The console log will show you the latest number (first of your mode, then natural), attempt count, and current average.
   - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
-? (if you'd like to know how this works, I (will) have written it out at the bottom, but try to figure it out yourself!)
 */
 
 const attempts = 1000000
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'commas', 'shithead', 'page.Crash()' (this will not do anything)
+const mode = 'trunc' //'sci', 'power', 'trunc', 'avg', 'commas', 'page.Crash()' (this will not do anything)
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
@@ -78,10 +78,6 @@ const checkIfAnomaly = (acc)=>{
     return 'black'
   }
 }
-if (mode == 'shithead') {
-for (let shithead = 1000; shithead >-190000; shithead += -4) {
-    drawLine(0, shithead, width, height, 'maroon');
-}}
 
 registerOnclick((x,y) => {
   let acc = 0;
@@ -99,10 +95,6 @@ registerOnclick((x,y) => {
 
 
 
-
-const test = (colour) =>{
-  return drawText('test', width/2, height/2, colour, 40)
-}
 const sudokuBoard =()=>{
   for (let editVar = 0; editVar < 10/9; editVar += 1/9){
     drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
