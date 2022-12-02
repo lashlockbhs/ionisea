@@ -2,9 +2,9 @@
 const max = Math.max(width,height)
 const min = Math.min(width,height)
 //draw board
-for (let editVar = 0; editVar <= 1; editVar += 1/3){
-  drawLine(max/2-min/2 + min*editVar, height, max/2-min/2 + min*editVar, 0, 'grey', 2)
-  drawLine(max/2-min/2, height*editVar, max/2+min/2, height*editVar, 'gray', 2)
+for (let editVar = 0; editVar <= 2; editVar += 1){
+  drawLine(max/2-min/2 + min*(editVar/3), height, max/2-min/2 + min*(editVar/3), 0, 'grey', 2)
+  drawLine(max/2-min/2, height*(editVar/3), max/2+min/2, height*(editVar/3), 'gray', 2)
 }
 const coordArray = [
   [[], [], []],
