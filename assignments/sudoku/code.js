@@ -62,7 +62,7 @@ const averageResults = (array) =>{
 }
 
 // Mode check
-const modeCheck = (acc) =>{
+const convertAccMode = (acc) =>{
   if (mode < 1 || mode >5){ return acc
   } else if (mode == 1) {
     sciNote(acc)
@@ -82,7 +82,7 @@ const checkIfAnomaly = (acc)=>{
     logs.highAnomalies++
     logs.anomalies++
     if (acc.length-2 >= (attempts.toString().length)){ 
-      drawText('Jackpot with ' + modeCheck() + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
+      drawText('Jackpot with ' + convertAccMode() + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
       logs.jackpots++
       return 'blue'
     }
@@ -104,15 +104,15 @@ registerOnclick((x,y) => {
   }
   logs.array.push(acc)
   logs.total++
-  console.log(modeCheck(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
+  console.log(convertAccMode(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
-  drawText(modeCheck(acc), x, y, checkIfAnomaly(acc),25)
+  drawText(convertAccMode(acc), x, y, checkIfAnomaly(acc),25)
 });
 
 
 
 const sudokuBoard =()=>{
-  for (let editVar = 0; editVar < 10/9; editVar += 1/9){
+  for (let editVar = 0; editVar <= 1; editVar += 1/9){
     drawLine(width/2-height/2 + height*editVar, height, width/2-height/2 + height*editVar, 0, 'grey', 2)
     drawLine(width/2-height/2, height*editVar, width/2+height/2, height*editVar, 'gray', 2)
   }
