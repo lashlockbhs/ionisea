@@ -74,7 +74,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 4){
     return averageResults(logs.array)
   } else if (mode == 5){
-    return commas(acc.toString)
+    return commas(acc.toString())
   }
 }
 //Check for anomaly
