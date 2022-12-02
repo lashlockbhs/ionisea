@@ -104,9 +104,9 @@ registerOnclick((x,y) => {
   }
   logs.array.push(acc)
   logs.total++
-  console.log(modeCheck(), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
+  console.log(modeCheck(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
-  drawText(mode == 'sci' ? sciNote(acc) : mode == 'power' ? acc.length-1 : mode == 'trunc' ? truncate(acc) : mode == 'avg' ? averageResults(logs.array) : mode == 'commas' ? commas(acc): acc, x, y, checkIfAnomaly(acc),25)
+  drawText(modeCheck(acc), x, y, checkIfAnomaly(acc),25)
 });
 
 
