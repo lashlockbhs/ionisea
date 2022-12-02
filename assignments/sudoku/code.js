@@ -48,7 +48,7 @@ const sciNote = (acc) => {
  return Math.trunc(acc/10*Math.ceil(Math.log10(acc + 1))+ "x10 ^" + Math.ceil(Math.log10(num + 1)))
 }
 const truncate = (acc) =>{
-  const accLength = Math.ceil(Math.log10(acc + 1))
+  const accLength = Math.ceil(Math.log10(acc))
   console.log(accLength)
   if (accLength <4) return acc;
   const truncPower = accLength/3 <= 2 ? 'k' : accLength/3 <= 3 ? 'm' : accLength/3 <= 4 ? 'b' : accLength/3 <= 5 ? 't' : '😵'
