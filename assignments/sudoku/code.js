@@ -45,7 +45,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return Math.round(acc/10*)
+ return Math.round(acc/10*acc.length)
 }
 const truncate = (acc) =>{
   if (acc.length <4) return acc
