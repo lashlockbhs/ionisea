@@ -32,7 +32,7 @@ This program starts when you click on
 
 const attempts = 1000000
 const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
-const mode = 3 // 0-5, explained in the guide
+const mode = 2 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
@@ -52,7 +52,7 @@ const truncate = (acc) =>{
   console.log(accLength)
   if (accLength <4) return acc
 for (let i = 0; i< 33; i+=3){
-  if (accLength < 4 + i) return (acc/(10**(accLength-accLength % i))).toString() //(i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
+  if (accLength < 4 + i) return (acc/(10**(accLength-accLength % i))) //(i/3 == 1 ? 'k' : i/3 == 2 ? 'm' : i/3 == 3 ? 'b' : i/3 == 4 ? 't' : '😵')
 }}
 const averageResults = (array) =>{
   let avg = 0;
@@ -68,7 +68,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 1) {
     sciNote(acc)
   } else if (mode == 2){
-    Math.log10(acc)
+    Math.ceil(Math.log10(acc)).toString()
   } else if (mode == 3){
     truncate(acc)
   } else if (mode == 4){
