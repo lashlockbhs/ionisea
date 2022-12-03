@@ -65,7 +65,8 @@ const averageResults = (array) =>{
 // Mode check
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
-    return parseFloat(l.toExponential().toString())
+    const lstring = l.toExponential().toString()
+    return lstring.substring(0,attempts) + lstring.substring(lstring.length-3)
   } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
