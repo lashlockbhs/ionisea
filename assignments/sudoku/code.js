@@ -48,7 +48,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return acc.toExponential().toString().substring(0, acc.toString().length-3) + ' * 10 ^ ' + Math.ceil(Math.log10(acc + 1))-1
+ return acc.toExponential().toString().substring(0, acc.toString().length-3) + ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1).toString()
  //return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
