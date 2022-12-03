@@ -49,14 +49,14 @@ const commas = (num) =>{
 const sciNote = (acc) => {
   const expoString = acc.toExponential().toString()
   //which of these two is better?
- return expoString.substring(0, acc.toString().length-3) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
+ return acc.toExponential().toPrecision(4) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
  //return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
   if (accLength <4) return acc;
   const truncPower = accLength < 7 ? 'k' : accLength < 10 ? 'm' : accLength < 13 ? 'b' : accLength/3 < 5 ? 't' : '😕'
-  return Math.round(acc/(10**(accLength-1-((accLength-1)%3)))) + truncPower
+  return Math.round(acc.toPrecision(4) + truncPower
 }
 const averageResults = (array) =>{
   return Math.round(array.reduce((a, x) => a + x, 0) / array.length)
@@ -65,7 +65,7 @@ const averageResults = (array) =>{
 // Mode check
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
-    return (Math.round(l*attempts)/attempts).toExponential()
+    return l.toExponential().toPrecision(4)
   } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
