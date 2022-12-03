@@ -60,7 +60,7 @@ const truncate = (acc) =>{
   return Math.round(acc/(10**(accLength-1-((accLength-1)%3)))) + truncPower
 }
 const averageResults = (array) =>{
-  return array.reduce((a, x) => a + x, 0) / array.length
+  return Math.round(array.reduce((a, x) => a + x, 0) / array.length)
 }
 
 // Mode check
