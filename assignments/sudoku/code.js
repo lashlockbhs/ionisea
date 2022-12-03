@@ -1,6 +1,6 @@
 /* Quick guide! Read to understand a bit better.
 (Right click -> 'Change all occurrences' on any of the things in 'quotes' to hightlight their occurences in the code.)
-This program starts when you click on 
+This program starts when you click on the canvas, 
   - Start by choosing the amount of attempts every time you click.
     * Feel free to set this to any (positive) number (integer), but be careful!
     * Setting it too high will make it crash, or it will slow down heavily (30s+ wait)!
@@ -46,7 +46,8 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ " * 10 ^ " + (Math.ceil(Math.log10(acc + 1))-1)
+ return Math.fround(acc)
+ //return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ " * 10 ^ " + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
