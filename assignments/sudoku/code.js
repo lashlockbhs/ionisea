@@ -41,7 +41,7 @@ let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies:
 const commas = (num) =>{
   let numLength = Math.ceil(Math.log10(num + 1))
   let returnString = num.toString();
-  for (let x = 3 - (4-numLength % 3); x< numLength; x+= 3){
+  for (let x = 4 - (4-numLength % 3); x< numLength; x+= 3){
     returnString = returnString.substring(0,x*4/3) + ',' + returnString.substring(x*4/3)
   }
   if (returnString[0] == ',') returnString = returnString.substring(1)
