@@ -84,7 +84,7 @@ const convertAccMode = (acc) =>{
 const checkIfAnomaly = (acc)=>{
   const accLength = Math.ceil(Math.log10(acc+1))
   const attemptsLength = Math.ceil(Math.log10(attempts+1))
-  if (accLength > (attemptsLength+1)) {
+  if (accLength >= (attemptsLength+1)) {
     logs.highAnomalies++
     logs.anomalies++
     if (accLength >= (attemptsLength+2)){ 
