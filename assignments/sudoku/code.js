@@ -56,7 +56,7 @@ const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
   if (accLength <4) return acc;
   const truncPower = accLength < 7 ? 'k' : accLength < 10 ? 'm' : accLength < 13 ? 'b' : accLength/3 < 5 ? 't' : '😕'
-  return Math.round(acc.toPrecision(4) + truncPower
+  return Math.round(acc.toPrecision(4)) + truncPower
 }
 const averageResults = (array) =>{
   return Math.round(array.reduce((a, x) => a + x, 0) / array.length)
