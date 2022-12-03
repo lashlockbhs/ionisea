@@ -32,7 +32,7 @@ This program starts when you click on the canvas,
 */
 
 const attempts = 10000
-const multiplier = 1 // negatives and 0 may break this depending on mode
+const multiplier = 100000000000000000 // negatives and 0 may break this depending on mode
 const mode = 6 // 0-6, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
@@ -65,8 +65,7 @@ const averageResults = (array) =>{
 
 // Mode check
 const convertAccMode = (acc) =>{
-  if (mode < 1){ return acc
-  } else if (mode == 1) {
+ if (mode == 1) {
     return sciNote(acc, ' * 10 ^ ')
   } else if (mode == 2){
     return Math.ceil(Math.log10(acc))
