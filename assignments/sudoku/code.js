@@ -31,7 +31,7 @@ This program starts when you click on the canvas,
   - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
 */
 
-const attempts = 10000
+const attempts = 1000000
 const multiplier = 10 // negatives and 0 may break this depending on mode
 const mode = 6 // 0-6, explained in the guide
 const logLowestResult = false
