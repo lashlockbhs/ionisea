@@ -77,7 +77,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 5){
     return commas(acc)
   } else if (mode == 6){
-    sciNote(acc, 'e+')
+    return sciNote(acc, 'e+')
   }
 }
 //Check for anomaly
