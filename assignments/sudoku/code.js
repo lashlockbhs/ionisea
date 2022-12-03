@@ -115,7 +115,7 @@ registerOnclick((x,y) => {
   if (logLowestResult) console.log(lowest);
   logs.avg = averageResults(logs.array)
   console.log(convertAccMode(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
-  console.log('current avg:', averageResults(logs.array))
+  console.log('current avg:', logs.avg)
   drawText(convertAccMode(acc), x, y, checkIfAnomaly(acc),25)
 });
 
