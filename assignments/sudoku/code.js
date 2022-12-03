@@ -31,7 +31,7 @@ This program starts when you click on
 */
 
 const attempts = 1000000
-const multiplier = 1000000000000 // negatives may break this
+const multiplier = 0 // negatives may break this
 const mode = 2 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
