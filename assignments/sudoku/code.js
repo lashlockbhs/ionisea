@@ -31,7 +31,7 @@ This program starts when you click on the canvas,
   - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
 */
 
-const attempts = 1
+const attempts = 1000
 const multiplier = 1 // negatives and 0 may break this depending on mode
 const mode = 1 // 0-6, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, avg:0, array: []} 
