@@ -106,7 +106,7 @@ const checkIfAnomaly = (acc)=>{
 
 registerOnclick((x,y) => {
   let acc = 0;
-  let lowest = Math.random
+  let lowest = Math.random()
   for (let e=0; e < Math.abs(attempts); e++){
     const l = Math.random()/Math.random()
     if (lowest > l) lowest = l
