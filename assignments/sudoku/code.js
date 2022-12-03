@@ -41,7 +41,7 @@ const commas = (num) =>{
   for (let x = 4 - (4-returnString.length % 3); x< returnString.length; x+= 3){
     returnString = returnString.substring(0,x*4/3) + ',' + returnString.substring(x*4/3)
   }
-  if (returnString[0] == ',') returnString = returnString.substring(1)
+  if (returnString[returnString.length] == ',') returnString = returnString.substring(0,returnString.length)
   return returnString;
 }
 const sciNote = (acc) => {
