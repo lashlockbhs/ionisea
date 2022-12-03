@@ -30,8 +30,8 @@ This program starts when you click on
   - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
 */
 
-const attempts = 1000000
-const multiplier = 100000000 //this should not exceed a few million or things WILL break (also breaks with negatives)
+const attempts = 1
+const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
 const mode = 3 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
@@ -73,7 +73,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 4){
     return averageResults(logs.array)
   } else if (mode == 5){
-    return commas(acc.toString())
+    return commas(acc)
   }
 }
 //Check for anomaly
