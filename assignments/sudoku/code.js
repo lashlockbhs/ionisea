@@ -51,7 +51,7 @@ const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
   if (accLength <4) return acc;
   const truncPower = accLength/3 <= 2 ? 'k' : accLength/3 < 3 ? 'm' : accLength/3 < 4 ? 'b' : accLength/3 < 5 ? 't' : '😵'
-  return (acc/10**(accLength-1+(accLength%6)-accLength%3) + truncPower)
+  return (acc/10**(accLength) + truncPower)
 }
 const averageResults = (array) =>{
   let avg = 0;
