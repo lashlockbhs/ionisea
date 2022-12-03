@@ -33,7 +33,7 @@ This program starts when you click on the canvas,
 
 const attempts = 10000
 const multiplier = 10 // negatives and 0 may break this depending on mode
-const mode = 1 // 0-6, explained in the guide
+const mode = 6 // 0-6, explained in the guide
 const logLowestResult = true
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
@@ -77,7 +77,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 5){
     return commas(acc)
   } else if (mode == 6){
-    return sciNote(acc, 'e+')
+    return acc.toExponential()
   }else return acc
 }
 //Check for anomaly
@@ -113,7 +113,7 @@ registerOnclick((x,y) => {
   }
   logs.array.push(acc)
   logs.total++
-  console.log(lowest)
+  if (logLowestResult) console.log(lowest);
   console.log(convertAccMode(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(convertAccMode(acc), x, y, checkIfAnomaly(acc),25)
