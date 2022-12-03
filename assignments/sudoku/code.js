@@ -35,7 +35,7 @@ const attempts = 1000000
 const multiplier = 1 // negatives and 0 may break this depending on mode
 const mode = 1 // 0-6, explained in the guide
 const logLowestResult = false
-let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
+let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, avg:0, array: []} 
 
 // Notation functions
 const commas = (num) =>{
@@ -113,6 +113,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   logs.total++
   if (logLowestResult) console.log(lowest);
+  logs.avg = averageResults(logs.array)
   console.log(convertAccMode(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
   console.log('current avg:', averageResults(logs.array))
   drawText(convertAccMode(acc), x, y, checkIfAnomaly(acc),25)
