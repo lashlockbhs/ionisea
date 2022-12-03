@@ -22,6 +22,7 @@ This program starts when you click on the canvas,
       ~ For example, if the number returned was 2.799 million, it would express it as "2.7m"
     * 4; A straightforward representation of the average of all results.
     * 5; interjects commas where there should be one to increase legibility.
+    * 6; Calls 'sci,' but uses e+ format rather than *10^. (1.0 * 10 ^ 4 = 1e+4)
     * Anything else will default to the raw number.
   - 'logs' can be useful if you are looking for some metric in particular.
     * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
@@ -30,7 +31,7 @@ This program starts when you click on the canvas,
   - You should be good to go! (: Have fun tweaking the variables to see what you like best. 
 */
 
-const attempts = 1000000
+const attempts = 1
 const multiplier = 1 // negatives and 0 may break this depending on mode
 const mode = 1 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
@@ -46,7 +47,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ "* 10 ^" + (Math.ceil(Math.log10(acc + 1))-1)
+ return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ " * 10 ^ " + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
