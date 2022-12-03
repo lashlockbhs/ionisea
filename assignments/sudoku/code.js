@@ -46,8 +46,8 @@ const commas = (num) =>{
   if (returnString[0] == ',') returnString = returnString.substring(1)
   return returnString;
 }
-const sciNote = (acc, e) => {
- return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ (e ? " * 10 ^ " : 'e+') + (Math.ceil(Math.log10(acc + 1))-1)
+const sciNote = (acc, format) => {
+ return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+format + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
@@ -67,7 +67,7 @@ const averageResults = (array) =>{
 const convertAccMode = (acc) =>{
   if ((mode < 1) || (mode >5)){ return acc
   } else if (mode == 1) {
-    return sciNote(acc, false)
+    return sciNote(acc, ' * 10 ^ ')
   } else if (mode == 2){
     return Math.ceil(Math.log10(acc))
   } else if (mode == 3){
@@ -77,7 +77,7 @@ const convertAccMode = (acc) =>{
   } else if (mode == 5){
     return commas(acc)
   } else if (mode == 6){
-    sciNote(acc, true)
+    sciNote(acc, 'e+')
   }
 }
 //Check for anomaly
