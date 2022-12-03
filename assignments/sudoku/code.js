@@ -66,7 +66,7 @@ const averageResults = (array) =>{
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
     const lstring = l.toExponential().toString()
-    return lstring.substring(0,attempts) + lstring.substring(lstring.length-3)
+    return lstring.substring(0,5) + lstring.substring(lstring.length-3)
   } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
