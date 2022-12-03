@@ -49,7 +49,7 @@ const commas = (num) =>{
 }
 const sciNote = (acc) => {
   const expoString = acc.toExponential().toString()
-  //which of these two is better? basically the same length
+  //which of these two is better?
  return expoString.substring(0, acc.toString().length-3) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
  //return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
@@ -60,11 +60,7 @@ const truncate = (acc) =>{
   return Math.round(acc/(10**(accLength-1-((accLength-1)%3)))) + truncPower
 }
 const averageResults = (array) =>{
-  let avg = 0;
-  for(const element of array){
-    avg += element
-  }
-  return Math.round(avg/array.length)
+  return array.reduce((a, x) => a + x, 0) / array.length
 }
 
 // Mode check
