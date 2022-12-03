@@ -45,7 +45,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return Math.trunc(acc/10*Math.ceil(Math.log10(acc + 1)))+ "x10 ^" + Math.ceil(Math.log10(acc + 1))
+ return Math.trunc(acc/10**Math.ceil(Math.log10(acc + 1)))+ "x10 ^" + Math.ceil(Math.log10(acc + 1))
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
