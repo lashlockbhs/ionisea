@@ -60,7 +60,7 @@ const drawmandel = (iterations, bx, by, centerx, centery, zoom, c) =>{
     }
   }
 }
-const x = 31.05
+const x = 31
 const y = 0 
 const maxiterations = 10000
 const zoom = 100000
