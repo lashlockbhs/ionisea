@@ -65,7 +65,7 @@ const averageResults = (array) =>{
 // Mode check
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
-    return l
+    return l.toExponential
   } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
