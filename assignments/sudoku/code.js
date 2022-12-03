@@ -33,7 +33,7 @@ This program starts when you click on the canvas,
 
 const attempts = 10000
 const multiplier = 100000000000000000000000 // negatives and 0 may break this depending on mode
-const mode = 6 // 0-6, explained in the guide
+const mode = 1 // 0-6, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
 // Notation functions
