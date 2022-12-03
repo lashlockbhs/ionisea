@@ -12,7 +12,7 @@ This program starts when you click on
   - Now you choose the mode that you would like the text to be displayed in:
     * 0; Returns the raw number
     * 1; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
-    * 2; Takes the power of 10 that would be applied in 'sci'.
+    * 2; Takes the amount of digits in the number.
     * 3; Truncation, the most complicated but best looking number representation.
       ~ Similar to 'sci', in that it takes the first few digits and shows a multiplication.
       ~ However, this uses letters to show the multiplication.
@@ -31,7 +31,7 @@ This program starts when you click on
 */
 
 const attempts = 1000000
-const multiplier = 1 //this should not exceed a few million or things WILL break (also breaks with negatives)
+const multiplier = 10000000 //this should not exceed a few million or things WILL break (also breaks with negatives)
 const mode = 2 // 0-5, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, array: []} 
 
@@ -45,7 +45,7 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
- return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ "x10^" + (Math.ceil(Math.log10(acc + 1))-1)
+ return (acc/10**Math.ceil(Math.log10(acc/10))).toString().substring(0,5)+ " * 10 ^ " + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
