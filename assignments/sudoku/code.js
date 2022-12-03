@@ -84,10 +84,10 @@ const convertAccMode = (acc) =>{
 const checkIfAnomaly = (acc)=>{
   const accLength = Math.ceil(Math.log10(acc+1))
   const attemptsLength = Math.ceil(Math.log10(attempts+1))
-  if (accLength-1 >= (attemptsLength)) {
+  if (accLength > (attemptsLength+1)) {
     logs.highAnomalies++
     logs.anomalies++
-    if (accLength-2 >= (attemptsLength)){ 
+    if (accLength >= (attemptsLength+2)){ 
       drawText('Jackpot with ' + convertAccMode(acc) + '!', Math.random()*width - height, Math.random()*height, 'blue', height/8)
       logs.jackpots++
       return 'blue'
