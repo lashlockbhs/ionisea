@@ -10,7 +10,7 @@ This program starts when you click on the canvas,
     * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
     * The default 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
   - Now you choose the mode that you would like the text to be displayed in:
-    * 0; Returns the raw number
+    * 0; Returns the lowest number from the attempts in raw format
     * 1; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
     * 2; Takes the amount of digits in the number.
     * 3; Truncation, the most complicated but best looking number representation.
@@ -64,8 +64,10 @@ const averageResults = (array) =>{
 }
 
 // Mode check
-const convertAccMode = (acc) =>{
- if (mode == 1) {
+const convertAccMode = (acc, l) =>{
+  if (mode == 0){
+    return l
+  } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
     return Math.ceil(Math.log10(acc))
@@ -77,7 +79,7 @@ const convertAccMode = (acc) =>{
     return commas(acc)
   } else if (mode == 6){
     return acc.toExponential()
-  }else return acc
+  }else  return acc
 }
 //Check for anomaly
 const checkIfAnomaly = (acc)=>{
@@ -103,20 +105,19 @@ const checkIfAnomaly = (acc)=>{
 
 registerOnclick((x,y) => {
   let acc = 0;
-  let lowest = logLowestResult ? 1 : 0;
+  let lowest = 1
   for (let e=0; e < attempts; e++){
     const l = Math.random()/Math.random()
-    if (lowest > l && logLowestResult) lowest = l
+    if (lowest > l) lowest = l
     if (Math.abs(acc)<Math.round(Math.abs(l* multiplier))) acc=Math.round(l*multiplier);
     // these absolute values make negative multipliers possible
   }
   logs.array.push(acc)
-  logs.total++
-  if (logLowestResult) console.log(lowest);
+  logs.total++;
   logs.avg = averageResults(logs.array)
-  console.log(convertAccMode(acc), '/', acc, '/ from', commas(attempts.toString()), 'attempts')
-  console.log('current avg:', logs.avg)
-  drawText(convertAccMode(acc), x, y, checkIfAnomaly(acc),25)
+  console.log(convertAccMode(acc), '/', acc, '/ from', convertAccMode(attempts), 'attempts')
+  console.log('current avg:', logs.avg, 'lowest: ' + lowest)
+  drawText(convertAccMode(acc, lowest), x, y, checkIfAnomaly(acc),25)
 });
 
 
