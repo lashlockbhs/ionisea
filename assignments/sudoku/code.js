@@ -22,7 +22,7 @@ This program starts when you click on the canvas,
       ~ For example, if the number returned was 2.799 million, it would express it as "2.7m"
     * 4; A straightforward representation of the average of all results.
     * 5; interjects commas where there should be one to increase legibility.
-    * 6; Calls 'sci,' but uses e+ format rather than *10^. (1.0 * 10 ^ 4 = 1e+4)
+    * 6; Exponential value using ...e+... format
     * Anything else will default to the raw number.
   - 'logs' can be useful if you are looking for some metric in particular.
     * 'logs' stores all clicks' results in an array that can be accessed with 'logs.array' in REPL.
@@ -47,8 +47,9 @@ const commas = (num) =>{
   if (returnString[0] == ',') returnString = returnString.substring(1)
   return returnString;
 }
-const sciNote = (acc, format) => {
- return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+format + (Math.ceil(Math.log10(acc + 1))-1)
+const sciNote = (acc) => {
+ return acc.toExponential().toString().substring(0, acc.toString().length-3) + ' * 10 ^ ' + Math.ceil(Math.log10(acc + 1))-1
+ //return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
@@ -67,7 +68,7 @@ const averageResults = (array) =>{
 // Mode check
 const convertAccMode = (acc) =>{
  if (mode == 1) {
-    return sciNote(acc, ' * 10 ^ ')
+    return sciNote(acc)
   } else if (mode == 2){
     return Math.ceil(Math.log10(acc))
   } else if (mode == 3){
