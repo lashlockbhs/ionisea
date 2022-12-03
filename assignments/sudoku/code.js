@@ -107,12 +107,13 @@ const checkIfAnomaly = (acc)=>{
 registerOnclick((x,y) => {
   let acc = 0;
   let lowest = 1
-  for (let e=0; e < attempts; e++){
+  for (let e=0; e < Math.abs(attempts); e++){
     const l = Math.random()/Math.random()
     if (lowest > l) lowest = l
-    if (Math.abs(acc)<Math.round(Math.abs(l* multiplier))) acc=Math.round(l*multiplier);
+    if (Math.abs(acc)<Math.abs(l* multiplier)) acc=l*multiplier;
     // these absolute values make negative multipliers possible
   }
+  if (attempts < 100) acc = Math.round(acc)
   logs.array.push(acc)
   logs.total++;
   logs.avg = averageResults(logs.array)
