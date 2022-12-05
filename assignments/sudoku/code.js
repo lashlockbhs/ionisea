@@ -33,7 +33,7 @@ This program starts when you click on the canvas,
 
 const attempts = 1000000
 const multiplier = 1000 // negatives and 0 may break this depending on mode
-const mode = 2 // 0-6, explained in the guide
+const mode = 1 // 0-6, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, avg:0, array: []} 
 
 // Notation functions
@@ -49,7 +49,7 @@ const commas = (num) =>{
 const sciNote = (acc) => {
   const expoString = acc.toExponential().toString()
   //which of these two is better?
- return (acc/10**Math.round(Math.log10(acc-1))).toString().substring(0,6) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
+ return (acc/10**Math.round(Math.log10(acc+1))).toString().substring(0,6) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
  //return (Math.round(acc/10**Math.ceil(Math.log10(acc/1000)))/100).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
