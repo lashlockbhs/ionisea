@@ -65,8 +65,7 @@ const averageResults = (array) =>{
 // Mode check
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
-    const lstring = l.toExponential().toString()
-    return lstring.substring(0,5) + lstring.substring(lstring.length-3)
+    return l.toPrecision(Math.ceil(Math.log10(attempts-1))-3)
   } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
@@ -117,7 +116,7 @@ registerOnclick((x,y) => {
   logs.array.push(acc)
   logs.total++;
   logs.avg = averageResults(logs.array)
-  console.log(convertAccMode(Math.round(acc,lowest)), '/', acc, '/ from', attempts, 'attempts')
+  console.log(convertAccMode(Math.round(acc)), '/', acc, '/ from', attempts, 'attempts')
   console.log('current avg:', logs.avg, 'lowest: ' + lowest.toPrecision(Math.ceil(Math.log10(attempts-1))-3))
   drawText(convertAccMode(acc, lowest), x, y, checkIfAnomaly(acc),25)
 });
