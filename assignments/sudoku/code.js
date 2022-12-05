@@ -111,13 +111,13 @@ registerOnclick((x,y) => {
     const l = Math.random()/Math.random()
     if (lowest > l) lowest = l
     if (Math.abs(acc)<Math.abs(l* multiplier)) acc=l*multiplier;
-    // these absolute values make negative multipliers possible
+    // these absolute values make negative multipliers not break 
   }
   if (attempts < 100) acc = Math.round(acc)
   logs.array.push(acc)
   logs.total++;
   logs.avg = averageResults(logs.array)
-  console.log(convertAccMode(Math.round(acc)), '/', acc, '/ from', attempts, 'attempts')
+  console.log(convertAccMode(Math.round(acc,lowest)), '/', acc, '/ from', attempts, 'attempts')
   console.log('current avg:', logs.avg, 'lowest: ' + lowest.toPrecision(Math.ceil(Math.log10(attempts-1))-3))
   drawText(convertAccMode(acc, lowest), x, y, checkIfAnomaly(acc),25)
 });
