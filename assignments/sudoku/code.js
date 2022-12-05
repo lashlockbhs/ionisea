@@ -50,7 +50,7 @@ const sciNote = (acc) => {
   const expoString = acc.toExponential().toString()
   //which of these two is better?
  //return (acc/10**(Math.ceil(Math.log10(acc))-1)).toString().substring(0,6) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
- return Math.round(acc/10**((Math.ceil(Math.log10(acc/1)))-3)).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
+ return Math.round(acc/10**((Math.ceil(Math.log10(acc)))-1)).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
