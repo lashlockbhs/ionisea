@@ -47,10 +47,10 @@ const commas = (num) =>{
   return returnString;
 }
 const sciNote = (acc) => {
-  //which of these two is better?
+  //which of these two is better? 1st can be optimized some (did the 2nd one 1st)
   //const expoString = acc.toExponential().toString()
  //return (acc/10**(Math.ceil(Math.log10(acc))-1)).toString().substring(0,6) + ' * 10 ^ ' + (expoString[expoString.length-2] === '+' ? '' : '-') +(Math.ceil(Math.log10(acc + 1))-1)
- return Math.round(acc/10**((Math.ceil(Math.log10(acc+1)))-1)).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
+ return acc/10**((Math.ceil(Math.log10(acc+1)))-1).toString().substring(0,5)+ ' * 10 ^ ' + (Math.ceil(Math.log10(acc + 1))-1)
 }
 const truncate = (acc) =>{
   const accLength = Math.ceil(Math.log10(acc))
