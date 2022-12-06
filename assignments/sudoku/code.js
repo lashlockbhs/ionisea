@@ -65,6 +65,7 @@ const averageResults = (array) =>{
 // Mode check
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
+    if (attempts < 1000) return l
     return l.toPrecision(Math.ceil(Math.log10(attempts+1))-3)
   } else if (mode == 1) {
     return sciNote(acc)
