@@ -66,7 +66,7 @@ const averageResults = (array) =>{
 const convertAccMode = (acc, l) =>{
   if (mode == 0){
     if (attempts < 1000) return l
-    return (l.toPrecision(Math.ceil(Math.log10(attempts+1))-3)).toExponential()
+    return parseFloat(l.toPrecision(Math.ceil(Math.log10(attempts+1))-3)).toExponential()
   } else if (mode == 1) {
     return sciNote(acc)
   } else if (mode == 2){
