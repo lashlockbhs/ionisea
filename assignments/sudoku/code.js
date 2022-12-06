@@ -67,7 +67,7 @@ const convertAccMode = (acc, l) =>{
   if (mode == 0){
     if (l>0.0001) {return l 
     } else {
-      return l.toFixed(Math.ceil(Math.log10(attempts+1)))
+      return l.toPrecision(Math.ceil(Math.log10(attempts+1)))
     }
   } else if (mode == 1) {
     return sciNote(acc)
