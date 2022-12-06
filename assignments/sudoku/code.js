@@ -10,7 +10,7 @@ This program starts when you click on the canvas,
     * This should only be used in testing or to have fun, as it will overrepresent amounts of anomalies.
     * The default 'multiplier' is 1, anything less (above 0) will result in more 'lowAnomalies', and vice versa.
   - Now you choose the mode that you would like the text to be displayed in:
-    * 0; Returns the lowest number from the attempts in raw format
+    * 0; Returns the lowest number from the attempts in exponential format. (5.2e-5)
     * 1; Scientific notation, relatively straightforward. (10,000 -> 1.0 * 10^4)
     * 2; Takes the amount of digits in the number.
     * 3; Truncation, the most complicated but best looking number representation.
@@ -32,7 +32,7 @@ This program starts when you click on the canvas,
 */
 
 const attempts = 100000
-const multiplier = 0.000001 // negatives and 0 may break this depending on mode
+const multiplier = 1 // negatives and 0 may break this depending on mode
 const mode = 0 // 0-6, explained in the guide
 let logs = {total: 0, jackpots: 0, highAnomalies: 0, lowAnomalies: 0, anomalies: 0, avg:0, array: []} 
 
