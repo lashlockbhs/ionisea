@@ -8,9 +8,9 @@ for (let editVar = 1-borders; editVar <= 2+borders; editVar += 1){
 }}
 drawBoard(0) //set 1 for borders and 0 for no borders
 const coordArray = [
-  [[''], [''], ['']],
-  [[''], [''], ['']],
-  [[''], [''], ['']],
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', ''],
 ]
 const player1 = 'X' //will go first
 const player2 = 'O'
@@ -56,7 +56,7 @@ let yPos;
   } else if (x < max/2 + min/2){
     xPos = 2
   } 
-  if (coordArray[yPos][xPos] == '' && winSearch(player) == undefined){
+  if (coordArray[yPos][xPos] === '' && winSearch(player) == undefined){
     coordArray[yPos][xPos] = player
     drawText(player, max/2-min/2 - min*0.1 +min/6 + (min * xPos/3), min*0.1 + min/6 + min*yPos/3, 'black', min * 0.3)
     console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player))
