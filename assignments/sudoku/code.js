@@ -75,7 +75,7 @@ const convertAccMode = (acc, l) =>{
   } else if (mode == 5){
     return commas(acc)
   } else if (mode == 6){
-    return acc.toExponential()
+    return acc.toPrecision(Math.ceil(Math.log10(acc+1))).toExponential()
   }else  return acc
 }
 //Check for anomaly
