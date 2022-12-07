@@ -6,7 +6,7 @@ for (let editVar = 1-borders; editVar <= 2+borders; editVar += 1){
   drawLine(max/2-min/2 + min*(editVar/3), height, max/2-min/2 + min*(editVar/3), 0, color, 2)
   drawLine(max/2-min/2, height*(editVar/3), max/2+min/2, height*(editVar/3), color, 2)
 }}
-drawBoard(0, 'grey') //set 1 for borders and 0 for no borders
+drawBoard(0, 'grey') //set 1 for borders and 0 for no borders, color
 const coordArray = [
   ['', '', ''],
   ['', '', ''],
