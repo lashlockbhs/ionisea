@@ -35,3 +35,6 @@ const add2Vectors = (a) => {
 const addNumVectors = (a) => {
   return a.reduce((acc, x) => add2Vectors([acc, x]), vector(0, 0))
 }
+
+const verySphericalObject = {mass: 2.5, size: 2}
+const largeCube = {mass: 2.5, size: 2, position: {x: 200, y : 150}}
