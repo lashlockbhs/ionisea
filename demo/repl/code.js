@@ -35,7 +35,7 @@ const add2Vectors = (a) => {
 const addNumVectors = (a) => {
   let accVector = vector(0,0)
   for (const element of a){
-    accVector = add2Vectors(accVector, element)
+    accVector = add2Vectors([accVector, element])
   }
   return accVector
   //return a.reduce((acc, x) => add2Vectors([acc, x]), vector(0, 0))
