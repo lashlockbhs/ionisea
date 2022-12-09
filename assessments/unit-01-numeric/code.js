@@ -22,7 +22,7 @@ const volumeOfCube = (edgeLength) => {
 }
 
 const populationGrowth = (initPop, growthRate) => {
-  return initPop + initPop * growthRate
+  return initPop * growthRate
 }
 
 const earnedRunAverage = (earnedRuns, inningsPitched) =>{
