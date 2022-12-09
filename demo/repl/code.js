@@ -29,12 +29,13 @@ const add2Vectors = (a) => {
   let y2 = Math.sin(a[1].angle) * a[1].magnitude
   let angle = Math.atan2(y1 + y2, x1 + x2)
   let mag = Math.sqrt((x1 + x2) ** 2 + (y1 + y2) ** 2)
-  return ({ angle: angle * 180 / Math.PI, magnitude: mag })
+  return ({ angle: angle, magnitude: mag })
 }
 
 const addNumVectors = (a) => {
-  let accVector = vector(0,0)
-  for (const element of a){
+  let accVector = a[0]
+  let array = a
+  for (const element of a+1){
     accVector = add2Vectors([accVector, element])
   }
   return accVector
