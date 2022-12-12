@@ -61,7 +61,7 @@ const createObject = (type, mass, size, x, y)=>{
   } else if (type == 2){
     drawTriangle(x-size/2,y-size/2,x,y+size/2,x+size/2,y-size/2)
   }
-  return object = {mass, size, type, position: {x, y}}
+  return {mass, size, type, position: {x, y}}
 }
 const obj = createObject()
 
