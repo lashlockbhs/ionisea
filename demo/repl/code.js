@@ -63,7 +63,7 @@ const createObject = (type, mass, size, x, y)=>{
   }
   return object = {mass, size, type, position: {x, y}}
 }
-const createObject()
+const obj = createObject()
 
 const gravAttraction = (o1, o2) => {
   const distance = Math.hypot(Math.abs(o1.position.x - o2.position.x), Math.abs(o1.position.y - o2.position.y))
