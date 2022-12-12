@@ -53,9 +53,20 @@ const addNumVectors = (a, mode) => {
 const EARTH_GRAVITY = 9.8
 const G = 6.6743e-11
 
+const createObject = (type, mass, size, x, y)=>{
+  if (type == 0){
+    drawCircle(x,y,size)
+  } else if (type == 1) {
+    drawRect(x-size/2, y-size/2, x+size/2, y+size/2)
+  } else if (type == 2){
+    drawTriangle(x-size/2,y-size/2,x,y+size/2,x+size/2,y-size/2)
+  }
+  return object = {mass, size, type, position: {x, y}}
+}
+const createObject()
+
 const gravAttraction = (o1, o2) => {
   const distance = Math.hypot(Math.abs(o1.position.x - o2.position.x), Math.abs(o1.position.y - o2.position.y))
   return (o1.mass * o2.mass * G) / distance ** 2
 }
 
-const object = {mass: 2.5, size: 2, type:0, position: {x: 200, y : 150}}
