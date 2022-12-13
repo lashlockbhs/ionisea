@@ -52,7 +52,6 @@ const addNumVectors = (a, mode) => {
 
 const EARTH_GRAVITY = 9.8
 const G = 6.6743e-11
-const shapethung = new Shape
 class Shape {
  constructor(type, mass, size, x, y, actingForces){
    this.type = type
