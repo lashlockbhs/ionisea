@@ -18,6 +18,16 @@ const MAX_FIB_N = 1476;
 
 const MAX_FIB = fib2(MAX_FIB_N);
 */
+
+const rotate = (cx, cy, x, y, angle) => {
+    let radians = (Math.PI / 180) * angle;
+    cos = Math.cos(radians),
+        sin = Math.sin(radians),
+        nx = (cos * (x - cx)) + (sin * (y - cy)) + cx,
+        ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
+    return [nx, ny];
+}
+
 const vector = (angle, magnitude) => {
   return ({ angle: angle * Math.PI / 180, magnitude })
 }
@@ -49,27 +59,86 @@ const addNumVectors = (a, mode) => {
     return a.reduce((acc, x) => add2Vectors([acc, x]), vector(0, 0))
   }
 }
-const objectDraw = []
+
 const EARTH_GRAVITY = 9.8
 const G = 6.6743e-11
-registerOnClick((x,y) =>{
- objectDraw.push({x, y})
-})
 class Shape {
- constructor(sides, mass, size, actingForces){
-   this.sides = sides
-   this.mass = mass
-   this.size = size
-   this.center = 
-   this.actingForce = [addNumVectors(actingForces)]
+ constructor(sidesCords, x, y, rotation, centerX, centerY, mass, actingForces){
+   this.sidesCords = sidesCords;
+   this.mass = mass;
+   this.x = x;
+   this.y = y;
+   this.rotation = rotation;
+   this.centerX = centerX;
+   this.centerY = centerY;
+   this.force = addNumVectors(actingForces);
  }
-  draw(){
-  
+ 
+  drawShape() {
+    let currX = this.x;
+    let currY = this.y;
+
+    for (let i = 0; i < this.sidesCords.length; i++) {
+        let cordSetStart = rotate(this.centerX, this.centerY, currX, currY, this.rotation)
+        let cordSetEnd = rotate(this.centerX, this.centerY, currX + this.sidesCords[i].xAdd, currY + this.sidesCords[i].yAdd, this.rotation)
+        drawLine(cordSetStart[0], cordSetStart[1], cordSetEnd[0], cordSetEnd[1], 'black', ctx);
+        currX = currX + this.sidesCords[i].xAdd;
+        currY = currY + this.sidesCords[i].yAdd;
+    }
+  }
+getBoundOfObject (){
+    let currX = 0;
+    let currY = 0;
+    let array = []
+    let n;
+    for (let i = 0; i < this.sidesCords.length; i++) {
+        let rotatedSideCords = rotate(this.centerX, this.centerY, this.centerX + this.sidesCords[i].xAdd, this.centerY + this.sidesCords[i].yAdd, this.rotation)
+        let numOfSidePixels = Math.floor(Math.sqrt(this.sidesCords[i].xAdd ** 2 + this.sidesCords[i].yAdd ** 2))
+        let xAddperpix = (rotatedSideCords[0] - this.centerX) / numOfSidePixels
+        let yAddperpix = (rotatedSideCords[1] - this.centerY) / numOfSidePixels
+
+        for (n = 0; n < numOfSidePixels; n++) {
+            array.push({ "x": this.centerX + (currX + (xAddperpix * n)), "y": this.centerY + (currY + (yAddperpix * n)) })
+
+        }
+        currX = currX + (xAddperpix * n);
+        currY = currY + (yAddperpix * n);
+    }
+    return array;
+}
+    
+}
+
+
+
+
+const gravAttraction = (o1, o2) => {
+  const distance = Math.hypot(Math.abs(o1.position.x - o2.position.x), Math.abs(o1.position.y - o2.position.y))
+  return (o1.mass * o2.mass * G) / distance ** 2
+}
+
+
+const square1 = new shape(shapeCordsSquare, 100, 100, 10, 5, 5, 5)
+const triangle1 = new shape(trinaglesides, 100, 150, 0, 5, 5, 5)
+
+const drawFrame = (time) => {
+  if (time > next) {
+    
+    clear();
+    const objectBound = getBoundOfObject(square1)
+    console.log(objectBound)
+
+    drawPoints(objectBound)
+    drawShape(square1)
+    
+    square1.rotation = countFrame*1;
+    next += 10
+    countFrame++
   }
 }
 
-const gravAttraction = (o1, o2) => {
-  const distance = Math.hypot(Math.abs(o1.center.x - o2.center.x), Math.abs(o1.center.y - o2.center.y))
-  return (o1.mass * o2.mass * G) / distance ** 2
-}
+animate(drawFrame)
+
+
+
 
