@@ -52,22 +52,18 @@ const addNumVectors = (a, mode) => {
 
 const EARTH_GRAVITY = 9.8
 const G = 6.6743e-11
-
-class createObject {
+const shapethung = new Shape
+resgister on click(() =
+)
+class Shape {
  constructor(type, mass, size, x, y){
-   this.type
-   this.mass
-   this.size
+   this.type = type
+   this.mass = mass
+   this.size = size
    this.position = {x,y}
  }
   draw(){
-  if (this.type == 0){
-    drawCircle(this.position.x,this.position.y,this.size)
-  } else if (this.type == 1) {
-    drawRect(this.position.x-this.size/2, this.position.y-this.size/2, this.position.x+this.size/2, this.position.y+this.size/2)
-  } else if (this.type == 2){
-    drawTriangle(this.position.x-this.size/2,this.position.y-this.size/2,this.position.x,this.position.y+this.size/2,this.position.x+this.size/2,this.position.y-this.size/2)
-  }
+  
   }
 }
 
