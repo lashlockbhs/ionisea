@@ -118,26 +118,25 @@ const gravAttraction = (o1, o2) => {
 }
 
 
-const square1 = new shape(shapeCordsSquare, 100, 100, 10, 5, 5, 5)
-const triangle1 = new shape(trinaglesides, 100, 150, 0, 5, 5, 5)
+const square1 = new shape(shapeCordsSquare, 100, 100, 10, 5, 5, 5);
+const triangle1 = new shape(trinaglesides, 100, 150, 0, 5, 5, 5);
 
 const drawFrame = (time) => {
   if (time > next) {
     
     clear();
-    const objectBound = getBoundOfObject(square1)
-    console.log(objectBound)
+    const squareobjectBound = square1.getBoundOfObject();
+    console.log(squareobjectBound);
 
-    drawPoints(objectBound)
-    drawShape(square1)
+    square1.drawShape();
     
     square1.rotation = countFrame*1;
-    next += 10
-    countFrame++
+    next += 10;
+    countFrame++;
   }
 }
 
-animate(drawFrame)
+animate(drawFrame);
 
 
 
