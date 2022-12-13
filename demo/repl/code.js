@@ -62,11 +62,11 @@ class createObject {
  }
   draw(){
   if (this.type == 0){
-    drawCircle(x,y,size)
+    drawCircle(this.position.x,this.position.y,this.size)
   } else if (this.type == 1) {
-    drawRect(x-size/2, y-size/2, x+size/2, y+size/2)
+    drawRect(this.position.x-this.size/2, this.position.y-this.size/2, this.position.x+this.size/2, this.position.y+this.size/2)
   } else if (this.type == 2){
-    drawTriangle(x-size/2,y-size/2,x,y+size/2,x+size/2,y-size/2)
+    drawTriangle(this.position.x-this.size/2,this.position.y-this.size/2,this.position.x,this.position.y+this.size/2,this.position.x+this.size/2,this.position.y-this.size/2)
   }
   }
 }
