@@ -49,26 +49,27 @@ const addNumVectors = (a, mode) => {
     return a.reduce((acc, x) => add2Vectors([acc, x]), vector(0, 0))
   }
 }
-
+const objectDraw = []
 const EARTH_GRAVITY = 9.8
 const G = 6.6743e-11
+registerOnClick((x,y) =>{
+ objectDraw.push({x, y})
+})
 class Shape {
- constructor(type, mass, size, x, y, actingForces){
-   this.type = type
+ constructor(sides, mass, size, actingForces){
+   this.sides = sides
    this.mass = mass
    this.size = size
-   this.position = {x,y}
-   this.force = addNumVectors(actingForces)
+   this.center = 
+   this.actingForce = [addNumVectors(actingForces)]
  }
   draw(){
   
   }
 }
 
-
-
 const gravAttraction = (o1, o2) => {
-  const distance = Math.hypot(Math.abs(o1.position.x - o2.position.x), Math.abs(o1.position.y - o2.position.y))
+  const distance = Math.hypot(Math.abs(o1.center.x - o2.center.x), Math.abs(o1.center.y - o2.center.y))
   return (o1.mass * o2.mass * G) / distance ** 2
 }
 
