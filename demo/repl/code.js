@@ -1,31 +1,24 @@
-/*
-// Warning! Do not call this function with numbers much bigger than 40 unless
-// you want to kill this tab.
-const fib = (n) => (n < 2 ? n : fib(n - 2) + fib(n - 1));
 
-// This one you can safely call with as big numbers as you want though after
-// MAX_FIB_N it will return Infinity.
-const fib2 = (n) => {
-  let [a, b] = [0, 1];
-  for (let i = 0; i < n; i++) {
-    [a, b] = [b, a + b];
-    if (!isFinite(a)) break;
-  }
-  return a;
-};
+let shapeCordsSquare = [
+    { "xAdd": 0, "yAdd": 10 },
+    { "xAdd": 10, "yAdd": 0 },
+    { "xAdd": 0, "yAdd": -10 },
+    { "xAdd": -10, "yAdd": 0 },
+]
 
-const MAX_FIB_N = 1476;
-
-const MAX_FIB = fib2(MAX_FIB_N);
-*/
+let trinaglesides = [
+    { "xAdd": 5, "yAdd": -10 },
+    { "xAdd": 5, "yAdd": 10 },
+    { "xAdd": -10, "yAdd": 0},
+]
 
 const rotate = (cx, cy, x, y, angle) => {
-    let radians = (Math.PI / 180) * angle;
+  let radians = (Math.PI / 180) * angle,
     cos = Math.cos(radians),
-        sin = Math.sin(radians),
-        nx = (cos * (x - cx)) + (sin * (y - cy)) + cx,
-        ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
-    return [nx, ny];
+    sin = Math.sin(radians),
+    nx = (cos * (x - cx)) + (sin * (y - cy)) + cx,
+    ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
+  return [nx, ny];
 }
 
 const vector = (angle, magnitude) => {
@@ -63,50 +56,50 @@ const addNumVectors = (a, mode) => {
 const EARTH_GRAVITY = 9.8
 const G = 6.6743e-11
 class Shape {
- constructor(sidesCords, x, y, rotation, centerX, centerY, mass, actingForces){
-   this.sidesCords = sidesCords;
-   this.mass = mass;
-   this.x = x;
-   this.y = y;
-   this.rotation = rotation;
-   this.centerX = centerX;
-   this.centerY = centerY;
-   this.force = addNumVectors(actingForces);
- }
- 
+  constructor(sidesCords, x, y, rotation, centerX, centerY, mass, actingForces) {
+    this.sidesCords = sidesCords;
+    this.mass = mass;
+    this.x = x;
+    this.y = y;
+    this.rotation = rotation;
+    this.centerX = this.x+centerX; //offset from x
+    this.centerY = this.y+centerY; //offset from y
+    //this.force = addNumVectors(actingForces);
+  }
+
   drawShape() {
     let currX = this.x;
     let currY = this.y;
 
     for (let i = 0; i < this.sidesCords.length; i++) {
-        let cordSetStart = rotate(this.centerX, this.centerY, currX, currY, this.rotation)
-        let cordSetEnd = rotate(this.centerX, this.centerY, currX + this.sidesCords[i].xAdd, currY + this.sidesCords[i].yAdd, this.rotation)
-        drawLine(cordSetStart[0], cordSetStart[1], cordSetEnd[0], cordSetEnd[1], 'black', ctx);
-        currX = currX + this.sidesCords[i].xAdd;
-        currY = currY + this.sidesCords[i].yAdd;
+      let cordSetStart = rotate(this.centerX, this.centerY, currX, currY, this.rotation)
+      let cordSetEnd = rotate(this.centerX, this.centerY, currX + this.sidesCords[i].xAdd, currY + this.sidesCords[i].yAdd, this.rotation)
+      drawLine(cordSetStart[0], cordSetStart[1], cordSetEnd[0], cordSetEnd[1], 'black', ctx);
+      currX = currX + this.sidesCords[i].xAdd;
+      currY = currY + this.sidesCords[i].yAdd;
     }
   }
-getBoundOfObject (){
+  getBoundOfObject() {
     let currX = 0;
     let currY = 0;
     let array = []
     let n;
     for (let i = 0; i < this.sidesCords.length; i++) {
-        let rotatedSideCords = rotate(this.centerX, this.centerY, this.centerX + this.sidesCords[i].xAdd, this.centerY + this.sidesCords[i].yAdd, this.rotation)
-        let numOfSidePixels = Math.floor(Math.sqrt(this.sidesCords[i].xAdd ** 2 + this.sidesCords[i].yAdd ** 2))
-        let xAddperpix = (rotatedSideCords[0] - this.centerX) / numOfSidePixels
-        let yAddperpix = (rotatedSideCords[1] - this.centerY) / numOfSidePixels
+      let rotatedSideCords = rotate(this.centerX, this.centerY, this.centerX + this.sidesCords[i].xAdd, this.centerY + this.sidesCords[i].yAdd, this.rotation)
+      let numOfSidePixels = Math.floor(Math.sqrt(this.sidesCords[i].xAdd ** 2 + this.sidesCords[i].yAdd ** 2))
+      let xAddperpix = (rotatedSideCords[0] - this.centerX) / numOfSidePixels
+      let yAddperpix = (rotatedSideCords[1] - this.centerY) / numOfSidePixels
 
-        for (n = 0; n < numOfSidePixels; n++) {
-            array.push({ "x": this.centerX + (currX + (xAddperpix * n)), "y": this.centerY + (currY + (yAddperpix * n)) })
+      for (n = 0; n < numOfSidePixels; n++) {
+        array.push({ "x": this.centerX + (currX + (xAddperpix * n)), "y": this.centerY + (currY + (yAddperpix * n)) })
 
-        }
-        currX = currX + (xAddperpix * n);
-        currY = currY + (yAddperpix * n);
+      }
+      currX = currX + (xAddperpix * n);
+      currY = currY + (yAddperpix * n);
     }
     return array;
-}
-    
+  }
+
 }
 
 
@@ -117,27 +110,39 @@ const gravAttraction = (o1, o2) => {
   return (o1.mass * o2.mass * G) / distance ** 2
 }
 
+const drawPoints = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        drawLine(array[i].x, array[i].y, array[i].x+1, array[i].y+1, "red", ctx)
+    }
+}
 
-const square1 = new shape(shapeCordsSquare, 100, 100, 10, 5, 5, 5);
-const triangle1 = new shape(trinaglesides, 100, 150, 0, 5, 5, 5);
+const square1 = new Shape(shapeCordsSquare, 100, 100, 1, 5, 5, 5, []);
+const triangle1 = new Shape(trinaglesides, 100, 100, 1, 5, 5, 5, []);
 
+
+let next = 0;
+let countFrame = 0;
 const drawFrame = (time) => {
   if (time > next) {
-    
+
     clear();
     const squareobjectBound = square1.getBoundOfObject();
-    console.log(squareobjectBound);
+    //console.log(squareobjectBound);
 
     square1.drawShape();
-    
-    square1.rotation = countFrame*1;
+    triangle1.drawShape();
+
+    console.log(squareobjectBound[1].y)
+    drawPoints(squareobjectBound)
+
+    triangle1.rotation = countFrame;
+    square1.rotation = countFrame;
     next += 10;
     countFrame++;
   }
 }
 
 animate(drawFrame);
-
 
 
 
