@@ -1,6 +1,4 @@
-registerOnKeyDown((Enter)=>{
-drawText('((:', Math.random()*width, Math.random()*height, 'red', 24)
-})
+
 //rotational acceleration???
 
 drawFilledRect(0,0,width,height, 'black')
