@@ -46,17 +46,7 @@ const vectorMultiply = (o, n) => {
     return ({ angle: o.angle + Math.PI, magnitude: o.magnitude * -n })
   }
 }
-const addGrav = (obj, array) =>{
-const gravAttraction = (o1, o2) => {
-  const angle = Math.atan2(o2.centerY - o1.centerY, o2.centerX - o1.centerX)
-  const distance = Math.hypot(Math.abs(o1.centerX - o2.centerX), Math.abs(o1.centerY - o2.centerY))
-  if (distance === 0) return vector(0,0)
-  else return vector(angle, (o1.mass * o2.mass * 6.6743e-11) / distance ** 2)
-}
-for (const element of array){
-  obj.actingForce.push(gravAttraction(obj, element))
-}
-}
+    
 const addNumVectors = (a, mode) => {
   if (mode === 'degrees') {
     const r = a.reduce((acc, x) => add2Vectors([acc, x]), vector(0, 0))
