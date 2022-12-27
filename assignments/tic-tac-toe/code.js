@@ -62,7 +62,7 @@ let yPos;
     console.log (coordArray, 'recent: ', xPos, yPos, 'winner: ', winSearch(player))
     player = player === player1 ? player2 : player1
     turns++
-    if (turns == 9 && winSearch(player) == undefined) drawCircle(width/2, height/2, min*0.45,'grey', 7);
+    if (turns == 9 && winSearch(player) == undefined) drawCircle(width/2, height/2, min*0.45,'grey', 10);
 }}});
 
 
