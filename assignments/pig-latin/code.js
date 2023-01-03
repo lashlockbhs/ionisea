@@ -4,5 +4,5 @@ const pigLatin =(string)=>{
 }
 const advancedPigLatin =(string)=>{ 
   let vLoc = string.search(/[aeiou]/)
-  return vLoc === 0? string.substring(0)+'way':string.substring(vLoc)+string.substring(0, vLoc)+'ay'
+  return vLoc === 0? string+'way':string.substring(vLoc)+string.substring(0, vLoc)+'ay'
 }
