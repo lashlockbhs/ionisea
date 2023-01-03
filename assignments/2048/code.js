@@ -93,28 +93,55 @@ class Shape {
     }
   }
   getBoundOfObject() {
-    let currX = this.startingY;
-    let currY = this.startingX;
+    let currX = this.x; //inverse this because x and y were switced for some reason to lazy to figure out its 1am
+    let currY = this.y;
     let array = []
-    for (let i = 0; i < this.sides.length; i++) {
-      let coordSetStart = rotate(this.centerX, this.centerY, currX, currY, this.rotation)
-      let coordSetEnd = rotate(this.centerX, this.centerY, currX + this.sides[i].xAdd, currY + this.sides[i].yAdd, this.rotation);
-      let numOfSidePixels = Math.round(Math.sqrt(((coordSetStart[0]-coordSetEnd[0]) ** 2) + ((coordSetStart[1]-coordSetEnd[1]) ** 2)));
+    let n;
+    for (let i = 0; i < this.sidesCords.length; i++) {
+      let cordSetStart = rotate(this.centerX, this.centerY, currX, currY, this.rotation)
+      let cordSetEnd = rotate(this.centerX, this.centerY, currX + this.sidesCords[i].xAdd, currY + this.sidesCords[i].yAdd, this.rotation);
+      let numOfSidePixels = Math.round(Math.sqrt(((cordSetStart[0] - cordSetEnd[0]) ** 2) + ((cordSetStart[1] - cordSetEnd[1]) ** 2)));
 
-      drawLine(coordSetStart[0], coordSetStart[1], coordSetEnd[0], coordSetEnd[1])
-      
-      let xAddPerPix = (coordSetEnd[0] - coordSetStart[0])/numOfSidePixels
-      let yAddPerPix = (coordSetEnd[1] - coordSetStart[1])/numOfSidePixels
 
-      for(let n = 0; n<numOfSidePixels; n++){
-        array.push({"x" : coordSetStart[0] + n*xAddPerPix, "y" : coordSetStart[1] + n*yAddPerPix})
+      let xAddPerPix = (cordSetEnd[0] - cordSetStart[0]) / numOfSidePixels
+      let yAddPerPix = (cordSetEnd[1] - cordSetStart[1]) / numOfSidePixels
+
+
+
+      for (n = 0; n < numOfSidePixels; n++) {
+        array.push({ "x": cordSetStart[0] + n * xAddPerPix, "y": cordSetStart[1] + n * yAddPerPix })
       }
-      
-      currX = currX + this.sides[i].xAdd;
-      currY = currY + this.sides[i].yAdd;
+
+      currX = currX + this.sidesCords[i].xAdd;
+      currY = currY + this.sidesCords[i].yAdd;
     }
     return array
   }
+}
+
+const collisions = (shapes) => {
+  const collisionPoints = []
+
+  for (let shapeNum = 0; shapeNum < shapes.length; shapeNum++) {
+    for (let shapeNumCheck = shapeNum; shapeNumCheck < shapes.length; shapeNumCheck++) {
+      if (shapeNum != shapeNumCheck) {
+        const currShapeBounds = shapes[shapeNum].getBoundOfObject()
+        const currShapeBoundsCheck = shapes[shapeNumCheck].getBoundOfObject()
+
+        for (let currShapeBoundsIndex = 0; currShapeBoundsIndex < currShapeBounds.length; currShapeBoundsIndex++) {
+          for (let currShapeBoundsCheckIndex = 0; currShapeBoundsCheckIndex < currShapeBoundsCheck.length; currShapeBoundsCheckIndex++) {
+
+            if (Math.sqrt((currShapeBounds[currShapeBoundsIndex].x - currShapeBoundsCheck[currShapeBoundsCheckIndex].x) ** 2 + (currShapeBounds[currShapeBoundsIndex].y - currShapeBoundsCheck[currShapeBoundsCheckIndex].y) ** 2) <= 1) {
+              //object add
+              collisionPoints.push({ "x": currShapeBounds[currShapeBoundsIndex].x, "y": currShapeBounds[currShapeBoundsIndex].y, "shape1": shapes[shapeNum], "shape2": shapes[shapeNumCheck] })
+            }
+          }
+        }
+      }
+    }
+  }
+  //returns an array of objects that have a x, y point of collison and the shapes involoved
+  return collisionPoints;
 }
 
 
