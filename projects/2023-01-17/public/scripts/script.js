@@ -51,13 +51,6 @@ a2.append(
 );
 body.append(a2)
 
-const q3 = document.createElement('h1');
-
-q3.append(document.createTextNode('What about using HTML for GUIs?'));
-
-body.append(q3)
-
-
 const q4 = document.createElement('h1');
 
 q4.append(document.createTextNode('What are some of the main elements of HTML?'));
@@ -127,4 +120,3 @@ l10.append(document.createTextNode(`
 list1.append(l10)
 
 document.append(list1)
-
