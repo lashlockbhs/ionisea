@@ -57,23 +57,12 @@ q3.append(document.createTextNode('What about using HTML for GUIs?'));
 
 body.append(q3)
 
-const a3 = document.createElement('p');
 
-a3.append(
-  document.createTextNode(`
-  HTML can be used to create user interfaces for web applications, but it is primarily designed as a 
-  markup language for creating structured documents to be displayed in web browsers. While it can 
-  be used to create basic user interfaces, it is not typically considered a good choice for creating
-  complex, interactive user interfaces. Other technologies such as JavaScript and CSS are typically
-  used in conjunction with HTML to create more advanced user interfaces for web applications. 
-  Additionally, there are other technologies such as Electron, React Native and NativeScript that
-  allow to create cross-platform desktop and mobile apps using web technologies such as HTML, 
-  CSS, and JavaScript.
-`),
-);
-body.append(a3)
+const q4 = document.createElement('h1');
 
+q4.append(document.createTextNode('What are some of the main elements of HTML?'));
 
+body.append(q4)
 
 const list1 = document.querySelector('ol')
 
@@ -137,5 +126,5 @@ l10.append(document.createTextNode(`
 `));
 list1.append(l10)
 
-body.append(list1)
+document.append(list1)
 
