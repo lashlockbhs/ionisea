@@ -150,10 +150,22 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
  also wrote the first version of the HTML language, which provided the structure for web pages. He is currently 
  working on a decentralized web project called Solid.`));
 body.append(a5)
-
-const credits = document.createElement('credits')
-
+const credits = document.createElement('div')
+credits.setAttribute('class', 'credits')
 const c1 = document.createElement('p')
 c1.append(document.createTextNode('Text from 2023-01-14 conversation with'));
+const c1link = document.createElement('div')
+c1link.append('ChatGPT')
+c1link.setAttribute('href', "https://chat.openai.com/chat")
+c1.append(c1link)
 credits.append(c1)
+const c2 = document.createElement('p')
+c2.append(document.createTextNode('Photo of a young Tim Berners-Lee from'))
+const c2link1 = document.createElement('div')
+c2link1.append(document.createTextNode('flickr'))
+c2link1.setAttribute('href', "https://flickr.com")
+c2.append(c2link1)
+c2.append(document.createTextNode('no thanks to ChatGPT.'))
+credits.append(c2)
+body.append(credits)
 
