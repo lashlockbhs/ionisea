@@ -126,7 +126,7 @@ const a4 = document.createElement('p')
 a4.append(document.createTextNode(
   `These are some of the main elements, but there are many more available, like <header>, <nav>, <main>, <footer>, 
   <form>, <input>, <select>, etc.`
-  ))
+))
 body.append(a4)
 
 const q5 = document.createElement('h1');
@@ -137,5 +137,23 @@ body.append(q5)
 
 
 const youngLee = document.createElement('img');
-youngLee.setAttribute(src, "/images/tim-berners-lee.jpg")// what the hell
+youngLee.setAttribute('src', "/images/tim-berners-lee.jpg")
 body.append(youngLee)
+
+const a5 = document.createElement('p')
+a5.append(document.createTextNode(`
+I'm sorry, I am a text based model and I am not able to find or show images. However, I can tell you that
+ the inventor of the World Wide Web (WWW) is Sir Tim Berners-Lee. He is a British computer scientist and 
+ is considered to be the inventor of the World Wide Web. He proposed and developed the first successful 
+ communication between a Hypertext Transfer Protocol (HTTP) client and server via the Internet in 1989. 
+ He also created the first web browser, called WorldWideWeb, and the first web server, called httpd. He 
+ also wrote the first version of the HTML language, which provided the structure for web pages. He is currently 
+ working on a decentralized web project called Solid.`));
+body.append(a5)
+
+const credits = document.createElement('credits')
+
+const c1 = document.createElement('p')
+c1.append(document.createTextNode('Text from 2023-01-14 conversation with'));
+credits.append(c1)
+
