@@ -137,5 +137,5 @@ body.append(q5)
 
 
 const youngLee = document.createElement('img');
-youngLee.setAttribute(src /images/tim-berners-lee.jpg) // what the hell
+youngLee.setAttribute(src, "/images/tim-berners-lee.jpg")// what the hell
 body.append(youngLee)
