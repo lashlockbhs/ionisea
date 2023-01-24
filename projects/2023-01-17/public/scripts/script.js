@@ -57,7 +57,7 @@ q4.append(document.createTextNode('What are some of the main elements of HTML?')
 
 body.append(q4)
 
-const list1 = document.querySelector('ol')
+const list1 = document.createElement('ol')
 
 const l1 = document.createElement('li')
 l1.append(document.createTextNode(`
@@ -119,4 +119,23 @@ l10.append(document.createTextNode(`
 `));
 list1.append(l10)
 
-document.append(list1)
+body.append(list1)
+
+const a4 = document.createElement('p')
+
+a4.append(document.createTextNode(
+  `These are some of the main elements, but there are many more available, like <header>, <nav>, <main>, <footer>, 
+  <form>, <input>, <select>, etc.`
+  ))
+body.append(a4)
+
+const q5 = document.createElement('h1');
+
+q5.append(document.createTextNode('Can you find a picture of the inventor of the web?'));
+
+body.append(q5)
+
+
+const youngLee = document.createElement('img');
+youngLee.setAttribute(src /images/tim-berners-lee.jpg) // what the hell
+body.append(youngLee)
