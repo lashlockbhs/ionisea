@@ -68,7 +68,7 @@ body.append(makeList([
   makeCode('<h1>').append(createPgrph(' to ').append(makeCode('<h6>')).append(createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.'))),
   makeCode('<p>') + ': This element is used for paragraphs of text.',
   makeCode('<a>') + ': This element is used for hyperlinks, which allow users to navigate between pages on the web.',
-  makeCode('<img>') + ': This element is used to embed images in a web page.')),
+  makeCode('<img>') + ': This element is used to embed images in a web page.',
   makeCode('<ul> and <ol>') + ': These elements are used for unordered and ordered lists, respectively.',
   makeCode('<li>') + ': This element is used for list items.',
   makeCode('<div> and <span>') + ': These elements are used for grouping and applying styles to elements on a web page.',
