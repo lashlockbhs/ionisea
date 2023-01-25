@@ -5,7 +5,7 @@ const makeHeader = (text, type) => { // strings
   return t
 }
 
-const makePgrph = (text) => { // string
+const makeParagraph = (text) => { // string
   const t = document.createElement('p')
   t.append(document.createTextNode(text))
   return t
@@ -35,17 +35,17 @@ const makeCode = (text) => {
   return t
 }
 
-const listItem = (elements) => {
-  const li = document.createElement('li')
+const mergeItems = (elements, type) => {
+  const r = document.createElement(type)
   for (const element of elements){
-    li.append(element)
+    r.append(element)
   }
-  return li
+  return r
 }
 
 body.append(makeHeader('Can you tell me why HTML was developed?', 'h1'))
 
-body.append(makePgrph(`
+body.append(makeParagraph(`
  HTML (Hypertext Markup Language) was developed to create a standard way to
  create and structure documents on the World Wide Web. It allows developers to
  create structured documents, including headings, paragraphs, images and links,
@@ -57,7 +57,7 @@ body.append(makePgrph(`
 body.append(makeHeader('What about using HTML for GUIs?', 'h1'));
 
 body.append(
-  makePgrph(`
+  makeParagraph(`
   HTML can be used to create user interfaces for web applications, but it is primarily designed
   as a markup language for creating structured documents to be displayed in web browsers. While
   it can be used to create basic user interfaces, it is not typically considered a good choice
@@ -71,19 +71,19 @@ body.append(
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
 body.append(makeList([
-  listItem([ makeCode('<html>'), createPgrph(': This is the root element of an HTML document, and it contains all of the other elements.') ]),
-  listItem([ makeCode('<head>'), createPgrph(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")]),
-  listItem([ makeCode('<body>'), createPgrph(': This element contains the content of the document that is displayed in the browser window.') ]),
-  listItem([ makeCode('<h1>'), createPgrph(' to '), makeCode('<h6>'), createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')]),
-  listItem([ makeCode('<p>'), createPgrph(': This element is used for paragraphs of text.') ]),
-  listItem([ makeCode('<a>'), createPgrph( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ]),
-  listItem([ makeCode('<img>'), createPgrph( ': This element is used to embed images in a web page.') ]),
-  listItem([ makeCode('<ul> and <ol>'), createPgrph( ': These elements are used for unordered and ordered lists, respectively.') ]),
-  listItem([ makeCode('<li>'), createPgrph( ': This element is used for list items.') ]),
-  listItem([ makeCode('<div> and <span>'), createPgrph(': These elements are used for grouping and applying styles to elements on a web page.') ]),
+  mergeItems([ makeCode('<html>'), createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.') ], 'li'),
+  mergeItems([ makeCode('<head>'), createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
+  mergeItems([ makeCode('<body>'), createTextNode(': This element contains the content of the document that is displayed in the browser window.') ]),
+  mergeItems([ makeCode('<h1>'), createTextNode(' to '), makeCode('<h6>'), createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')], 'li'),
+  mergeItems([ makeCode('<p>'), createTextNode(': This element is used for paragraphs of text.') ], 'li'),
+  mergeItems([ makeCode('<a>'), createTextNode( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ], 'li'),
+  mergeItems([ makeCode('<img>'), createTextNode( ': This element is used to embed images in a web page.') ], 'li'),
+  mergeItems([ makeCode('<ul> and <ol>'), createTextNode( ': These elements are used for unordered and ordered lists, respectively.') ], 'li'),
+  mergeItems([ makeCode('<li>'), createTextNode( ': This element is used for list items.') ], 'li'),
+  mergeItems([ makeCode('<div> and <span>'), createTextNode(': These elements are used for grouping and applying styles to elements on a web page.') ], 'li'),
 ], 'ol'));
 
-body.append(makePgrph(
+body.append(makeParagraph(
   `These are some of the main elements, but there are many more available, like <header>, <nav>, <main>, <footer>, 
   <form>, <input>, <select>, etc.`
 ))
@@ -95,7 +95,7 @@ const youngLee = document.createElement('img');
 youngLee.setAttribute('src', "/images/tim-berners-lee.jpg")
 body.append(youngLee)
 
-body.append(makePgrph(`
+body.append(makeParagraph(`
 I'm sorry, I am a text based model and I am not able to find or show images. However, I can tell you that
  the inventor of the World Wide Web (WWW) is Sir Tim Berners-Lee. He is a British computer scientist and 
  is considered to be the inventor of the World Wide Web. He proposed and developed the first successful 
@@ -108,11 +108,11 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
 const credits = document.createElement('div')
 credits.setAttribute('class', 'credits')
 
-const c1 = makePgrph('Text from 2023-01-14 conversation with ') + makeLink('ChatGPT.', "https://chat.openai.com/chat")
+const c1 = makeParagraph('Text from 2023-01-14 conversation with ') + makeLink('ChatGPT.', "https://chat.openai.com/chat")
 credits.append(c1)
 
-const c2 = makePgrph('Photo of a young Tim Berners-Lee from') + makeLink(' Flickr ', "https://www.flickr.com/photos/itupictures/16662336315") + 
-makePgrph('no thanks to ChatGPT. (') + makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/') + makePgrph(').')
+const c2 = makeParagraph('Photo of a young Tim Berners-Lee from') + makeLink(' Flickr ', "https://www.flickr.com/photos/itupictures/16662336315") + 
+makeParagraph('no thanks to ChatGPT. (') + makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/') + makeParagraph(').')
 credits.append(c2)
 
 body.append(credits)
