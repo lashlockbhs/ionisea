@@ -29,8 +29,9 @@ const makeLink = (text, link) => { // strings
 }
 
 const makeCode = (text) => {
-  const t = document.createElement('code')
+  const t = document.createElement('p')
   t.append(document.createTextNode(text))
+  t.setAttribute('font', 'Roboto') //I don't know how this works
   return t
 }
 
