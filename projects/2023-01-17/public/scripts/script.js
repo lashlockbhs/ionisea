@@ -62,13 +62,13 @@ body.append(
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
 body.append(makeList([
-  makeCode('<html>') + ': This is the root element of an HTML document, and it contains all of the other elements.',
-  makeCode('<head>') + ": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.",
-  makeCode('<body>') + ': This element contains the content of the document that is displayed in the browser window.',
-  makeCode('<h1>') + ' to '  + makeCode('<h6>') + ': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.',
+  makeCode('<html>').append(createPgrph(': This is the root element of an HTML document, and it contains all of the other elements.')),
+  makeCode('<head>').append(createPgrph(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")),
+  makeCode('<body>').append(createPgrph(': This element contains the content of the document that is displayed in the browser window.')),
+  makeCode('<h1>').append(createPgrph(' to ').append(makeCode('<h6>')).append(createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.'))),
   makeCode('<p>') + ': This element is used for paragraphs of text.',
   makeCode('<a>') + ': This element is used for hyperlinks, which allow users to navigate between pages on the web.',
-  makeCode('<img>') + ': This element is used to embed images in a web page.',
+  makeCode('<img>') + ': This element is used to embed images in a web page.')),
   makeCode('<ul> and <ol>') + ': These elements are used for unordered and ordered lists, respectively.',
   makeCode('<li>') + ': This element is used for list items.',
   makeCode('<div> and <span>') + ': These elements are used for grouping and applying styles to elements on a web page.',
@@ -99,15 +99,11 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
 const credits = document.createElement('div')
 credits.setAttribute('class', 'credits')
 
-const c1 = makePgrph('Text from 2023-01-14 conversation with ')
-c1.append(makeLink('ChatGPT.', "https://chat.openai.com/chat"))
+const c1 = makePgrph('Text from 2023-01-14 conversation with ') + makeLink('ChatGPT.', "https://chat.openai.com/chat")
 credits.append(c1)
 
-const c2 = makePgrph('Photo of a young Tim Berners-Lee from')
-c2.append(makeLink(' Flickr ', "https://www.flickr.com/photos/itupictures/16662336315"))
-c2.append(makePgrph('no thanks to ChatGPT. ('))
-c2.append(makeLink('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/')
-c2.append(makePgrph(').'))
+const c2 = makePgrph('Photo of a young Tim Berners-Lee from') + makeLink(' Flickr ', "https://www.flickr.com/photos/itupictures/16662336315") + 
+makePgrph('no thanks to ChatGPT. (') + makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/') + makePgrph(').')
 credits.append(c2)
 
 body.append(credits)
