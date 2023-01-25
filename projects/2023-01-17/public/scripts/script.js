@@ -71,16 +71,16 @@ body.append(
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
 body.append(makeList([
-  mergeItems([ makeCode('<html>'), createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.') ], 'li'),
-  mergeItems([ makeCode('<head>'), createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
-  mergeItems([ makeCode('<body>'), createTextNode(': This element contains the content of the document that is displayed in the browser window.') ], 'li'),
-  mergeItems([ makeCode('<h1>'), createTextNode(' to '), makeCode('<h6>'), createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')], 'li'),
-  mergeItems([ makeCode('<p>'), createTextNode(': This element is used for paragraphs of text.') ], 'li'),
-  mergeItems([ makeCode('<a>'), createTextNode( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ], 'li'),
-  mergeItems([ makeCode('<img>'), createTextNode( ': This element is used to embed images in a web page.') ], 'li'),
-  mergeItems([ makeCode('<ul> and <ol>'), createTextNode( ': These elements are used for unordered and ordered lists, respectively.') ], 'li'),
-  mergeItems([ makeCode('<li>'), createTextNode( ': This element is used for list items.') ], 'li'),
-  mergeItems([ makeCode('<div> and <span>'), createTextNode(': These elements are used for grouping and applying styles to elements on a web page.') ], 'li'),
+  mergeItems([ makeCode('<html>'), document.createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.') ], 'li'),
+  mergeItems([ makeCode('<head>'), document.createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
+  mergeItems([ makeCode('<body>'), document.createTextNode(': This element contains the content of the document that is displayed in the browser window.') ], 'li'),
+  mergeItems([ makeCode('<h1>'), document.createTextNode(' to '), makeCode('<h6>'), document.createTextNode(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')], 'li'),
+  mergeItems([ makeCode('<p>'), document.createTextNode(': This element is used for paragraphs of text.') ], 'li'),
+  mergeItems([ makeCode('<a>'), document.createTextNode( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ], 'li'),
+  mergeItems([ makeCode('<img>'), document.createTextNode( ': This element is used to embed images in a web page.') ], 'li'),
+  mergeItems([ makeCode('<ul>'), document.createTextNode(' and '), makeCode('<ol>'), document.createTextNode( ': These elements are used for unordered and ordered lists, respectively.') ], 'li'),
+  mergeItems([ makeCode('<li>'), document.createTextNode( ': This element is used for list items.') ], 'li'),
+  mergeItems([ makeCode('<div> and <span>'), document.createTextNode(': These elements are used for grouping and applying styles to elements on a web page.') ], 'li'),
 ], 'ol'));
 
 body.append(makeParagraph(
