@@ -73,7 +73,7 @@ body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 body.append(makeList([
   mergeItems([ makeCode('<html>'), createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.') ], 'li'),
   mergeItems([ makeCode('<head>'), createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
-  mergeItems([ makeCode('<body>'), createTextNode(': This element contains the content of the document that is displayed in the browser window.') ]),
+  mergeItems([ makeCode('<body>'), createTextNode(': This element contains the content of the document that is displayed in the browser window.') ], 'li'),
   mergeItems([ makeCode('<h1>'), createTextNode(' to '), makeCode('<h6>'), createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')], 'li'),
   mergeItems([ makeCode('<p>'), createTextNode(': This element is used for paragraphs of text.') ], 'li'),
   mergeItems([ makeCode('<a>'), createTextNode( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ], 'li'),
