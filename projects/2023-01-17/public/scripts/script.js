@@ -102,6 +102,30 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
  working on a decentralized web project called Solid.`
 ));
 
+body.append(makeHeader("What else has Lee done recently?", 'h1'))
+
+const leeSaver = document.createElement('img');
+leeSaver.setAttribute('src', "/images/saviour.png")
+body.append(leeSaver)
+
+body.append(makeParagraph(`
+Once upon a time, in a bustling metropolis, the city was thrown into chaos as a group of heavily armed doctors 
+launched a surprise attack on the city's main square. The city's residents were caught off guard and panicked as the 
+doctors began to indiscriminately open fire on civilians. The police were quick to respond, but were outmatched by 
+the doctors' superior firepower. The city's mayor, desperate to protect his citizens, reached out to a retired 
+special forces soldier named Sir Tim Burners-Lee. Sir Tim Burners-Lee had left the military after a mission went awry 
+and had been living a quiet life, but the mayor knew that Sir Tim Burners-Lee was the city's only hope. Sir Tim 
+Burners-Lee reluctantly agreed to help and quickly assembled a team of former military comrades. Together, they devised 
+a plan to infiltrate the doctor's children's hospital and take out the leaders of the group. The team successfully infiltrated 
+the children's hospital, taking out the doctors one by one. As they closed in on the leader of the group, they were ambushed 
+by a group of suicide bombers. Sir Tim Burners-Lee and his team were able to neutralize the bombers but not before one 
+of them managed to detonate their explosives, causing significant damage to the children's hospital. Despite the setback, Sir Tim
+Burners-Lee and his team were able to take out the leader of the group and end the attack. The city's residents were 
+relieved and grateful to Sir Tim Burners-Lee and his team for their bravery and quick thinking. In the aftermath of the 
+attack, the city came together to rebuild and heal. Sir Tim Burners-Lee returned to his quiet life, but the memory of 
+the attack and the lives lost stayed with him. He knew that there would always be those who sought to do harm, but he
+also knew that there would always be those willing to stand up and protect their fellow citizens.
+`))
 const credits = document.createElement('div')
 credits.setAttribute('class', 'credits')
 
