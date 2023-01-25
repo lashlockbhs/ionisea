@@ -34,6 +34,14 @@ const makeCode = (text) => {
   return t
 }
 
+const listItem = (elements) => {
+  const li = document.createElement('li')
+  for (const element of elements){
+    li.append(element)
+  }
+  return li
+}
+
 body.append(makeHeader('Can you tell me why HTML was developed?', 'h1'))
 
 body.append(makePgrph(`
@@ -62,16 +70,16 @@ body.append(
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
 body.append(makeList([
-  makeCode('<html>').append(createPgrph(': This is the root element of an HTML document, and it contains all of the other elements.')),
-  makeCode('<head>').append(createPgrph(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")),
-  makeCode('<body>').append(createPgrph(': This element contains the content of the document that is displayed in the browser window.')),
-  makeCode('<h1>').append(createPgrph(' to ').append(makeCode('<h6>')).append(createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.'))),
-  makeCode('<p>') + ': This element is used for paragraphs of text.',
-  makeCode('<a>') + ': This element is used for hyperlinks, which allow users to navigate between pages on the web.',
-  makeCode('<img>') + ': This element is used to embed images in a web page.',
-  makeCode('<ul> and <ol>') + ': These elements are used for unordered and ordered lists, respectively.',
-  makeCode('<li>') + ': This element is used for list items.',
-  makeCode('<div> and <span>') + ': These elements are used for grouping and applying styles to elements on a web page.',
+  listItem([ makeCode('<html>'), createPgrph(': This is the root element of an HTML document, and it contains all of the other elements.') ]),
+  listItem([ makeCode('<head>'), createPgrph(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")]),
+  listItem([ makeCode('<body>'), createPgrph(': This element contains the content of the document that is displayed in the browser window.') ]),
+  listItem([ makeCode('<h1>'), createPgrph(' to '), makeCode('<h6>'), createPgrph(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')]),
+  listItem([ makeCode('<p>'), createPgrph(': This element is used for paragraphs of text.') ]),
+  listItem([ makeCode('<a>'), createPgrph( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ]),
+  listItem([ makeCode('<img>'), createPgrph( ': This element is used to embed images in a web page.') ]),
+  listItem([ makeCode('<ul> and <ol>'), createPgrph( ': These elements are used for unordered and ordered lists, respectively.') ]),
+  listItem([ makeCode('<li>'), createPgrph( ': This element is used for list items.') ]),
+  listItem([ makeCode('<div> and <span>'), createPgrph(': These elements are used for grouping and applying styles to elements on a web page.') ]),
 ], 'ol'));
 
 body.append(makePgrph(
