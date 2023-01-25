@@ -14,9 +14,7 @@ const makeParagraph = (text) => { // string
 const makeList = (elements, type) => { // elements is an array of strings
   const returnList = document.createElement(type)
   for (const element of elements) {
-    const e = document.createElement('li')
-    e.append(document.createTextNode(element))
-    returnList.append(e)
+    returnList.append(element)
   }
   return returnList
 }
@@ -29,15 +27,14 @@ const makeLink = (text, link) => { // strings
 }
 
 const makeCode = (text) => {
-  const t = document.createElement('p')
+  const t = document.createElement('code')
   t.append(document.createTextNode(text))
-  t.setAttribute('font', 'Roboto') //I don't know how this works
   return t
 }
 
 const mergeItems = (elements, type) => {
   const r = document.createElement(type)
-  for (const element of elements){
+  for (const element of elements) {
     r.append(element)
   }
   return r
@@ -71,22 +68,22 @@ body.append(
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
 body.append(makeList([
-  mergeItems([ makeCode('<html>'), document.createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.') ], 'li'),
-  mergeItems([ makeCode('<head>'), document.createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
-  mergeItems([ makeCode('<body>'), document.createTextNode(': This element contains the content of the document that is displayed in the browser window.') ], 'li'),
-  mergeItems([ makeCode('<h1>'), document.createTextNode(' to '), makeCode('<h6>'), document.createTextNode(': These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.')], 'li'),
-  mergeItems([ makeCode('<p>'), document.createTextNode(': This element is used for paragraphs of text.') ], 'li'),
-  mergeItems([ makeCode('<a>'), document.createTextNode( ': This element is used for hyperlinks, which allow users to navigate between pages on the web.') ], 'li'),
-  mergeItems([ makeCode('<img>'), document.createTextNode( ': This element is used to embed images in a web page.') ], 'li'),
-  mergeItems([ makeCode('<ul>'), document.createTextNode(' and '), makeCode('<ol>'), document.createTextNode( ': These elements are used for unordered and ordered lists, respectively.') ], 'li'),
-  mergeItems([ makeCode('<li>'), document.createTextNode( ': This element is used for list items.') ], 'li'),
-  mergeItems([ makeCode('<div> and <span>'), document.createTextNode(': These elements are used for grouping and applying styles to elements on a web page.') ], 'li'),
+  mergeItems([makeCode('<html>'), document.createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.')], 'li'),
+  mergeItems([makeCode('<head>'), document.createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
+  mergeItems([makeCode('<body>'), document.createTextNode(': This element contains the content of the document that is displayed in the browser window.')], 'li'),
+  mergeItems([makeCode('<h1>'), document.createTextNode(' to '), makeCode('<h6>'), document.createTextNode(': These elements are used for headings and subheadings. '), makeCode('<h1>'), document.createTextNode(' is the highest level heading, while '), makeCode('<h6>'), document.createTextNode(' is the lowest.')], 'li'),
+  mergeItems([makeCode('<p>'), document.createTextNode(': This element is used for paragraphs of text.')], 'li'),
+  mergeItems([makeCode('<a>'), document.createTextNode(': This element is used for hyperlinks, which allow users to navigate between pages on the web.')], 'li'),
+  mergeItems([makeCode('<img>'), document.createTextNode(': This element is used to embed images in a web page.')], 'li'),
+  mergeItems([makeCode('<ul>'), document.createTextNode(' and '), makeCode('<ol>'), document.createTextNode(': These elements are used for unordered and ordered lists, respectively.')], 'li'),
+  mergeItems([makeCode('<li>'), document.createTextNode(': This element is used for list items.')], 'li'),
+  mergeItems([makeCode('<div> and <span>'), document.createTextNode(': These elements are used for grouping and applying styles to elements on a web page.')], 'li'),
 ], 'ol'));
 
-body.append(makeParagraph(
-  `These are some of the main elements, but there are many more available, like <header>, <nav>, <main>, <footer>, 
-  <form>, <input>, <select>, etc.`
-))
+body.append(mergeItems([
+  document.createTextNode(`These are some of the main elements, but there are many more available, like `),
+  makeCode("<header>, <nav>, <main>, <footer>, <form>, <input>, <select>,"), document.createTextNode(' etc.')
+], 'p'))
 
 body.append(makeHeader('Can you find a picture of the inventor of the web?', 'h1'));
 
@@ -102,17 +99,25 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
  communication between a Hypertext Transfer Protocol (HTTP) client and server via the Internet in 1989. 
  He also created the first web browser, called WorldWideWeb, and the first web server, called httpd. He 
  also wrote the first version of the HTML language, which provided the structure for web pages. He is currently 
- working on a decentralized web project called Solid.`));
-
+ working on a decentralized web project called Solid.`
+));
 
 const credits = document.createElement('div')
 credits.setAttribute('class', 'credits')
 
-const c1 = makeParagraph('Text from 2023-01-14 conversation with ') + makeLink('ChatGPT.', "https://chat.openai.com/chat")
+const c1 = mergeItems([
+  document.createTextNode('Text from 2023-01-14 conversation with '),
+  makeLink('ChatGPT.', "https://chat.openai.com/chat"),
+], 'p')
 credits.append(c1)
 
-const c2 = makeParagraph('Photo of a young Tim Berners-Lee from') + makeLink(' Flickr ', "https://www.flickr.com/photos/itupictures/16662336315") + 
-makeParagraph('no thanks to ChatGPT. (') + makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/') + makeParagraph(').')
+const c2 = mergeItems([
+  document.createTextNode('Photo of a young Tim Berners-Lee from '),
+  makeLink('Flickr', "https://www.flickr.com/photos/itupictures/16662336315"),
+  document.createTextNode(' no thanks to ChatGPT. ('),
+  makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/'),
+  document.createTextNode(').'),
+], 'p')
 credits.append(c2)
 
 body.append(credits)
