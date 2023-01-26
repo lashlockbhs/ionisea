@@ -68,6 +68,8 @@ body.append(
 
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
+body.append(makeParagraph('Some of the main elements of HTML include: '))
+
 body.append(makeList([
   mergeItems([makeCode('<html>'), document.createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.')], 'li'),
   mergeItems([makeCode('<head>'), document.createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
