@@ -1,44 +1,67 @@
-// Get a reference to the object representing the BODY element so we can append stuff to it.
 const body = document.querySelector('body');
+const makeHeader = (text, type) => { // strings
+  const t = document.createElement(type)
+  t.append(document.createTextNode(text))
+  return t
+}
 
-// Create a new H1 element.
-const q1 = document.createElement('h1');
+const makeParagraph = (text) => { // string
+  const t = document.createElement('p')
+  t.append(document.createTextNode(text))
+  return t
+}
 
-// Create a text node and add it to the H1
-q1.append(document.createTextNode('Can you tell me why HTML was developed?'));
+const makeImage = (source, description) =>{
+  const img = document.createElement('img');
+  img.setAttribute('src', source)
+  img.setAttribute('alt', description)
+  return img
+}
 
-// Add the new H1 element to the body.
-body.append(q1);
+const makeList = (elements, type) => { // elements is an array of strings
+  const returnList = document.createElement(type)
+  for (const element of elements) {
+    returnList.append(element)
+  }
+  return returnList
+}
 
-// Create a new P element.
-const a1 = document.createElement('p');
+const makeLink = (text, link) => { // strings
+  const l = document.createElement('a')
+  l.append(document.createTextNode(text))
+  l.setAttribute('href', link)
+  return l
+}
 
-// Create a text node and add it to the P element. Note the use of `` rather
-// than '' which allows us to break the string across lines.
-a1.append(
-  document.createTextNode(`
+const makeCode = (text) => {
+  const t = document.createElement('code')
+  t.append(document.createTextNode(text))
+  return t
+}
+
+const mergeItems = (elements, type) => {
+  const r = document.createElement(type)
+  for (const element of elements) {
+    r.append(element)
+  }
+  return r
+}
+
+body.append(makeHeader('Can you tell me why HTML was developed?', 'h1'))
+
+body.append(makeParagraph(`
  HTML (Hypertext Markup Language) was developed to create a standard way to
  create and structure documents on the World Wide Web. It allows developers to
  create structured documents, including headings, paragraphs, images and links,
  that can be displayed in a web browser. It was created to simplify the process
  of creating and sharing documents online, so that anyone can create and view
  web pages with a consistent look and feel.
-`),
-);
+`))
 
-// Add the new P element to the body.
-body.append(a1);
+body.append(makeHeader('What about using HTML for GUIs?', 'h1'));
 
-const q2 = document.createElement('h1');
-
-q2.append(document.createTextNode('What about using HTML for GUIs?'));
-
-body.append(q2)
-
-const a2 = document.createElement('p');
-
-a2.append(
-  document.createTextNode(`
+body.append(
+  makeParagraph(`
   HTML can be used to create user interfaces for web applications, but it is primarily designed
   as a markup language for creating structured documents to be displayed in web browsers. While
   it can be used to create basic user interfaces, it is not typically considered a good choice
@@ -49,128 +72,92 @@ a2.append(
   technologies such as HTML, CSS, and JavaScript.
 `),
 );
-body.append(a2)
 
-const q4 = document.createElement('h1');
+body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
-q4.append(document.createTextNode('What are some of the main elements of HTML?'));
+body.append(makeParagraph('Some of the main elements of HTML include: '))
 
-body.append(q4)
+body.append(makeList([
+  mergeItems([makeCode('<html>'), document.createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.')], 'li'),
+  mergeItems([makeCode('<head>'), document.createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
+  mergeItems([makeCode('<body>'), document.createTextNode(': This element contains the content of the document that is displayed in the browser window.')], 'li'),
+  mergeItems([makeCode('<h1>'), document.createTextNode(' to '), makeCode('<h6>'), document.createTextNode(': These elements are used for headings and subheadings. '), 
+    makeCode('<h1>'), document.createTextNode(' is the highest level heading, while '), makeCode('<h6>'), document.createTextNode(' is the lowest.')], 'li'),
+  mergeItems([makeCode('<p>'), document.createTextNode(': This element is used for paragraphs of text.')], 'li'),
+  mergeItems([makeCode('<a>'), document.createTextNode(': This element is used for hyperlinks, which allow users to navigate between pages on the web.')], 'li'),
+  mergeItems([makeCode('<img>'), document.createTextNode(': This element is used to embed images in a web page.')], 'li'),
+  mergeItems([makeCode('<ul>'), document.createTextNode(' and '), makeCode('<ol>'), document.createTextNode(': These elements are used for unordered and ordered lists, respectively.')], 'li'),
+  mergeItems([makeCode('<li>'), document.createTextNode(': This element is used for list items.')], 'li'),
+  mergeItems([makeCode('<div> and <span>'), document.createTextNode(': These elements are used for grouping and applying styles to elements on a web page.')], 'li'),
+], 'ol'));
 
-const list1 = document.createElement('ol')
+body.append(mergeItems([
+  document.createTextNode(`These are some of the main elements, but there are many more available, like `),
+  makeCode("<header>, <nav>, <main>, <footer>, <form>, <input>, <select>,"), document.createTextNode(' etc.')
+], 'p'))
 
-const l1 = document.createElement('li')
-l1.append(document.createTextNode(`
-  <html>: This is the root element of an HTML document, and it contains all of the other elements.
-`));
-list1.append(l1)
+body.append(makeHeader('Can you find a picture of the inventor of the web?', 'h1'));
 
-const l2 = document.createElement('li')
-l2.append(document.createTextNode(`
-<head>: This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.
-`));
-list1.append(l2)
+body.append(makeImage("/images/tim-berners-lee.jpg", "A young Tim Berners-Lee"))
 
-const l3 = document.createElement('li')
-l3.append(document.createTextNode(`
-  <body>: This element contains the content of the document that is displayed in the browser window.
-`));
-list1.append(l3)
-
-const l4 = document.createElement('li')
-l4.append(document.createTextNode(`
-  <h1> to <h6>: These elements are used for headings and subheadings. <h1> is the highest level heading, while <h6> is the lowest.
-`));
-list1.append(l4)
-
-const l5 = document.createElement('li')
-l5.append(document.createTextNode(`
-  <p>: This element is used for paragraphs of text.
-`));
-list1.append(l5)
-
-const l6 = document.createElement('li')
-l6.append(document.createTextNode(`
-  <a>: This element is used for hyperlinks, which allow users to navigate between pages on the web.
-`));
-list1.append(l6)
-
-const l7 = document.createElement('li')
-l7.append(document.createTextNode(`
-<img>: This element is used to embed images in a web page.
-`));
-list1.append(l7)
-
-const l8 = document.createElement('li')
-l8.append(document.createTextNode(`
-<ul> and <ol>: These elements are used for unordered and ordered lists, respectively.
-`));
-list1.append(l8)
-
-const l9 = document.createElement('li')
-l9.append(document.createTextNode(`
-  <li>: This element is used for list items.
-`));
-list1.append(l9)
-
-const l10 = document.createElement('li')
-l10.append(document.createTextNode(`
-  <div> and <span>: These elements are used for grouping and applying styles to elements on a web page.
-`));
-list1.append(l10)
-
-body.append(list1)
-
-const a4 = document.createElement('p')
-
-a4.append(document.createTextNode(
-  `These are some of the main elements, but there are many more available, like <header>, <nav>, <main>, <footer>, 
-  <form>, <input>, <select>, etc.`
-))
-body.append(a4)
-
-const q5 = document.createElement('h1');
-
-q5.append(document.createTextNode('Can you find a picture of the inventor of the web?'));
-
-body.append(q5)
-
-
-const youngLee = document.createElement('img');
-youngLee.setAttribute('src', "/images/tim-berners-lee.jpg")
-body.append(youngLee)
-
-const a5 = document.createElement('p')
-a5.append(document.createTextNode(`
+body.append(makeParagraph(`
 I'm sorry, I am a text based model and I am not able to find or show images. However, I can tell you that
  the inventor of the World Wide Web (WWW) is Sir Tim Berners-Lee. He is a British computer scientist and 
  is considered to be the inventor of the World Wide Web. He proposed and developed the first successful 
  communication between a Hypertext Transfer Protocol (HTTP) client and server via the Internet in 1989. 
  He also created the first web browser, called WorldWideWeb, and the first web server, called httpd. He 
  also wrote the first version of the HTML language, which provided the structure for web pages. He is currently 
- working on a decentralized web project called Solid.`));
-body.append(a5)
+ working on a decentralized web project called Solid.`
+));
+
+body.append(makeHeader("What else has Lee done recently?", 'h1'))
+body.append(makeParagraph('(this story is AI-generated & satirical.)'))
+
+body.append(makeImage("/images/saviour.png", "The terrorists' 'Stronghold' (ruined childrens' hospital)"))
+
+body.append(makeParagraph(`
+Once upon a time, in a bustling metropolis, the city was thrown into chaos as a group of heavily armed terrorists 
+launched a surprise attack on the city's main square. The city's residents were caught off guard and panicked as the 
+terrorists began to indiscriminately open fire on civilians. The police were quick to respond, but were outmatched by 
+the terrorists' superior firepower. The city's mayor, desperate to protect his citizens, reached out to a retired 
+special forces soldier named Sir Tim Burners-Lee. Sir Tim Burners-Lee had left the military after a mission went awry 
+and had been living a quiet life, but the mayor knew that Sir Tim Burners-Lee was the city's only hope. Sir Tim 
+Burners-Lee reluctantly agreed to help and quickly assembled a team of former military comrades. Together, they devised 
+a plan to infiltrate the terrorist's stronghold and take out the leaders of the group. The team successfully infiltrated 
+the stronghold, taking out the terrorists one by one. As they closed in on the leader of the group, they were ambushed 
+by a group of suicide bombers. Sir Tim Burners-Lee and his team were able to neutralize the bombers but not before one 
+of them managed to detonate their explosives, causing significant damage to the stronghold. Despite the setback, Sir Tim
+Burners-Lee and his team were able to take out the leader of the group and end the attack. The city's residents were 
+relieved and grateful to Sir Tim Burners-Lee and his team for their bravery and quick thinking. In the aftermath of the 
+attack, the city came together to rebuild and heal. Sir Tim Burners-Lee returned to his quiet life, but the memory of 
+the attack and the lives lost stayed with him. He knew that there would always be those who sought to do harm, but he
+also knew that there would always be those willing to stand up and protect their fellow citizens.
+`))
 const credits = document.createElement('div')
 credits.setAttribute('class', 'credits')
-const c1 = document.createElement('p')
-c1.append(document.createTextNode('Text from 2023-01-14 conversation with '));
-const c1link = document.createElement('a')
-c1link.append(document.createTextNode('ChatGPT.'))
-c1link.setAttribute('href', "https://chat.openai.com/chat")
-c1.append(c1link)
-credits.append(c1)
-const c2 = document.createElement('p')
-c2.append(document.createTextNode('Photo of a young Tim Berners-Lee from'))
-const c2link1 = document.createElement('a')
-c2link1.append(document.createTextNode(' Flickr '))
-c2link1.setAttribute('href', "https://www.flickr.com/photos/itupictures/16662336315")
-c2.append(c2link1)
-c2.append(document.createTextNode('no thanks to ChatGPT. ('))
-const c2link2 = document.createElement('a')
-c2link2.append(document.createTextNode('CC BY 2.0'))
-c2link2.setAttribute('href', 'https://creativecommons.org/licenses/by/2.0/')
-c2.append(c2link2)
-c2.append(document.createTextNode(').'))
-credits.append(c2)
+
+const c1 = mergeItems([
+  document.createTextNode('Text from 2023-01-14 conversation with '),
+  makeLink('ChatGPT.', "https://chat.openai.com/chat"),
+], 'p')
+
+
+const c2 = mergeItems([
+  document.createTextNode('Photo of a young Tim Berners-Lee from '),
+  makeLink('Flickr', "https://www.flickr.com/photos/itupictures/16662336315"),
+  document.createTextNode(' no thanks to ChatGPT. ('),
+  makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/'),
+  document.createTextNode(').'),
+], 'p')
+
+const c3 = mergeItems([
+  document.createTextNode('Image accompanying '),
+  makeLink("ChatGPT", 'https://chat.openai.com/chat'),
+  document.createTextNode("'s Berners-Lee fantasy generated at "),
+  makeLink('Hotpot.ai', 'https://hotpot.ai/s/art-generator/8-4muDQ5qd4t2YiR5'),
+  document.createTextNode('.')
+], 'p')
+
+credits.append(c1, c2, c3)
 body.append(credits)
 
