@@ -11,6 +11,13 @@ const makeParagraph = (text) => { // string
   return t
 }
 
+const makeImage = (source, description) =>{
+  const img = document.createElement('img');
+  img.setAttribute('src', source)
+  img.setAttribute('alt', description)
+  return img
+}
+
 const makeList = (elements, type) => { // elements is an array of strings
   const returnList = document.createElement(type)
   for (const element of elements) {
@@ -91,10 +98,7 @@ body.append(mergeItems([
 
 body.append(makeHeader('Can you find a picture of the inventor of the web?', 'h1'));
 
-// doesn't really deserve its' own function so I've left it here
-const youngLee = document.createElement('img');
-youngLee.setAttribute('src', "/images/tim-berners-lee.jpg")
-body.append(youngLee)
+body.append(makeImage("/images/tim-berners-lee.jpg", "A young Tim Berners-Lee"))
 
 body.append(makeParagraph(`
 I'm sorry, I am a text based model and I am not able to find or show images. However, I can tell you that
@@ -109,9 +113,7 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
 body.append(makeHeader("What else has Lee done recently?", 'h1'))
 body.append(makeParagraph('(this story is AI-generated & satirical.)'))
 
-const leeSaver = document.createElement('img');
-leeSaver.setAttribute('src', "/images/saviour.png")
-body.append(leeSaver)
+body.append(makeImage("/images/saviour.png", "The terrorists' 'Stronghold' (ruined childrens' hospital)"))
 
 body.append(makeParagraph(`
 Once upon a time, in a bustling metropolis, the city was thrown into chaos as a group of heavily armed terrorists 
