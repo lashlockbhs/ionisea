@@ -65,13 +65,15 @@ body.append(
   technologies such as HTML, CSS, and JavaScript.
 `),
 );
+
 body.append(makeHeader('What are some of the main elements of HTML?', 'h1'));
 
 body.append(makeList([
   mergeItems([makeCode('<html>'), document.createTextNode(': This is the root element of an HTML document, and it contains all of the other elements.')], 'li'),
   mergeItems([makeCode('<head>'), document.createTextNode(": This element contains information about the document, such as the title of the page, which is displayed in the browser's title bar or tab.")], 'li'),
   mergeItems([makeCode('<body>'), document.createTextNode(': This element contains the content of the document that is displayed in the browser window.')], 'li'),
-  mergeItems([makeCode('<h1>'), document.createTextNode(' to '), makeCode('<h6>'), document.createTextNode(': These elements are used for headings and subheadings. '), makeCode('<h1>'), document.createTextNode(' is the highest level heading, while '), makeCode('<h6>'), document.createTextNode(' is the lowest.')], 'li'),
+  mergeItems([makeCode('<h1>'), document.createTextNode(' to '), makeCode('<h6>'), document.createTextNode(': These elements are used for headings and subheadings. '), 
+    makeCode('<h1>'), document.createTextNode(' is the highest level heading, while '), makeCode('<h6>'), document.createTextNode(' is the lowest.')], 'li'),
   mergeItems([makeCode('<p>'), document.createTextNode(': This element is used for paragraphs of text.')], 'li'),
   mergeItems([makeCode('<a>'), document.createTextNode(': This element is used for hyperlinks, which allow users to navigate between pages on the web.')], 'li'),
   mergeItems([makeCode('<img>'), document.createTextNode(': This element is used to embed images in a web page.')], 'li'),
@@ -103,24 +105,24 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
 ));
 
 body.append(makeHeader("What else has Lee done recently?", 'h1'))
-body.append(makeHeader('(information from this point on is satirical.)'), 'h3')
+body.append(makeParagraph('(information from this point on is satirical.)'))
 
 const leeSaver = document.createElement('img');
 leeSaver.setAttribute('src', "/images/saviour.png")
 body.append(leeSaver)
 
 body.append(makeParagraph(`
-Once upon a time, in a bustling metropolis, the city was thrown into chaos as a group of heavily armed doctors 
+Once upon a time, in a bustling metropolis, the city was thrown into chaos as a group of heavily armed terrorists 
 launched a surprise attack on the city's main square. The city's residents were caught off guard and panicked as the 
-doctors began to indiscriminately open fire on civilians. The police were quick to respond, but were outmatched by 
-the doctors' superior firepower. The city's mayor, desperate to protect his citizens, reached out to a retired 
+terrorists began to indiscriminately open fire on civilians. The police were quick to respond, but were outmatched by 
+the terrorists' superior firepower. The city's mayor, desperate to protect his citizens, reached out to a retired 
 special forces soldier named Sir Tim Burners-Lee. Sir Tim Burners-Lee had left the military after a mission went awry 
 and had been living a quiet life, but the mayor knew that Sir Tim Burners-Lee was the city's only hope. Sir Tim 
 Burners-Lee reluctantly agreed to help and quickly assembled a team of former military comrades. Together, they devised 
-a plan to infiltrate the doctor's children's hospital and take out the leaders of the group. The team successfully infiltrated 
-the children's hospital, taking out the doctors one by one. As they closed in on the leader of the group, they were ambushed 
+a plan to infiltrate the terrorist's stronghold and take out the leaders of the group. The team successfully infiltrated 
+the stronghold, taking out the terrorists one by one. As they closed in on the leader of the group, they were ambushed 
 by a group of suicide bombers. Sir Tim Burners-Lee and his team were able to neutralize the bombers but not before one 
-of them managed to detonate their explosives, causing significant damage to the children's hospital. Despite the setback, Sir Tim
+of them managed to detonate their explosives, causing significant damage to the stronghold. Despite the setback, Sir Tim
 Burners-Lee and his team were able to take out the leader of the group and end the attack. The city's residents were 
 relieved and grateful to Sir Tim Burners-Lee and his team for their bravery and quick thinking. In the aftermath of the 
 attack, the city came together to rebuild and heal. Sir Tim Burners-Lee returned to his quiet life, but the memory of 
@@ -134,7 +136,7 @@ const c1 = mergeItems([
   document.createTextNode('Text from 2023-01-14 conversation with '),
   makeLink('ChatGPT.', "https://chat.openai.com/chat"),
 ], 'p')
-credits.append(c1)
+
 
 const c2 = mergeItems([
   document.createTextNode('Photo of a young Tim Berners-Lee from '),
@@ -143,7 +145,15 @@ const c2 = mergeItems([
   makeLink(('CC BY 2.0'), 'https://creativecommons.org/licenses/by/2.0/'),
   document.createTextNode(').'),
 ], 'p')
-credits.append(c2)
 
+const c3 = mergeItems([
+  document.createTextNode('Image accompanying '),
+  makeLink("ChatGPT", 'https://chat.openai.com/chat'),
+  document.createTextNode("'s Berners-Lee fantasy generated at "),
+  makeLink('Hotpot.ai', 'https://hotpot.ai/s/art-generator/8-4muDQ5qd4t2YiR5'),
+  document.createTextNode('.')
+], 'p')
+
+credits.append(c1, c2, c3)
 body.append(credits)
 
