@@ -103,6 +103,7 @@ I'm sorry, I am a text based model and I am not able to find or show images. How
 ));
 
 body.append(makeHeader("What else has Lee done recently?", 'h1'))
+body.append(makeHeader('(information from this point on is satirical.)'), 'h3')
 
 const leeSaver = document.createElement('img');
 leeSaver.setAttribute('src', "/images/saviour.png")
