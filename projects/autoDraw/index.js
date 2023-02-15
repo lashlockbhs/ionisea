@@ -4,12 +4,12 @@
 
 import express from 'express';
 
-const port = 3000;
+const port = 0;
 
 const app = express();
 
 app.use(express.static('public'));
 
 app.listen(port, function () {
-  console.log(`Listening on port ${this.address().port}`);
+  console.log(` لَكَ الْمُلْكَ وَالْقُوَّةَ وَالْمَجْدَ إِلَى الأَبَدِ ${this.address().port} لَكِنْ نَجِّنَا مِنَ الشِّرِّيرِ لأَنَّ`);
 });
