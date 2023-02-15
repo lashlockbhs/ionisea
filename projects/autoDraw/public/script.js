@@ -1,6 +1,17 @@
-import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawLine, drawFilledRect, drawCircle } from './graphics.js';
+import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
 setCanvas(document.getElementById('screen'));
-drawFilledRect(0, 0, width, height, ' #002082')
+
+const drawSpace = (maybeLines) => {
+  drawFilledRect(0, 0, width, height, ' #002082')
+  if (maybeLines) {
+    const min = Math.min(height, width)
+    for (let i = 0; i < min; i += min/100) {
+      drawLine(i, 0, i, height , 'grey', 1)
+      drawLine(0, i, width, i, 'grey', 1)
+    }
+  }
+}
+drawSpace(true)
 /* rom shapes guide
  * range of motion dictates the range at which the line can "turn" each update
  * it is in radians, 90 degrees = pi radians
@@ -10,19 +21,23 @@ drawFilledRect(0, 0, width, height, ' #002082')
  * following informations is about edges because they look better
  * > 2 * pi will result in redundancy or breakage in the case of 360/180/0
  * pi is a perfect square, anything greater than that up to 2 pi will probably result in a triangle of some kind
- * anything less can make a shape with more sides
+ * anything less can make a shape with more sides or maybe break
  * shapes:
  * 4/3 for equilateral triangles
  * 8/5 pi makes stars (:
  * pi makes squares
+ * 5/6 makes broken pentagons
  * 4/5 makes pentagons
+ * 3/4 makes boken pentagons
  * 2/3 makes hexagons
  * 1/2 makes octagons
+ * 1/3 does nonagons (unconfirmed, very rare)
  * etc
+ * more sides = rarer to see
 */
 
 const length = 10
-const RoM = 0.5 * Math.PI // range of motion (radians) - read above
+const RoM = 2/3 * Math.PI // range of motion (radians) - read above
 let angle = Math.PI
 let coords = { x: width / 2, y: height / 2 }
 const preDraw = (count) => {
@@ -37,7 +52,7 @@ const preDraw = (count) => {
     }
   }
 };
-preDraw(1e+6)
+preDraw(1e+7)
 animate((t) => {
   //random
   //angle += (Math.random()-0.5) * RoM/2
