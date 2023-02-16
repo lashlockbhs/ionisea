@@ -65,7 +65,7 @@ const drawFilledTriangle = (x1, y1, x2, y2, x3, y3, color) => {
 };
 
 const drawText = (text, x, y, color, size) => {
-  ctx.font = `${size}px sans-serif`;
+  ctx.font = `${size}px serif`;
   ctx.fillStyle = color;
   ctx.fillText(text, x, y);
 };
