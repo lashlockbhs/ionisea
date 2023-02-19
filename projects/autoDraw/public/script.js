@@ -21,15 +21,16 @@ const drawSpace = (maybeLines, maybeCoords, maybeCenterMark) => {
 }
 drawSpace(false, false, true)
 
-/* rom shapes guide
+/* rom (shapes) guide
  * range of motion dictates the range at which the line can "turn" each update
  * it is in radians, 90 degrees = pi radians
  * on random, it will turn some angle in the range given, clockwise or counterclockwise
  * on edges, it will only do the edges of that range
+ * 0 will do a straight line on random, 2pi does a straight line on edges, 4pi and 0 will break
  * 
- * following informations is about edges because they look better
- * > 2 * pi will result in redundancy or breakage in the case of 360/180/0
- * pi is a perfect square, anything greater than that up to 2 pi will probably result in a triangle of some kind
+ *  - following informations is about edges - 
+ * > 2 * pi will result in redundancy or breakage in the case of 4pi/2pi/0 
+ * pi can make a perfect square, anything greater than that up to 2 pi will probably result in a triangle of some kind
  * anything less can make a shape with more sides or maybe break
  * shapes:
  * 4/3 for equilateral triangles
@@ -41,7 +42,7 @@ drawSpace(false, false, true)
  * 1/2 makes octagons (and looks like a subway map)
  * 4/9 makes nonagons 
  * etc
- * more sides = squares the chance to see it; 3 ^ (sides-1) [unconfirmed equation but it makes logical sense]
+ * more sides = squares the chance to see it; 3 ^ sides (closed polygons) or 3^vertices (or 3 ^ sides - 1, works for open shapes)
 */
 
 const length = 10
