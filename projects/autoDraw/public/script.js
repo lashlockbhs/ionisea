@@ -52,7 +52,6 @@ let recentArray = []
 const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 
 const checkForShape = () => {
-  console.log('start')
   if (recentArray.length > 1) {
     let checkVal = recentArray[0]
     let count = 0
@@ -98,7 +97,7 @@ const preDraw = (count) => {
     }
   }
 };
-preDraw(0)
+preDraw(100000)
 
 animate((t) => {
   update(false, true)
