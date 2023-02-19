@@ -53,13 +53,23 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 
 const checkForShape = () => {
   if (recentArray.length > 1) {
-    let checkVal = recentArray[0]
+    let checkVal = recentArray[0].place
     let count = 0
     let index = 0
     for (const element of recentArray) {
-      if ((element === checkVal) && !(element === 0)) {
+      if ((element.place === checkVal) && !(element.place === 0)) {
         count++
         if (count === maxArrLength) {
+          let rad = recentArray[0].angle
+          let loc = recentArray[0].coords
+          for (let i = 0; i <= maxArrLength; i++){
+            const p = Math.cos(rad) * length
+            const b = Math.sin(rad) * length
+            const newLoc = { x: loc.x + b, y: loc.y + p }
+            drawLine(loc.x, loc.y, newLoc.x, newLoc.y, 'orange', 3)
+            rad += checkVal * RoM / 2
+            loc = newLoc
+          }
           recentArray = []
           drawFilledCircle(coords.x, coords.y, 3, 'orange')
           return 'fillertest'
@@ -72,9 +82,8 @@ const checkForShape = () => {
   }
 };
 
-const update = (maybeRandom, maybeResetOffEdge) => {
+const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes) => {
   const place = maybeRandom ? Math.random() * 2 - 1 : Math.round(Math.random() * 2 - 1);
-  recentArray.push(place)
   angle += place * RoM / 2
   const p = Math.cos(angle) * length
   const b = Math.sin(angle) * length
@@ -85,20 +94,21 @@ const update = (maybeRandom, maybeResetOffEdge) => {
     update()
   } else {
     drawLine(coords.x, coords.y, newCoords.x, newCoords.y, 'white')
+    recentArray.push({place, coords, angle})
     coords = newCoords
-    checkForShape()
+    if (maybeCheckForShapes) checkForShape()
   }
 };
 
 const preDraw = (count) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      update(false, true)
+      update(false, true, false)
     }
   }
 };
 preDraw(1000000)
 
 animate((t) => {
-  update(false, true)
+  update(false, true, false)
 });
