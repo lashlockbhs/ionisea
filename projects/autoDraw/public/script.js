@@ -66,7 +66,7 @@ const checkForShape = () => {
             const p = Math.cos(rad) * length
             const b = Math.sin(rad) * length
             const newLoc = { x: loc.x + b, y: loc.y + p }
-            drawLine(loc.x, loc.y, newLoc.x, newLoc.y, 'orange', 3)
+            drawLine(loc.x, loc.y, newLoc.x, newLoc.y, 'orange', 2)
             rad += checkVal * RoM / 2
             loc = newLoc
           }
@@ -103,12 +103,12 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes) => {
 const preDraw = (count) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      update(false, true, false)
+      update(false, true, true)
     }
   }
 };
 preDraw(1000000)
 
 animate((t) => {
-  update(false, true, false)
+  update(false, true, true)
 });
