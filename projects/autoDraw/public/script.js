@@ -37,15 +37,15 @@ drawSpace(false, false, true)
  * 1.5 makes right triangles
  * pi makes squares
  * 4/5 makes pentagons
- * 2/3 makes hexagons
- * 1/2 makes octagons
+ * 2/3 makes hexagons (looks 3-dimensional in lower densities)
+ * 1/2 makes octagons (and looks like a subway map)
  * 4/9 makes nonagons 
  * etc
- * more sides = rarer to see
+ * more sides = squares the chance to see it; 3 ^ (sides-1) [unconfirmed equation but it makes logical sense]
 */
 
 const length = 10
-const RoM = 2/3 * Math.PI // range of motion (radians) - read above
+const RoM = 1 * Math.PI // range of motion (radians) - read above
 let angle = 0
 let coords = { x: width / 2, y: height / 2 }
 let recentArray = []
@@ -66,7 +66,7 @@ const checkForShape = () => {
             const p = Math.cos(rad) * length
             const b = Math.sin(rad) * length
             const newLoc = { x: loc.x + b, y: loc.y + p }
-            drawLine(loc.x, loc.y, newLoc.x, newLoc.y, 'orange', 2)
+            drawLine(loc.x, loc.y, newLoc.x, newLoc.y, 'orange', 3)
             rad += checkVal * RoM / 2
             loc = newLoc
           }
@@ -107,7 +107,7 @@ const preDraw = (count) => {
     }
   }
 };
-preDraw(1000000)
+preDraw(3000000)
 
 animate((t) => {
   update(false, true, true)
