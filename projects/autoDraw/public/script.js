@@ -60,15 +60,12 @@ const checkForShape = () => {
     for (const element of recentArray) {
       if ((element === checkVal) && !(element === 0)) {
         count++
-        console.log("hit", element)
         if (count === maxArrLength) {
-          console.log('full', element)
           recentArray = []
           drawCircle(coords.x, coords.y, length / 2, 'grey', 1)
           return 'fillertest'
         }
       } else {
-        console.log('miss', element)
         recentArray = recentArray.slice(index, -1)
       }
       index++
