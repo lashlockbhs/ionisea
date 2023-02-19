@@ -61,11 +61,11 @@ const checkForShape = () => {
         count++
         if (count === maxArrLength) {
           recentArray = []
-          drawCircle(coords.x, coords.y, length / 2, 'grey', 1)
+          drawFilledCircle(coords.x, coords.y, 3, 'orange')
           return 'fillertest'
         }
       } else {
-        recentArray = recentArray.slice(index, -1)
+        recentArray = recentArray.slice(index)
       }
       index++
     }
@@ -97,7 +97,7 @@ const preDraw = (count) => {
     }
   }
 };
-preDraw(100000)
+preDraw(1000000)
 
 animate((t) => {
   update(false, true)
