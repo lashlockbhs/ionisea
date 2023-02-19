@@ -1,13 +1,17 @@
 import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawText, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
 setCanvas(document.getElementById('screen'));
 
-const drawSpace = (maybeLines, maybeCoords) => {
+const drawSpace = (maybeLines, maybeCoords, maybeCenterMark) => {
   drawFilledRect(0, 0, width, height, ' #002082')
+  if (maybeCenterMark) {
+    drawLine(width / 2, height / 2 - 50, width / 2, height / 2 + 50, 'orange', 5)
+    drawLine(width / 2 + 50, height / 2, width / 2 - 50, height / 2, 'orange', 5)
+  }
   if (maybeLines) {
     for (let i = 0; i < width; i += width / 100) {
-      if (maybeCoords){
-        for(let s = 0; s < height; s += height/100){
-          drawText('(' + i + ', ' + (height-s) + ')', i + 2, s - 2, 'grey', 10)
+      if (maybeCoords) {
+        for (let s = 0; s < height; s += height / 100) {
+          drawText('(' + i + ', ' + (height - s) + ')', i + 2, s - 2, 'grey', 10)
         }
       }
       drawLine(i, 0, i, height, 'grey', 1)
@@ -15,7 +19,7 @@ const drawSpace = (maybeLines, maybeCoords) => {
     }
   }
 }
-drawSpace(true, true)
+drawSpace(false, false, true)
 
 /* rom shapes guide
  * range of motion dictates the range at which the line can "turn" each update
@@ -32,7 +36,6 @@ drawSpace(true, true)
  * 8/5 pi makes stars (:
  * 1.5 makes right triangles
  * pi makes squares
- * 5/6 makes broken pentagons
  * 4/5 makes pentagons
  * 2/3 makes hexagons
  * 1/2 makes octagons
@@ -42,47 +45,64 @@ drawSpace(true, true)
 */
 
 const length = 10
-const RoM = 1.5 * Math.PI // range of motion (radians) - read above
+const RoM = 2/3 * Math.PI // range of motion (radians) - read above
 let angle = 0
 let coords = { x: width / 2, y: height / 2 }
 let recentArray = []
-const maxArrLength = Math.round(4 * Math.PI / RoM) -1
+const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 
 const checkForShape = () => {
-  if (recentArray.length === maxArrLength) {
-    const checkVal = recentArray[0]
+  console.log('start')
+  if (recentArray.length > 1) {
+    let checkVal = recentArray[0]
+    let count = 0
+    let index = 0
     for (const element of recentArray) {
-      if ((element != checkVal) || (element === 0)) {
-        recentArray = []
-        return 'b'
+      if ((element === checkVal) && !(element === 0)) {
+        count++
+        console.log("hit", element)
+        if (count === maxArrLength) {
+          console.log('full', element)
+          recentArray = []
+          drawCircle(coords.x, coords.y, length / 2, 'grey', 1)
+          return 'fillertest'
+        }
+      } else {
+        console.log('miss', element)
+        recentArray = recentArray.slice(index, -1)
       }
+      index++
     }
-    recentArray = []
-    drawCircle(coords.x, coords.y, length / 2, 'grey', 1)
   }
 };
 
-const update = (maybeRandom) => {
+const update = (maybeRandom, maybeResetOffEdge) => {
   const place = maybeRandom ? Math.random() * 2 - 1 : Math.round(Math.random() * 2 - 1);
   recentArray.push(place)
   angle += place * RoM / 2
-  const b = Math.sin(angle) * length
   const p = Math.cos(angle) * length
+  const b = Math.sin(angle) * length
   const newCoords = { x: coords.x + b, y: coords.y + p }
-  drawLine(coords.x, coords.y, newCoords.x, newCoords.y, 'white')
-  coords = newCoords
-  checkForShape()
+  if (maybeResetOffEdge && ((newCoords.x < 0) || (newCoords.x > width) || (newCoords.y < 0) || (newCoords.y > height))) {
+    coords = { x: width / 2, y: height / 2 }
+    angle = 0
+    update()
+  } else {
+    drawLine(coords.x, coords.y, newCoords.x, newCoords.y, 'white')
+    coords = newCoords
+    checkForShape()
+  }
 };
 
 const preDraw = (count) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      update(false)
+      update(false, true)
     }
   }
 };
-preDraw(5000000)
+preDraw(0)
 
 animate((t) => {
-  update(false)
+  update(false, true)
 });
