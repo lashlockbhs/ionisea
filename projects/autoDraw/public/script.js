@@ -2,12 +2,12 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = false
+const doSubwayMap = true
 const randomPlacement = false
 
 //drawing dependents
 let length = 10
-let RoM = 4/3 * Math.PI // range of motion (radians) - read below
+let RoM = 1/2 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
@@ -61,10 +61,19 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     }
     update()
   } else {
+    if (maybeSubwayMapStart) {
+      drawFilledCircle(coords.x, coords.y, lineWidth/2, lineColor)
+    }
+    if (maybeSubwayMap){
+      if(Math.random() < 0.25){
+        drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
+      }
+    }
     drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
     recentArray.push({ place, coords, angle })
     coords = newCoords
     if (maybeCheckForShapes) checkForShape()
+    if (angle > 2*Math.PI) angle -= 2*Math.PI
   }
 };
 
@@ -95,7 +104,7 @@ const drawSpace = (maybeLines, maybeCoords, maybeCenterMark, subwayMap) => {
     lineWidth = 10
     angle = 0
     coords = {x: width/2, y: height/2}
-    lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99) + Math.round(Math.random() * 99)
+    lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
   } else {
     drawFilledRect(0, 0, width, height, '#002082')
     if (maybeCenterMark) {
@@ -148,7 +157,7 @@ const checkForShape = () => {
   }
 };
 
-preDraw(5000000) // keep relatively low for subway map
+preDraw(10000) // keep relatively low for subway map
 
 animate((t) => {
   if (doSubwayMap){
