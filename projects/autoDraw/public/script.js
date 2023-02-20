@@ -2,12 +2,12 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = false
+const doSubwayMap = true
 const randomPlacement = false
 
 //drawing dependents
 let length = 10
-let RoM = 1 / 2 * Math.PI // range of motion (radians) - read below
+let RoM = 4/5 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
@@ -71,8 +71,8 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
 const preDraw = (count, subwayStart = false) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      if (doSubwayMap && subwayStart){
-        if (update(false, true, false, true, true)) {
+      if (doSubwayMap){
+        if (update(false, true, false, true, true, subwayStart)) {
           return ''
         }
         } else {
@@ -148,7 +148,7 @@ const checkForShape = () => {
   }
 };
 
-preDraw(2500000) // keep relatively low for subway map
+preDraw(5000000) // keep relatively low for subway map
 
 animate((t) => {
   if (doSubwayMap){
