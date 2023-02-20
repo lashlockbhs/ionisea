@@ -3,11 +3,11 @@ setCanvas(document.getElementById('screen'));
 
 //global decisions
 const doSubwayMap = false
-const randomPlacement = true
+const randomPlacement = false
 
 //drawing dependents
 let length = 10
-let RoM = 2 * Math.PI // range of motion (radians) - read below
+let RoM = 4/3 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
@@ -37,7 +37,7 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * 1/2 makes octagons 
  * 4/9 makes nonagons 
  * etc
- * more sides = squares the chance to see it; 3 ^ sides (closed polygons) or 3^vertices (or 3 ^ sides - 1, works for open shapes)
+ * more sides = squares the chance to see it; 3 ^ (sides - 1) or 3^vertices, no vertice is created on an intersection point
 */
 
 const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubwayMap, maybeSubwayMapStart) => {
