@@ -1,8 +1,12 @@
 import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawText, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
 setCanvas(document.getElementById('screen'));
 
-let length = 10
+//global decisions
 const doSubwayMap = false
+const randomPlacement = false
+
+//drawing dependents
+let length = 10
 let RoM = 1 / 2 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
@@ -35,6 +39,7 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * etc
  * more sides = squares the chance to see it; 3 ^ sides (closed polygons) or 3^vertices (or 3 ^ sides - 1, works for open shapes)
 */
+
 const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubwayMap, maybeSubwayMapStart) => {
   const place = maybeRandom ? Math.random() * 2 - 1 : Math.round(Math.random() * 2 - 1);
   angle += place * RoM / 2
@@ -66,9 +71,14 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
 const preDraw = (count, subwayStart = false) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      if (update(false, true, true, doSubwayMap, subwayStart) && subwayStart) {
-        return ''
-      }
+      if (doSubwayMap && subwayStart){
+        if (update(false, true, false, true, true)) {
+          return ''
+        }
+        } else {
+          update(randomPlacement, true, true, false)
+        }
+      
     }
   }
 };
@@ -138,8 +148,12 @@ const checkForShape = () => {
   }
 };
 
-preDraw(25000) // keep relatively low for subway map
+preDraw(2500000) // keep relatively low for subway map
 
 animate((t) => {
-  update(false, true, true, doSubwayMap)
+  if (doSubwayMap){
+  update(false, true, false, true)
+  } else {
+    update(randomPlacement, true, true, false)
+  }
 });
