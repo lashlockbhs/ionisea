@@ -2,12 +2,12 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = true
-const randomPlacement = false
+const doSubwayMap = false
+const randomPlacement = true
 
 //drawing dependents
 let length = 10
-let RoM = 4/5 * Math.PI // range of motion (radians) - read below
+let RoM = 2 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
@@ -19,8 +19,8 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 /* rom (shapes) guide
  * range of motion dictates the range at which the line can "turn" each update
  * it is in radians, 90 degrees = pi radians
- * on random, it will turn some angle in the range given, clockwise or counterclockwise
- * on edges, it will only do the edges of that range
+ * on 'random', it will turn some angle in the range given, clockwise or counterclockwise
+ * on 'edges', it will only do the edges/center of that range
  * 0 will do a straight line on random, 2pi does a straight line on edges, 4pi and 0 will break
  * 
  *  - following informations is about edges - 
