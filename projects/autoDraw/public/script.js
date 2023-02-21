@@ -2,21 +2,22 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = true //this overrides most of the following options
+const doSubwayMap = true // this overrides most of the following options
+  const fillSubwayLineGaps = false // this may take up to twice as long, and is unnoticable when zoomed out
 const randomPlacement = false
 
 //drawing dependents
- // editable
+// editable
 let RoM = 4 / 3 * Math.PI // range of motion (radians) - read below
 let length = 10
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
 let lineColor = 'white' // for subwaymap
- //non-editable
+//non-editable
 let recentArray = []
 let offEdgeCount = 0
- //for star detection this can be set to 4
+//for star detection this can be set to 4
 const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 
 /* rom (shapes) guide
@@ -66,10 +67,10 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     }
     update()
   } else {
-    //to make this look better but less performant, remove the second condition (may take up to twice as long, and unnoticable zoomed out)
-    if (maybeSubwayMap && maybeSubwayMapStart) { 
+    if (maybeSubwayMap && (maybeSubwayMapStart || fillSubwayLineGaps)) {
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     }
+    //stations
     if (maybeSubwayMap && !maybeSubwayMapStart) {
       if (Math.random() < 0.25) {
         drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
@@ -86,7 +87,7 @@ const preDraw = (count, subwayStart = false) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
       if (doSubwayMap) {
-        if (update(false, true, false, true, subwayStart)) {
+        if (update(false, true, false, true, fillSubwayLineGaps, subwayStart)) {
           return ''
         }
       } else {
@@ -104,7 +105,7 @@ const drawSpace = (maybeLines, maybeCoords, maybeCenterMark, subwayMap) => {
     lineWidth = 100
     lineColor = '#87CEEB'
     RoM = Math.PI / 2 // 1/2 pi
-    preDraw(1000, true)
+    preDraw(1000, false, true)
     length = 50
     lineWidth = 10
     angle = 0
@@ -120,7 +121,7 @@ const drawSpace = (maybeLines, maybeCoords, maybeCenterMark, subwayMap) => {
       for (let i = 0; i < width; i += width / 100) {
         if (maybeCoords) {
           for (let s = 0; s < height; s += height / 100) {
-            drawText('(' + (i - width/2) + ', ' + (height - s -height/2) + ')', i + 2, s - 2, 'grey', 10)
+            drawText('(' + (i - width / 2) + ', ' + (height - s - height / 2) + ')', i + 2, s - 2, 'grey', 10)
           }
         }
         drawLine(i, 0, i, height, 'grey', 1)
