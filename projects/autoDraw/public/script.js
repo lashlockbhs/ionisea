@@ -70,6 +70,7 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     if (maybeSubwayMap && (maybeSubwayMapStart || fillSubwayLineGaps)) {
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     }
+    //stations
     if (maybeSubwayMap && !maybeSubwayMapStart) {
       if (Math.random() < 0.25) {
         drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
@@ -86,7 +87,7 @@ const preDraw = (count, subwayStart = false) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
       if (doSubwayMap) {
-        if (update(false, true, false, true, fillSubwayLineGaps, subwayStart)) {
+        if (update(false, true, false, true, subwayStart)) {
           return ''
         }
       } else {
