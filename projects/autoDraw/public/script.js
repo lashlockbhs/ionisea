@@ -3,7 +3,7 @@ setCanvas(document.getElementById('screen'));
 
 //global decisions
 const doSubwayMap = true // this overrides most of the following options
-  const fillSubwayLineGaps = false // this may take up to twice as long, and is unnoticable when zoomed out
+  const fillSubwayLineGaps = true // this may take up to twice as long, and is unnoticable when zoomed out
 const randomPlacement = false
 
 //drawing dependents
@@ -46,7 +46,7 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * more sides = squares the chance to see it; 3 ^ (sides - 1) or 3^vertices, no vertice is created on an intersection point
 */
 
-const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubwayMap, maybeSubwayMapStart) => {
+const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubwayMap, maybeSubwayMapStart = false) => {
   const place = maybeRandom ? Math.random() * 2 - 1 : Math.round(Math.random() * 2 - 1);
   angle += place * RoM / 2
   const p = Math.cos(angle) * length
@@ -70,7 +70,6 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     if (maybeSubwayMap && (maybeSubwayMapStart || fillSubwayLineGaps)) {
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     }
-    //stations
     if (maybeSubwayMap && !maybeSubwayMapStart) {
       if (Math.random() < 0.25) {
         drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
