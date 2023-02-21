@@ -7,7 +7,7 @@ const randomPlacement = false
 
 //drawing dependents
 let length = 10
-let RoM = 4/5 * Math.PI // range of motion (radians) - read below
+let RoM = 4 / 2.5 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
@@ -20,10 +20,11 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * range of motion dictates the range at which the line can "turn" each update
  * it is in radians, 180 degrees = pi radians
  * on 'random', it will turn some angle in the range given, clockwise or counterclockwise
- * on 'edges', it will only do the edges/center of that range
- * 0 will do a straight line on random, 2pi does a straight line on edges (0 & 4pi both do a straight line in one direction)
+ * on 'round', it will only do the edges/center of that range
+ * 'round' is the default, to enable 'random,' set randomPlacement to true (line 6)
+ * 0 will do a straight line on random, 2pi does a straight line on round (0 & 4pi both do a straight line in one direction)
   
- *  - following informations is about edges - 
+ *  - following informations is about 'round' - 
  * > 2 * pi will result in redundancy or breakage in the case of 4pi/2pi/0 
  * pi can make a perfect square, anything greater than that up to 2 pi will probably result in a triangle of some kind
  * anything less can make a shape with more sides or maybe break
@@ -62,7 +63,7 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     }
     update()
   } else {
-    if (maybeSubwayMap && maybeSubwayMapStart) { //to make this look better but less performant, remove the second condition and the else on line 66
+    if (maybeSubwayMap && maybeSubwayMapStart) { //to make this look better but less performant, remove the second condition and the else 2 lines down
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     } else if (maybeSubwayMap && !maybeSubwayMapStart) {
       if (Math.random() < 0.25) {
@@ -73,7 +74,6 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     recentArray.push({ place, coords, angle })
     coords = newCoords
     if (maybeCheckForShapes) checkForShape()
-    if (angle > 2 * Math.PI) angle -= 2 * Math.PI
   }
 };
 
