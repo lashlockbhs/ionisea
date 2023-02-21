@@ -2,18 +2,21 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = false
+const doSubwayMap = true //this overrides most of the following options
 const randomPlacement = false
 
 //drawing dependents
-let length = 10
+ // editable
 let RoM = 4 / 2.5 * Math.PI // range of motion (radians) - read below
+let length = 10
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
-let recentArray = []
 let lineColor = 'white' // for subwaymap
+ //non-editable
+let recentArray = []
 let offEdgeCount = 0
+ //for star detection this can be set to 4
 const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 
 /* rom (shapes) guide
@@ -63,9 +66,10 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     }
     update()
   } else {
-    if (maybeSubwayMap && maybeSubwayMapStart) { //to make this look better but less performant, remove the second condition and the else 2 lines down
+    if (maybeSubwayMap /*&& maybeSubwayMapStart*/) { //to make this look better but less performant, remove the second condition
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
-    } else if (maybeSubwayMap && !maybeSubwayMapStart) {
+    }
+    if (maybeSubwayMap && !maybeSubwayMapStart) {
       if (Math.random() < 0.25) {
         drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
       }
