@@ -2,7 +2,7 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = false //this overrides most of the following options
+const doSubwayMap = true //this overrides most of the following options
 const randomPlacement = false
 
 //drawing dependents
@@ -66,7 +66,8 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     }
     update()
   } else {
-    if (maybeSubwayMap /*&& maybeSubwayMapStart*/) { //to make this look better but less performant, remove the second condition
+    //to make this look better but less performant, remove the second condition (may take up to twice as long, and unnoticable zoomed out)
+    if (maybeSubwayMap && maybeSubwayMapStart) { 
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     }
     if (maybeSubwayMap && !maybeSubwayMapStart) {
