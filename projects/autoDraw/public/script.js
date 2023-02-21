@@ -2,12 +2,12 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = true
+const doSubwayMap = false
 const randomPlacement = false
 
 //drawing dependents
 let length = 10
-let RoM = 1/2 * Math.PI // range of motion (radians) - read below
+let RoM = 4/5 * Math.PI // range of motion (radians) - read below
 let angle = 0
 let lineWidth = 1
 let coords = { x: width / 2, y: height / 2 }
@@ -18,7 +18,7 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
 
 /* rom (shapes) guide
  * range of motion dictates the range at which the line can "turn" each update
- * it is in radians, 90 degrees = pi radians
+ * it is in radians, 180 degrees = pi radians
  * on 'random', it will turn some angle in the range given, clockwise or counterclockwise
  * on 'edges', it will only do the edges/center of that range
  * 0 will do a straight line on random, 2pi does a straight line on edges, 4pi and 0 will break
@@ -61,11 +61,10 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     }
     update()
   } else {
-    if (maybeSubwayMapStart) {
-      drawFilledCircle(coords.x, coords.y, lineWidth/2, lineColor)
-    }
-    if (maybeSubwayMap){
-      if(Math.random() < 0.25){
+    if (maybeSubwayMap && maybeSubwayMapStart) { //to make this look better but less performant, remove the second condition and the else on line 66
+      drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
+    } else if (maybeSubwayMap && !maybeSubwayMapStart) {
+      if (Math.random() < 0.25) {
         drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
       }
     }
@@ -73,21 +72,21 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     recentArray.push({ place, coords, angle })
     coords = newCoords
     if (maybeCheckForShapes) checkForShape()
-    if (angle > 2*Math.PI) angle -= 2*Math.PI
+    if (angle > 2 * Math.PI) angle -= 2 * Math.PI
   }
 };
 
 const preDraw = (count, subwayStart = false) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
-      if (doSubwayMap){
-        if (update(false, true, false, true, true, subwayStart)) {
+      if (doSubwayMap) {
+        if (update(false, true, false, true, subwayStart)) {
           return ''
         }
-        } else {
-          update(randomPlacement, true, true, false)
-        }
-      
+      } else {
+        update(randomPlacement, true, !randomPlacement, false)
+      }
+
     }
   }
 };
@@ -96,14 +95,14 @@ const drawSpace = (maybeLines, maybeCoords, maybeCenterMark, subwayMap) => {
   if (subwayMap) {
     drawFilledRect(0, 0, width, height, '#FAF9F6')
     length = 300
-    lineWidth = 50
+    lineWidth = 100
     lineColor = '#87CEEB'
     RoM = Math.PI / 2 // 1/2 pi
     preDraw(1000, true)
     length = 50
     lineWidth = 10
     angle = 0
-    coords = {x: width/2, y: height/2}
+    coords = { x: width / 2, y: height / 2 }
     lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
   } else {
     drawFilledRect(0, 0, width, height, '#002082')
@@ -157,12 +156,12 @@ const checkForShape = () => {
   }
 };
 
-preDraw(10000) // keep relatively low for subway map
+preDraw(2000000) // keep relatively low for subway map
 
 animate((t) => {
-  if (doSubwayMap){
-  update(false, true, false, true)
+  if (doSubwayMap) {
+    update(false, true, false, true)
   } else {
-    update(randomPlacement, true, true, false)
+    update(randomPlacement, true, !randomPlacement, false)
   }
 });
