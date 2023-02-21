@@ -21,8 +21,8 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * it is in radians, 180 degrees = pi radians
  * on 'random', it will turn some angle in the range given, clockwise or counterclockwise
  * on 'edges', it will only do the edges/center of that range
- * 0 will do a straight line on random, 2pi does a straight line on edges, 4pi and 0 will break
- * 
+ * 0 will do a straight line on random, 2pi does a straight line on edges (0 & 4pi both do a straight line in one direction)
+  
  *  - following informations is about edges - 
  * > 2 * pi will result in redundancy or breakage in the case of 4pi/2pi/0 
  * pi can make a perfect square, anything greater than that up to 2 pi will probably result in a triangle of some kind
@@ -31,10 +31,11 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * 4/3 for equilateral triangles
  * 8/5 pi makes stars (:
  * 1.5 makes right triangles
- * pi makes squares
+ * pi makes squares   (4/4 pi)
  * 4/5 makes pentagons
- * 2/3 makes hexagons (looks 3-dimensional in lower densities)
- * 1/2 makes octagons 
+ * 2/3 makes hexagons  (4/6 pi)
+ * 4/7 makes "septagons"
+ * 1/2 makes octagons  (4/8 pi)
  * 4/9 makes nonagons 
  * etc
  * more sides = squares the chance to see it; 3 ^ (sides - 1) or 3^vertices, no vertice is created on an intersection point
