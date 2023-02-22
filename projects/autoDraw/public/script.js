@@ -75,14 +75,16 @@ const updateSubway = () => {
     angle = 0
     offEdgeCount++
     if ((offEdgeCount % 2 === 0) && (offEdgeCount > 1)) {
-      lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
+      lineColor = '#' + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
+    } else if (offEdgeCount % 2 === 1) {
+      angle = Math.PI
     }
   } else {
     if (fillSubwayLineGaps && (offEdgeCount > 2)) {
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     }
     //stations
-    if (Math.random() < 0.25 && (offEdgeCount > 2)) {
+    if ((Math.random() < 0.25) && (offEdgeCount >= 2)) {
       drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
     }
     drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
@@ -96,6 +98,7 @@ const startSubwayMap = () => {
   lineWidth = 100
   lineColor = '#87CEEB'
   RoM = Math.PI / 2 // 1/2 pi
+  let lastOffEdge = 0
   while (offEdgeCount < 2) {
     drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     updateSubway()
