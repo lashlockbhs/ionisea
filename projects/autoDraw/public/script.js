@@ -97,8 +97,8 @@ const startSubwayMap = () => {
   lineColor = '#87CEEB'
   RoM = Math.PI / 2 // 1/2 pi
   while (offEdgeCount < 2) {
-    updateSubway()
     drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
+    updateSubway()
   }
   length = 50
   lineWidth = 10
