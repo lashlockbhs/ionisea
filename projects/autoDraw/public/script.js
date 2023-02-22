@@ -3,12 +3,12 @@ setCanvas(document.getElementById('screen'));
 
 //global decisions
 const doSubwayMap = true // this overrides most of the following options
-  const fillSubwayLineGaps = true // this may take up to twice as long, and is unnoticable when zoomed out
+const fillSubwayLineGaps = false // this may take up to twice as long, and is unnoticable when zoomed out
 const randomPlacement = false
 
 //drawing dependents
 // editable
-let RoM = 4 / 3 * Math.PI // range of motion (radians) - read below
+let RoM = 1 / 2 * Math.PI // range of motion (radians) - read below
 let length = 10
 let angle = 0
 let lineWidth = 1
@@ -46,7 +46,7 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * more sides = squares the chance to see it; 3 ^ (sides - 1) or 3^vertices, no vertice is created on an intersection point
 */
 
-const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubwayMap, maybeSubwayMapStart = false) => {
+const update = (maybeRandom, maybeResetOffEdge) => {
   const place = maybeRandom ? Math.random() * 2 - 1 : Math.round(Math.random() * 2 - 1);
   angle += place * RoM / 2
   const p = Math.cos(angle) * length
@@ -56,61 +56,71 @@ const update = (maybeRandom, maybeResetOffEdge, maybeCheckForShapes, maybeSubway
     coords = { x: width / 2, y: height / 2 }
     angle = 0
     offEdgeCount++
-    if (maybeSubwayMapStart && (offEdgeCount === 2)) {
-      return true;
-    }
-    if (maybeSubwayMapStart && (offEdgeCount === 1)) {
-      angle = Math.PI
-    }
-    if (maybeSubwayMap && (offEdgeCount % 2 === 0) && (offEdgeCount > 1)) {
-      lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
-    }
-    update()
   } else {
-    if (maybeSubwayMap && (maybeSubwayMapStart || fillSubwayLineGaps)) {
-      drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
-    }
-    //stations
-    if (maybeSubwayMap && !maybeSubwayMapStart) {
-      if (Math.random() < 0.25) {
-        drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
-      }
-    }
     drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
     recentArray.push({ place, coords, angle })
     coords = newCoords
-    if (maybeCheckForShapes) checkForShape()
+    if (!maybeRandom) checkForShape()
   }
 };
 
-const preDraw = (count, subwayStart = false) => {
+const updateSubway = () => {
+  const place = Math.round(Math.random() * 2 - 1);
+  angle += place * RoM / 2
+  const p = Math.cos(angle) * length
+  const b = Math.sin(angle) * length
+  const newCoords = { x: coords.x + b, y: coords.y + p }
+  if (((newCoords.x < 0) || (newCoords.x > width) || (newCoords.y < 0) || (newCoords.y > height))) {
+    coords = { x: width / 2, y: height / 2 }
+    angle = 0
+    offEdgeCount++
+    if ((offEdgeCount % 2 === 0) && (offEdgeCount > 1)) {
+      lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
+    }
+  } else {
+    if (fillSubwayLineGaps && (offEdgeCount > 2)) {
+      drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
+    }
+    //stations
+    if (Math.random() < 0.25 && (offEdgeCount > 2)) {
+      drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
+    }
+    drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
+    coords = newCoords
+  }
+};
+
+const startSubwayMap = () => {
+  drawFilledRect(0, 0, width, height, '#FAF9F6')
+  length = 300
+  lineWidth = 100
+  lineColor = '#87CEEB'
+  RoM = Math.PI / 2 // 1/2 pi
+  while (offEdgeCount < 2) {
+    updateSubway()
+    drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
+  }
+  length = 50
+  lineWidth = 10
+  angle = 0
+  coords = { x: width / 2, y: height / 2 }
+}
+
+const preDraw = (count) => {
   if (count > 0) {
     for (let i = 0; i < count; i++) {
       if (doSubwayMap) {
-        if (update(false, true, false, true, subwayStart)) {
-          return ''
-        }
+        updateSubway()
       } else {
-        update(randomPlacement, true, !randomPlacement, false)
+        update(randomPlacement, true)
       }
-
     }
   }
 };
 
-const drawSpace = (maybeLines, maybeCoords, maybeCenterMark, subwayMap) => {
-  if (subwayMap) {
-    drawFilledRect(0, 0, width, height, '#FAF9F6')
-    length = 300
-    lineWidth = 100
-    lineColor = '#87CEEB'
-    RoM = Math.PI / 2 // 1/2 pi
-    preDraw(1000, false, true)
-    length = 50
-    lineWidth = 10
-    angle = 0
-    coords = { x: width / 2, y: height / 2 }
-    lineColor = '#' + Math.round(Math.random() * 99) + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
+const drawSpace = (maybeLines, maybeCoords, maybeCenterMark) => {
+  if (doSubwayMap) {
+    startSubwayMap()
   } else {
     drawFilledRect(0, 0, width, height, '#002082')
     if (maybeCenterMark) {
@@ -130,7 +140,7 @@ const drawSpace = (maybeLines, maybeCoords, maybeCenterMark, subwayMap) => {
     }
   }
 }
-drawSpace(true, true, true, doSubwayMap)
+drawSpace(false, false, true)
 
 const checkForShape = () => {
   if (recentArray.length > 1) {
@@ -163,12 +173,12 @@ const checkForShape = () => {
   }
 };
 
-preDraw(2000000) // keep relatively low for subway map
+preDraw(20000) // keep relatively low for subway map
 
 animate((t) => {
   if (doSubwayMap) {
-    update(false, true, false, true)
+    updateSubway()
   } else {
-    update(randomPlacement, true, !randomPlacement, false)
+    update(randomPlacement, true)
   }
 });
