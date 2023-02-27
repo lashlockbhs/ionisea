@@ -11,6 +11,12 @@ const filter = (predicate, array) => {
 };
 
 const map = (fn, array) => {
+  const mapped = []
+  for (const element of array) {
+   mapped.push(fn(element))
+  }
+  return mapped
+
 };
 
 const flatMap = (fn, array) => {
