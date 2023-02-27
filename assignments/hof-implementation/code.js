@@ -1,7 +1,13 @@
 // N.B. Do not use the array methods of the same name to implement these functions!
 
 const filter = (predicate, array) => {
-  for (const element of array)
+  const filtered = []
+  for (const element of array) {
+    if (predicate(element)) {
+      filtered.push(element)
+    }
+  }
+  return filtered
 };
 
 const map = (fn, array) => {
