@@ -20,14 +20,21 @@ const map = (fn, array) => {
 };
 
 const reduce = (fn, initialValue, array) => {
-  let acc = initialValue
+  let reduced = initialValue
   for (const element of array){
-    acc = fn(acc, element)
+    reduced = fn(reduced, element)
   }
-  return acc
+  return reduced
 };
 
 const flatMap = (fn, array) => {
+  const flatMapped = []
+  for (const element of array){
+    for (const e of fn(element)){
+      flatMapped.push(e)
+    }
+  }
+  return flatMapped
 };
 
 const every = (predicate, array) => {
