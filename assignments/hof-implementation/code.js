@@ -20,7 +20,7 @@ const map = (fn, array) => {
 };
 
 const reduce = (fn, initialValue, array) => {
-  const acc = initialValue
+  let acc = initialValue
   for (const element of array){
     fn(acc, element)
   }
