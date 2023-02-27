@@ -47,4 +47,10 @@ const every = (condition, array) => {
 };
 
 const some = (condition, array) => {
+    for (const element of array){
+    if (condition(element)){
+      return true
+    }
+  }
+  return false
 };
