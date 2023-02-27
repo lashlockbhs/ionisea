@@ -22,7 +22,7 @@ const map = (fn, array) => {
 const reduce = (fn, initialValue, array) => {
   let acc = initialValue
   for (const element of array){
-    fn(acc, element)
+    acc = fn(acc, element)
   }
   return acc
 };
