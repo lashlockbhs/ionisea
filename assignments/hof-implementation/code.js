@@ -1,9 +1,9 @@
 // N.B. Do not use the array methods of the same name to implement these functions!
 
-const filter = (predicate, array) => {
+const filter = (condition, array) => {
   const filtered = []
   for (const element of array) {
-    if (predicate(element)) {
+    if (condition(element)) {
       filtered.push(element)
     }
   }
@@ -37,8 +37,14 @@ const flatMap = (fn, array) => {
   return flatMapped
 };
 
-const every = (predicate, array) => {
+const every = (condition, array) => {
+  for (const element of array){
+    if (!condition(element)){
+      return false
+    }
+  }
+  return true
 };
 
-const some = (predicate, array) => {
+const some = (condition, array) => {
 };
