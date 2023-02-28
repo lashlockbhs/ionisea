@@ -7,5 +7,9 @@ const odds = (arr) =>{
 }
 
 const big = (arr) =>{
-  return arr.filter((e) => e> 100)
+  return arr.filter((e) => e > 100)
+}
+
+const names = (arr) =>{
+  arr.filter((e) => e.name)
 }
