@@ -39,5 +39,5 @@ const someEven = (arr) =>{
 }
 
 const lengthOfNames = (arr) =>{
-  return arr.filter((e) => e[0].toUpperCase === e[0]).map((e) => e.length())
+  return arr.filter((e) => e[0].toUpperCase() === e[0]).map((e) => e.length())
 }
