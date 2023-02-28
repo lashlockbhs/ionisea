@@ -17,3 +17,7 @@ const names = (arr) =>{
 const grades = (arr) =>{
  return arr.map((e) => e.grade)
 }
+
+const pairs = (arr) =>{
+  return arr.map((e) => [e,e])
+}
