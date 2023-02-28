@@ -103,7 +103,7 @@ const startSubwayMap = () => {
     updateSubway()
   }
   while (offEdgeCount < 1) updateStart()
-  angle = Math.PI /2
+  angle = Math.PI
   while (offEdgeCount < 2) updateStart()
   length = 50
   lineWidth = 10
