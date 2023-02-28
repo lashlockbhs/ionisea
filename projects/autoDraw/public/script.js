@@ -1,4 +1,4 @@
-import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawText, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
+import { setCanvas, drawFilledCircle, clear, randColor, width, height, animate, now, drawText, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
 setCanvas(document.getElementById('screen'));
 
 //global decisions
@@ -75,12 +75,12 @@ const updateSubway = () => {
     angle = 0
     offEdgeCount++
     if ((offEdgeCount % 2 === 0) && (offEdgeCount > 1)) {
-      lineColor = '#' + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString() + Math.round(Math.random() * 99).toString()
+      lineColor = randColor()
     } else if (offEdgeCount % 2 === 1) {
       angle = Math.PI
     }
   } else {
-    if (fillSubwayLineGaps && (offEdgeCount > 2)) {
+    if (fillSubwayLineGaps && (offEdgeCount >= 2) && (place != 0)) {
       drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     }
     //stations
@@ -101,10 +101,13 @@ const startSubwayMap = () => {
   const updateStart = () =>{
     drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     updateSubway()
+    if ((lastOffEdge === 0) && (offEdgeCount === 1)) angle = Math.PI
+    lastOffEdge = offEdgeCount
   }
   while (offEdgeCount < 1) updateStart()
   angle = Math.PI
   while (offEdgeCount < 2) updateStart()
+  lineColor = randColor()
   length = 50
   lineWidth = 10
   angle = 0

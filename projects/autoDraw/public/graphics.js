@@ -2,6 +2,14 @@ let ctx;
 let width;
 let height;
 
+const randColor = () => {
+  const chars = 'ABCDEF1234567890'
+  let c = '#'
+  for (let i = 0; i < 6; i++) {
+    c += chars[Math.round(Math.random()*16)-1]
+  }
+  return c
+}
 const setCanvas = (canvas) => {
   ctx = canvas.getContext('2d');
   width = canvas.width;
@@ -103,6 +111,7 @@ const animate = (drawFrame) => {
 };
 
 export {
+  randColor,
   setCanvas,
   drawLine,
   drawCircle,
