@@ -2,7 +2,7 @@ import { setCanvas, drawFilledCircle, clear, width, height, animate, now, drawTe
 setCanvas(document.getElementById('screen'));
 
 //global decisions
-const doSubwayMap = true // this overrides most of the following options
+const doSubwayMap = false // this overrides most of the following options
 const fillSubwayLineGaps = false // this may take up to twice as long, and is unnoticable when zoomed out
 const randomPlacement = false
 
@@ -98,11 +98,13 @@ const startSubwayMap = () => {
   lineWidth = 100
   lineColor = '#87CEEB'
   RoM = Math.PI / 2 // 1/2 pi
-  let lastOffEdge = 0
-  while (offEdgeCount < 2) {
+  const updateStart = () =>{
     drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     updateSubway()
   }
+  while (offEdgeCount < 1) updateStart()
+  angle = Math.PI /2
+  while (offEdgeCount < 2) updateStart()
   length = 50
   lineWidth = 10
   angle = 0
@@ -176,7 +178,7 @@ const checkForShape = () => {
   }
 };
 
-preDraw(20000) // keep relatively low for subway map
+preDraw(200000) // keep relatively low for subway map
 
 animate((t) => {
   if (doSubwayMap) {
