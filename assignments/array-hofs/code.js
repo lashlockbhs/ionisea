@@ -34,6 +34,10 @@ const allEven = (arr) => {
   return odds(arr).length === 0
 }
 
-const someEven = arr =>{
+const someEven = (arr) =>{
   return evens(arr).length > 0
+}
+
+const lengthOfNames = (arr) =>{
+  return arr.filter((e) => e[0].toUpperCase === e[0]).map((e) => e.length)
 }
