@@ -29,3 +29,7 @@ const averageGrade = (arr) =>{
 const flatpairs = (arr) =>{
   return arr.flatMap((e) => [e,e])
 }
+
+const allEven =(arr) =>{
+  return odds[arr].length  === 0
+}
