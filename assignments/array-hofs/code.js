@@ -13,3 +13,7 @@ const big = (arr) =>{
 const names = (arr) =>{
  return arr.map((e) => e.name)
 }
+
+const grades = (arr) =>{
+ return arr.map((e) => e.grade)
+}
