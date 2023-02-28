@@ -1,35 +1,39 @@
-const evens = (arr) =>{
-  return arr.filter((e) => e%2 === 0)
+const evens = (arr) => {
+  return arr.filter((e) => e % 2 === 0)
 }
 
-const odds = (arr) =>{
-  return arr.filter((e) => e%2 != 0)
+const odds = (arr) => {
+  return arr.filter((e) => e % 2 != 0)
 }
 
-const big = (arr) =>{
+const big = (arr) => {
   return arr.filter((e) => e > 100)
 }
 
-const names = (arr) =>{
- return arr.map((e) => e.name)
+const names = (arr) => {
+  return arr.map((e) => e.name)
 }
 
-const grades = (arr) =>{
- return arr.map((e) => e.grade)
+const grades = (arr) => {
+  return arr.map((e) => e.grade)
 }
 
-const pairs = (arr) =>{
-  return arr.map((e) => [e,e])
+const pairs = (arr) => {
+  return arr.map((e) => [e, e])
 }
 
-const averageGrade = (arr) =>{
+const averageGrade = (arr) => {
   return grades(arr).reduce((acc, e) => acc + e, 0) / arr.length
 }
 
-const flatpairs = (arr) =>{
-  return arr.flatMap((e) => [e,e])
+const flatpairs = (arr) => {
+  return arr.flatMap((e) => [e, e])
 }
 
-const allEven =(arr) =>{
-  return odds(arr).length  === 0
+const allEven = (arr) => {
+  return odds(arr).length === 0
+}
+
+const someEven = arr =>{
+  return evens(arr).length > 0
 }
