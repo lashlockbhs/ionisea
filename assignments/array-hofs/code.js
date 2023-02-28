@@ -26,6 +26,6 @@ const averageGrade = (arr) =>{
   return grades(arr).reduce((acc, e) => acc + e, 0) / arr.length
 }
 
-const pairs = (arr) =>{
+const flatpairs = (arr) =>{
   return arr.flatMap((e) => [e,e])
 }
