@@ -31,5 +31,5 @@ const flatpairs = (arr) =>{
 }
 
 const allEven =(arr) =>{
-  return odds[arr].length  === 0
+  return odds(arr).length  === 0
 }
