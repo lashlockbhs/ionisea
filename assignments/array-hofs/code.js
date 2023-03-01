@@ -31,11 +31,12 @@ const flatpairs = (arr) => {
 }
 
 const allEven = (arr) => {
-  return odds(arr).length === 0
+  return arr.every(e => e%2 === 0)
+  //return odds(arr).length === 0
 }
 
 const someEven = (arr) =>{
-  return evens(arr).length > 0
+  //return evens(arr).length > 0
 }
 
 const lengthOfNames = (arr) =>{
