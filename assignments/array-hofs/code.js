@@ -36,6 +36,7 @@ const allEven = (arr) => {
 }
 
 const someEven = (arr) =>{
+  return arr.some(e => e%2 === 0)
   //return evens(arr).length > 0
 }
 
