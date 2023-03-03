@@ -13,5 +13,5 @@ body {
 canvas {
   /* note: top margin needs to fit with size of canvas set in Javascript. */
   border: 1px dotted grey;
-  background: #ccbbff;
+  background: #4e4e4e;
 }
