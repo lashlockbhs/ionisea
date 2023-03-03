@@ -1,11 +1,11 @@
 import { animate } from './animation.js';
 import graphics from './graphics.js';
 //const avg = array => array.reduce((tot, e) => tot + e, 0) / array.length
-const randColor =() =>{
+const randColor = () => {
   const charList = 'ABCDEF1234567890'
   let color = '#'
-  while (color.length< 7){
-    color += charList[Math.round(Math.random()*15)]
+  while (color.length < 7) {
+    color += charList[Math.round(Math.random() * 15)]
   }
   return color
 }
@@ -19,6 +19,8 @@ const canvas = document.getElementById('screen');
 const g = graphics(canvas);
 const height = canvas.height
 const width = canvas.width
+let paused = true
+const randomizePos = true
 
 g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
 
@@ -33,7 +35,6 @@ const postInit = (initPoints, depth) => {
     }
     g.drawLine(arr[arr.length - 1].x, arr[arr.length - 1].y, arr[0].x, arr[0].y, colour, 2)
     avgPts.push(avgPoints([arr[arr.length - 1], arr[0]]))
-    console.log(arr)
     arr = avgPts
   }
 }
@@ -57,14 +58,27 @@ const drawThing = (radius, sides) => {
   }
   g.drawLine(coordArr[coordArr.length - 1].x, coordArr[coordArr.length - 1].y, coordArr[0].x, coordArr[0].y, colour, 2)
   avgPts.push(avgPoints([coordArr[coordArr.length - 1], coordArr[0]]))
-  console.log(avgPts)
-  postInit(avgPts, sides*20);
+  postInit(avgPts, sides * 20);
 }
-
+canvas.onclick = e => {
+  paused = !paused
+}
 canvas.onmousemove = (e) => {
-  const distFromMid = Math.hypot(Math.abs(width / 2 - e.x), Math.abs(height / 2 - e.y));
-  const sides = Math.round((height-distFromMid)/40)
-  g.clear();
-  drawThing(height / 2, sides)
-  //g.drawFilledCircle(width/2, height/2, 2, 'red')
+  if (paused) {
+    const distFromMid = Math.hypot(Math.abs(width / 2 - e.x), Math.abs(height / 2 - e.y));
+    const sides = Math.round((height - distFromMid) / 40)
+    g.clear();
+    drawThing(height / 2, sides)
+    //g.drawFilledCircle(width/2, height/2, 2, 'red')
+  }
 }
+/* broken and not great
+animate(elapsed => {
+  if (randomizePos && paused) {
+    const postion = {x: Math.round(Math.random()*width), y: Math.round(Math.random() * height)}
+    const distFromMid = Math.hypot(Math.abs(width / 2 - postion.x), Math.abs(height / 2 - postion.y));
+    const sides = Math.round((height - distFromMid) / 40)
+    g.clear();
+    drawThing(height / 2, sides)
+  }
+})*/
