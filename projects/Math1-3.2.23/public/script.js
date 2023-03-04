@@ -69,6 +69,7 @@ canvas.onmousemove = (e) => {
     const sides = Math.round((height - distFromMid) / 40)
     g.clear();
     drawThing(height / 2, sides)
+    g.drawText(sides, 0, height, 'white', 12)
     //g.drawFilledCircle(width/2, height/2, 2, 'red')
   }
 }
