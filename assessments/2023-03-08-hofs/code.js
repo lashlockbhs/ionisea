@@ -64,16 +64,4 @@ const heaviest = (animals) => animals.reduce((m,c) => Math.max(c.weight, m), 0)
 const allStudents = (grades) => grades.map(e => e.students)
 console.log(allStudents([{students: ['jane goodall', 'rumplestiltskin', 'barack obama', 'john f kennedy', 'winston churchill']}, 
 {students: ['abraham lincoln', 'xi jinping', 'richard nixon', 'jon arbuckle']}]))
-
-const allStudentsDef = (grades) => {
-  const r = [];
-  for (let i = 0; i < grades.length; i++) {
-    const inGrade = grades[i].students;
-    for (let j = 0; j < inGrade.length; j++) {
-      r.push(inGrade[j]);
-    }
-  }
-  return r;
-};
-console.log(allStudentsDef([{students: ['jane goodall', 'rumplestiltskin', 'barack obama', 'john f kennedy', 'winston churchill']}, 
-{students: ['abraham lincoln', 'xi jinping', 'richard nixon', 'jon arbuckle']}]))
+//seems scuffed but seems to work \/
