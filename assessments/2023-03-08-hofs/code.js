@@ -15,3 +15,11 @@ const shouty = (strings) => {
   }
   return loud
 };
+
+const join = (strings, delimiter) => {
+  let joined = ''
+  for (const string of strings){
+    joined += string
+  }
+  return joined
+};
