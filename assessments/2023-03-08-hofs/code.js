@@ -20,7 +20,7 @@ const join = (strings, delimiter) => {
   let joined = null
   for (const string of strings) {
     if (joined === null) {
-      joined = s
+      joined = string
     } else {
       joined += delimiter + string
     }
