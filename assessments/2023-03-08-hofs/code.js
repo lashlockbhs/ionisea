@@ -64,4 +64,8 @@ const heaviest = (animals) => animals.reduce((m,c) => Math.max(c.weight, m), 0)
 const allStudents = (grades) => grades.map(e => e.students)
 console.log(allStudents([{students: ['jane goodall', 'rumplestiltskin', 'barack obama', 'john f kennedy', 'winston churchill']}, 
 {students: ['abraham lincoln', 'xi jinping', 'richard nixon', 'jon arbuckle']}]))
-//seems scuffed but seems to work \/
+//seems scuffed but seems to work as well
+
+const allCromulent = (things) => things.every(e => isCromulent(e))
+
+const notAllTerrible = (things) => things.some(e => !isTerrible(e))
