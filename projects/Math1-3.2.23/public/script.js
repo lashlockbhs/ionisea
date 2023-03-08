@@ -1,14 +1,7 @@
 import { animate } from './animation.js';
 import graphics from './graphics.js';
 //const avg = array => array.reduce((tot, e) => tot + e, 0) / array.length
-const randColor = () => {
-  const charList = 'ABCDEF1234567890'
-  let color = '#'
-  while (color.length < 7) {
-    color += charList[Math.round(Math.random() * 15)]
-  }
-  return color
-}
+const randColor = () => '#' + Math.floor(Math.random() * 2 ** 24).toString(16)
 const avgPoints = (array) => {
   const avgX = array.reduce((tot, e) => tot + e.x, 0) / array.length
   const avgY = array.reduce((tot, e) => tot + e.y, 0) / array.length
@@ -28,12 +21,12 @@ const postInit = (initPoints, depth) => {
   let arr = initPoints
   for (let i = 0; i < depth; i++) {
     const avgPts = []
-    const colour = randColor()
+    const color = randColor()
     for (let i = 0; i < arr.length - 1; i++) {
-      g.drawLine(arr[i].x, arr[i].y, arr[i + 1].x, arr[i + 1].y, colour, 2)
+      g.drawLine(arr[i].x, arr[i].y, arr[i + 1].x, arr[i + 1].y, color, 2)
       avgPts.push(avgPoints([arr[i], arr[i + 1]]))
     }
-    g.drawLine(arr[arr.length - 1].x, arr[arr.length - 1].y, arr[0].x, arr[0].y, colour, 2)
+    g.drawLine(arr[arr.length - 1].x, arr[arr.length - 1].y, arr[0].x, arr[0].y, color, 2)
     avgPts.push(avgPoints([arr[arr.length - 1], arr[0]]))
     arr = avgPts
   }
@@ -60,12 +53,12 @@ const drawThing = (radius, sides) => {
   avgPts.push(avgPoints([coordArr[coordArr.length - 1], coordArr[0]]))
   postInit(avgPts, sides * 20);
 }
-canvas.onclick = e => {
+canvas.onclick = (e) => {
   paused = !paused
 }
 canvas.onmousemove = (e) => {
   if (paused) {
-    const distFromMid = Math.hypot(Math.abs(width / 2 - e.x), Math.abs(height / 2 - e.y));
+    const distFromMid = Math.hypot(Math.abs(width / 2 - (e.x - (document.body.clientWidth - canvas.width)/2)), Math.abs(height / 2 - e.y));
     const sides = Math.round((height - distFromMid) / 40)
     g.clear();
     drawThing(height / 2, sides)
