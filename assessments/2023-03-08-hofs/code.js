@@ -17,9 +17,13 @@ const shouty = (strings) => {
 };
 
 const join = (strings, delimiter) => {
-  let joined = ''
-  for (const string of strings){
-    joined += string
+  let joined = null
+  for (const string of strings) {
+    if (joined === null) {
+      joined = s
+    } else {
+      joined += delimiter + string
+    }
   }
   return joined
 };
