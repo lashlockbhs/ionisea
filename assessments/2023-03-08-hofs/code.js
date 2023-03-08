@@ -37,4 +37,20 @@ const allSiblings = (students) => {
   }
   return siblings
 };
-console.log(allSiblings([{siblings: ['mary', 'mark', 'joe']}, {siblings: ['alfred', 'joann', 'homer']}] ))
+//console.log(allSiblings([{siblings: ['mary', 'mark', 'joe']}, {siblings: ['alfred', 'joann', 'homer']}] ))
+const allPassing = (students, passing) => {
+  for (const student of students){
+    if (student.grade < passing){
+      return false
+    }
+  }
+  return true
+};
+const someonesFavorite = (people, food) => {
+   for (const person of people){
+    if (person.favoriteFood === food){
+      return true
+    }
+  }
+  return false
+};
