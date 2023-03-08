@@ -27,3 +27,13 @@ const join = (strings, delimiter) => {
   }
   return joined
 };
+
+const allSiblings = (students) => {
+  const siblings = []
+  for (const student of students){
+    for (const sibling of student.siblings){
+      siblings.push(sibling)
+    }
+  }
+  return siblings
+};
