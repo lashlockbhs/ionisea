@@ -59,4 +59,4 @@ const strange = (people) => people.filter(p => p.isStrange)
 
 const birthdays = (students) => students.map(student => student.birthday)
 
-const heaviest = (animals) => animals.reduce((m,c) => Math.max(c, m), 0)
+const heaviest = (animals) => animals.reduce((m,c) => Math.max(c.weight, m), 0)
