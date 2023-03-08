@@ -37,3 +37,4 @@ const allSiblings = (students) => {
   }
   return siblings
 };
+console.log(allSiblings([{siblings: ['mary', 'mark', 'joe']}, {siblings: ['alfred', 'joann', 'homer']}] ))
