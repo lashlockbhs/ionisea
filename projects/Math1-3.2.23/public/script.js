@@ -12,8 +12,7 @@ const canvas = document.getElementById('screen');
 const g = graphics(canvas);
 const height = canvas.height
 const width = canvas.width
-let paused = true
-const randomizePos = true
+let paused= false
 
 g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
 
@@ -43,21 +42,15 @@ const drawThing = (radius, sides) => {
     coordArr.push({ x: width / 2 + b, y: height / 2 + p })
     angle += angleAdj
   }
-  const colour = randColor()
-  const avgPts = []
-  for (let i = 0; i < coordArr.length - 1; i++) {
-    g.drawLine(coordArr[i].x, coordArr[i].y, coordArr[i + 1].x, coordArr[i + 1].y, colour, 2)
-    avgPts.push(avgPoints([coordArr[i], coordArr[i + 1]]))
-  }
-  g.drawLine(coordArr[coordArr.length - 1].x, coordArr[coordArr.length - 1].y, coordArr[0].x, coordArr[0].y, colour, 2)
-  avgPts.push(avgPoints([coordArr[coordArr.length - 1], coordArr[0]]))
-  postInit(avgPts, sides * 20);
+  postInit(coordArr, sides * 20);
 }
+
 canvas.onclick = (e) => {
   paused = !paused
 }
+
 canvas.onmousemove = (e) => {
-  if (paused) {
+  if (!paused) {
     const distFromMid = Math.hypot(Math.abs(width / 2 - (e.x - (document.body.clientWidth - canvas.width)/2)), Math.abs(height / 2 - e.y));
     const sides = Math.round((height - distFromMid) / 40)
     g.clear();
@@ -66,13 +59,3 @@ canvas.onmousemove = (e) => {
     //g.drawFilledCircle(width/2, height/2, 2, 'red')
   }
 }
-/* broken and not great
-animate(elapsed => {
-  if (randomizePos && paused) {
-    const postion = {x: Math.round(Math.random()*width), y: Math.round(Math.random() * height)}
-    const distFromMid = Math.hypot(Math.abs(width / 2 - postion.x), Math.abs(height / 2 - postion.y));
-    const sides = Math.round((height - distFromMid) / 40)
-    g.clear();
-    drawThing(height / 2, sides)
-  }
-})*/
