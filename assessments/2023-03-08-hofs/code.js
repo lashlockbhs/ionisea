@@ -1,4 +1,4 @@
-const evens = (numbers) => {
+const evens = (numbers) => { // correct
   const noRm = []
   for (const element of numbers) {
     if (element % 2 === 0) {
@@ -8,7 +8,7 @@ const evens = (numbers) => {
   return noRm
 };
 
-const shouty = (strings) => {
+const shouty = (strings) => { // correct
   const loud = []
   for (const element of strings) {
     loud.push(element.toUpperCase())
@@ -16,7 +16,7 @@ const shouty = (strings) => {
   return loud
 };
 
-const join = (strings, delimiter) => {
+const join = (strings, delimiter) => { // correct
   let joined = null
   for (const string of strings) {
     if (joined === null) {
@@ -28,7 +28,7 @@ const join = (strings, delimiter) => {
   return joined
 };
 
-const allSiblings = (students) => {
+const allSiblings = (students) => { // correct
   const siblings = []
   for (const student of students){
     for (const sibling of student.siblings){
@@ -38,7 +38,7 @@ const allSiblings = (students) => {
   return siblings
 };
 //console.log(allSiblings([{siblings: ['mary', 'mark', 'joe']}, {siblings: ['alfred', 'joann', 'homer']}] ))
-const allPassing = (students, passing) => {
+const allPassing = (students, passing) => { // correct
   for (const student of students){
     if (student.grade < passing){
       return false
@@ -46,7 +46,7 @@ const allPassing = (students, passing) => {
   }
   return true
 };
-const someonesFavorite = (people, food) => {
+const someonesFavorite = (people, food) => { // correct
    for (const person of people){
     if (person.favoriteFood === food){
       return true
@@ -55,17 +55,17 @@ const someonesFavorite = (people, food) => {
   return false
 };
 
-const strange = (people) => people.filter(p => p.isStrange)
+const strange = (people) => people.filter(p => p.isStrange) // correct
 
-const birthdays = (students) => students.map(student => student.birthday)
+const birthdays = (students) => students.map(student => student.birthday) // correct
 
-const heaviest = (animals) => animals.reduce((m,c) => Math.max(c.weight, m), 0)
+const heaviest = (animals) => animals.reduce((m,c) => Math.max(c.weight, m), 0) // correct
 
-const allStudents = (grades) => grades.map(e => e.students)
-console.log(allStudents([{students: ['jane goodall', 'rumplestiltskin', 'barack obama', 'john f kennedy', 'winston churchill']}, 
+const allStudents = (grades) => grades.map(e => e.students) // something
+console.log(allStudents([{students: ['jane goodall', 'rumplestiltskin', 'barack obama', 'john f kennedy', 'winston churchill']},
 {students: ['abraham lincoln', 'xi jinping', 'richard nixon', 'jon arbuckle']}]))
 //seems scuffed but seems to work as well
 
-const allCromulent = (things) => things.every(e => isCromulent(e))
+const allCromulent = (things) => things.every(e => isCromulent(e)) // correct
 
-const notAllTerrible = (things) => things.some(e => !isTerrible(e))
+const notAllTerrible = (things) => things.some(e => !isTerrible(e)) // correct
