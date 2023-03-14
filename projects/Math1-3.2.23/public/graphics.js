@@ -4,8 +4,23 @@ class Graphics {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
   }
+  drawPolygon(ptArr, color, lineWidth = 1) {
+    this.ctx.strokeStyle = color;
+    this.ctx.lineWidth = lineWidth;
+    this.ctx.moveTo(ptArr[0].x, ptArr[0].y);
+    ptArr.slice(1).forEach((e) => this.ctx.lineTo(e.x, e.y));
+    this.ctx.lineTo(ptArr[0].x, ptArr[0].y);
+    this.ctx.stroke();
+  }
+  drawFilledPolygon(ptArr, color) {
+    this.ctx.fillStyle = color;
+    this.ctx.moveTo(ptArr[0].x, ptArr[0].y);
+    ptArr.slice(1).forEach((e) => this.ctx.lineTo(e.x, e.y));
+    this.ctx.lineTo(ptArr[0].x, ptArr[0].y);
+    this.ctx.fill();
+  }
 
-  drawLine(x1, y1, x2, y2, color, width = 1)  {
+  drawLine(x1, y1, x2, y2, color, width = 1) {
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = width;
     this.ctx.beginPath();
@@ -14,7 +29,7 @@ class Graphics {
     this.ctx.stroke();
   }
 
-  drawCircle(x, y, r, color, lineWidth = 1)  {
+  drawCircle(x, y, r, color, lineWidth = 1) {
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = lineWidth;
     this.ctx.beginPath();
@@ -22,13 +37,13 @@ class Graphics {
     this.ctx.stroke();
   }
 
-  drawRect(x, y, width, height, color, lineWidth = 1)  {
+  drawRect(x, y, width, height, color, lineWidth = 1) {
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = lineWidth;
     this.ctx.strokeRect(x, y, width, height);
   }
 
-  drawTriangle(x1, y1, x2, y2, x3, y3, color, lineWidth = 1)  {
+  drawTriangle(x1, y1, x2, y2, x3, y3, color, lineWidth = 1) {
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = lineWidth;
     this.ctx.beginPath();
@@ -39,19 +54,19 @@ class Graphics {
     this.ctx.stroke();
   }
 
-  drawFilledCircle(x, y, r, color)  {
+  drawFilledCircle(x, y, r, color) {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
     this.ctx.ellipse(x, y, r, r, 0, 0, 2 * Math.PI);
     this.ctx.fill();
   }
 
-  drawFilledRect(x, y, width, height, color)  {
+  drawFilledRect(x, y, width, height, color) {
     this.ctx.fillStyle = color;
     this.ctx.fillRect(x, y, width, height);
   }
 
-  drawFilledTriangle(x1, y1, x2, y2, x3, y3, color)  {
+  drawFilledTriangle(x1, y1, x2, y2, x3, y3, color) {
     this.ctx.fillStyle = color;
     this.ctx.beginPath();
     this.ctx.moveTo(x1, y1);
@@ -61,7 +76,7 @@ class Graphics {
     this.ctx.fill();
   }
 
-  drawText(text, x, y, color, size)  {
+  drawText(text, x, y, color, size) {
     this.ctx.font = `${size}px sans-serif`;
     this.ctx.fillStyle = color;
     this.ctx.fillText(text, x, y);

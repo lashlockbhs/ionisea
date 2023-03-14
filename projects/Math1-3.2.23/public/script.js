@@ -7,31 +7,29 @@ const avgPoints = (array) => {
   const avgY = array.reduce((tot, e) => tot + e.y, 0) / array.length
   return { x: avgX, y: avgY }
 }
+const avgArr = (arr) => {
+  const newArr = arr.slice(1).map((e, i) => avgPoints([e, arr[i]]))
+  newArr.push(avgPoints([arr[0], arr[arr.length - 1]]))
+  return newArr
+}
 
 const canvas = document.getElementById('screen');
 const g = graphics(canvas);
 const height = canvas.height
 const width = canvas.width
-let paused= false
+let paused = false
 
 g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
 
-const postInit = (initPoints, depth) => {
+const drawShapes = (initPoints, depth) => {
   let arr = initPoints
   for (let i = 0; i < depth; i++) {
-    const avgPts = []
-    const color = randColor()
-    for (let i = 0; i < arr.length - 1; i++) {
-      g.drawLine(arr[i].x, arr[i].y, arr[i + 1].x, arr[i + 1].y, color, 2)
-      avgPts.push(avgPoints([arr[i], arr[i + 1]]))
-    }
-    g.drawLine(arr[arr.length - 1].x, arr[arr.length - 1].y, arr[0].x, arr[0].y, color, 2)
-    avgPts.push(avgPoints([arr[arr.length - 1], arr[0]]))
-    arr = avgPts
+    g.drawPolygon(arr, randColor())
+    arr = avgArr(arr);
   }
 }
 
-const drawThing = (radius, sides) => {
+const detectPositions = (radius, sides) => {
   g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
   const angleAdj = 2 * Math.PI / sides
   let angle = 0
@@ -42,7 +40,7 @@ const drawThing = (radius, sides) => {
     coordArr.push({ x: width / 2 + b, y: height / 2 + p })
     angle += angleAdj
   }
-  postInit(coordArr, sides * 20);
+  drawShapes(coordArr, sides ** 2);
 }
 
 canvas.onclick = (e) => {
@@ -51,10 +49,10 @@ canvas.onclick = (e) => {
 
 canvas.onmousemove = (e) => {
   if (!paused) {
-    const distFromMid = Math.hypot(Math.abs(width / 2 - (e.x - (document.body.clientWidth - canvas.width)/2)), Math.abs(height / 2 - e.y));
+    const distFromMid = Math.hypot(Math.abs(width / 2 - (e.x - (document.body.clientWidth - canvas.width) / 2)), Math.abs(height / 2 - e.y));
     const sides = Math.round((height - distFromMid) / 40)
     g.clear();
-    drawThing(height / 2, sides)
+    detectPositions(height / 2, sides)
     g.drawText(sides, 0, height, 'white', 12)
     //g.drawFilledCircle(width/2, height/2, 2, 'red')
   }
