@@ -32,7 +32,6 @@ const drawShapes = (initPoints, depth) => {
 
 const detectPositions = (radius, sides) => {
   g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
-  if (!(sides < 3)) {
     const angleAdj = 2 * Math.PI / sides
     let angle = 0
     const coordArr = []
@@ -43,7 +42,6 @@ const detectPositions = (radius, sides) => {
       angle += angleAdj
     }
     drawShapes(coordArr, sides ** 2);
-  }
 };
 
 canvas.onclick = (e) => {
