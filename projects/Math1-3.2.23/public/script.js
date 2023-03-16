@@ -25,7 +25,7 @@ g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
 const drawShapes = (initPoints, depth) => {
   let arr = initPoints
   for (let i = 0; i < depth; i++) {
-    g.drawPolygon(arr, g.randColor(), 2)
+    g.drawFilledPolygon(arr, g.randColor(), 2)
     arr = avgArr(arr);
   }
 }
