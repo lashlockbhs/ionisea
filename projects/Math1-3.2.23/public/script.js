@@ -1,13 +1,14 @@
 import { animate } from './animation.js';
 import graphics from './graphics.js';
 //const avg = array => array.reduce((tot, e) => tot + e, 0) / array.length
-const randColor = () => '#' + Math.floor(Math.random() * 2 ** 24).toString(16)
 const avgPoints = (array) => {
   const avgX = array.reduce((tot, e) => tot + e.x, 0) / array.length
   const avgY = array.reduce((tot, e) => tot + e.y, 0) / array.length
   return { x: avgX, y: avgY }
 }
 const avgArr = (arr) => {
+  //const newArr = []
+  //arr.forEach((e, i) => newArr.push(avgPoints([arr.slice(i - 1, i)])))
   const newArr = arr.slice(1).map((e, i) => avgPoints([e, arr[i]]))
   newArr.push(avgPoints([arr[0], arr[arr.length - 1]]))
   return newArr
@@ -24,24 +25,26 @@ g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
 const drawShapes = (initPoints, depth) => {
   let arr = initPoints
   for (let i = 0; i < depth; i++) {
-    g.drawPolygon(arr, randColor())
+    g.drawFilledPolygon(arr, g.randColor(), 1)
     arr = avgArr(arr);
   }
 }
 
 const detectPositions = (radius, sides) => {
   g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
-  const angleAdj = 2 * Math.PI / sides
-  let angle = 0
-  const coordArr = []
-  for (let i = 0; i < sides; i++) {
-    const p = Math.sin(angle) * radius
-    const b = Math.cos(angle) * radius
-    coordArr.push({ x: width / 2 + b, y: height / 2 + p })
-    angle += angleAdj
+  if (!(sides < 3)) {
+    const angleAdj = 2 * Math.PI / sides
+    let angle = 0
+    const coordArr = []
+    for (let i = 0; i < sides; i++) {
+      const p = Math.sin(angle) * radius
+      const b = Math.cos(angle) * radius
+      coordArr.push({ x: width / 2 + b, y: height / 2 + p })
+      angle += angleAdj
+    }
+    drawShapes(coordArr, sides ** 2);
   }
-  drawShapes(coordArr, sides ** 2);
-}
+};
 
 canvas.onclick = (e) => {
   paused = !paused
@@ -53,7 +56,6 @@ canvas.onmousemove = (e) => {
     const sides = Math.round((height - distFromMid) / 40)
     g.clear();
     detectPositions(height / 2, sides)
-    g.drawText(sides, 0, height, 'white', 12)
-    //g.drawFilledCircle(width/2, height/2, 2, 'red')
+    g.drawText(sides, 0, height, 'white', 15)
   }
 }

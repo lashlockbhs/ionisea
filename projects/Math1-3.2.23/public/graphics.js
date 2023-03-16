@@ -4,16 +4,23 @@ class Graphics {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
   }
+  randColor(){
+    return '#' + Math.floor(Math.random() * 2 ** 24).toString(16)
+  }
+  
   drawPolygon(ptArr, color, lineWidth = 1) {
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = lineWidth;
+    this.ctx.beginPath();
     this.ctx.moveTo(ptArr[0].x, ptArr[0].y);
     ptArr.slice(1).forEach((e) => this.ctx.lineTo(e.x, e.y));
     this.ctx.lineTo(ptArr[0].x, ptArr[0].y);
     this.ctx.stroke();
   }
+
   drawFilledPolygon(ptArr, color) {
     this.ctx.fillStyle = color;
+    this.ctx.beginPath();
     this.ctx.moveTo(ptArr[0].x, ptArr[0].y);
     ptArr.slice(1).forEach((e) => this.ctx.lineTo(e.x, e.y));
     this.ctx.lineTo(ptArr[0].x, ptArr[0].y);
