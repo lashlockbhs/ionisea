@@ -25,7 +25,7 @@ g.drawCircle(width / 2, height / 2, height / 2, 'white', 2)
 const drawShapes = (initPoints, depth) => {
   let arr = initPoints
   for (let i = 0; i < depth; i++) {
-    g.drawFilledPolygon(arr, g.randColor(), 1)
+    g.drawPolygon(arr, g.randColor(), 2)
     arr = avgArr(arr);
   }
 }
@@ -51,7 +51,7 @@ canvas.onclick = (e) => {
 canvas.onmousemove = (e) => {
   if (!paused) {
     const distFromMid = Math.hypot(Math.abs(width / 2 - (e.x - (document.body.clientWidth - canvas.width) / 2)), Math.abs(height / 2 - e.y));
-    const sides = Math.round((height - distFromMid) / 40)
+    const sides = Math.round((distFromMid) / 40 + 2)
     g.clear();
     detectPositions(height / 2, sides)
     g.drawText(sides, 0, height, 'white', 15)
