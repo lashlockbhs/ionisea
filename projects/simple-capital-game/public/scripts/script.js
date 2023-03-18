@@ -8,7 +8,7 @@ let countryDisplay = document.createElement('h1')
 */
 
 const canvasA = document.getElementById('screen')
-const canvasB = document.getElementById('wrongDisp')
+const canvasB = document.getElementById('answers')
 let currentCountry //= countries[Math.floor(Math.random() * countries.length)]
 let stats = { correct: 0, wrong: 0 }
 const g1 = graphics(canvasA)
