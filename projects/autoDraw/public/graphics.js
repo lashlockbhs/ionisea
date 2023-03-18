@@ -1,6 +1,21 @@
 let ctx;
 let width;
 let height;
+const drawPolygon = (ptArr, color, lineWidth = 1)=> {
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth;
+  ctx.beginPath();
+  ctx.moveTo(ptArr[0].x, ptArr[0].y);
+  ptArr.slice(1).forEach((e) => {
+    if ((e.x == width/2) && (e.y == height/2)){
+      ctx.moveTo(e.x, e.y)
+    } else{
+      ctx.lineTo(e.x, e.y)
+    }
+  });
+  ctx.lineTo(ptArr[0].x, ptArr[0].y);
+  ctx.stroke();
+}
 
 const randColor = () => {
   const chars = 'ABCDEF1234567890'
@@ -126,4 +141,5 @@ export {
   height,
   now,
   animate,
+  drawPolygon,
 };
