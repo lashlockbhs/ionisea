@@ -198,7 +198,7 @@ const countries = [
    { country: "Vatican City", capital: "Vatican City" },
    { country: "Venezuela", capital: "Caracas" },
    { country: "Vietnam", capital: "Hanoi" },
-   { country: "Yemen", capital: "Sanaa" },
+   { country: "Yemen", capital: "Sana'a" },
    { country: "Zambia", capital: "Lusaka" },
    { country: "Zimbabwe", capital: "Harare" },
 ];

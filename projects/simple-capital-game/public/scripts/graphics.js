@@ -3,6 +3,8 @@ class Graphics {
     constructor(canvas) {
       this.canvas = canvas;
       this.ctx = canvas.getContext('2d');
+      this.width = canvas.width
+      this.height = canvas.height
     }
     randColor(){
       return '#' + Math.floor(Math.random() * 2 ** 24).toString(16)
@@ -84,7 +86,7 @@ class Graphics {
     }
   
     drawText(text, x, y, color, size) {
-      this.ctx.font = `${size}px sans-serif`;
+      this.ctx.font = `${size}px monospace`;
       this.ctx.fillStyle = color;
       this.ctx.fillText(text, x, y);
     }
