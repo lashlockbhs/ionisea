@@ -1,4 +1,4 @@
-//je prends du "chat-GPT"
+//taken from ChatGPT
 const countries = [
    // batch 1
    { country: "Afghanistan", capital: "Kabul" },

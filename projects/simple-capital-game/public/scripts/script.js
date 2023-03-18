@@ -24,11 +24,11 @@ window.onload = () => {
   nextQ();
 }
 
-const fillAnswer = (uncapped) => {
+const fillAnswer = (wrongcaps) => {
   g2.clear();
   const string = `The capital of ${currentCountry.country} is ${currentCountry.capital}.`
   g2.drawText(string, (g2.width - string.length * 7.5) / 2, g2.height / 2 + 7.5, 'black', 15)
-  if (uncapped) g2.drawText('Use correct capitalization!', (g2.width - 125) / 2, g2.height / 2 + 25, 'black', 10)
+  if (wrongcaps) g2.drawText('Use correct capitalization!', (g2.width - 125) / 2, g2.height / 2 + 25, 'black', 10)
 }
 const nextQ = () => {
   /*statDisplay.textContent = '';
@@ -50,7 +50,7 @@ document.onkeydown = ((e) => {
       stats.wrong++
     };
     document.getElementById('answer').value = ''
-    fillAnswer(input[0] === input[0].toLowerCase());
+    fillAnswer((input === currentCountry.capital.toLowerCase()) || (input === currentCountry.capital.toUpperCase()));
     nextQ();
   };
 });
