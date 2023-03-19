@@ -20,7 +20,7 @@ window.onload = () => {
 }
 
 const fillAnswer = (wrongcaps, correct, answer) => {
-  let string = `The capital of ${currentCountry.country} is ${currentCountry.capital}. ` + `(your answer: ${answer} ${correct ? '✓' : '✗'})`
+  let string = `The capital of ${currentCountry.country} is ${currentCountry.capitals[0]}. ` + `(your answer: ${answer} ${correct ? '✓' : '✗'} ${wrongcaps ? ' - Incorrect Case)' : ')'}`
   pastAnswers = [string].concat(pastAnswers)
   correctDisplay.textContent = ''
   pastAnswers.forEach(e => { correctDisplay.append(createLi(e)) })
@@ -36,7 +36,7 @@ const nextQ = () => {
 
 document.onkeydown = ((e) => {
   const input = document.getElementById('answerInput').value;
-  const maybeCorrect = input === currentCountry.capital;
+  const maybeCorrect = currentCountry.capitals.some((e) => input === e);
   if ((e.key == "Enter") && (input != '')) {
     if (maybeCorrect) {
       stats.correct++
@@ -44,7 +44,7 @@ document.onkeydown = ((e) => {
       stats.wrong++
     };
     document.getElementById('answerInput').value = ''
-    fillAnswer((!maybeCorrect && (input.toLowerCase() === currentCountry.capital.toLowerCase())), maybeCorrect, input);
+    fillAnswer((!maybeCorrect && (currentCountry.capitals.some((e) => input.toLowerCase() === e.toLowerCase()))), maybeCorrect, input);
     nextQ();
   };
 });
