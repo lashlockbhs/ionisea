@@ -1,14 +1,13 @@
 import { countries } from './countries.js'
-import graphics from './graphics.js'
 
 
 let statDisplay = document.getElementById('stats')
 let countryDisplay = document.getElementById('question')
 let correctDisplay = document.getElementById('answers')
 let pastAnswers = []
+let stats = { correct: 0, wrong: 0 }
 
 let currentCountry //= countries[Math.floor(Math.random() * countries.length)]
-let stats = { correct: 0, wrong: 0 }
 
 const createLi = (text) => {
   const li = document.createElement('li')
