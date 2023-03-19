@@ -1,14 +1,14 @@
-import { setCanvas, drawFilledCircle, clear, randColor, width, height, animate, now, drawText, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
+import { setCanvas, drawFilledCircle, drawPolygon, clear, randColor, width, height, animate, now, drawText, drawLine, drawFilledRect, drawCircle, drawRect, } from './graphics.js';
 setCanvas(document.getElementById('screen'));
 
 //global decisions
 const doSubwayMap = false // this overrides most of the following options
 const fillSubwayLineGaps = false // this may take up to twice as long, and is unnoticable when zoomed out
-const randomPlacement = false
+const randomPlacement = true
 
 //drawing dependents
 // editable
-let RoM = 1 / 2 * Math.PI // range of motion (radians) - read below
+let RoM = 2 * Math.PI // range of motion (radians) - read below
 let length = 10
 let angle = 0
 let lineWidth = 1
@@ -17,8 +17,9 @@ let lineColor = 'white' // for subwaymap
 //non-editable
 let recentArray = []
 let offEdgeCount = 0
+let polyArr = []
 //for star detection this can be set to 4
-const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
+const maxArrLength = 4//Math.round(4 * Math.PI / RoM) - 1
 
 /* rom (shapes) guide
  * range of motion dictates the range at which the line can "turn" each update
@@ -46,7 +47,7 @@ const maxArrLength = Math.round(4 * Math.PI / RoM) - 1
  * more sides = squares the chance to see it; 3 ^ (sides - 1) or 3^vertices, no vertice is created on an intersection point
 */
 
-const update = (maybeRandom, maybeResetOffEdge) => {
+const update = (maybeRandom, maybeResetOffEdge, maybeDraw) => {
   const place = maybeRandom ? Math.random() * 2 - 1 : Math.round(Math.random() * 2 - 1);
   angle += place * RoM / 2
   const p = Math.cos(angle) * length
@@ -57,7 +58,7 @@ const update = (maybeRandom, maybeResetOffEdge) => {
     angle = 0
     offEdgeCount++
   } else {
-    drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
+    if (!maybeDraw) drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
     recentArray.push({ place, coords, angle })
     coords = newCoords
     if (!maybeRandom) checkForShape()
@@ -80,14 +81,14 @@ const updateSubway = () => {
       angle = Math.PI
     }
   } else {
-    if (fillSubwayLineGaps && (offEdgeCount >= 2) && (place != 0)) {
-      drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
-    }
-    //stations
-    if ((Math.random() < 0.25) && (offEdgeCount >= 2)) {
-      drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
-    }
-    drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
+      if (fillSubwayLineGaps && (offEdgeCount >= 2) && (place != 0)) {
+        drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
+      }
+      //stations
+      if ((Math.random() < 0.25) && (offEdgeCount >= 2)) {
+        drawFilledCircle(coords.x, coords.y, lineWidth, lineColor)
+      }
+      drawLine(coords.x, coords.y, newCoords.x, newCoords.y, lineColor, lineWidth)
     coords = newCoords
   }
 };
@@ -98,7 +99,8 @@ const startSubwayMap = () => {
   lineWidth = 100
   lineColor = '#87CEEB'
   RoM = Math.PI / 2 // 1/2 pi
-  const updateStart = () =>{
+  let lastOffEdge = 0
+  const updateStart = () => {
     drawFilledCircle(coords.x, coords.y, lineWidth / 2, lineColor)
     updateSubway()
     if ((lastOffEdge === 0) && (offEdgeCount === 1)) angle = Math.PI
@@ -120,9 +122,11 @@ const preDraw = (count) => {
       if (doSubwayMap) {
         updateSubway()
       } else {
-        update(randomPlacement, true)
+        update(randomPlacement, true, false)
+        polyArr.push(coords)
       }
     }
+    if (!doSubwayMap) drawPolygon(polyArr, lineColor, lineWidth)
   }
 };
 
@@ -170,7 +174,7 @@ const checkForShape = () => {
             loc = newLoc
           }
           recentArray = []
-          drawFilledCircle(coords.x, coords.y, 3, 'orange')
+          drawFilledCircle(coords.x, coords.y, 2, 'orange')
           return 'fillertest'
         }
       } else {
@@ -181,12 +185,12 @@ const checkForShape = () => {
   }
 };
 
-preDraw(200000) // keep relatively low for subway map
+preDraw(10000000) // keep relatively low for subway map
 
 animate((t) => {
   if (doSubwayMap) {
     updateSubway()
   } else {
-    update(randomPlacement, true)
+    update(randomPlacement, true, true)
   }
 });
