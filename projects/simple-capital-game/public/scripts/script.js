@@ -7,7 +7,7 @@ let countryDisplay = document.getElementById('question')
 let correctDisplay = document.getElementById('answers')
 let pastAnswers = []
 
-let currentCountry = countries[Math.floor(Math.random() * countries.length)]
+let currentCountry //= countries[Math.floor(Math.random() * countries.length)]
 let stats = { correct: 0, wrong: 0 }
 
 const createLi = (text) => {
@@ -15,7 +15,6 @@ const createLi = (text) => {
   li.append(text)
   return li
 }
-
 
 window.onload = () => {
   nextQ();
@@ -27,6 +26,7 @@ const fillAnswer = (wrongcaps, correct, answer) => {
   correctDisplay.textContent = ''
   pastAnswers.forEach(e => { correctDisplay.append(createLi(e)) })
 }
+
 const nextQ = () => {
   statDisplay.textContent = '';
   countryDisplay.textContent = '';
