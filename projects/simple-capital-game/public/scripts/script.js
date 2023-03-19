@@ -20,7 +20,7 @@ window.onload = () => {
 }
 
 const fillAnswer = (wrongcaps, correct, answer) => {
-  let string = `The capital of ${currentCountry.country} is ${currentCountry.capitals[0]}. ` + `(your answer: ${answer} ${correct ? '✓' : '✗'} ${wrongcaps ? ' - Incorrect Case)' : ')'}`
+  let string = `The capital of ${currentCountry.country} is ${currentCountry.capitals[0]}. ` + `(Your answer: ${answer} ${correct ? '✓' : '✗'}${wrongcaps ? ' - Incorrect case)' : ')'}`
   pastAnswers = [string].concat(pastAnswers)
   correctDisplay.textContent = ''
   pastAnswers.forEach(e => { correctDisplay.append(createLi(e)) })
