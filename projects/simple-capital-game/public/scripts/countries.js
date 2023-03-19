@@ -1,4 +1,9 @@
-//taken from ChatGPT and modified by myself to include new name changes, alternate capitals and otherwise
+// This arraw wastaken from ChatGPT and modified by myself to include new name changes, alternate capitals and otherwise,
+// making use in part of the following on ./script.js and copypasting from answer display.
+/* countries.forEach((e) => {
+  pastAnswers.push(createLi(`{country: "${e.country}", capitals: ["${e.capital}"]},`))
+})*/
+
 const countries = [
 {country: "Afghanistan", capitals: ["Kabul"]},
 {country: "Albania", capitals: ["Tirana"]},
