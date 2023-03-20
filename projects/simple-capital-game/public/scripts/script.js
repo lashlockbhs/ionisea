@@ -38,17 +38,19 @@ const nextQ = () => {
 
 hintButton.onclick = (e) => {
   hintCount++
-  if (hintCount === 1) {
+  if (hintCount % 2 === 1) {
     alert(`'${currentCountry.capitals[0][0]}' is the first letter of the capital you are looking for.`);
-  } else if (hintCount === 2) {
-    alert(`The name of the capital you are looking for is ${currentCountry.capitals[0].length} letters long.`);
+  } else if (hintCount % 2 === 0) {
+    alert(`The name of the capital you are looking for is ${currentCountry.capitals[0].length} letters long (including spaces).`);
   };
 };
 
+
 document.onkeydown = ((e) => {
-  const input = document.getElementById('answerInput').value;
-  const maybeCorrect = currentCountry.capitals.some((e) => (input === e) || (input.toLowerCase()=== e.toLowerCase()));
+  console.log(e);
   if ((e.key == "Enter") && (input != '')) {
+    const input = document.getElementById('answerInput').value;
+    const maybeCorrect = currentCountry.capitals.some((e) => (input === e) || (input.toLowerCase() === e.toLowerCase()));
     if (maybeCorrect) {
       if (hintCount < 2) stats.correct++
     } else {
