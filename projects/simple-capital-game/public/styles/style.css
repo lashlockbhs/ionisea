@@ -3,6 +3,11 @@ html{
   font-family: 'Courier New', Courier, monospace;
 }
 
+button{
+  background-color: rgb(236, 215, 175);
+  color: rgb(61, 60, 61);
+}
+
 body {
   margin-top: 0.75in;
   background-color: rgb(61, 60, 61);
