@@ -4,6 +4,7 @@ import { countries } from './countries.js'
 let statDisplay = document.getElementById('stats')
 let countryDisplay = document.getElementById('question')
 let correctDisplay = document.getElementById('answers')
+let hintButton = document.getElementById('hint')
 let pastAnswers = []
 let stats = { correct: 0, wrong: 0 }
 
@@ -33,6 +34,10 @@ const nextQ = () => {
   statDisplay.append('correct: ' + stats.correct + '; incorrect: ' + stats.wrong);
   countryDisplay.append('What is the capital of ' + currentCountry.country + '?');
 };
+
+hintButton.onclick= (e)=>{
+  alert(`The first letter of the capital you are looking for is '${currentCountry.capitals[0][0]}'.`)
+}
 
 document.onkeydown = ((e) => {
   const input = document.getElementById('answerInput').value;

@@ -1,8 +1,8 @@
 body {
-  margin-top: 1in;
-  background-color: antiquewhite;
+  margin-top: 0.75in;
+  background-color: rgba(196, 128, 196, 0.331);
   text-align: center;
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 ul{
