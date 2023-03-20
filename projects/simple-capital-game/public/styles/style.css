@@ -1,8 +1,13 @@
+*,
+html{
+  font-family: 'Courier New', Courier, monospace;
+}
+
 body {
   margin-top: 0.75in;
-  background-color: rgba(196, 128, 196, 0.331);
+  background-color: rgb(61, 60, 61);
+  color: rgb(236, 215, 175);
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 ul{

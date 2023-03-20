@@ -1,31 +1,32 @@
-import { countries } from './countries.js'
+import { countries } from './countries.js';
 
 
-let statDisplay = document.getElementById('stats')
-let countryDisplay = document.getElementById('question')
-let correctDisplay = document.getElementById('answers')
-let hintButton = document.getElementById('hint')
-let pastAnswers = []
-let stats = { correct: 0, wrong: 0 }
+let statDisplay = document.getElementById('stats');
+let countryDisplay = document.getElementById('question');
+let correctDisplay = document.getElementById('answers');
+let hintButton = document.getElementById('hint');
+let pastAnswers = [];
+let hintCount = 0;
+let stats = { correct: 0, wrong: 0 };
 
-let currentCountry //= countries[Math.floor(Math.random() * countries.length)]
+let currentCountry;
 
 const createLi = (text) => {
-  const li = document.createElement('li')
-  li.append(text)
-  return li
-}
+  const li = document.createElement('li');
+  li.append(text);
+  return li;
+};
 
 window.onload = () => {
   nextQ();
-}
+};
 
-const fillAnswer = (wrongcaps, correct, answer) => {
-  let string = `The capital of ${currentCountry.country} is ${currentCountry.capitals[0]}. ` + `(Your answer: ${answer} ${correct ? '✓' : '✗'}${wrongcaps ? ' - Incorrect case)' : ')'}`
-  pastAnswers = [string].concat(pastAnswers)
-  correctDisplay.textContent = ''
-  pastAnswers.forEach(e => { correctDisplay.append(createLi(e)) })
-}
+const fillAnswer = (correct, answer) => {
+  let string = `The capital of ${currentCountry.country} is ${currentCountry.capitals[0]}. ` + `(Your answer: ${answer} ${correct ? '✓' : '✗'}; Hints used: ${hintCount})`;
+  pastAnswers = [string].concat(pastAnswers);
+  correctDisplay.textContent = '';
+  pastAnswers.forEach(e => correctDisplay.append(createLi(e)));
+};
 
 const nextQ = () => {
   statDisplay.textContent = '';
@@ -35,21 +36,27 @@ const nextQ = () => {
   countryDisplay.append('What is the capital of ' + currentCountry.country + '?');
 };
 
-hintButton.onclick= (e)=>{
-  alert(`The first letter of the capital you are looking for is '${currentCountry.capitals[0][0]}'.`)
-}
+hintButton.onclick = (e) => {
+  hintCount++
+  if (hintCount === 1) {
+    alert(`'${currentCountry.capitals[0][0]}' is the first letter of the capital you are looking for.`);
+  } else if (hintCount === 2) {
+    alert(`The name of the capital you are looking for is ${currentCountry.capitals[0].length} letters long.`);
+  };
+};
 
 document.onkeydown = ((e) => {
   const input = document.getElementById('answerInput').value;
-  const maybeCorrect = currentCountry.capitals.some((e) => input === e);
+  const maybeCorrect = currentCountry.capitals.some((e) => (input === e) || (input.toLowerCase()=== e.toLowerCase()));
   if ((e.key == "Enter") && (input != '')) {
     if (maybeCorrect) {
-      stats.correct++
+      if (hintCount < 2) stats.correct++
     } else {
       stats.wrong++
     };
     document.getElementById('answerInput').value = ''
-    fillAnswer((!maybeCorrect && (currentCountry.capitals.some((e) => input.toLowerCase() === e.toLowerCase()))), maybeCorrect, input);
+    fillAnswer(maybeCorrect, input);
+    hintCount = 0;
     nextQ();
   };
 });
