@@ -48,8 +48,8 @@ hintButton.onclick = (e) => {
 
 document.onkeydown = ((e) => {
   console.log(e);
+  const input = document.getElementById('answerInput').value;
   if ((e.key == "Enter") && (input != '')) {
-    const input = document.getElementById('answerInput').value;
     const maybeCorrect = currentCountry.capitals.some((e) => (input === e) || (input.toLowerCase() === e.toLowerCase()));
     if (maybeCorrect) {
       if (hintCount < 2) stats.correct++
