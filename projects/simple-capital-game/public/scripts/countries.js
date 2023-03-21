@@ -129,7 +129,7 @@ const countries = [
   { country: "Namibia", capitals: ["Windhoek"] },
   { country: "Nauru", capitals: ["Yaren"] },
   { country: "Nepal", capitals: ["Kathmandu"] },
-  { country: "the Netherlands", capitals: ["Amsterdam"] },
+  { country: "the Netherlands", capitals: ["Amsterdam", "The Hague"] },
   { country: "New Zealand", capitals: ["Wellington"] },
   { country: "Nicaragua", capitals: ["Managua"] },
   { country: "Niger", capitals: ["Niamey"] },
