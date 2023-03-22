@@ -1,6 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
 *,
 html{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Ubuntu Mono', Courier, monospace;
 }
 
 button{
