@@ -5,7 +5,7 @@ const textInput = document.getElementById('textInput')
 const keyInput = document.getElementById('keyInput')
 let output = document.getElementById('output')
 
-const possibleChars = `'1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}|asdfghjkl;ASDFGHJKL:"zxcvbnm,./ZXCVBNM<>?`
+const possibleChars = `'1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}|asdfghjkl;ASDFGHJKL:"zxcvbnm,./ZXCVBNM<>? `
 // missing ' and \ hel[]
 
 const generateKey = () => {
@@ -27,17 +27,17 @@ const applyKey = (change, char, mode) => {
 const crypt = (text, key, mode) => {
     let newText = '';
     for (let c = 0; c < text.length; c++) {
-        newText += applyKey(parseInt(key[c % (key.length)], 36), text[c], mode)
+        newText += applyKey(parseInt(key[c % (key.length-1)], 36), text[c], mode)
     }
     return newText;
 }
 
 encodeButton.onclick = (e) => {
     if (keyInput.value == '') keyInput.value = generateKey()
-    output.textContent = crypt(textInput.value, keyInput.value, 1)
+    textInput.value = crypt(textInput.value, keyInput.value, 1)
 }
 
 decodeButton.onclick = (e) => {
     if (keyInput.value == '') alert(`Provide a key!`) // double equals is intentional, alerts are fine dont worry about it
-    output.textContent = crypt(textInput.value, keyInput.value, -1)
+    textInput.value = crypt(textInput.value, keyInput.value, -1)
 }
