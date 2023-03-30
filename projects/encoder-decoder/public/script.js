@@ -34,10 +34,10 @@ const crypt = (text, key, mode) => {
 
 encodeButton.onclick = (e) => {
     if (keyInput.value == '') keyInput.value = generateKey()
-    textInput.value = crypt(textInput.value, keyInput.value, 1)
+    output.textContent = crypt(textInput.value, keyInput.value, 1)
 }
 
 decodeButton.onclick = (e) => {
     if (keyInput.value == '') alert(`Provide a key!`) // double equals is intentional, alerts are fine dont worry about it
-    textInput.value = crypt(textInput.value, keyInput.value, -1)
+    output.textContent = crypt(textInput.value, keyInput.value, -1)
 }
