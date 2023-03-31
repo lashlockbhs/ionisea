@@ -6,7 +6,7 @@ const keyInput = document.getElementById('keyInput')
 let output = document.getElementById('output')
 
 const possibleChars = `'1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}|asdfghjkl;ASDFGHJKL:"zxcvbnm,./ZXCVBNM<>? `
-// missing ' and \ hel[]
+// missing ` and \ 
 
 const generateKey = () => {
     const characters = '0123456789abcdefghijklmnopqrstuvwxyz'
@@ -15,7 +15,7 @@ const generateKey = () => {
         s += characters[Math.floor(Math.random() * characters.length)]
     }
     return s;
-    //return Math.round((Math.random()+1)*2**100).toString(36) // doesn't wor!!
+    //return Math.round((Math.random()+1)*2**100).toString(36) // doesn't work!!
 }
 
 const applyKey = (change, char, mode) => {
