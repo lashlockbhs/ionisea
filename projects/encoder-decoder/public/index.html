@@ -1,30 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
   <title>Encoder/Decoder</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3208/3208737.png">
-  <link href="style.css" media="all" rel="stylesheet" type="text/css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3208/3208737.png" />
+  <link href="style.css" media="all" rel="stylesheet" type="text/css" />
   <script src="script.js" type="module"></script>
 </head>
 
 <body>
-  <label for="textInput">Text to encode/decode:</label>
-  <br>
-  <input type="text" id="textInput" name="textInput">
-  <br>
-  <br>
-  <label for="keyInput">Key (leave blank if you do not have one): </label>
-  <br>
-  <input type="text" id="keyInput" name="keyInput">
-  <br>
-  <br>
-  <button id='encode'> Encode </button>
-  <button id='decode'> Decode </button>
-  <br>
-  <h3 id="output">Output text will appear here.</h3>
+  <div>Text to encode/decode:</div>
+
+  <div>
+    <input type="text" id="textInput" name="textInput" />
+  </div>
+
+  <div>Key (leave blank if you do not have one):</div>
+
+  <div>
+    <input type="text" id="keyInput" name="keyInput" />
+  </div>
+
+  <div>
+    <button id="encode">Encode</button>
+    <button id="decode">Decode</button>
+  </div>
+
+  <div id="output">Output text will appear here.</div>
 </body>
 
 </html>
