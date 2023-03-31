@@ -4,15 +4,18 @@
 }
 
 body {
-  width: 60em;
+  width: 40em;
   margin: 0.75in auto;
 }
 
 body * {
-  margin: 12px auto;
+  margin: 10px auto;
 }
 
 #output {
+  line-break: auto;
+  outline: 1px dashed;
+  margin: 20px auto;
   font-weight: 600;
   font-size: 1.3rem;
 }
