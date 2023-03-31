@@ -13,7 +13,7 @@ body * {
 }
 
 #output {
-  line-break: auto;
+  line-break: anywhere;
   outline: 1px dashed;
   margin: 20px auto;
   font-weight: 600;
