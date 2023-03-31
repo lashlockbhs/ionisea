@@ -7,3 +7,12 @@ body {
   width: 60em;
   margin: 0.75in auto;
 }
+
+body * {
+  margin: 12px auto;
+}
+
+#output {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
