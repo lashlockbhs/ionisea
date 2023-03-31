@@ -27,7 +27,7 @@ const applyKey = (change, char, mode) => {
 const crypt = (text, key, mode) => {
     let newText = '';
     for (let c = 0; c < text.length; c++) {
-        newText += applyKey(parseInt(key[c % (key.length-1)], 36), text[c], mode)
+        newText += applyKey(parseInt(key[c % (key.length)], 36), text[c], mode)
     }
     return newText;
 }
