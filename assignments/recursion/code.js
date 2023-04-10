@@ -1,6 +1,6 @@
 const triangular = (n) =>{
   if (n === 0){
-    return false
+    return 0
   } else {
     return triangular(n) + n
   }
