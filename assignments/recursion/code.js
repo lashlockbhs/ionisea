@@ -65,3 +65,8 @@ const treeMap = (branch, op) =>{
     return {left: treeMap(branch.left, op), right: treeMap(branch.right, op)}
   }
 }
+
+const change = (am, coins) =>{
+  const largestCoin = Math.max(...coins) // for later use
+  
+}
