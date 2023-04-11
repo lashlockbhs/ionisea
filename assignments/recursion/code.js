@@ -41,7 +41,10 @@ const sum = (ns) => { // You left this in the slides!
 }
 
 const search = (arr, val) =>{
-  if (){
-
+  if (arr.at(-1) === val){
+    return true;
+  } else if (arr.length !== 0) {
+    return search(arr.slice(0,-1))
   }
+  return false
 }
