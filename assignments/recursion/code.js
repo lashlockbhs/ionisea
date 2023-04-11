@@ -50,7 +50,7 @@ const search = (arr, val) => {
   }
 }
 
-const reverseString = (string) = {
+const reverseString = (string) => {
   if (string.length === 1) {
     return string
   } else {
