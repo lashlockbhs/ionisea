@@ -44,7 +44,7 @@ const search = (arr, val) => {
   if (arr.at(-1) === val) {
     return true;
   } else if (arr.length !== 0) {
-    return search(arr.slice(-1, -2))
+    return search(arr.slice(0, -2), val)
   } else {
     return false
   }
