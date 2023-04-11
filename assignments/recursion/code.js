@@ -65,4 +65,3 @@ const treeMap = (branch, op) =>{
     return {left: treeMap(branch.left, op), right: treeMap(branch.right, op)}
   }
 }
-console.log(isLeaf)
