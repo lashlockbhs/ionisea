@@ -45,6 +45,6 @@ const search = (arr, val) =>{
     return true;
   } else if (arr.length !== 0) {
     return search(arr.slice(0,-1))
-  }
+  } else {
   return false
-}
+}}
