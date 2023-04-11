@@ -15,3 +15,11 @@ const fibonacci = (n) => {
     return fibonacci(n - 2) + fibonacci(n - 1);
   }
 }
+
+const gcd = (a, b) =>{
+  if (b === 0){
+    return a
+  } else{
+    return gcd(b, a%b)
+  }
+}
