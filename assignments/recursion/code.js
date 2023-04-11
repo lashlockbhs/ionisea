@@ -1,3 +1,11 @@
+const factorial = (n) => { //from slides
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
 const triangular = (n) => {
   if (n === 0) {
     return 0
@@ -29,5 +37,11 @@ const sum = (ns) => { // You left this in the slides!
     return 0; 
   } else {
     return ns[0] + sum(ns.slice(1));
+  }
+}
+
+const search = (arr, val) =>{
+  if (){
+
   }
 }
