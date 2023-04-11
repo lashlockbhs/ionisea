@@ -28,6 +28,6 @@ const sum = (ns) => { // You left this in the slides!
   if (ns.length === 0) {
     return 0; 
   } else {
-    return ns[0] + sumOfArray(ns.slice(1));
+    return ns[0] + sum(ns.slice(1));
   }
 }
