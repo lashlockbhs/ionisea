@@ -62,7 +62,7 @@ const treeMap = (branch, op) =>{
   if (isLeaf(branch)){
     return op(branch)
   } else {
-    return treeMap(branch)
+    return treeMap(branch, op)
   }
 }
 console.log(isLeaf)
