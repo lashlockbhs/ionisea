@@ -23,3 +23,11 @@ const gcd = (a, b) =>{
     return gcd(b, a%b)
   }
 }
+
+const sum = (ns) => { // You left this in the slides!
+  if (ns.length === 0) {
+    return 0; 
+  } else {
+    return ns[0] + sumOfArray(ns.slice(1));
+  }
+}
