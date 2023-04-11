@@ -24,27 +24,28 @@ const fibonacci = (n) => {
   }
 }
 
-const gcd = (a, b) =>{
-  if (b === 0){
+const gcd = (a, b) => {
+  if (b === 0) {
     return a
-  } else{
-    return gcd(b, a%b)
+  } else {
+    return gcd(b, a % b)
   }
 }
 
 const sum = (ns) => { // You left this in the slides!
   if (ns.length === 0) {
-    return 0; 
+    return 0;
   } else {
     return ns[0] + sum(ns.slice(1));
   }
 }
 
-const search = (arr, val) =>{
-  if (arr.at(-1) === val){
+const search = (arr, val) => {
+  if (arr.at(-1) === val) {
     return true;
   } else if (arr.length !== 0) {
-    return search(arr.slice(0,-1))
+    return search(arr.slice(0, -2))
   } else {
-  return false
-}}
+    return false
+  }
+}
