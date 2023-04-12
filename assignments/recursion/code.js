@@ -39,10 +39,10 @@ const sum = (ns) => { // You left this in the slides!
 }
 
 const search = (arr, val) => {
-  if (arr.at(-1) === val) {
+  if (arr.at(0) === val) {
     return true;
   } else if (arr.length !== 0) {
-    return search(arr.slice(0, -1), val)
+    return search(arr.slice(1), val)
   } else {
     return false
   }
