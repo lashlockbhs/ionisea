@@ -67,11 +67,16 @@ const treeMap = (branch, op) =>{
 }
 
 const change = (am, coins) =>{
-  if (coins.sort((a,b) => a-b) !== coins){
-    return change(am, coins.sort((a,b) => a-b))
+  if (coins.sort((a,b) => b-a) !== coins){
+    return change(am, coins.sort((a,b) => b-a))
+  } else if (am !== 0) {
+    const largestCoin = Math.max(...coins) // for later use
+    if (am - largestCoin < 0){
+      return change(am, coins.slice(0))
+    } else{
+      return change(am - largestCoin, coins)
+    }
   }
-  const largestCoin = Math.max(...coins) // for later use
-  
 }
 
 const coins = [89, 343, 3434, 489, 20]
