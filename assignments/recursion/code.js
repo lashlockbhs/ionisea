@@ -67,6 +67,9 @@ const treeMap = (branch, op) =>{
 }
 
 const change = (am, coins) =>{
+  if (coins.sort((a,b) => a-b) !== coins){
+    change(am, coins)
+  }
   const largestCoin = Math.max(...coins) // for later use
   
 }
