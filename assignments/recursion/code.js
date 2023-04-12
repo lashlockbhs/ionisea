@@ -75,4 +75,4 @@ const change = (am, coins) =>{
 }
 
 const coins = [89, 343, 3434, 489, 20]
-console.log(coins.sort((a,b) => a-b))
+console.log(coins.sort((a,b) => b-a))
