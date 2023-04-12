@@ -67,7 +67,7 @@ const treeMap = (branch, op) =>{
 }
 
 const change = (am, coins) =>{
-  return am/Math.min(...coins)
+  return am/Math.max(...coins)
   /* // I think you need to store a value in args
   if (coins.sort((a,b) => b-a) !== coins){
     return change(am, coins.sort((a,b) => b-a))
