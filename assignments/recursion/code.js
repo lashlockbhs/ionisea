@@ -56,19 +56,21 @@ const reverseString = (string) => {
   }
 }
 
-const treeMap = (branch, op) =>{
-  if (isLeaf(branch)){
+const treeMap = (branch, op) => {
+  if (isLeaf(branch)) {
     return op(branch)
   } else {
-    return {left: treeMap(branch.left, op), right: treeMap(branch.right, op)}
+    return { left: treeMap(branch.left, op), right: treeMap(branch.right, op) }
   }
 }
 
-const change = (am, coins) =>{
-  if (am > Math.min(coins)){ // i assume you would maybe add all of the possible 
-    return change(am-coins.findLast(e => e <= am), coins)
-  } else {
-    return 1
+
+
+const change = (am, coins) => {
+  if (am > Math.min(coins)) { // i assume you would maybe add all of the possible 
+    if (am === 0) {
+      return 1
+    } else return change(am - coins.findLast(e => e <= am), coins)
   }
   /* // I think you need to store a value in args for this sort of thing
   if (coins.sort((a,b) => b-a) !== coins){
