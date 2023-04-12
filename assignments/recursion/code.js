@@ -71,7 +71,7 @@ const change = (am, coins) => {
     if (am === 0) {
       return 1
     } else return change(am - coins.findLast(e => e <= am), coins)
-  }
+  } else return 0
   /* // I think you need to store a value in args for this sort of thing
   if (coins.sort((a,b) => b-a) !== coins){
     return change(am, coins.sort((a,b) => b-a))
