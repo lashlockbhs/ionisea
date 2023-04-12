@@ -67,8 +67,8 @@ const treeMap = (branch, op) =>{
 }
 
 const change = (am, coins) =>{
-  if (am > Math.min(coins)){
-    return 
+  if (am > Math.min(coins)){            // arrows @!!1
+    return change(am-coins.findLast(e => e <= amount))
   } else {
     return 1
   }
