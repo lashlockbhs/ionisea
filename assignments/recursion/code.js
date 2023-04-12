@@ -67,7 +67,7 @@ const treeMap = (branch, op) =>{
 }
 
 const change = (am, coins) =>{
-
+  return am/Math.min(...coins)
   /* // I think you need to store a value in args
   if (coins.sort((a,b) => b-a) !== coins){
     return change(am, coins.sort((a,b) => b-a))
@@ -82,5 +82,7 @@ const change = (am, coins) =>{
   */
 }
 
+/*
 const coins = [89, 343, 3434, 489, 20]
 console.log(coins.sort((a,b) => b-a))
+*/ // for testing
