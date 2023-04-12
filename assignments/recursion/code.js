@@ -39,7 +39,7 @@ const sum = (ns) => { // You left this in the slides!
 }
 
 const search = (arr, val) => {
-  if (arr.at(0) === val) {
+  if (arr[0] === val) {
     return true;
   } else if (arr.length !== 0) {
     return search(arr.slice(1), val)
@@ -66,7 +66,7 @@ const treeMap = (branch, op) =>{
 
 const change = (am, coins) =>{
   if (am > Math.min(coins)){            // i assume you would maybe add all of the possible 
-    return change(am-coins.findLast(e => e <= amount))
+    return change(am-coins.findLast(e => e <= amount), coins)
   } else {
     return 1
   }
