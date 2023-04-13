@@ -72,7 +72,7 @@ const change = (am, coins) => {
       return 1
     } else{
       let acc = 0
-      for (let i = 0; coins[i] <= amount; i++){
+      for (let i = 0; coins[i] <= am; i++){
         acc+=change(am, coins.slice(0,i))
       }
       return acc;
