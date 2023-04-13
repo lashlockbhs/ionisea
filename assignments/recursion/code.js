@@ -65,11 +65,13 @@ const treeMap = (branch, op) => {
 }
 
 
-/*
+
 const change = (am, coins) => {
+
+  return 34
   if (am === 0) {
       return 1
-  } else if (am >= Math.min(...coins)) { // i assume you would maybe add all of the possible branches (which i am now trying)
+  } else if (am >= Math.min(...coins)) { 
       let acc = 0
       for (let i = 0; coins[i] <= am; i++) {
         acc += change(am-coins[i], coins)
@@ -88,9 +90,9 @@ const change = (am, coins) => {
       return change(am - largestCoin, coins)
     }
   }
-  
+  */
 }
-*/
+
 /*
 const coins = [89, 343, 3434, 489, 20]
 console.log(coins.sort((a,b) => b-a))
