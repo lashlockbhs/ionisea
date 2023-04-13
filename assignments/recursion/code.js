@@ -67,9 +67,9 @@ const treeMap = (branch, op) => {
 
 
 const change = (am, coins) => {
-  if (coins.some(e => am - e === 0)) {
+  if (am === 0) {
       return 1
-  } else if (am >= Math.min(coins)) { // i assume you would maybe add all of the possible branches (which i am now trying)
+  } else if (am >= Math.min(...coins)) { // i assume you would maybe add all of the possible branches (which i am now trying)
       let acc = 0
       for (let i = 0; coins[i] <= am; i++) {
         acc += change(am-coins[i], coins)
