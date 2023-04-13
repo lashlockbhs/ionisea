@@ -75,7 +75,7 @@ const change = (am, coins) => {
         acc += change(am-coins[i], coins.slice(0, i))
       }
       return acc;
-  } else return 0
+  } //else return 0
 
   /* // I think you need to store a value in args for this sort of thing
   if (coins.sort((a,b) => b-a) !== coins){
