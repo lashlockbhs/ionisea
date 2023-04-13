@@ -72,7 +72,7 @@ const change = (am, coins) => {
   } else if (am >= Math.min(coins)) { // i assume you would maybe add all of the possible branches (which i am now trying)
       let acc = 0
       for (let i = 0; coins[i] <= am; i++) {
-        acc += change(am-coins[i], coins.slice(0, i))
+        acc += change(am-coins[i], coins)
       }
       return acc;
   } else return 0
