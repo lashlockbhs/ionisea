@@ -70,7 +70,13 @@ const change = (am, coins) => {
   if (am > Math.min(coins)) { // i assume you would maybe add all of the possible 
     if (am === 0) {
       return 1
-    } else return change(am - coins.findLast(e => e <= am), coins)
+    } else{
+      let acc = 0
+      for (let i = 0; coins[i] <= amount; i++){
+        acc+=change(am, coins.slice(0,i))
+      }
+      return acc;
+    } 
   } else return 0
   /* // I think you need to store a value in args for this sort of thing
   if (coins.sort((a,b) => b-a) !== coins){
