@@ -65,31 +65,31 @@ const treeMap = (branch, op) => {
 }
 
 
-
+/*
 const change = (am, coins) => {
   if (am === 0) {
-      return 1
-  } else if (am >= Math.min(...coins)) { 
-      let acc = 0
-      for (let i = 0; am >= coins[i]; i++) {
-        acc += change(am-coins[i], coins)
-      }
-      return acc;
-  } else return 0
-
-  /* // I think you need to store a value in args for this sort of thing
-  if (coins.sort((a,b) => b-a) !== coins){
-    return change(am, coins.sort((a,b) => b-a))
-  } else if (am !== 0) {
-    const largestCoin = Math.max(...coins) // for later use
-    if (am - largestCoin < 0){
-      return change(am, coins.slice(0))
-    } else{
-      return change(am - largestCoin, coins)
+    return 1
+  } else if (am >= Math.min(...coins)) {
+    let acc = 0
+    for (let i = 0; (am >= coins[i]) || (i < coins.length); i++) {
+      acc += change(am - coins[i], coins)
     }
-  }
-  */
+    return acc;
+  } else return 0
 }
+*/
+/* // I think you need to store a value in args for this sort of thing
+if (coins.sort((a,b) => b-a) !== coins){
+  return change(am, coins.sort((a,b) => b-a))
+} else if (am !== 0) {
+  const largestCoin = Math.max(...coins) // for later use
+  if (am - largestCoin < 0){
+    return change(am, coins.slice(0))
+  } else{
+    return change(am - largestCoin, coins)
+  }
+}
+*/
 
 /*
 const coins = [89, 343, 3434, 489, 20]
