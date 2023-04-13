@@ -67,17 +67,18 @@ const treeMap = (branch, op) => {
 
 
 const change = (am, coins) => {
-  if (am > Math.min(coins)) { // i assume you would maybe add all of the possible 
+  if (am > Math.min(coins)) { // i assume you would maybe add all of the possible (wgich i am now trying)
     if (am === 0) {
       return 1
-    } else{
+    } else {
       let acc = 0
-      for (let i = 0; coins[i] <= am; i++){
-        acc+=change(am, coins.slice(0,i))
+      for (let i = 0; coins[i] < am; i++) {
+        acc += change(am, coins.slice(0, i))
       }
       return acc;
-    } 
+    }
   } else return 0
+
   /* // I think you need to store a value in args for this sort of thing
   if (coins.sort((a,b) => b-a) !== coins){
     return change(am, coins.sort((a,b) => b-a))
