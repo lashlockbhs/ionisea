@@ -67,7 +67,7 @@ const treeMap = (branch, op) => {
 
 
 const change = (am, coins) => {
-  if (am > Math.min(coins)) { // i assume you would maybe add all of the possible (wgich i am now trying)
+  if (am >= Math.min(coins)) { // i assume you would maybe add all of the possible (wgich i am now trying)
     if (coins.some(e => am - e === 0)) {
       return 1
     } else {
