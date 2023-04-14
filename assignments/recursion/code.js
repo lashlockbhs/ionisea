@@ -67,6 +67,14 @@ const treeMap = (branch, op) => {
 
 
 const change = (am, coins) => {
+  if (am === 0) {
+    return 1;
+  } else if (coins === []){
+    return 0;
+  } else {
+    return change(am - coins [0], coins) + change(am, coins.slice(1))
+  }
+
  /* if (am === 0) {
     return 1
   } else if (am >= Math.min(...coins)) {
