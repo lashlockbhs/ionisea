@@ -83,12 +83,13 @@ const change = (am, coins) => {
   } else {
     return change(am - coins[0], coins) + change(am, coins.slice(1))
   }
-
-  
 }
+
+
 
 // test code
 
+//this was close
 /* if (am === 0) {
      return 1
    } else if (am >= Math.min(...coins)) {
@@ -100,6 +101,7 @@ const change = (am, coins) => {
    } else return 0
 */
 
+//this was not
 /* // I think you need to store a value in args for this sort of thing
 if (coins.sort((a,b) => b-a) !== coins){
   return change(am, coins.sort((a,b) => b-a))
