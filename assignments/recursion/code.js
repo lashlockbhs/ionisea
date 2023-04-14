@@ -67,13 +67,13 @@ const treeMap = (branch, op) => {
 
 
 const change = (am, coins) => {
-  if (am === 100){
+ /* if (am === 100){
     if (coins.length > 0){
       return 292
     } else {
       return 0
     }
-  } else if (am === 200) return 2435
+  } else if (am === 200) return 2435*/
   if (am === 0) {
     return 1;
   } else if ((coins === []) || (coins[0] > am)) {
