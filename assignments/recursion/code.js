@@ -69,21 +69,21 @@ const treeMap = (branch, op) => {
 const change = (am, coins) => {
   if (am === 0) {
     return 1;
-  } else if (coins === [] || coins[0] > am){
+  } else if (coins === [] || coins[0] > am) {
     return 0;
   } else {
-    return change(am - coins [0], coins) + change(am, coins.slice(1))
+    return change(am - coins[0], coins) + change(am, coins.slice(1))
   }
 
- /* if (am === 0) {
-    return 1
-  } else if (am >= Math.min(...coins)) {
-    let acc = 0
-    for (let i = 0; (am >= coins[i]) || (i < coins.length); i++) {
-      acc += change(am - coins[i], coins)
-    }
-    return acc;
-  } else return 0*/
+  /* if (am === 0) {
+     return 1
+   } else if (am >= Math.min(...coins)) {
+     let acc = 0
+     for (let i = 0; (am >= coins[i]) || (i < coins.length); i++) {
+       acc += change(am - coins[i], coins)
+     }
+     return acc;
+   } else return 0*/
 }
 
 
