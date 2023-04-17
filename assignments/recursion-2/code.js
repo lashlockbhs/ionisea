@@ -12,7 +12,7 @@ const multiply = (a, b) => { //this one looks improvable
   } else if (b === 1) {
     return a
   } else {
-    return multiply(a + a, b - 1);
+    return a + multiply(a, b - 1);
   };
 };
 
