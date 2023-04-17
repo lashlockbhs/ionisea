@@ -28,6 +28,6 @@ const triple = (n, a) => {
   if (a === 0){
     return n
   } else {
-    return double(n*3, a-1)
+    return triple(n*3, a-1)
   }
 }
