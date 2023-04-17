@@ -49,7 +49,7 @@ const search = (arr, val) => {
 }
 
 const reverseString = (string) => {
-  if (string.length === 1) {
+  if (string.length <= 1) {
     return string
   } else {
     return reverseString(string.slice(1)) + string[0]
