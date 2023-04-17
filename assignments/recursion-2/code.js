@@ -10,7 +10,7 @@ const multiply = (a, b) => { //this one looks improvable
   if (b === 0) {
     return 0;
   } else if (b === 1) {
-
+    return a
   } else {
     return multiply(a + a, b - 1);
   };
