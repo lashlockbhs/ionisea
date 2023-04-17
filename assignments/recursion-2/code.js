@@ -2,7 +2,7 @@ const add = (a, b) => {
   if (b === 0){
     return a
   } else {
-    return add(a+b, 0)
+    return add(a+1, b-1)
   }
 }
 
@@ -15,3 +15,5 @@ const multiply = (a, b) => {
     return multiply(a*b, b/b)
   }
 }
+
+const dou
