@@ -1,8 +1,8 @@
 const add = (a, b) => {
   if (b === 0) {
-    return a;
+    return 1;
   } else {
-    return add(a + 1, b - 1);
+    return 1 + add(a, b - 1);
   };
 };
 
@@ -41,7 +41,7 @@ const power = (n, a) =>{
 }
 
 const deleteXs = (str) => {
-  if (str.find()){
+  if (str.find('x')){
 
   }
 }
