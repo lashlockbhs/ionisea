@@ -9,39 +9,41 @@ const add = (a, b) => {
 const multiply = (a, b) => { //this one looks improvable
   if (b === 0) {
     return 0;
+  } else if (b === 1) {
+
   } else {
-    return multiply(a + a, b-1);
+    return multiply(a + a, b - 1);
   };
 };
 
 const double = (n, a) => {
-  if (a === 0){
+  if (a === 0) {
     return n;
   } else {
-    return double(n*2, a-1);
+    return double(n * 2, a - 1);
   };
 };
 
 const triple = (n, a) => {
-  if (a === 0){
+  if (a === 0) {
     return n;
   } else {
-    return triple(n*3, a-1);
+    return triple(n * 3, a - 1);
   };
 };
 
-const power = (n, a) =>{
-  if (a === 0){
+const power = (n, a) => {
+  if (a === 0) {
     return 1
-  } else if (a === 1){
+  } else if (a === 1) {
     return n;
   } else {
-    return power(n**a, a-1)
+    return power(n * a, a - 1)
   }
 }
 
 const deleteXs = (str) => {
-  if (str.find('x')){
+  if (str.find('x')) {
 
   }
 }
