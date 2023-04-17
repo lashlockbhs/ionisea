@@ -41,5 +41,7 @@ const power = (n, a) =>{
 }
 
 const deleteXs = (str) => {
-  if (str.find())
+  if (str.find()){
+    
+  }
 }
