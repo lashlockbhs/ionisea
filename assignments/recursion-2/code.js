@@ -43,7 +43,7 @@ const power = (n, a) => {
 }
 
 const deleteXs = (str) => {
-  if (str.search('x') === undefined) {
+  if (str.indexOf('x') === undefined) {
     return str;
   }
 }
