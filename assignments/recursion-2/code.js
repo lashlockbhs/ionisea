@@ -7,12 +7,10 @@ const add = (a, b) => {
 };
 
 const multiply = (a, b) => { //this one looks improvable
-  if (a === 0 || b === 0) {
-    return 0;
-  } else if (b === 1) {
+  if (b === 1) {
     return a;
   } else {
-    return multiply(a * b, b / b);
+    return multiply(a * b, 1);
   };
 };
 
