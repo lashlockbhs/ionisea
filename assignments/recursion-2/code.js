@@ -1,8 +1,8 @@
 const add = (a, b) => {
   if (b === 0) {
-    return 1;
+    return a;
   } else {
-    return 1 + add(a, b - 1);
+    return add(a + 1, b - 1);
   };
 };
 
