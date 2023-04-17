@@ -38,14 +38,15 @@ const power = (n, a) => {
   } else if (a === 1) {
     return n;
   } else {
-    return power(n * a, a - 1)
+    return n* power(n, a - 1)
   }
 }
 
 const deleteXs = (str) => {
-  if (str.indexOf('x') === -1) {
+  const ind = str.indexOf('x')
+  if (ind === -1) {
     return str;
   } else {
-    return deleteXs(str.substring(0, str.indexOf('x')) + str.substring(str.indexOf('x') +1 , str.length))
+    return deleteXs(str.substring(0, ind) + str.substring(ind + 1, str.length))
   }
 }
