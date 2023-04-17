@@ -23,3 +23,11 @@ const double = (n, a) => {
     return double(n*2, a-1)
   }
 }
+
+const triple = (n, a) => {
+  if (a === 0){
+    return n
+  } else {
+    return double(n*3, a-1)
+  }
+}
