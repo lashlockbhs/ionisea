@@ -7,7 +7,7 @@ const add = (a, b) => {
 };
 
 const multiply = (a, b) => { //this one looks improvable
-  if (b === 0) {
+  if (b === 1) {
     return 1;
   } else {
     return multiply(a + a, b-1);
