@@ -36,6 +36,10 @@ const power = (n, a) =>{
   } else if (a === 1){
     return n;
   } else {
-    return power(n*n, a-1)
+    return power(n**a, a-1)
   }
+}
+
+const deleteXs = (str) => {
+  if (str.find())
 }
