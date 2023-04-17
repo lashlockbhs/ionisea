@@ -45,5 +45,7 @@ const power = (n, a) => {
 const deleteXs = (str) => {
   if (str.indexOf('x') === -1) {
     return str;
+  } else {
+    return deleteXs(str.substring(0, str.indexOf('x'))+ str.substring(str.indexOf('x'), str.length))
   }
 }
