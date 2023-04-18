@@ -50,8 +50,7 @@ const deleteXs = (str) => {
 const maximum = (arr) => {
   if (typeof(arr[0]) == 'undefined'){
     return -Infinity
-  }
-  if (arr.length === 1){
+  } else if (arr.length === 1){
     return arr[0]
   } else if (arr[0] < arr[1]){
     return maximum(arr.slice(1))
