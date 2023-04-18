@@ -40,19 +40,12 @@ const power = (n, a) => {
 
 const deleteXs = (str) => {
   if (!str.split('').some(x => x === 'x')) {
-    return str
-  } else if (str[0] === 'x') {
-    return deleteXs(str.slice(1))
-  } else {
-    return deleteXs(str.slice(1) + str[0])
-  }
-  /*
-  const ind = str.indexOf('x')
-  if (ind === -1) {
     return str;
+  } else if (str[0] === 'x') {
+    return deleteXs(str.substring(1));
   } else {
-    return deleteXs(str.substring(0, ind) + str.substring(ind + 1, str.length))
-  }*/
+    return deleteXs(str.substring(1) + str[0]);
+  } // (: (:
 }
 
 const countXs = (str) => { //it doesnt use index of !! (:::
@@ -66,7 +59,7 @@ const countXs = (str) => { //it doesnt use index of !! (:::
 };
 
 const maximum = (arr) => {
-  if (typeof (arr[0]) === 'undefined') {
+  if (typeof (arr[0]) === 'undefined') { // in hindsight this could've used length === 0
     return -Infinity
   } else if (arr.length === 1) {
     return arr[0]
