@@ -58,3 +58,13 @@ const maximum = (arr) => {
     return maximum([arr[0]].concat(arr.slice(2)))
   }
 }
+
+const every = (arr, p) =>{
+  if (!p(arr[0])){
+    return false
+  } else if (arr.length === 0){
+    return true
+  } else {
+    return every(arr.slice(1),p)
+  }
+}
