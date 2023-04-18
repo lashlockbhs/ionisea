@@ -41,9 +41,11 @@ const power = (n, a) => {
 const deleteXs = (str) => {
   if (!str.split('').some(x => x === 'x')) {
     return str
-  } else if (str[0] === 'x'){
+  } else if (str[0] === 'x') {
     return deleteXs(str.slice(1))
-  } //else if 
+  } else {
+    return deleteXs(str.slice(1) + str[0])
+  }
   /*
   const ind = str.indexOf('x')
   if (ind === -1) {
@@ -54,9 +56,9 @@ const deleteXs = (str) => {
 }
 
 const countXs = (str) => { //it doesnt use index of !! (:::
-  if (str.split('').every(x => x === 'x')){
+  if (str.split('').every(x => x === 'x')) {
     return str.length;
-  } else if (str[0] === 'x'){
+  } else if (str[0] === 'x') {
     return countXs(str.substring(1) + 'x');
   } else {
     return countXs(str.substring(1));
