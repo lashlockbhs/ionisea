@@ -6,7 +6,7 @@ const add = (a, b) => {
   };
 };
 
-const multiply = (a, b) => { 
+const multiply = (a, b) => {
   if (b === 0) {
     return 0;
   } else {
@@ -48,23 +48,23 @@ const deleteXs = (str) => {
 }
 
 const maximum = (arr) => {
-  if (typeof(arr[0]) === 'undefined'){
+  if (typeof (arr[0]) === 'undefined') {
     return -Infinity
-  } else if (arr.length === 1){
+  } else if (arr.length === 1) {
     return arr[0]
-  } else if (arr[0] < arr[1]){
+  } else if (arr[0] < arr[1]) {
     return maximum(arr.slice(1))
   } else {
     return maximum([arr[0]].concat(arr.slice(2)))
   }
 }
 
-const every = (arr, p) =>{
-  if (p(arr[0]) === false){
-    return false
-  } else if (arr.length === 0){
+const every = (arr, p) => {
+  if (arr.length === 0) {
     return true
+  } else if (!p(arr[0])) {
+    return false
   } else {
-    return every(arr.slice(1),p)
+    return every(arr.slice(1), p)
   }
 }
