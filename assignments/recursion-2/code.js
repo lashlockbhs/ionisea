@@ -6,7 +6,7 @@ const add = (a, b) => {
   };
 };
 
-const multiply = (a, b) => { //this one looks improvable
+const multiply = (a, b) => { 
   if (b === 0) {
     return 0;
   } else {
@@ -40,7 +40,7 @@ const power = (n, a) => {
 
 const deleteXs = (str) => {
   if (str[0] === 'x') {
-    return str.slice(0)
+    return deleteXs(str.slice(1))
   } else {
     return str.slice(1)
   }
