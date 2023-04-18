@@ -53,6 +53,6 @@ const maximum = (arr) => {
   } else if (arr[0] < arr[1]){
     return arr.slice(1) // store max in first val
   } else {
-    return arr[0].concat(arr.slice(2))
+    return [arr[0]].concat(arr.slice(2))
   }
 }
