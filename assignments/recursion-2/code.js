@@ -46,3 +46,12 @@ const deleteXs = (str) => {
     return deleteXs(str.substring(0, ind) + str.substring(ind + 1, str.length))
   }
 }
+
+const maximum = (arr) => {
+  if (arr.length = 1){
+    return arr[0]
+  } else {
+    return // store max in first val
+    
+  }
+}
