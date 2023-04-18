@@ -34,7 +34,7 @@ const power = (n, a) => {
   if (a === 0) {
     return 1
   } else {
-    return n* power(n, a - 1)
+    return n * power(n, a - 1)
   }
 }
 
