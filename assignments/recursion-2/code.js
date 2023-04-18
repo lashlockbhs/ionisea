@@ -48,8 +48,8 @@ const deleteXs = (str) => {
 }
 
 const maximum = (arr) => {
-  if (typeof(arr[0]) !== 'number'){
-
+  if (typeof(arr[0]) == 'undefined'){
+    return -Infinity
   }
   if (arr.length === 1){
     return arr[0]
