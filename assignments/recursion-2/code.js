@@ -49,13 +49,13 @@ const deleteXs = (str) => {
 
 const countXs = (str) => {
   if (str.split('').every(x => x === 'x')){
-    return str.length
+    return str.length;
   } else if (str[0] === 'x'){
-    return countXs(str.substring(1) + 'x')
+    return countXs(str.substring(1) + 'x');
   } else {
-    return countXs(str.substring(1))
-  }
-}
+    return countXs(str.substring(1));
+  };
+};
 
 const maximum = (arr) => {
   if (typeof (arr[0]) === 'undefined') {
