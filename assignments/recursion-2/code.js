@@ -47,7 +47,7 @@ const deleteXs = (str) => {
   }
 }
 
-const countXs = (str) => {
+const countXs = (str) => { //it doesnt use index of !! (:::
   if (str.split('').every(x => x === 'x')){
     return str.length;
   } else if (str[0] === 'x'){
