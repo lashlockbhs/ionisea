@@ -33,8 +33,6 @@ const triple = (n, a) => {
 const power = (n, a) => {
   if (a === 0) {
     return 1
-  } else if (a === 1) {
-    return n;
   } else {
     return n* power(n, a - 1)
   }
