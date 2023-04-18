@@ -48,7 +48,7 @@ const deleteXs = (str) => {
 }
 
 const maximum = (arr) => {
-  if (typeof(arr[0]) == 'undefined'){
+  if (typeof(arr[0]) === 'undefined'){
     return -Infinity
   } else if (arr.length === 1){
     return arr[0]
@@ -60,7 +60,7 @@ const maximum = (arr) => {
 }
 
 const every = (arr, p) =>{
-  if (!p(arr[0])){
+  if (p(arr[0])){
     return false
   } else if (arr.length === 0){
     return true
