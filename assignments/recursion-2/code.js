@@ -75,6 +75,6 @@ const some = (arr, p) => {
   } else if (p(arr[0])) {
     return true
   } else {
-    return every(arr.slice(1), p)
+    return some(arr.slice(1), p)
   }
 }
