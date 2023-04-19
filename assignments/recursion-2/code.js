@@ -46,14 +46,6 @@ const deleteXs = (str) => {
   } else {
     return str[0] + deleteXs(str.slice(1))
   }
-
-  if (!str.split('').some(x => x === 'x')) {
-    return str;
-  } else if (str[0] === 'x') {
-    return deleteXs(str.substring(1));
-  } else {
-    return deleteXs(str.substring(1) + str[0]);
-  } // (: (:
 }
 
 const countXs = (str) => { //it doesnt use index of !! (:::
