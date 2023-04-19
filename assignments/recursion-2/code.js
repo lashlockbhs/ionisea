@@ -59,6 +59,13 @@ const countXs = (str) => { //it doesnt use index of !! (:::
 };
 
 const maximum = (arr) => {
+  if (arr.length === 0){
+    return -Infinity
+  } else {
+    return Math.max(arr[0], maximum(arr.slice(1)))
+  }
+
+  /*
   if (typeof (arr[0]) === 'undefined') { // in hindsight this could've used length === 0
     return -Infinity
   } else if (arr.length === 1) {
@@ -68,6 +75,7 @@ const maximum = (arr) => {
   } else {
     return maximum([arr[0]].concat(arr.slice(2)))
   }
+  */
 }
 
 const every = (arr, p) => {
