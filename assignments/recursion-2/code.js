@@ -69,10 +69,8 @@ const maximum = (arr) => {
 const every = (arr, p) => {
   if (arr.length === 0) {
     return true
-  } else if (!p(arr[0])) {
-    return false
   } else {
-    return every(arr.slice(1), p)
+    return !p(arr[0]) && every(arr.slice(1), p)
   }
 }
 
