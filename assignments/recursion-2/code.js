@@ -64,18 +64,6 @@ const maximum = (arr) => {
   } else {
     return Math.max(arr[0], maximum(arr.slice(1)))
   }
-
-  /*
-  if (typeof (arr[0]) === 'undefined') { // in hindsight this could've used length === 0
-    return -Infinity
-  } else if (arr.length === 1) {
-    return arr[0]
-  } else if (arr[0] < arr[1]) {
-    return maximum(arr.slice(1))
-  } else {
-    return maximum([arr[0]].concat(arr.slice(2)))
-  }
-  */
 }
 
 const every = (arr, p) => {
