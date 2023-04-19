@@ -70,7 +70,7 @@ const every = (arr, p) => {
   if (arr.length === 0) {
     return true
   } else {
-    return !p(arr[0]) && every(arr.slice(1), p)
+    return every(arr.slice(1), p) && !p(arr[0])
   }
 }
 
