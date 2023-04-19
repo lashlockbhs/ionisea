@@ -39,6 +39,14 @@ const power = (n, a) => {
 }
 
 const deleteXs = (str) => {
+  if (str.length === 0){
+    return str
+  } else if (str[0] === 'x'){
+    return deleteXs(str.slice(1))
+  } else {
+    return str[0] + deleteXs(str.slice(1))
+  }
+
   if (!str.split('').some(x => x === 'x')) {
     return str;
   } else if (str[0] === 'x') {
