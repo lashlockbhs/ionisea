@@ -48,7 +48,7 @@ const deleteXs = (str) => {
   }
 }
 
-const countXs = (str) => { //it doesnt use index of !! (:::
+const countXs = (str) => { 
   if (str.split('').every(x => x === 'x')) {
     return str.length;
   } else if (str[0] === 'x') {
@@ -70,7 +70,7 @@ const every = (arr, p) => {
   if (arr.length === 0) {
     return true
   } else {
-    return every(arr.slice(1), p) && p(arr[0])
+    return p(arr[0]) && every(arr.slice(1), p) 
   }
 }
 
@@ -78,6 +78,6 @@ const some = (arr, p) => {
   if (arr.length === 0) {
     return false
   } else {
-    return some(arr.slice(1), p) || p(arr[0])
+    return p(arr[0]) && some(arr.slice(1), p)
   }
 }
