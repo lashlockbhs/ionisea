@@ -78,6 +78,6 @@ const some = (arr, p) => {
   if (arr.length === 0) {
     return false
   } else {
-    return p(arr[0]) && some(arr.slice(1), p)
+    return p(arr[0]) || some(arr.slice(1), p)
   }
 }
