@@ -41,9 +41,9 @@ const div10Not100 = (i) => { // a bit scuffed but works until 12451
   if (i === 0) return 0
   else {
     if ((i / 100) === Math.round(i/100) || ((i / 10) !== Math.round(i/10))){
-      return div10not100(i-1)
+      return div10Not100(i-1)
     } else if ((i / 10) === Math.round(i/10)){
-      return 1+div10not100(i-1)
+      return 1+div10Not100(i-1)
     }
   }
 }
