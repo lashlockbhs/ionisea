@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////
+/* ---------------------------------------------------------------- */
 // Write your code here ...
 
 const factorial = (n) => n === 0 ? 1 : n * factorial(n - 1)
@@ -17,7 +17,7 @@ const sumPrimesBelow = n => n === 0 ? n :
     sumPrimesBelow(n - 1)
   ;
 
-const nvwls = (str) => {
+const nvwls = (str) => { // i defined a helper var, hope that's ok
   if (str.length === 0) {
     return ''
   } else if (vowels.indexOf(str[0]) !== -1) { // this could be done with a bunch of booleans but its a bit of a hassle
@@ -27,14 +27,14 @@ const nvwls = (str) => {
 
 const caesar = (str, key) => str.length === 0 ? '' : rotate(str[0], key) + caesar(str.substring(1), key);
 
-const toList = (arr) => arr.length === 0 ? null : {first: arr[0], rest: toList(arr.slice(1))};
+const toList = (arr) => arr.length === 0 ? null : { first: arr[0], rest: toList(arr.slice(1)) };
 
-const map = (branch, op) => {
-  if (branch.rest === null) return {first: op(branch.first), rest: null}
-  else return {first: op(branch.first), rest: map(branch.rest, op)}
-}
+const map = (branch, op) => branch.rest === null ?
+  { first: op(branch.first), rest: null }
+  : { first: op(branch.first), rest: map(branch.rest, op) }
+  ;
 
-////////////////////////////////////////////////////////////////
+/* ---------------------------------------------------------------- */
 // Functions you will use in your code. No need to touch these
 // or understand these beyond understanding what they do which
 // is described in the appropriate questions.
