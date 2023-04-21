@@ -56,7 +56,7 @@ const whichDiv10Not100 = (n) => { //significantly easier without worrying about 
   return x;
 }
 
-const randomDiv10Not100
+const randomDiv10Not100 = 90
 
 /* ---------------------------------------------------------------- */
 // Functions you will use in your code. No need to touch these
