@@ -19,7 +19,7 @@ const sumPrimesBelow = n => n === 0 ? n :
 
 const nvwls = (str) => {
   if (str.length === 0) {
-    return
+    return ''
   } else if (vowels.indexOf(str[0]) !== -1) {
     return nvwls(str.slice(1))
   } else return str[0] + nvwls(str.slice(1))
@@ -37,7 +37,7 @@ const isPrime = (n) => {
   return n > 1 && loop(2);
 }
 
-const vowels = 'aeiou'
+const vowels = 'aeiouAEIOU'
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
