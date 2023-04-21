@@ -9,6 +9,12 @@ const factorial = (n) => {
   }
 }
 
+const fibonacci = (n) => {
+  if (n < 2) {
+    return n
+  } else return fibonacci(n-1) + fibonacci (n-2)
+}
+
 
 ////////////////////////////////////////////////////////////////
 // Functions you will use in your code. No need to touch these
