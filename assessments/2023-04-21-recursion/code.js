@@ -12,11 +12,17 @@ const maximum = (arr) => arr.length === 0 ? -Infinity : Math.max(arr[0], maximum
 const treeMap = (branch, op) => isLeaf(branch) ? op(branch) :
   { left: treeMap(branch.left, op), right: treeMap(branch.right, op) };
 
-const sumPrimesBelow = n => {
-  if (n === 0) return n
-  else if (isPrime(n)) {
-    return n+sumPrimesBelow(n-1)
-  } else return sumPrimesBelow(n-1)
+const sumPrimesBelow = n => n === 0 ? n :
+  isPrime(n) ? n + sumPrimesBelow(n - 1) :
+    sumPrimesBelow(n - 1)
+  ;
+
+const nvwls = (str) => {
+  if (str.length === 0) {
+    return
+  } else if (vowels.indexOf(str[0]) === -1) {
+    return nvwls(str.slice(1))
+  } else return str[0] + nvwls(str.slice(1))
 }
 
 ////////////////////////////////////////////////////////////////
@@ -30,6 +36,8 @@ const isPrime = (n) => {
   const loop = (f) => f ** 2 > n || (n % f !== 0 && loop(f + 1));
   return n > 1 && loop(2);
 }
+
+const vowels = 'aeiou'
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
