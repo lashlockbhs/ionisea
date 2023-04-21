@@ -11,7 +11,7 @@ const maximum = (arr) => {
   if (arr.length === 0) {
     return -Infinity
   } else {
-    return Math.max(arr[0], maximum(arr.slice(1))
+    return Math.max(arr[0], maximum(arr.slice(1)))
   }
 }
 
