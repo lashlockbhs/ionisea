@@ -34,6 +34,17 @@ const map = (branch, op) => branch.rest === null ?
   : { first: op(branch.first), rest: map(branch.rest, op) }
   ;
 
+const div10not100 = (i) => {
+  if (i === 0) return 0
+  else {
+    if ((i / 100) === Math.round(i/100) || ((i / 10) !== Math.round(i/10))){
+      return div10not100(i-1)
+    } else if ((i / 10) === Math.round(i/10)){
+      return 1+div10not100(i-1)
+    }
+  }
+}
+
 /* ---------------------------------------------------------------- */
 // Functions you will use in your code. No need to touch these
 // or understand these beyond understanding what they do which
@@ -62,3 +73,5 @@ const rotate = (char, places) => {
     return lower === char ? rotated : rotated.toUpperCase();
   }
 }
+
+/* ---------------------------------------------------------------- */
