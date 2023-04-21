@@ -20,9 +20,17 @@ const sumPrimesBelow = n => n === 0 ? n :
 const nvwls = (str) => {
   if (str.length === 0) {
     return ''
-  } else if (vowels.indexOf(str[0]) !== -1) {
+  } else if (vowels.indexOf(str[0]) !== -1) { // this could be done with a bunch of booleans but its a bit of a hassle
     return nvwls(str.slice(1))
   } else return str[0] + nvwls(str.slice(1))
+}
+
+const caesar = (str, key) =>{
+  if (str.length === 0) {
+    return ''
+  } else {
+    return rotate(char, key) + caesar(str.substring(1), key)
+  }
 }
 
 ////////////////////////////////////////////////////////////////
