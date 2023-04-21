@@ -35,26 +35,28 @@ const map = (branch, op) => branch.rest === null ?
   ;
 
 /* ---------------------------------------------------------------- */
-//challenge problem(s)
+//challenge problems
 
 const div10Not100 = (i) => { // a bit scuffed but works until 12451
   if (i === 0) return 0
   else {
-    if ((i / 100) === Math.round(i/100) || ((i / 10) !== Math.round(i/10))){
-      return div10Not100(i-1)
-    } else if ((i / 10) === Math.round(i/10)){
-      return 1+div10Not100(i-1)
+    if ((i / 100) === Math.round(i / 100) || ((i / 10) !== Math.round(i / 10))) {
+      return div10Not100(i - 1)
+    } else if ((i / 10) === Math.round(i / 10)) {
+      return 1 + div10Not100(i - 1)
     }
   }
 }
 
-const whichDiv10Not100 = (n) => {
-let x = 0;
-while (div10Not100(x) < n){
- x+= 10;
+const whichDiv10Not100 = (n) => { //significantly easier without worrying about recursion
+  let x = 0;
+  while (div10Not100(x) < n) {
+    x += 10;
+  }
+  return x;
 }
-return x;
-}
+
+const randomDiv10Not100
 
 /* ---------------------------------------------------------------- */
 // Functions you will use in your code. No need to touch these
