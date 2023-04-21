@@ -27,7 +27,7 @@ const nvwls = (str) => {
 
 const caesar = (str, key) => str.length === 0 ? '' : rotate(str[0], key) + caesar(str.substring(1), key);
 
-const toList = (arr) => arr.length === 0 ? null : {first: arr[0], rest: arr.slice(1)};
+const toList = (arr) => arr.length === 0 ? null : {first: arr[0], rest: toList(arr.slice(1))};
 
 ////////////////////////////////////////////////////////////////
 // Functions you will use in your code. No need to touch these
