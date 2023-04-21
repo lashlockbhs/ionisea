@@ -5,6 +5,10 @@ const factorial = (n) => n === 0 ? 1 : n*factorial(n-1)
 
 const fibonacci = (n) => n < 2 ? n : fibonacci(n-1) + fibonacci (n-2)
 
+const sumSquares = (n) => {
+  if (n === 0) return n
+  else return n**2 + sumSquares(n-1)
+}
 
 ////////////////////////////////////////////////////////////////
 // Functions you will use in your code. No need to touch these
