@@ -31,7 +31,7 @@ const toList = (arr) => arr.length === 0 ? null : {first: arr[0], rest: toList(a
 
 const map = (branch, op) => {
   if (branch.rest === null) return {first: op(branch.first), rest: null}
-  else return {first: map(branch.first, op), rest: map(branch.rest, op)}
+  else return {first: op(branch.first), rest: map(branch.rest, op)}
 }
 
 ////////////////////////////////////////////////////////////////
