@@ -29,7 +29,7 @@ const caesar = (str, key) =>{
   if (str.length === 0) {
     return ''
   } else {
-    return rotate(char, key) + caesar(str.substring(1), key)
+    return rotate(str[0], key) + caesar(str.substring(1), key)
   }
 }
 
