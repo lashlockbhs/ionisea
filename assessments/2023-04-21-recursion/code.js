@@ -34,7 +34,10 @@ const map = (branch, op) => branch.rest === null ?
   : { first: op(branch.first), rest: map(branch.rest, op) }
   ;
 
-const div10not100 = (i) => {
+/* ---------------------------------------------------------------- */
+//challenge problem(s)
+
+const div10not100 = (i) => { // a bit scuffed but works until 12451
   if (i === 0) return 0
   else {
     if ((i / 100) === Math.round(i/100) || ((i / 10) !== Math.round(i/10))){
@@ -43,6 +46,14 @@ const div10not100 = (i) => {
       return 1+div10not100(i-1)
     }
   }
+}
+
+const whichDiv10not100 = (n) => {
+let x = 0;
+while (div10not100(x) < n){
+ x+= 10;
+}
+return x;
 }
 
 /* ---------------------------------------------------------------- */
