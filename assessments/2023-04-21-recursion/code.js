@@ -20,7 +20,7 @@ const sumPrimesBelow = n => n === 0 ? n :
 const nvwls = (str) => {
   if (str.length === 0) {
     return
-  } else if (vowels.indexOf(str[0]) === -1) {
+  } else if (vowels.indexOf(str[0]) !== -1) {
     return nvwls(str.slice(1))
   } else return str[0] + nvwls(str.slice(1))
 }
