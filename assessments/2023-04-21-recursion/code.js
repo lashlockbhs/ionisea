@@ -29,6 +29,11 @@ const caesar = (str, key) => str.length === 0 ? '' : rotate(str[0], key) + caesa
 
 const toList = (arr) => arr.length === 0 ? null : {first: arr[0], rest: toList(arr.slice(1))};
 
+const map = (branch, op) => {
+  if (isLeaf(branch)) return op(branch)
+  else return {first: map(branch.first, op), rest: map(branch.rest, op)}
+}
+
 ////////////////////////////////////////////////////////////////
 // Functions you will use in your code. No need to touch these
 // or understand these beyond understanding what they do which
