@@ -3,14 +3,28 @@
   margin: 0;
 }
 
+.coms{
+  margin: 2em;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: x-large;
+}
+
+.deck{
+  display:inline-block;
+  margin:auto;
+  margin-bottom: 3em;
+  height:300px;
+  width: 220px;
+  border: 1px solid;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
   text-align: center;
+  /*column-count: 2;
+  column-width:auto;*/
 }
 
-canvas {
-  margin: 1in auto;
-  border: 1px dotted grey;
-}
+
