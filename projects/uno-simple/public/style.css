@@ -10,12 +10,29 @@
 }
 
 .deck{
-  display:inline-block;
-  margin:auto;
-  margin-bottom: 3em;
+  display: inline-block;
+  margin: auto;
+  vertical-align: middle;
+  line-height: 300px;  
+  margin-bottom: 1em;
+  font-size:60px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   height:300px;
-  width: 220px;
+  width: 200px;
   border: 1px solid;
+}
+
+.card{
+  height:210px;
+  width: 140px;
+  border: 1px solid;
+  display: inline-block;
+  margin: 0 auto;
+  vertical-align: middle;
+  line-height: 210px;  
+  margin-bottom: 2em;
+  font-size:40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html,
@@ -23,8 +40,6 @@ body {
   height: 100%;
   width: 100%;
   text-align: center;
-  /*column-count: 2;
-  column-width:auto;*/
 }
 
 
