@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
 * {
+  background-color: brown;
   padding: 0;
   margin: 0;
 }
@@ -19,11 +20,14 @@
   border-radius: 15px;
   display: inline-block;
   margin: auto;
+  margin-left: 1em;
+  margin-right:1em;
   vertical-align: middle;
   line-height: 300px;  
-  margin-bottom: 1em;
-  font-size:65px;
+  margin-bottom: 0.5em;
+  font-size:80px;
   border: 7px solid rgb(0, 0, 0);
+  background:rgb(41, 59, 38);
   font-family: 'Patrick Hand';
   height:300px;
   width: 200px;
@@ -38,9 +42,15 @@
   margin: 0 auto;
   vertical-align: middle;
   line-height: 210px;
+  margin-top: 1em;
   margin-bottom: 1em;
-  font-size:50px;
+  margin: 0.15em;
+  font-size:75px;
   font-family: 'Patrick Hand';
+}
+
+.hand{
+  background-color: aliceblue;
 }
 
 html,
