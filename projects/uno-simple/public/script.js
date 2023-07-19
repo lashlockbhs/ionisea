@@ -5,19 +5,8 @@ let elements = {
     currentCard: document.getElementById('currentCard'),
     drawStack: document.getElementById('draw'),
     hand: document.getElementById('hand'),
+    arrow: document.getElementById('arrow'),
 }
-
-/*
-const delayPlay = () => { //for visible bot playing
-    const start = Date.now();
-    const stop = Math.random*4000
-    while (Date.now < start+stop){
-        let x = 2-2
-    }
-    return;
-}   
-*/
-
 
 const randCard = () => {
     const chances = ['0', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '@', '@', '+2', '+2', 'x', 'x'] // add 1 +4 and 1 color switch
@@ -25,6 +14,13 @@ const randCard = () => {
     return ({ face: chances[randNum], color: ['blue', 'yellow', 'green', 'red'][Math.floor(Math.random() * 4)] })
 }
 
+const sleep = (ms) => {
+    let date = Date.now();
+    let curDate = null;
+    for (curDate = Date.now(); curDate > date + ms; curDate = Date.now()) {
+
+    }
+};
 const newHand = () => [randCard(), randCard(), randCard(), randCard(), randCard(), randCard(), randCard()]
 
 class Com {
@@ -36,7 +32,7 @@ class Com {
 
     addCard() {
         this.hand.push(randCard())
-        this.display.innerHTML = `Com ${this.symbol}: ${this.hand.length} cards`
+        this.display.innerHTML = `Com ${this.symbol}: ${this.hand.length} ${'🂠'.repeat(this.hand.length)}`
     }
 
     playCard(card) {
@@ -44,16 +40,15 @@ class Com {
         this.hand.splice(this.hand.findIndex(e => e == card), 1)
         checkForAbility(card)
         if (this.hand.length === 0) {
-            alert(`com ${this.symbol} wins, you done messe up`)
+            alert(`Com ${this.symbol} wins.`)
             location.reload()
         }
-        this.display.innerHTML = `Com ${this.symbol}: ${this.hand.length} cards`
+        this.display.innerHTML = `Com ${this.symbol}: ${this.hand.length} ${'🂠'.repeat(this.hand.length)}`
         updateCurrCard(card)
     }
 
     turn() {
-        const possiblePlays = this.hand.filter((card) => (card.color == playing.currCard.color) || (card.face == playing.currCard.face))
-        // == is fallback in case i fricked something up
+        const possiblePlays = this.hand.filter((card) => (card.color === playing.currCard.color) || (card.face === playing.currCard.face))
         if (possiblePlays.length > 0) {
             this.playCard(possiblePlays[Math.floor(Math.random() * possiblePlays.length)])
         } else {
@@ -64,13 +59,14 @@ class Com {
 }
 
 class Player {
-    constructor(hand, cardDispArr) {
+    constructor() {
         this.hand = []
         this.cardDispArr = []
     }
 
     drawCard(active) {
-        const card = randCard()
+        let card = randCard()
+        //card.face= '+2'
         this.hand.push(card)
         const disp = document.createElement('div')
         disp.className = 'card'
@@ -95,7 +91,7 @@ class Player {
         checkForAbility(card)
         updateCurrCard(card)
         if (this.hand.length === 0) {
-            alert(`you win !!`)
+            alert(`You Win !`)
             location.reload()
         }
         moveTurn()
@@ -112,21 +108,26 @@ let playing = {
 }
 
 const checkForAbility = (card) => {
-    const abilities = [{ face: 'x', action: () => playing.active++ },
-    { face: '@', action: () => playing.direction-=playing.direction },
+    const action = [{ face: 'x', action: () => playing.active = (((playing.direction + playing.active) % 4) + 4) % 4 },
+    {
+        face: '@', action: () => {
+            playing.direction = -playing.direction;
+            elements.arrow.innerHTML = elements.arrow.innerHTML == '→' ? '←' : '→'
+        }
+    },
     {
         face: '+2', action: () => {
             const nextPlayer = (((playing.direction + playing.active) % 4) + 4) % 4;
-            if (nextPlayer === 0) for (let x = 1; x < 2; x++)player.drawCard(false)
-            if (nextPlayer === 1) for (let x = 1; x < 2; x++)playing.comA.addCard()
-            if (nextPlayer === 2) for (let x = 1; x < 2; x++)playing.comB.addCard()
-            if (nextPlayer === 3) for (let x = 1; x < 2; x++)playing.comC.addCard()
+            if (nextPlayer === 0) for (let x = 0; x < 2; x++) player.drawCard(false)
+            if (nextPlayer === 1) for (let x = 0; x < 2; x++) playing.comA.addCard()
+            if (nextPlayer === 2) for (let x = 0; x < 2; x++) playing.comB.addCard()
+            if (nextPlayer === 3) for (let x = 0; x < 2; x++) playing.comC.addCard()
+            playing.active = (((playing.direction + playing.active) % 4) + 4) % 4
         }
-    }]
-    const action = abilities.find((e) => e.face === card.face).action
-    console.log(action)
+    }].find((e) => e.face === card.face)//.action
+    // console.log(action)
     if (action != undefined) {
-        action()
+        action.action()
     }
 }
 
@@ -136,19 +137,31 @@ const updateCurrCard = (card) => {
     elements.currentCard.innerHTML = card.face
 }
 
-const moveTurn = () => {
-    playing.active = (((playing.direction + playing.active) % 4) + 4) % 4
+const moveTurn = async () => {
+    playing.active = (((playing.direction + playing.active) % 4) + 4) % 4;
+    const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
     if (playing.active === 1) {
-        //delayPlay();
-        playing.comA.turn()
+        elements.hand.style.backgroundColor = 'grey'
+        elements.comA.style.backgroundColor = 'green'
+        await delay(500 + Math.round(Math.random() * 500));
+        playing.comA.turn();
+        elements.comA.style.backgroundColor = 'transparent'
+        await delay(250)
     } else if (playing.active === 2) {
-        //delayPlay();
-        playing.comB.turn()
+        elements.comB.style.backgroundColor = 'green'
+        await delay(500 + Math.round(Math.random() * 500));
+        playing.comB.turn();
+        await delay(250 )
+        elements.comB.style.backgroundColor = 'transparent'
     } else if (playing.active === 3) {
-        //delayPlay();    
-        playing.comC.turn()
+        elements.comC.style.backgroundColor = 'green'
+        await delay(500 + Math.round(Math.random() * 500));
+        playing.comC.turn();
+        await delay(250)
+        elements.comC.style.backgroundColor = 'transparent'
+        elements.hand.style.backgroundColor = 'transparent'
     }
-}
+} //adapted from ChatGPT as MDN was kinda useless, will fix
 
 const player = new Player()
 
