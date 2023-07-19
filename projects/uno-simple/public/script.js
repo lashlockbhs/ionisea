@@ -9,7 +9,7 @@ let elements = {
 }
 
 const randCard = () => {
-    const chances = ['0', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '☯', '☯', '+2', '+2', '☒', '☒', '+4', '&']
+    const chances = ['0', '1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '⇆', '⇆', '+2', '+2', '☒', '☒', '+4', '⨁']
     const randNum = Math.floor(Math.random() * 27);
     return ({ face: chances[randNum], color: randNum > 24 ? 'grey' : ['blue', 'yellow', 'green', 'red'][Math.floor(Math.random() * 4)] })
 }
@@ -31,7 +31,7 @@ class Com {
     }
 
     addCard() {
-        this.hand.push({face:'&', color: 'grey'})//randCard())
+        this.hand.push(randCard())
         this.display.innerHTML = `Com ${this.symbol}: ${this.hand.length} ${'🂠'.repeat(this.hand.length)}`
     }
 
@@ -141,7 +141,7 @@ const checkForAbility = (card) => {
         face: '☒', action: () => playing.active = nextPlayer
     },
     {
-        face: '☯', action: () => {
+        face: '⇆', action: () => {
             playing.direction = -playing.direction;
             elements.arrow.innerHTML = elements.arrow.innerHTML == '→' ? '←' : '→'
         }
@@ -163,7 +163,7 @@ const checkForAbility = (card) => {
         }
     },
     {
-        face: '&', action: switchColor
+        face: '⨁', action: switchColor
     }
     ].find((e) => e.face === card.face)
     if (action != undefined) {
@@ -180,10 +180,10 @@ const updateCurrCard = (card) => {
 const botTurn = async (symbol) => {
     const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
     elements[symbol].style.backgroundColor = 'green'
-    await delay(500 + Math.round(Math.random() * 500));
+    await delay(650 + Math.round(Math.random() * 500));
     playing[symbol].turn();
     elements[symbol].style.backgroundColor = 'transparent'
-    await delay(250)
+    await delay(400)
 }
 
 const moveTurn = async () => {
@@ -205,15 +205,14 @@ window.onload = () => {
     updateCurrCard(randCard())
     while ((playing.currCard.face === '+4') ||
         (playing.currCard.face === '☒') ||
-        (playing.currCard.face === '☯') ||
+        (playing.currCard.face === '⇆') ||
         (playing.currCard.face === '+2') ||
-        (playing.currCard.face === '&')) {
+        (playing.currCard.face === '⨁')) {
         updateCurrCard(randCard())
     }
     for (let x = 0; x < 7; x++) {
         player.drawCard(false)
     }
-    alert(`& is color switch`)
 }
 
 elements.drawStack.onmousedown = (() => {
