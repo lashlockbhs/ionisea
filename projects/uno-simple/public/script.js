@@ -80,23 +80,27 @@ class Player {
         )
         this.cardDispArr.push(disp)
         elements.hand.append(disp)
-        if (active !== false) moveTurn();
+        if (active !== false) {
+            moveTurn();
+            elements.hand.style.backgroundColor = 'grey'
+        }
     }
 
     playCard(card, disp) {
-        const original = this.cardDispArr
-        disp.remove()
-        const ind = this.cardDispArr.findIndex((e, i) => e === original[i])
-        this.hand.splice(ind, 1)
-        checkForAbility(card)
-        updateCurrCard(card)
+        const original = this.cardDispArr;
+        disp.remove();
+        const ind = this.cardDispArr.findIndex((e, i) => e === original[i]);
+        this.hand.splice(ind, 1);
+        checkForAbility(card);
+        updateCurrCard(card);
         if (this.hand.length === 0) {
-            alert(`You Win !`)
-            location.reload()
-        }
-        moveTurn()
-    }
-}
+            alert(`You Win !`);
+            location.reload();
+        };
+        moveTurn();
+        elements.hand.style.backgroundColor = 'grey';
+    };
+};
 
 let playing = {
     direction: 1, //1 being forward, -1 being backward
@@ -124,7 +128,7 @@ const checkForAbility = (card) => {
             if (nextPlayer === 3) for (let x = 0; x < 2; x++) playing.comC.addCard()
             playing.active = (((playing.direction + playing.active) % 4) + 4) % 4
         }
-    }].find((e) => e.face === card.face)//.action
+    }].find((e) => e.face === card.face)
     // console.log(action)
     if (action != undefined) {
         action.action()
@@ -140,26 +144,29 @@ const updateCurrCard = (card) => {
 const moveTurn = async () => {
     playing.active = (((playing.direction + playing.active) % 4) + 4) % 4;
     const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
-    if (playing.active === 1) {
-        elements.hand.style.backgroundColor = 'grey'
+    if (playing.active === 0) {
+        elements.hand.style.backgroundColor = 'transparent'
+    } else if (playing.active === 1) {
+        
         elements.comA.style.backgroundColor = 'green'
         await delay(500 + Math.round(Math.random() * 500));
         playing.comA.turn();
         elements.comA.style.backgroundColor = 'transparent'
         await delay(250)
     } else if (playing.active === 2) {
+        elements.hand.style.backgroundColor = 'grey'
         elements.comB.style.backgroundColor = 'green'
         await delay(500 + Math.round(Math.random() * 500));
         playing.comB.turn();
-        await delay(250 )
+        await delay(250)
         elements.comB.style.backgroundColor = 'transparent'
     } else if (playing.active === 3) {
+        elements.hand.style.backgroundColor = 'grey'
         elements.comC.style.backgroundColor = 'green'
         await delay(500 + Math.round(Math.random() * 500));
         playing.comC.turn();
         await delay(250)
         elements.comC.style.backgroundColor = 'transparent'
-        elements.hand.style.backgroundColor = 'transparent'
     }
 } //adapted from ChatGPT as MDN was kinda useless, will fix
 
@@ -170,6 +177,7 @@ window.onload = () => {
     for (let x = 0; x < 7; x++) {
         player.drawCard(false)
     }
+    alert(`x is skip, @ is reverse`)
 }
 
 elements.drawStack.onmousedown = (() => {
