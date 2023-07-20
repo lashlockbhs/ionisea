@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
 * {
-  background-color: brown;
   padding: 0;
   margin: 0;
 }
@@ -53,6 +52,9 @@
   background-color: aliceblue;
 }
 
+body{
+  background-color: brown;
+}
 html,
 body {
   height: 100%;

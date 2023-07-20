@@ -173,7 +173,7 @@ const botTurn = async (symbol) => {
     const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
     await delay(500)
     elements[symbol].style.backgroundColor = 'green'
-    await delay(300 + Math.round(Math.random() * 500));
+    await delay(450 + Math.round(Math.random() * 550));
     playing[symbol].turn();
     await delay(500)
     elements[symbol].style.backgroundColor = 'transparent'
