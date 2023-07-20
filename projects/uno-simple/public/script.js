@@ -208,6 +208,13 @@ window.onload = () => {
     }
 }
 
+document.onkeydown = (e) => { // ( : cheatimg
+    if(playing.playerArr.find((p) => p === `com${e.key}`){
+        console.log(playing[`com${e.key}`].hand)
+    }
+}
+
+
 elements.drawStack.onmousedown = (() => {
     if (playing.active == 0) {
         player.drawCard()
