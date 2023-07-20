@@ -115,14 +115,14 @@ const switchColor = () => {
                 max = { color, count: ct }
             }
         }
-        updateCurrCard({face: playing.currCard.face, color: max.color})
+        updateCurrCard({ face: playing.currCard.face, color: max.color })
     } else {
         const answ = prompt(`What color would you like to switch to? (b/g/y/r)`)
-        if (answ == undefined){
-            updateCurrCard({face: playing.currCard.face, color: playing.colorArr[Math.floor(Math.random() * 4)]})
+        if (answ == undefined) {
+            updateCurrCard({ face: playing.currCard.face, color: playing.colorArr[Math.floor(Math.random() * 4)] })
         } else {
             const inArr = playing.colorArr.find((e) => e[0] == answ[0].toLowerCase())
-            updateCurrCard({face: playing.currCard.face, color: inArr})
+            updateCurrCard({ face: playing.currCard.face, color: inArr })
         }
     };
 };
@@ -173,14 +173,14 @@ const botTurn = async (symbol) => {
     const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
     await delay(500)
     elements[symbol].style.backgroundColor = 'green'
-    await delay(300+Math.round(Math.random()*500));
+    await delay(300 + Math.round(Math.random() * 500));
     playing[symbol].turn();
     await delay(500)
     elements[symbol].style.backgroundColor = 'transparent'
 }
-const moveTurn = async () => {
+const moveTurn = () => {
     playing.active = (((playing.direction + playing.active) % 4) + 4) % 4;
-    if (Math.abs(playing.direction) ===2) playing.direction /= 2
+    if (Math.abs(playing.direction) === 2) playing.direction /= 2
     if (playing.active === 0) {
         elements.hand.style.backgroundColor = 'white'
     } else if (playing.active === 1) {
@@ -190,7 +190,7 @@ const moveTurn = async () => {
     } else if (playing.active === 3) {
         botTurn('comC')
     }
-} //adapted from ChatGPT as MDN was kinda useless, will fix
+}
 
 const player = new Player()
 
@@ -209,11 +209,10 @@ window.onload = () => {
 }
 
 document.onkeydown = (e) => { // ( : cheatimg
-    if(playing.playerArr.find((p) => p === `com${e.key.toUpperCase()}`) != undefined){
+    if (playing.playerArr.find((p) => p === `com${e.key.toUpperCase()}`) != undefined) {
         console.log(playing[`com${e.key.toUpperCase()}`].hand)
     }
 }
-
 
 elements.drawStack.onmousedown = (() => {
     if (playing.active == 0) {
