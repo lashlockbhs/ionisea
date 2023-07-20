@@ -14,13 +14,6 @@ const randCard = () => {
     return ({ face: chances[randNum], color: randNum > 24 ? 'grey' : ['blue', 'yellow', 'green', 'red'][Math.floor(Math.random() * 4)] })
 }
 
-const sleep = (ms) => {
-    let date = Date.now();
-    let curDate = null;
-    for (curDate = Date.now(); curDate > date + ms; curDate = Date.now()) {
-
-    }
-};
 const newHand = () => [randCard(), randCard(), randCard(), randCard(), randCard(), randCard(), randCard()]
 
 class Com {
@@ -138,7 +131,7 @@ const switchColor = () => {
 const checkForAbility = (card) => {
     const nextPlayer = (((playing.direction + playing.active) % 4) + 4) % 4;
     const action = [{
-        face: '☒', action: () => playing.active = nextPlayer
+        face: '☒', action: () => playing.direction *= 2
     },
     {
         face: '⇆', action: () => {
@@ -150,13 +143,13 @@ const checkForAbility = (card) => {
         face: '+2', action: () => {
             if (nextPlayer === 0) for (let x = 0; x < 2; x++) player.drawCard(false)
             else for (let x = 0; x < 2; x++) playing[playing.playerArr[nextPlayer]].addCard()
-            playing.active = (((playing.direction + playing.active) % 4) + 4) % 4
+            playing.direction *= 2
         }
     },
     {
         face: '+4', action: () => {
             switchColor();
-            playing.active = nextPlayer
+            playing.direction *= 2
             for (let x = 0; x < 4; x++) {
                 nextPlayer === 0 ? player.drawCard(false) : playing[playing.playerArr[nextPlayer]].addCard()
             }
@@ -180,14 +173,15 @@ const updateCurrCard = (card) => {
 const botTurn = async (symbol) => {
     const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
     elements[symbol].style.backgroundColor = 'green'
-    await delay(650 + Math.round(Math.random() * 500));
+    await delay(550 + Math.round(Math.random() * 500));
     playing[symbol].turn();
     elements[symbol].style.backgroundColor = 'transparent'
-    await delay(400)
+    await delay(500)
 }
 
 const moveTurn = async () => {
     playing.active = (((playing.direction + playing.active) % 4) + 4) % 4;
+    if (Math.abs(playing.direction) ===2) playing.direction /= 2
     if (playing.active === 0) {
         elements.hand.style.backgroundColor = 'white'
     } else if (playing.active === 1) {
