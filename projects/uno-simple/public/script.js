@@ -209,8 +209,8 @@ window.onload = () => {
 }
 
 document.onkeydown = (e) => { // ( : cheatimg
-    if(playing.playerArr.find((p) => p === `com${e.key}`){
-        console.log(playing[`com${e.key}`].hand)
+    if(playing.playerArr.find((p) => p === `com${e.key.toUpperCase()}`) != undefined){
+        console.log(playing[`com${e.key.toUpperCase()}`].hand)
     }
 }
 
