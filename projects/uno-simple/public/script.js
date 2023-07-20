@@ -40,7 +40,7 @@ class Com {
         checkForAbility(card)
     }
 
-    turn() {
+    async turn() {
         const possiblePlays = this.hand.filter((card) => (card.color === playing.currCard.color) || (card.face === playing.currCard.face) || (card.color === 'grey'))
         if (possiblePlays.length > 0) {
             this.playCard(possiblePlays[Math.floor(Math.random() * possiblePlays.length)])
@@ -115,7 +115,6 @@ const switchColor = () => {
                 max = { color, count: ct }
             }
         }
-        console.log(max)
         updateCurrCard({face: playing.currCard.face, color: max.color})
     } else {
         const answ = prompt(`What color would you like to switch to? (b/g/y/r)`)
@@ -172,13 +171,13 @@ const updateCurrCard = (card) => {
 
 const botTurn = async (symbol) => {
     const delay = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
-    elements[symbol].style.backgroundColor = 'green'
-    await delay(550 + Math.round(Math.random() * 500));
-    playing[symbol].turn();
-    elements[symbol].style.backgroundColor = 'transparent'
     await delay(500)
+    elements[symbol].style.backgroundColor = 'green'
+    await delay(300+Math.round(Math.random()*500));
+    playing[symbol].turn();
+    await delay(500)
+    elements[symbol].style.backgroundColor = 'transparent'
 }
-
 const moveTurn = async () => {
     playing.active = (((playing.direction + playing.active) % 4) + 4) % 4;
     if (Math.abs(playing.direction) ===2) playing.direction /= 2
