@@ -1,30 +1,32 @@
+@font-face {
+  font-family: freeSerif;
+  src: url(freefont-20120503/FreeSerif.woff)
+}
+
 body {
   margin: auto;
 }
 
-#whiteDisp{
-  
-}
 
-#board{
+#board {
   border: 1px solid black;
   margin: auto;
   margin-top: 2em;
-  width: 640px;
-  height: 640px;
 }
 
 td {
-  width:80px;
-  height:80px;
+  width: 80px;
+  height: 80px;
   margin: auto;
   padding: 0px;
+  text-align: center;
+  line-height: 80px;
 }
 
 tr {
-  height:80px;
+  font-family: freeSerif, 'Times New Roman', Times, serif;
+  font-size: 70px;
+  height: 80px;
   margin: 0px;
   padding: 0px;
 }
-
-
