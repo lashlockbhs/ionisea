@@ -1,12 +1,30 @@
 body {
-  width: 40em;
-  margin: 1in auto;
+  margin: auto;
 }
 
-h1 {
-  font-family: sans-serif;
+#whiteDisp{
+  
 }
 
-p {
-  font-size: 18px;
+#board{
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 2em;
+  width: 640px;
+  height: 640px;
 }
+
+td {
+  width:80px;
+  height:80px;
+  margin: auto;
+  padding: 0px;
+}
+
+tr {
+  height:80px;
+  margin: 0px;
+  padding: 0px;
+}
+
+
