@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.coms{
+  margin: 1.2em;
+  margin-top: 0;
+  font-family: 'Ubuntu Mono';
+  font-size: x-large;
+}
+#arrow{
+  font-size: 60px;
+}
+.deck{
+  border-radius: 15px;
+  display: inline-block;
+  margin: auto;
+  margin-left: 1em;
+  margin-right:1em;
+  vertical-align: middle;
+  line-height: 300px;  
+  margin-bottom: 0.5em;
+  font-size:90px;
+  border: 7px solid rgb(0, 0, 0);
+  background:rgb(41, 59, 38);
+  font-family: 'Patrick Hand';
+  height:300px;
+  width: 200px;
+}
+
+.card{
+  border-radius: 15px;
+  height:210px;
+  width: 140px;
+  border: 5px solid rgb(116, 113, 113);
+  display: inline-block;
+  margin: 0 auto;
+  vertical-align: middle;
+  line-height: 210px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin: 0.15em;
+  font-size:80px;
+  font-family: 'Patrick Hand';
+}
+
+.hand{
+  background-color: aliceblue;
+}
+
+body{
+  background-color: brown;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+
