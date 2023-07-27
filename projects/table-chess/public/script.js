@@ -19,11 +19,12 @@ const squareClicked = (square, row, file) => {
         console.log(play.pickedUp)
         const c = play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor
         if (c == 'lightgreen') {
-            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor === 'sandybrown'
+            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'sandybrown'
         } else if (c == 'darkgreen') {
-            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor === 'saddlebrown'
+            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'saddlebrown'
         }
-        play.pickedUp.placePiece(square, row, file)
+        play.pickedUp.placePiece(row, file)
+        play.pickedUp = undefined
     }
 
 }
@@ -56,10 +57,13 @@ class Piece {
     }
 
     placePiece(row, file) {
-        board[row][file].element.innerHTML = this.face;
-        board[row][file].piece = this;
-        board[this.row][this.file].element.innerHTML = '';
-        board[this.row][this.file].piece = undefined;
+        play.board[row][file].element.innerHTML = this.face;
+        play.board[row][file].piece = this;
+        play.board[this.row][this.file].element.innerHTML = '';
+        play.board[this.row][this.file].piece = undefined;
+        this.row = row
+        this.file = file
+        play.player = play.player === 'black' ? 'white' : 'black'
     }
 
 
@@ -68,9 +72,28 @@ class Piece {
 class Pawn extends Piece {
     checkIfLegal(square, row, file) {
         console.log('square', square, row, file)
-        if ((this.color === `black`) && (((row - this.row === 1)) || ((this.row === 1) && (row === 3) && (play.board[row][file].piece == undefined) && (play.board[2][file].piece == undefined)) || ((row - this.row === 1) && (Math.abs(file - this.file) === 1)))) {
+        if ((this.color === `black`) && (
+            ((row-this.row === 1) && (this.file === file)) || 
+            (
+                (this.file === file) &&
+                (this.row === 1) && 
+                (row === 3) && 
+                (play.board[5][file].piece == undefined)
+            ) || 
+            ((row - this.row === 1) && (Math.abs(file - this.file) === 1)  && (play.board[row][file].piece.color === 'white'))
+        )) {
             return true;
-        } else if ((this.color === `white`) && (((row === (this.row - 1))) || ((this.row === 6) && (row === 4) && (play.board[row][file].piece == undefined) && (play.board[5][file].piece == undefined)) || ((row - this.row === -1) && (Math.abs(file - this.file) === 1)))) {
+        } else if ((this.color === `white`) && (
+            ((row-this.row === -1) && (this.file === file)) || 
+            (
+                (this.file === file) &&
+                (this.row === 6) && 
+                (row === 4) && 
+                (play.board[row][file].piece == undefined) && 
+                (play.board[5][file].piece == undefined)
+            ) || 
+            ((row - this.row === -1) && (Math.abs(file - this.file) === 1)  && (play.board[row][file].piece.color === 'black'))
+        )) {
             return true;
         } else return false //en passant later
     }
@@ -106,30 +129,32 @@ class Knight extends Piece {
 
 class Bishop extends Piece {
     checkIfLegal(square, row, file) {
-        if ((Math.abs(this.row - row) / Math.abs(this.file - file) === 1)) {
-            let r = Math.min(this.row, row)
-            let f = Math.min(this.file, file)
-            while ((r <= Math.max(this.row, row)) && (f <= Math.max(this.file, file))) {
+        if (Math.abs(Math.abs(this.row - row) / Math.abs(this.file - file)) === 1) {
+            let r = this.row+Math.sign(row-this.row)
+            let f = this.file+Math.sign(file-this.file)
+            while ((r != row) && (f != file)) {
                 if (play.board[r][f].piece != undefined) {
                     return false
                 }
-                r, f++
+                r+= Math.sign(row-this.row)
+                f+= Math.sign(file-this.file)
             }
             return true;
-        }
+        } else return false
     }
 }
 
 class Queen extends Piece {
     checkIfLegal(square, row, file) {
-        if ((Math.abs(this.row - row) / Math.abs(this.file - file) === 1)) {
-            let r = Math.min(this.row, row)
-            let f = Math.min(this.file, file)
-            while ((r < Math.max(this.row, row)) && (f < Math.max(this.file, file))) {
+        if (Math.abs(Math.abs(this.row - row) / Math.abs(this.file - file)) === 1) {
+            let r = this.row+Math.sign(row-this.row)
+            let f = this.file+Math.sign(file-this.file)
+            while ((r != row) && (f != file)) {
                 if (play.board[r][f].piece != undefined) {
                     return false
                 }
-                r, f++
+                r+= Math.sign(row-this.row)
+                f+= Math.sign(file-this.file)
             }
             return true;
         } else if ((this.row === row)) {
@@ -153,7 +178,9 @@ class Queen extends Piece {
 
 class King extends Piece {
     checkIfLegal(square, row, file) {
-
+        if ((Math.abs(this.row - row) <= 1) || (Math.abs(this.file - file) <= 1)){
+            return true
+        } else return false;
     }
 }
 
