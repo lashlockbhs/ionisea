@@ -60,7 +60,7 @@ const squareClicked = (square, row, file) => {
             visualSquare.element.style.backgroundColor = 'darkgreen'
         }
         play.pickedUp = visualSquare.piece
-    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == `${square.id[0]}${square.id[1]}`) && (play.pickedUp.checkIfLegal(square, row, file)) && ((square.piece == undefined) || (square.piece.color != play.player))) {
+    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == `${square.id[0]}${square.id[1]}`) && (play.pickedUp.checkIfLegal(visualSquare, square.id[0], square.id[1])) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
         const c = play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor
         if (c == 'lightgreen') {
             play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'sandybrown'
