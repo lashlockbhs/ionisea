@@ -10,15 +10,16 @@
 
 #whiteDisp {
   background-color: green;
+  margin-left: 30%;
 }
 
 .playerDisplay{
   font-family: freeMono, monospace;
+  display: inline-block;
   font-size: 30px;
   padding:0.75em;
   text-align: center; 
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-right: 20%;
 }
 
 #board {
