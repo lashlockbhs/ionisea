@@ -74,15 +74,13 @@ const squareClicked = (square) => {
         play.pickedUp = visualSquare.piece
     } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == square.id) && (play.pickedUp.checkIfLegal(visualSquare, r, f)) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
         play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = inverseColor[play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor]
-        console.log(c)
         play.pickedUp.placePiece(r, f)
-        play.moves.push({ face: play.pickedUp.face, color: play.pickedUp.color, start: { row: play.pickedUp.row, file: play.pickedUp.file }, end: { row: r, file: f } })
+        play.moves.push({ face: play.pickedUp.face, color: play.pickedUp.color, start: { row: parseInt(`${play.pickedUp.row}`), file: parseInt(`${play.pickedUp.file}`) }, end: { row: r, file: f } , id: play.pickedUp, piece: play.pickedUp})
         play.pickedUp = undefined
     } else if (visualSquare.piece === play.pickedUp) {
         square.style.backgroundColor = inverseColor[c]
         play.pickedUp = undefined
     }
-
 }
 
 const initBoard = () => {
@@ -105,11 +103,12 @@ const initBoard = () => {
 }
 
 class Piece {
-    constructor(row, file, color, face) {
+    constructor(row, file, color, face, id) {
         this.file = file,
             this.row = row,
             this.color = color,
             this.face = face
+            this.id = id
     }
 
     placePiece(row, file) {
@@ -235,12 +234,11 @@ const initPieces = () => {
     const classOrder = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
     const faceOrder = ['♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜']
     for (let x = 0; x <= 7; x++) {
-        play.board[0][x].piece = new classOrder[x](0, x, 'black', faceOrder[x])
-        play.board[7][x].piece = new classOrder[x](7, x, 'white', faceOrder[x])
-        play.board[1][x].piece = new Pawn(1, x, 'black', '♟');
-        play.board[6][x].piece = new Pawn(6, x, 'white', '♟');
+        play.board[0][x].piece = new classOrder[x](0, x, 'black', faceOrder[x], Math.random())
+        play.board[7][x].piece = new classOrder[x](7, x, 'white', faceOrder[x], Math.random())
+        play.board[1][x].piece = new Pawn(1, x, 'black', '♟', Math.random());
+        play.board[6][x].piece = new Pawn(6, x, 'white', '♟', Math.random());
     }
-
     refaceTiles();
 }
 
