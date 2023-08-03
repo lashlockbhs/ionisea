@@ -5,7 +5,7 @@ let play = {
     pickedUp: undefined,
     whiteDisplay: document.getElementById('whiteDisp'),
     blackDisplay: document.getElementById('blackDisp'),
-    recentMoves: [],
+    moves: [],
 }
 play.visualBoard.addEventListener("selectstart", event => event.preventDefault());
 
@@ -28,10 +28,10 @@ const turn = () => {
     play[`${play.player}Display`].style.backgroundColor = `green`
 
     play.board.reverse()
-    play.board.forEach((row , r) => {
+    play.board.forEach((row, r) => {
         row.reverse()
-        row.forEach( (square, f) => {
-            square.element = document.getElementById('' + r+f)
+        row.forEach((square, f) => {
+            square.element = document.getElementById('' + r + f)
             if (square.piece != undefined) {
                 square.piece.row = r
                 square.piece.file = f
@@ -50,39 +50,36 @@ document.onkeydown = (k) => {
         console.log(play.board)
     }
     if (k.key === `g`) {
-        const r = Math.floor(Math.random()*8)
-        const f = Math.floor(Math.random()*8)
+        const r = Math.floor(Math.random() * 8)
+        const f = Math.floor(Math.random() * 8)
         play.board[r][f].piece = new God(r, f, play.player, '帝')
         refaceTiles();
     }
 }
 
-const squareClicked = (square, row, file) => {
-    const visualSquare = play.board[parseInt(square.id[0])][parseInt(square.id[1])]
+const inverseColor = {
+    darkgreen: 'saddlebrown',
+    lightgreen: 'sandybrown',
+    saddlebrown: 'darkgreen',
+    sandybrown: 'lightgreen',
+}
+
+const squareClicked = (square) => {
+    const r = parseInt(square.id[0])
+    const f = parseInt(square.id[1])
+    const visualSquare = play.board[r][f]
+    const c = square.style.backgroundColor
     if ((visualSquare.piece != undefined) && (visualSquare.piece.color === play.player) && (play.pickedUp == undefined)) {
-        const c = visualSquare.element.style.backgroundColor
-        if (c == 'sandybrown') {
-            visualSquare.element.style.backgroundColor = 'lightgreen'
-        } else if (c == 'saddlebrown') {
-            visualSquare.element.style.backgroundColor = 'darkgreen'
-        }
+        square.style.backgroundColor = inverseColor[c]
         play.pickedUp = visualSquare.piece
-    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == square.id) && (play.pickedUp.checkIfLegal(visualSquare, square.id[0], square.id[1])) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
-        const c = play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor
-        if (c == 'lightgreen') {
-            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'sandybrown'
-        } else if (c == 'darkgreen') {
-            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'saddlebrown'
-        }
-        play.pickedUp.placePiece(square.id[0], square.id[1])
+    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == square.id) && (play.pickedUp.checkIfLegal(visualSquare, r, f)) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
+        play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = inverseColor[play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor]
+        console.log(c)
+        play.pickedUp.placePiece(r, f)
+        play.moves.push({ face: play.pickedUp.face, color: play.pickedUp.color, start: { row: play.pickedUp.row, file: play.pickedUp.file }, end: { row: r, file: f } })
         play.pickedUp = undefined
     } else if (visualSquare.piece === play.pickedUp) {
-        const c = play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor
-        if (c == 'lightgreen') {
-            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'sandybrown'
-        } else if (c == 'darkgreen') {
-            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'saddlebrown'
-        }
+        square.style.backgroundColor = inverseColor[c]
         play.pickedUp = undefined
     }
 
@@ -134,11 +131,10 @@ class Piece {
 
 class Pawn extends Piece {
     checkIfLegal(square, row, file) {
-        console.log('square', square, row, file)
-        console.log(this)
-        if (((row == this.row - 1) && (this.file == file)) || ((this.file == file) && (this.row == 6) && (row == 4) && (play.board[5][file].piece == undefined)) || ((row == this.row-1) && (Math.abs(file - this.file) == 1) && (play.board[row][file].piece.color !== this.color))) {
-            return true;
-        } else return false //en passant later
+        if ((row == this.row - 1) && (this.file == file)) return true
+        else if ((this.file == file) && (this.row == 6) && (row == 4) && (play.board[5][file].piece == undefined)) return true
+        else if ((row == this.row - 1) && (Math.abs(file - this.file) == 1) && (play.board[row][file].piece.color !== this.color)) return true
+        else return false //en passant later
     }
 }
 
@@ -223,6 +219,8 @@ class King extends Piece {
     checkIfLegal(square, row, file) {
         if ((Math.abs(this.row - row) <= 1) || (Math.abs(this.file - file) <= 1)) {
             return true
+        } else if ((play.moves.find(e => e.color === this.color) === undefined) && (play.board[row][file].piece !== undefined) && (play.board[row][file].face == '♜') && (play.board[row][file].piece.color === 'white')) {
+
         } else return false;
     }
 }
@@ -234,23 +232,11 @@ class God extends Piece {
 }
 
 const initPieces = () => {
-    play.board[0][0].piece = new Rook(0, 0, 'black', '♜')
-    play.board[0][1].piece = new Knight(0, 1, 'black', '♞')
-    play.board[0][2].piece = new Bishop(0, 2, 'black', '♝')
-    play.board[0][3].piece = new Queen(0, 3, 'black', '♛')
-    play.board[0][4].piece = new King(0, 4, 'black', '♚')
-    play.board[0][5].piece = new Bishop(0, 5, 'black', '♝')
-    play.board[0][6].piece = new Knight(0, 6, 'black', '♞')
-    play.board[0][7].piece = new Rook(0, 7, 'black', '♜')
-    play.board[7][0].piece = new Rook(7, 0, 'white', '♜')
-    play.board[7][1].piece = new Knight(7, 1, 'white', '♞')
-    play.board[7][2].piece = new Bishop(7, 2, 'white', '♝')
-    play.board[7][3].piece = new Queen(7, 3, 'white', '♛')
-    play.board[7][4].piece = new King(7, 4, 'white', '♚')
-    play.board[7][5].piece = new Bishop(7, 5, 'white', '♝')
-    play.board[7][6].piece = new Knight(7, 6, 'white', '♞')
-    play.board[7][7].piece = new Rook(7, 7, 'white', '♜')
+    const classOrder = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
+    const faceOrder = ['♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜']
     for (let x = 0; x <= 7; x++) {
+        play.board[0][x].piece = new classOrder[x](0, x, 'black', faceOrder[x])
+        play.board[7][x].piece = new classOrder[x](7, x, 'white', faceOrder[x])
         play.board[1][x].piece = new Pawn(1, x, 'black', '♟');
         play.board[6][x].piece = new Pawn(6, x, 'white', '♟');
     }
