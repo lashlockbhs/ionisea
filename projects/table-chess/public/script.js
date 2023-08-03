@@ -192,14 +192,14 @@ class Queen extends Piece {
                 f += Math.sign(file - this.file)
             }
             return true;
-        } else if ((this.row === row)) {
+        } else if ((this.row == row)) {
             for (let i = Math.min(this.file, file) + 1; i < Math.max(this.file, file); i++) {
                 if (play.board[this.row][i].piece != undefined) {
                     return false;
                 }
             }
             return true;
-        } else if (this.file === file) {
+        } else if (this.file == file) {
             for (let i = Math.min(this.row, row) + 1; i < Math.max(this.row, row); i++) {
                 if (play.board[i][this.file].piece != undefined) {
                     return false;
