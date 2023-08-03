@@ -6,6 +6,7 @@ let play = {
     whiteDisplay: document.getElementById('whiteDisp'),
     blackDisplay: document.getElementById('blackDisp'),
     moves: [],
+    kings: undefined,
 }
 play.visualBoard.addEventListener("selectstart", event => event.preventDefault());
 
@@ -55,6 +56,7 @@ document.onkeydown = (k) => {
         play.board[r][f].piece = new God(r, f, play.player, '帝')
         refaceTiles();
     }
+    if (k.key === 'm') console.log(moves)
 }
 
 const inverseColor = {
@@ -69,17 +71,19 @@ const squareClicked = (square) => {
     const f = parseInt(square.id[1])
     const visualSquare = play.board[r][f]
     const c = square.style.backgroundColor
-    if ((visualSquare.piece != undefined) && (visualSquare.piece.color === play.player) && (play.pickedUp == undefined)) {
-        square.style.backgroundColor = inverseColor[c]
-        play.pickedUp = visualSquare.piece
-    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == square.id) && (play.pickedUp.checkIfLegal(visualSquare, r, f)) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
-        play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = inverseColor[play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor]
-        play.pickedUp.placePiece(r, f)
-        play.moves.push({ face: play.pickedUp.face, color: play.pickedUp.color, start: { row: parseInt(`${play.pickedUp.row}`), file: parseInt(`${play.pickedUp.file}`) }, end: { row: r, file: f } , id: play.pickedUp, piece: play.pickedUp})
-        play.pickedUp = undefined
-    } else if (visualSquare.piece === play.pickedUp) {
-        square.style.backgroundColor = inverseColor[c]
-        play.pickedUp = undefined
+    if (play.kings[play.player]) {
+        if ((visualSquare.piece != undefined) && (visualSquare.piece.color === play.player) && (play.pickedUp == undefined)) {
+            square.style.backgroundColor = inverseColor[c]
+            play.pickedUp = visualSquare.piece
+        } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == square.id) && (play.pickedUp.checkIfLegal(visualSquare, r, f)) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
+            play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = inverseColor[play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor]
+            play.pickedUp.placePiece(r, f)
+            play.moves.push({ id: play.pickedUp.id, start: { row: parseInt(`${play.pickedUp.row}`), file: parseInt(`${play.pickedUp.file}`) }, end: { row: r, file: f }, id: play.pickedUp, piece: play.pickedUp })
+            play.pickedUp = undefined
+        } else if (visualSquare.piece === play.pickedUp) {
+            square.style.backgroundColor = inverseColor[c]
+            play.pickedUp = undefined
+        }
     }
 }
 
@@ -108,7 +112,7 @@ class Piece {
             this.row = row,
             this.color = color,
             this.face = face
-            this.id = id
+        this.id = id
     }
 
     placePiece(row, file) {
@@ -222,6 +226,10 @@ class King extends Piece {
 
         } else return false;
     }
+
+    isChecked() { //ONLY ACTIVATE ON CURRENT TURN, WILL BREAK OTHERWISE!!
+        return false // temp
+    }
 }
 
 class God extends Piece {
@@ -232,13 +240,16 @@ class God extends Piece {
 
 const initPieces = () => {
     const classOrder = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
-    const faceOrder = ['♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜']
+    const faceOrder = ['♜', '♞', '♝', '♛', '', '♝', '♞', '♜']
     for (let x = 0; x <= 7; x++) {
         play.board[0][x].piece = new classOrder[x](0, x, 'black', faceOrder[x], Math.random())
         play.board[7][x].piece = new classOrder[x](7, x, 'white', faceOrder[x], Math.random())
         play.board[1][x].piece = new Pawn(1, x, 'black', '♟', Math.random());
         play.board[6][x].piece = new Pawn(6, x, 'white', '♟', Math.random());
     }
+    play.kings = {white: new King(7, 4, 'white', '♚'), black: new King(0, 4, 'black', '♚')}
+    play.board[0][4].piece = play.kings.black
+    play.board[7][4].piece = play.kings.white
     refaceTiles();
 }
 
