@@ -14,6 +14,7 @@ const refaceTiles = () => {
         for (const tile of row) {
             if (tile.piece != undefined) {
                 tile.element.innerHTML = tile.piece.face
+                tile.element.style.color = tile.piece.color
             } else {
                 tile.element.innerHTML = ''
             }
@@ -47,6 +48,12 @@ document.onkeydown = (k) => {
     }
     if (k.key === `b`) {
         console.log(play.board)
+    }
+    if (k.key === `g`) {
+        const r = Math.floor(Math.random()*8)
+        const f = Math.floor(Math.random()*8)
+        play.board[r][f].piece = new God(r, f, play.player, '帝')
+        refaceTiles();
     }
 }
 
@@ -113,6 +120,7 @@ class Piece {
             play[`${play.player}Display`].innerHTML += play.board[row][file].piece.face
         }
         play.board[row][file].element.innerHTML = this.face;
+        play.board[row][file].element.style.color = this.color;
         play.board[row][file].piece = this;
         play.board[this.row][this.file].element.innerHTML = '';
         play.board[this.row][this.file].piece = undefined;
@@ -234,21 +242,19 @@ const initPieces = () => {
     play.board[0][5].piece = new Bishop(0, 5, 'black', '♝')
     play.board[0][6].piece = new Knight(0, 6, 'black', '♞')
     play.board[0][7].piece = new Rook(0, 7, 'black', '♜')
+    play.board[7][0].piece = new Rook(7, 0, 'white', '♜')
+    play.board[7][1].piece = new Knight(7, 1, 'white', '♞')
+    play.board[7][2].piece = new Bishop(7, 2, 'white', '♝')
+    play.board[7][3].piece = new Queen(7, 3, 'white', '♛')
+    play.board[7][4].piece = new King(7, 4, 'white', '♚')
+    play.board[7][5].piece = new Bishop(7, 5, 'white', '♝')
+    play.board[7][6].piece = new Knight(7, 6, 'white', '♞')
+    play.board[7][7].piece = new Rook(7, 7, 'white', '♜')
     for (let x = 0; x <= 7; x++) {
         play.board[1][x].piece = new Pawn(1, x, 'black', '♟');
+        play.board[6][x].piece = new Pawn(6, x, 'white', '♟');
     }
 
-    play.board[7][0].piece = new Rook(7, 0, 'white', '♖')
-    play.board[7][1].piece = new Knight(7, 1, 'white', '♘')
-    play.board[7][2].piece = new Bishop(7, 2, 'white', '♗')
-    play.board[7][3].piece = new Queen(7, 3, 'white', '♕')
-    play.board[7][4].piece = new King(7, 4, 'white', '♔')
-    play.board[7][5].piece = new Bishop(7, 5, 'white', '♗')
-    play.board[7][6].piece = new Knight(7, 6, 'white', '♘')
-    play.board[7][7].piece = new Rook(7, 7, 'white', '♖')
-    for (let x = 0; x <= 7; x++) {
-        play.board[6][x].piece = new Pawn(6, x, 'white', '♙');
-    }
     refaceTiles();
 }
 
