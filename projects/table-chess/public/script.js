@@ -11,7 +11,7 @@ play.visualBoard.addEventListener("selectstart", event => event.preventDefault()
 
 const refaceTiles = () => {
     for (const row of play.board) {
-        for (let tile of row) {
+        for (const tile of row) {
             if (tile.piece != undefined) {
                 tile.element.innerHTML = tile.piece.face
             } else {
@@ -32,8 +32,8 @@ const turn = () => {
         row.forEach( (square, f) => {
             square.element = document.getElementById('' + r+f)
             if (square.piece != undefined) {
-                square.piece.row = 7 - r
-                square.piece.file = 7 - f
+                square.piece.row = r
+                square.piece.file = f
             }
         })
     })
@@ -60,7 +60,7 @@ const squareClicked = (square, row, file) => {
             visualSquare.element.style.backgroundColor = 'darkgreen'
         }
         play.pickedUp = visualSquare.piece
-    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == `${square.id[0]}${square.id[1]}`) && (play.pickedUp.checkIfLegal(visualSquare, square.id[0], square.id[1])) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
+    } else if ((play.pickedUp != undefined) && !(`${play.pickedUp.row}${play.pickedUp.file}` == square.id) && (play.pickedUp.checkIfLegal(visualSquare, square.id[0], square.id[1])) && ((visualSquare.piece == undefined) || (visualSquare.piece.color != play.player))) {
         const c = play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor
         if (c == 'lightgreen') {
             play.board[play.pickedUp.row][play.pickedUp.file].element.style.backgroundColor = 'sandybrown'
@@ -127,9 +127,8 @@ class Piece {
 class Pawn extends Piece {
     checkIfLegal(square, row, file) {
         console.log('square', square, row, file)
-        if ((this.color === `black`) && (((row - this.row === -1) && (this.file === file)) || ((this.file === file) && (this.row === 6) && (row === 4) && (play.board[5][file].piece == undefined)) || ((row - this.row === -1) && (Math.abs(file - this.file) === 1) && (play.board[row][file].piece.color === 'white')))) {
-            return true;
-        } else if ((this.color === `white`) && (((row - this.row === -1) && (this.file === file)) || ((this.file === file) && (play.board[5][file].piece == undefined)) || ((row - this.row === -1) && (Math.abs(file - this.file) === 1) && (play.board[row][file].piece.color === 'black')))) {
+        console.log(this)
+        if (((row == this.row - 1) && (this.file == file)) || ((this.file == file) && (this.row == 6) && (row == 4) && (play.board[5][file].piece == undefined)) || ((row == this.row-1) && (Math.abs(file - this.file) == 1) && (play.board[row][file].piece.color !== this.color))) {
             return true;
         } else return false //en passant later
     }
@@ -137,14 +136,14 @@ class Pawn extends Piece {
 
 class Rook extends Piece {
     checkIfLegal(square, row, file) {
-        if ((this.row === row)) {
+        if ((this.row == row)) {
             for (let i = Math.min(this.file, file) + 1; i < Math.max(this.file, file); i++) {
                 if (play.board[this.row][i].piece != undefined) {
                     return false;
                 }
             }
             return true;
-        } else if (this.file === file) {
+        } else if (this.file == file) {
             for (let i = Math.min(this.row, row) + 1; i < Math.max(this.row, row); i++) {
                 if (play.board[i][this.file].piece != undefined) {
                     return false;
